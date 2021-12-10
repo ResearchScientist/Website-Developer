@@ -33,6 +33,7 @@ html {
 
 h1,h2 {
   font-family: 'Lato', sans-serif;
+  color: var(--text-blue);
 }
 
 p {
@@ -41,12 +42,16 @@ p {
   font-size: 16px;
   line-height: 1.5;
   overflow-wrap: break-word;
-  color:var(--text-white);
+  color: var(--text-white);
 }
 
 header {
   max-width: 800px;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 /* NAVIGATION */
