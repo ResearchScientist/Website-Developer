@@ -33,6 +33,7 @@ html {
 
 h1,h2 {
   font-family: 'Lato', sans-serif;
+  font-weight: 100;
   color: var(--text-blue);
 }
 
@@ -147,6 +148,16 @@ main {
   grid-row: 5;
   border-radius: 50%;
   background: radial-gradient(rgb(50,50,50),rgb(10,10,10));
+}
+
+#projects {
+  grid-column: 1/-1;
+  grid-row: 6/7;
+}
+
+#contact {
+  grid-column: 1/-1;
+  grid-row: 7/8;
 }
 
 /* IMAGES */
