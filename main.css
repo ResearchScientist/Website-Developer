@@ -54,6 +54,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 
 /* NAVIGATION */
@@ -182,7 +183,7 @@ main {
 #ufo {
   grid-column: -2;
   grid-row: 6;
-  animation: ease-in-out 1.5s infinite alternate glide;
+  animation: ease-in-out 1s infinite alternate glide;
   animation-play-state: paused;
 }
 
