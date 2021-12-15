@@ -158,6 +158,8 @@ footer {
 #planet-intro {
   width: 20vw;
   height: 20vw;
+  min-width: 320px;
+  min-height: 320px;
   margin: 0 0 0 5vw;
   grid-column: 2/-2;
   grid-row: 2/3;
@@ -225,4 +227,9 @@ footer {
 @keyframes glide {
   from {transform: rotate(-10deg);}
   to {transform: rotate(10deg);}
+}
+
+@media screen and (max-width: 410px) {
+  .title {font-size: 26px;}
+  .title span:nth-of-type(2) {font-size: 18px;}
 }
