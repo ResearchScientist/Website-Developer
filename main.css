@@ -110,11 +110,12 @@ footer {
   height: 80vh;
   grid-column: 1/-1;
   grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
-  width: 500px;
-  margin: 50% auto 0;
   font-family: 'Lato',sans-serif;
   font-weight: 300;
   font-size: 40px;
