@@ -26,7 +26,7 @@ body {
   --text-white: #eeeeee;
   --text-blue: #ccccff;
   --main-dark: #101010;
-  --planet-dark: #1d1d22;
+  --planet-dark: rgb(50,50,50),rgb(10,10,10);
 }
 
 /* MAIN PROPERTIES */
@@ -77,7 +77,49 @@ header {
 footer {
   width: 100%;
   height: 200px;
-  background-color: var(--planet-dark);
+  display: grid;
+  grid-template-columns: 10% repeat(4,20%) 10%;
+  grid-template-rows: repeat(4,25%);
+  background: rgb(25,25,25);
+}
+
+footer section {
+  display: flex;
+  flex-direction: column;
+}
+
+footer section h2 {
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(150,150,150);
+}
+
+footer section a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: rgb(100,100,100);
+}
+
+#f-code {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#f-social {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#sign-off {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  text-align: center;
+  align-self: center;
+  color: rgb(100,100,100);
 }
 
 /* NAVIGATION */
@@ -159,14 +201,14 @@ footer {
   justify-self: center;
 }
 
-#planet-intro {
+#planet {
   width: 300px;
   height: 300px;
   grid-column: 2/-1;
   grid-row: 1/2;
   justify-self: center;
   border-radius: 50%;
-  background: radial-gradient(circle at top, rgb(50,50,50),rgb(10,10,10) 62%);
+  background: radial-gradient(circle at top, var(--planet-dark) 62%);
 }
 
 #projects,#contact {
@@ -235,7 +277,7 @@ footer {
   .title {font-size: 26px;}
   .title span:nth-of-type(2) {font-size: 18px;}
   #about {grid-template-rows: repeat(2,50%);}
-  #planet-intro {grid-row: 1/-1;}
+  #planet {grid-row: 1/-1;}
   #about p:nth-of-type(1) {grid-column: 1/-1; grid-row: 1/-1;margin: 0 auto;}
   #about p:nth-of-type(2) {grid-column: 1/-1; grid-row: 2;}
 }
