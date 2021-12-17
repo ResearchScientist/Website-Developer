@@ -107,7 +107,7 @@ footer {
 /* SECTIONS */
 
 #title {
-  height: 80vh;
+  height: 70vh;
   grid-column: 1/-1;
   grid-row: 1/2;
   display: flex;
