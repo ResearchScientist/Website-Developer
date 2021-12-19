@@ -108,13 +108,18 @@ footer section a {
   grid-row: 1;
 }
 
-#f-social {
+#f-design {
   grid-column: 3;
   grid-row: 1;
 }
 
-#f-services {
+#f-social {
   grid-column: 4;
+  grid-row: 1;
+}
+
+#f-services {
+  grid-column: 5;
   grid-row: 1;
 }
 
