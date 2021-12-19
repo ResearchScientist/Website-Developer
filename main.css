@@ -113,12 +113,24 @@ footer section a {
   grid-row: 1;
 }
 
+#f-services {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+#f-services p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: rgb(100,100,100);
+}
+
 #sign-off {
   width: 100%;
   grid-column: 1/-1;
   grid-row: -2/-1;
   text-align: center;
   align-self: center;
+  font-size: 12px;
   color: rgb(100,100,100);
 }
 
