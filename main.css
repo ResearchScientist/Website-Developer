@@ -196,6 +196,17 @@ footer section a {
   font-size: 30px;
 }
 
+#projects .section-title , #contact .section-title {
+  padding: 100px 0 0;
+  text-align: center;
+  font-family: 'Roboto',sans-serif;
+  font-size: clamp(62px,20vw,158px);
+  font-weight: 900;
+  color: rgba(50,50,50,5%);
+}
+
+/* 62, 158*/
+
 #about {
   width: 100%;
   height: 100vh;
