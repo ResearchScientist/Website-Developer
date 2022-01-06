@@ -249,6 +249,7 @@ footer section a {
   max-width: 800px;
   grid-column: 1/-1;
   display: grid;
+  grid-template-columns: repeat(4,25%);
 }
 
 #projects h2,#contact h2 {
