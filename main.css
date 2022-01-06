@@ -205,7 +205,9 @@ footer section a {
   color: rgba(50,50,50,5%);
 }
 
-/* 62, 158*/
+#contact .section-title {
+  grid-row: 1;
+}
 
 #about {
   width: 100%;
@@ -246,11 +248,13 @@ footer section a {
   height: 100vh;
   max-width: 800px;
   grid-column: 1/-1;
+  display: grid;
 }
 
 #projects h2,#contact h2 {
   font-weight: 300;
   text-align: center;
+  grid-column: 1/-1;
 }
 
 #projects {grid-row: 3/4;}
@@ -301,6 +305,13 @@ footer section a {
 @keyframes glide {
   from {transform: rotate(-10deg);}
   to {transform: rotate(10deg);}
+}
+
+#satellite {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  /* margin: -400px 0 0; */
 }
 
 @media screen and (max-width: 410px) {
