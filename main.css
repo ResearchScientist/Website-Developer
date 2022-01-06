@@ -45,7 +45,7 @@ main {
   grid-template-rows: repeat(4,100vh);
   justify-items: center;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1,h2 {
