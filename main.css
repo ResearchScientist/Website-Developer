@@ -264,13 +264,15 @@ footer section a {
   max-width: 800px;
   grid-column: 1/-1;
   display: grid;
-  grid-template-columns: repeat(4,25%);
+  grid-template-columns: repeat(3,33%);
+  grid-template-rows: repeat(3,33%);
 }
 
 #projects h2,#contact h2 {
   font-weight: 300;
   text-align: center;
   grid-column: 1/-1;
+  grid-row: 1/-1;
 }
 
 #projects {grid-row: 3/4;}
@@ -281,6 +283,14 @@ footer section a {
 #avatar-astronaut {
   width: 140px;
   margin: -120px 0 0 100px;
+}
+
+#rocket {
+  width: 180px;
+  grid-column: 2/4;
+  grid-row: 2/4;
+  justify-self: center;
+  align-self: center;
 }
 
 /* STAR FIELD */
