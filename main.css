@@ -26,6 +26,7 @@ body {
   --text-white: #eeeeee;
   --text-blue: #ccccff;
   --main-dark: #101010;
+  --primary-blue: rgb(100,150,250);
   --planet-dark: rgb(50,50,50),rgb(10,10,10);
 }
 
@@ -38,11 +39,11 @@ html {
 
 main {
   width: 100%;
-  height: calc(400vh + 60px);
+  height: 400vh;
   margin: -60px 0 0;
   display: grid;
   grid-template-columns: repeat(4,25%);
-  grid-template-rows: repeat(3,100vh);
+  grid-template-rows: repeat(4,100vh);
   justify-items: center;
   align-items: center;
   overflow: hidden;
@@ -177,12 +178,9 @@ footer section a {
   padding: 3px 5px;
   font-family: 'Lato',sans-serif;
   font-size: 24px;
-  /* border: 1px solid var(--text-blue); */
 }
 
 /* SECTIONS */
-
-
 
 #title .title {
   grid-column: 1/-1;
@@ -199,10 +197,14 @@ footer section a {
   align-self: flex-end;
 }
 
+.emphasis {
+  color: var(--primary-blue);
+}
+
 #title button {
   grid-column: 1/-1;
   grid-row: 3/4;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .title {
