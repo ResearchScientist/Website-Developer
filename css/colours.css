@@ -4,6 +4,7 @@
   --text-black: #404040;
   --text-white: #eeeeee;
   --text-blue: #ccccff;
+  --text-watermark: rgba(50,50,50,5%);
   --main-dark: #101010;
   --primary-blue: rgb(100,150,250);
   --planet-dark: rgb(50,50,50),rgb(10,10,10);

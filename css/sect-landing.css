@@ -1,10 +1,10 @@
-#title .title {
+#landing .title {
   grid-column: 1/-1;
   grid-row: 1/3;
   align-self: center;
 }
 
-#title p {
+#landing p {
   max-width: 275px;
   grid-column: 1/-1;
   grid-row: 2/3;
@@ -17,7 +17,7 @@
   color: var(--primary-blue);
 }
 
-#title .my-button {
+#landing .my-button {
   grid-column: 1/-1;
   grid-row: 3/4;
   align-self: center;
