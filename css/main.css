@@ -1,0 +1,18 @@
+/* MAIN PROPERTIES */
+
+html {
+  background-color: var(--main-dark);
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100%;
+  height: 400vh;
+  margin: -60px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  grid-template-rows: repeat(4,100vh);
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+}

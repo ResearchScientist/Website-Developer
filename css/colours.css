@@ -1,0 +1,10 @@
+/* CUSTOM PROPERTIES */
+
+:root {
+  --text-black: #404040;
+  --text-white: #eeeeee;
+  --text-blue: #ccccff;
+  --main-dark: #101010;
+  --primary-blue: rgb(100,150,250);
+  --planet-dark: rgb(50,50,50),rgb(10,10,10);
+}

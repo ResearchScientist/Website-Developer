@@ -1,0 +1,24 @@
+/* LINE ART */
+
+#ufo {
+  grid-column: -2;
+  grid-row: 4/5;
+  animation: ease-in-out 1s infinite alternate glide;
+  animation-play-state: paused;
+}
+
+#ufo:hover {
+  animation-play-state: running;
+}
+
+@keyframes glide {
+  from {transform: rotate(-10deg);}
+  to {transform: rotate(10deg);}
+}
+
+#satellite {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  /* margin: -400px 0 0; */
+}
