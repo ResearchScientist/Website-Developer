@@ -6,7 +6,9 @@
 
 @import 'css/header.css';
 
-@import 'css/main.css';
+@import 'css/main-structure.css';
+
+@import 'css/sections.css';
 
 @import 'css/sect-landing.css';
 
@@ -15,49 +17,6 @@
 @import 'css/sect-projects.css';
 
 @import 'css/footer.css';
-
-
-/* SECTIONS */
-
-#projects .section-title , #contact .section-title {
-  padding: 100px 0 0;
-  text-align: center;
-  font-family: 'Roboto',sans-serif;
-  font-size: clamp(62px,20vw,158px);
-  font-weight: 900;
-  color: rgba(50,50,50,5%);
-}
-
-#contact .section-title {
-  grid-row: 1;
-}
-
-#title,#projects,#contact {
-  width: 100%;
-  height: 100vh;
-  max-width: 800px;
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: repeat(3,33%);
-  grid-template-rows: repeat(3,33%);
-}
-
-#title {
-  /* height: 70vh; */
-  grid-row: 1/2;
-  justify-content: center;
-  align-items: center;
-}
-
-#projects h2,#contact h2 {
-  font-weight: 300;
-  text-align: center;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-}
-
-#projects {grid-row: 3/4;}
-#contact {grid-row: 4/5;}
 
 /* IMAGES */
 
