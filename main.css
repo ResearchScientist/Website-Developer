@@ -29,10 +29,10 @@
 
 #rocket {
   width: 170px;
-  grid-column: 3/4;
-  grid-row: 3/4;
-  justify-self: flex-start;
-  align-self: flex-start;
+  grid-column: 2/4;
+  grid-row: 2/4;
+  justify-self: center;
+  align-self: center;
 }
 
 /* STAR FIELD */
