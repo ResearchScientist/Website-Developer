@@ -46,6 +46,4 @@
   to {transform: translateY(-100vh);}
 }
 
-@import 'css/line-art.css';
-
 @import 'css/media-queries.css';
