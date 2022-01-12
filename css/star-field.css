@@ -1,0 +1,21 @@
+/* STAR FIELD */
+
+#far-field, #mid-field, #near-field {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+#mid-field {
+  animation: linear 100s infinite fall;
+}
+
+#near-field {
+  animation: linear 50s infinite fall;
+}
+
+@keyframes fall {
+  from {transform: translateY(0);}
+  to {transform: translateY(-100vh);}
+}
