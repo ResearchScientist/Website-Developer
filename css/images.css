@@ -1,0 +1,14 @@
+/* IMAGES */
+
+#avatar-astronaut {
+  width: 140px;
+  margin: -120px 0 0 100px;
+}
+
+#rocket {
+  width: 170px;
+  grid-column: 2/4;
+  grid-row: 2/4;
+  justify-self: center;
+  align-self: center;
+}
