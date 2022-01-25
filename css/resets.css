@@ -1,6 +1,6 @@
 /* RESETS */
 
-html,body,main,header,footer,section,aside,div,nav,a,h1,h2,p,span,button,canvas {
+html,body,main,header,footer,section,aside,div,nav,a,h1,h2,h3,p,span,button,canvas {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
