@@ -8,7 +8,41 @@
   text-align: center;
   color: var(--text-blue);
   display: flex;
-  border: 1px solid rgb(50,100,200);
+  border: 1px solid #3264c8;
   text-decoration: none;
   z-index: 1;
+}
+
+.scroll-down {
+  height: 40px;
+  grid-column: 1/-1;
+  grid-row: 3/4;
+  text-decoration: none;
+  align-self: center;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.scroll-mouse {
+  width: 20px;
+  height: 30px;
+  border-radius: 45% 45% 30% 30%;
+  border: 1px solid white;
+}
+
+.scroll-mouse div {
+  width: 2px;
+  height: 4px;
+  margin: 5px auto 0;
+  border-radius: 20%;
+  content: none;
+  background: white;
+}
+
+.scroll-arrow {
+  width: 10px;
+  height: 10px;
+  /* border: 1px solid transparent transparent white white; */
+  border: 1px solid white;
+  transform: rotateX(-45deg);
 }
