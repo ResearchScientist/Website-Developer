@@ -27,7 +27,7 @@
   width: 20px;
   height: 30px;
   border-radius: 45% 45% 30% 30%;
-  border: 1px solid white;
+  border: 1px solid var(--text-blue);
 }
 
 .scroll-mouse div {
@@ -36,7 +36,7 @@
   margin: 5px auto 0;
   border-radius: 20%;
   content: none;
-  background: white;
+  background: var(--text-blue);
 }
 
 .scroll-arrow {
@@ -44,8 +44,8 @@
   height: 10px;
   margin: 0 auto;
   border: transparent;
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
+  border-left: 1px solid var(--text-blue);
+  border-bottom: 1px solid var(--text-blue);
   transform: rotateZ(-45deg);
   animation: scroll-down 1.2s infinite;
 }
