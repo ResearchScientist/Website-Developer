@@ -21,7 +21,9 @@
 .project-modal {
   grid-column: 1/-1;
   width: 82px;
-  margin: 0 auto;
+  /* height: 20px; */
+  justify-self: center;
+  align-self: center;
   text-align: center;
   border: 1px solid var(--primary-blue);
   background: var(--main-dark);
@@ -29,6 +31,7 @@
   display: grid;
   grid-template-columns: repeat(3,33%);
   grid-template-rows: repeat(3,33%);
+  /* transition: all 1s; */
 }
 
 .project-modal h3 {
@@ -39,7 +42,7 @@
   font-weight: 900;
   font-size: clamp(40px,8vw,100px);
   color: var(--text-watermark);
-  scale: .1;
+  scale: .01;
 }
 
 .project-modal .close-modal {
@@ -65,12 +68,10 @@
   grid-row: 1/-1;
   width: 100%;
   height: 100%;
-  margin: 2% 0 0;
   padding: 20px;
   border: 1px solid var(--primary-blue);
   background: var(--main-dark);
   z-index: 2;
-  margin: 0 auto;
   justify-self: center;
   align-self: center;
   visibility: visible;
