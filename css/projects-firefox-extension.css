@@ -1,0 +1,27 @@
+section {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 20px;
+  /* background: coral; */
+}
+
+div {
+  color: white;
+  width: 18px;
+  text-align: center;
+  /* background: crimson; */
+}
+
+
+div:nth-of-type(1) {
+  color: orange;
+  transform: rotateY(90deg);
+  animation: rotate-in 1.2s forwards 1s;
+}
+
+@keyframes rotate-in {
+  from {transform: rotateY(90deg);}
+  to {transform: rotateY(0deg);}
+}
