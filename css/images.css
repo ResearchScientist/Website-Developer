@@ -1,15 +1,24 @@
 /* IMAGES */
 
-#avatar-astronaut {
+#astronaut {
   width: 140px;
   margin: -120px 0 0 100px;
 }
 
 #rocket {
   width: 170px;
-  margin: 0 0 0 30%;
-  grid-column: 2/4;
+  grid-column: 1/2;
+  grid-row: 2/4;
+  transform: rotateZ(30deg);
+  justify-self: center;
+  align-self: center;
+}
+
+#satellite-3d {
+  grid-column: 2/-1;
   grid-row: 2/4;
   justify-self: center;
   align-self: center;
+  width: 250px;
+
 }
