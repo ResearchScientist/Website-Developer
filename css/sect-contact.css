@@ -4,4 +4,5 @@
   align-self: flex-start;
   justify-self: center;
   fill: var(--text-blue);
+  z-index: 10;
 }
