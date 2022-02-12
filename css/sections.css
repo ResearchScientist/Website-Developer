@@ -24,4 +24,5 @@
   font-size: clamp(62px,20vw,158px);
   font-weight: 900;
   color: var(--text-watermark);
+  user-select: none;
 }

@@ -1,5 +1,9 @@
 /* IMAGES */
 
+img {
+  user-select: none;
+}
+
 #astronaut {
   width: 140px;
   margin: -120px 0 0 100px;
