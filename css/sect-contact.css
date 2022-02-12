@@ -1,4 +1,7 @@
 #message {
-  grid-column: 2/-1;
-  grid-row: -2/-1;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  align-self: flex-start;
+  justify-self: center;
+  fill: var(--text-blue);
 }
