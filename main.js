@@ -11,12 +11,13 @@ window.onblur = function() {
   document.title = "Portfolio : Aw you left";
 }
 
-// 3D ILLUSTRATIONS
+// 3D ILLUSTRATION ANIMATIONS
 
 const rocket = document.getElementById('rocket');
+const thrust = document.getElementById('thrust');
 
 rocket.addEventListener('click',rocketLaunch);
 
 function rocketLaunch() {
-  console.log('rocket launched');
+  thrust.classList.toggle('rocket-thrust');
 }
