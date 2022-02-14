@@ -2,7 +2,6 @@
 
 img {
   user-select: none;
-  z-index: 10;
 }
 
 #astronaut {
@@ -26,4 +25,3 @@ img {
   align-self: center;
   width: 230px;
 }
-

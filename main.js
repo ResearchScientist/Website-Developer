@@ -10,3 +10,13 @@ window.onfocus = function() {
 window.onblur = function() {
   document.title = "Portfolio : Aw you left";
 }
+
+// 3D ILLUSTRATIONS
+
+const rocket = document.getElementById('rocket');
+
+rocket.addEventListener('click',rocketLaunch);
+
+function rocketLaunch() {
+  console.log('rocket launched');
+}
