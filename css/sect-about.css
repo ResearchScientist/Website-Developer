@@ -22,7 +22,7 @@
 #astronaut-dialogue-screen {
   width: 200px;
   height: 100px;
-  background: pink;
+  background: var(--main-dark);
   grid-column: 1/3;
   grid-row: 1/2;
   align-self: center;
