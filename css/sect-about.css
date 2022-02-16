@@ -22,9 +22,14 @@
 #astronaut-dialogue-screen {
   width: 200px;
   height: 100px;
+  padding: 10px;
   background: var(--main-dark);
+  border: 1px solid var(--primary-blue);
+  color: white;
+  /* outline: solid 1px var(--primary-blue); */
   grid-column: 1/3;
   grid-row: 1/2;
   align-self: center;
   justify-self: center;
+  display: none;
 }
