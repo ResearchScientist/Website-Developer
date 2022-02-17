@@ -25,6 +25,8 @@
   padding: 10px;
   background: var(--main-dark);
   border: 1px solid var(--primary-blue);
+  border-radius: 6px;
+  box-shadow: 0 0 5px var(--primary-blue), inset 0 0 5px var(--primary-blue);
   color: white;
   /* outline: solid 1px var(--primary-blue); */
   grid-column: 1/3;
