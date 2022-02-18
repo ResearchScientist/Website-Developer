@@ -22,7 +22,7 @@
   grid-column: 1/-1;
   grid-row: 1/-1;
   width: 82px;
-  /* height: 40px; */
+  height: 100%;
   justify-self: center;
   align-self: center;
   text-align: center;
@@ -32,7 +32,7 @@
   display: grid;
   grid-template-columns: repeat(3,33%);
   grid-template-rows: repeat(3,33%);
-  /* transition: all 1s; */
+  transition: all 1s;
 }
 
 .project-modal h3 {
@@ -53,7 +53,7 @@
   color: orange;
 }
 
-.project-modal:nth-of-type(1) {
+/* .project-modal:nth-of-type(1) {
   grid-row: 1/2;
 }
 
@@ -63,15 +63,15 @@
 
 .project-modal:nth-of-type(3) {
   grid-row: 2/3;
-}
+} */
 
 .project-modal:target {
   grid-row: 1/-1;
   width: 100%;
   height: 100%;
   padding: 20px;
-  border: 1px solid var(--primary-blue);
-  background: var(--main-dark);
+  /* border: 1px solid var(--primary-blue); */
+  /* background: var(--main-dark); */
   z-index: 2;
   justify-self: center;
   align-self: center;
