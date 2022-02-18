@@ -12,11 +12,21 @@ window.onblur = function() {
 
 const astronaut = document.getElementById('astronaut');
 const astronautText = document.getElementById('astronaut-dialogue-screen');
+const dialogue = [
+  "Live long and prosper.",
+  "This has happened before and it will happen again.",
+  "Come with me if you want to live.",
+  "This is the way.",
+  "Allons-y!",
+  "42",
+  "It's a trap.",
+  "In space, no one can hear you scream."
+]
 
 astronaut.addEventListener('click',astronautDialogue);
 
 function astronautDialogue() {
-  astronautText.textContent = 'hi';
+  astronautText.textContent = 'Live long and prosper.';
   toggleDialogueScreen();
 }
 
