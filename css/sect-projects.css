@@ -28,6 +28,8 @@
   text-align: center;
   border: 1px solid var(--primary-blue);
   background: var(--main-dark);
+  white-space: nowrap;
+  overflow: hidden;
   visibility: hidden;
   display: grid;
   grid-template-columns: repeat(3,33%);
