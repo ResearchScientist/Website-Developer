@@ -21,11 +21,11 @@ function astronautDialogue() {
 }
 
 function toggleDialogueScreen() {
-  if (astronautText.style.display === "none") {
-    astronautText.style.display = "block";
+  if (astronautText.style.display === "block") {
+    astronautText.style.display = "none";
   }
   else {
-    astronautText.style.display = "none";
+    astronautText.style.display = "block";
   }
 }
 
@@ -38,4 +38,14 @@ rocket.addEventListener('click',rocketLaunch);
 
 function rocketLaunch() {
   thrust.classList.toggle('rocket-thrust');
+}
+
+// SATELLITE ANIMATION
+
+const satellite = document.getElementById('satellite-3d');
+
+satellite.addEventListener('click',satelliteBeam);
+
+function satelliteBeam() {
+  console.log('im a beam');
 }
