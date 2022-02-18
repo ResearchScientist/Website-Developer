@@ -8,7 +8,7 @@ window.onblur = function() {
   document.title = "Portfolio : Aw you left";
 }
 
-// ASTRONAUT ANIMATION
+// ASTRONAUT DIALOGUE
 
 const astronaut = document.getElementById('astronaut');
 const astronautText = document.getElementById('astronaut-dialogue-screen');
@@ -26,7 +26,7 @@ const dialogue = [
 astronaut.addEventListener('click',astronautDialogue);
 
 function astronautDialogue() {
-  astronautText.textContent = 'Live long and prosper.';
+  astronautText.textContent = dialogue[Math.floor(Math.random()*dialogue.length)];
   toggleDialogueScreen();
 }
 
