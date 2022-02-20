@@ -10,8 +10,10 @@
 }
 
 #planet {
-  width: 300px;
-  height: 300px;
+  /* width: 300px; */
+  /* height: 300px; */
+  width: 45vh;
+  height: 45vh;
   grid-column: 2/-1;
   grid-row: 2/3;
   justify-self: center;
