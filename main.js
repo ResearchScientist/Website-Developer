@@ -65,13 +65,20 @@ const canvasSatellite_frameSpeed = 4;
 
 canvasSatellite_spritesheet.src = 'img/satellite-spritesheet.png';
 
+// ctx.drawImage(canvasSatellite_spritesheet,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe);
+
 function rotateSatellite() {
   ctx.clearRect(0,0,canvasSatellite_width,canvasSatellite_height);
   ctx.drawImage(canvasSatellite_spritesheet,canvasSatellite_frameX * canvasSatellite_spriteframe,canvasSatellite_frameY * canvasSatellite_spriteframe,canvasSatellite_spriteframe,canvasSatellite_spriteframe,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe);
   
   if (canvasSatellite_currentFrame % canvasSatellite_frameSpeed == 0) {
     if (canvasSatellite_frameX < 21) canvasSatellite_frameX++;
-    else canvasSatellite_frameX = 0;
+    // else canvasSatellite_frameX = 0;
+    // else cancelAnimationFrame(requestID);
+    else {
+      canvasSatellite_frameX = 0;
+      cancelAnimationFrame(requestID);
+    }
   }
   canvasSatellite_currentFrame++;
   requestAnimationFrame(rotateSatellite);
