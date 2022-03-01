@@ -31,12 +31,11 @@ img > * {
 }
 
 #satellite-3d {
-  grid-column: 2/-1;
+  grid-column: 1/-1;
   grid-row: 2/4;
-  margin: 32px 0 0 -8px;
   justify-self: center;
   align-self: center;
-  width: 155px;
+  width: 230px;
 }
 
 /* CANVAS SATELLITE ANIMATION */
@@ -44,11 +43,11 @@ img > * {
 #canvas-satellite {
   width: 230px;
   height: 230px;
-  grid-column: 2/-1;
+  grid-column: 1/-1;
   grid-row: 2/4;
   justify-self: center;
   align-self: center;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   z-index: 1;
 }
 

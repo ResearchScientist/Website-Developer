@@ -52,6 +52,7 @@ function rocketLaunch() {
 
 // SATELLITE ANIMATION
 
+const imgSatellite = document.getElementById('satellite-3d');
 const canvasSatellite = document.getElementById('canvas-satellite');
 const ctx = canvasSatellite.getContext('2d');
 const canvasSatellite_width = canvasSatellite.width = 460;
@@ -68,13 +69,13 @@ canvasSatellite_spritesheet.src = 'img/satellite-spritesheet.png';
 // ctx.drawImage(canvasSatellite_spritesheet,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe);
 
 function rotateSatellite() {
+  imgSatellite.style.visibility = 'hidden';
   ctx.clearRect(0,0,canvasSatellite_width,canvasSatellite_height);
   ctx.drawImage(canvasSatellite_spritesheet,canvasSatellite_frameX * canvasSatellite_spriteframe,canvasSatellite_frameY * canvasSatellite_spriteframe,canvasSatellite_spriteframe,canvasSatellite_spriteframe,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe);
   
   if (canvasSatellite_currentFrame % canvasSatellite_frameSpeed == 0) {
     if (canvasSatellite_frameX < 21) canvasSatellite_frameX++;
     // else canvasSatellite_frameX = 0;
-    // else cancelAnimationFrame(requestID);
     else {
       canvasSatellite_frameX = 0;
       cancelAnimationFrame(requestID);
