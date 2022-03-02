@@ -38,8 +38,6 @@ img > * {
   width: 230px;
 }
 
-/* CANVAS SATELLITE ANIMATION */
-
 #canvas-satellite {
   width: 230px;
   height: 230px;
@@ -47,7 +45,6 @@ img > * {
   grid-row: 2/4;
   justify-self: center;
   align-self: center;
-  /* border: 1px solid white; */
   z-index: 1;
 }
 

@@ -62,7 +62,7 @@ const canvasSatellite_spriteframe = 460;
 let canvasSatellite_frameX = 0;
 let canvasSatellite_frameY = 0;
 let canvasSatellite_currentFrame = 0;
-const canvasSatellite_frameSpeed = 4;
+const canvasSatellite_frameSpeed = 3;
 
 canvasSatellite_spritesheet.src = 'img/satellite-spritesheet.png';
 
@@ -74,7 +74,7 @@ function rotateSatellite() {
   ctx.drawImage(canvasSatellite_spritesheet,canvasSatellite_frameX * canvasSatellite_spriteframe,canvasSatellite_frameY * canvasSatellite_spriteframe,canvasSatellite_spriteframe,canvasSatellite_spriteframe,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe);
   
   if (canvasSatellite_currentFrame % canvasSatellite_frameSpeed == 0) {
-    if (canvasSatellite_frameX < 21) canvasSatellite_frameX++;
+    if (canvasSatellite_frameX < 23) canvasSatellite_frameX++;
     // else canvasSatellite_frameX = 0;
     else {
       canvasSatellite_frameX = 0;
