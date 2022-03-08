@@ -9,7 +9,8 @@
 
 #far-field {
   background-image: url("../img/background-stars.svg");
-  background-size: contain;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #mid-field {
