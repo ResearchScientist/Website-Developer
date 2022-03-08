@@ -7,6 +7,11 @@
   grid-row: 1/-1;
 }
 
+#far-field {
+  background-image: url("../img/background-stars.svg");
+  background-size: contain;
+}
+
 #mid-field {
   animation: linear 100s infinite fall;
 }
