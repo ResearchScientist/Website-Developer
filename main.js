@@ -8,6 +8,34 @@ window.onblur = function() {
   document.title = "Portfolio : Aw you left";
 }
 
+// MAIN NAVIGATION UNDERLINE
+
+const sectionProject = document.getElementById('projects');
+const sectionContact = document.getElementById('contact');
+const navigationHeader = document.querySelectorAll('#main-nav a');
+const navigationSections = document.getElementsByClassName('navigation-section');
+
+// console.log(navigationSections);
+
+window.addEventListener('scroll',() => {
+  let currentSection = '';
+  Array.from(navigationSections).forEach( section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if(pageYOffset >= sectionTop) {
+      currentSection = section.getAttribute('id');
+    }
+  })
+  console.log(currentSection);
+  
+  Array.from(navigationHeader).forEach(a => {
+    a.classList.remove('navigation-active');
+    if(a.classList.contains(currentSection)) {
+      a.classList.add('navigation-active');
+    }
+  })
+  })
+
 // ASTRONAUT DIALOGUE
 
 const astronaut = document.getElementById('astronaut');
