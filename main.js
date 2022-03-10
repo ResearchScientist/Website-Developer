@@ -88,8 +88,6 @@ const canvasSatellite_frameSpeed = 2;
 
 canvasSatellite_spritesheet.src = 'img/satellite-spritesheet.png';
 
-// ctx.drawImage(canvasSatellite_spritesheet,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe,0,0,canvasSatellite_spriteframe,canvasSatellite_spriteframe);
-
 function rotateSatellite() {
   imgSatellite.style.visibility = 'hidden';
   ctx.clearRect(0,0,canvasSatellite_width,canvasSatellite_height);
@@ -97,7 +95,6 @@ function rotateSatellite() {
   
   if (canvasSatellite_currentFrame % canvasSatellite_frameSpeed == 0) {
     if (canvasSatellite_frameX < 59) canvasSatellite_frameX++;
-    // else canvasSatellite_frameX = 0;
     else {
       canvasSatellite_frameX = 0;
       cancelAnimationFrame(requestID);
@@ -107,7 +104,4 @@ function rotateSatellite() {
   requestAnimationFrame(rotateSatellite);
 };
 
-// rotateSatellite();
-
 canvasSatellite.addEventListener('click',rotateSatellite);
-

@@ -1,18 +1,3 @@
-.my-button {
-  grid-column: 1/-1;
-  grid-row: 3/4;
-  align-self: center;
-  margin: 0 auto;
-  padding: 2px 4px 4px;
-  background: none;
-  text-align: center;
-  color: var(--text-blue);
-  display: flex;
-  border: 1px solid #3264c8;
-  text-decoration: none;
-  z-index: 1;
-}
-
 .scroll-down {
   height: 50px;
   grid-column: 1/-1;
