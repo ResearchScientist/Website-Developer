@@ -47,7 +47,14 @@ header {
   font-size: 24px;
 }
 
+#main-nav .navigation-inactive {
+  padding: 2px 0;
+  border: 1px solid rgba(0,0,0,0);
+  transition: border 0.5s linear;
+}
+
 #main-nav .navigation-active {
   padding: 2px 0;
   border-bottom: 1px solid var(--text-blue);
+  transition: border 0.5s linear;
 }

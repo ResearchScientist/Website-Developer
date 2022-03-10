@@ -10,31 +10,25 @@ window.onblur = function() {
 
 // MAIN NAVIGATION UNDERLINE
 
-const sectionProject = document.getElementById('projects');
-const sectionContact = document.getElementById('contact');
-const navigationHeader = document.querySelectorAll('#main-nav a');
 const navigationSections = document.getElementsByClassName('navigation-section');
+const sectionInView = { threshold: 0.7 };
+let observer = new IntersectionObserver(navigationUnderline,sectionInView);
 
-// console.log(navigationSections);
+Array.from(navigationSections).forEach(section => {
+  observer.observe(section);
+});
 
-window.addEventListener('scroll',() => {
-  let currentSection = '';
-  Array.from(navigationSections).forEach( section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if(pageYOffset >= sectionTop) {
-      currentSection = section.getAttribute('id');
+function navigationUnderline(movingSections) {
+  movingSections.forEach(movingSection => {
+    const sectionName = movingSection.target.id;
+    const activeNav = document.querySelector(`[data-mainNav=${sectionName}]`);
+    activeNav.classList.add('navigation-inactive');
+    activeNav.classList.remove('navigation-active');
+    if (movingSection.isIntersecting) {
+      activeNav.classList.add('navigation-active');
     }
-  })
-  console.log(currentSection);
-  
-  Array.from(navigationHeader).forEach(a => {
-    a.classList.remove('navigation-active');
-    if(a.classList.contains(currentSection)) {
-      a.classList.add('navigation-active');
-    }
-  })
-  })
+  });
+}
 
 // ASTRONAUT DIALOGUE
 
