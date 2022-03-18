@@ -24,6 +24,12 @@ header {
   font-family: 'Lato', sans-serif;
   color: var(--text-blue);
   border: 1px solid rgba(0,0,0,0);
+  transition: border 0.5s linear;
+}
+
+#main-nav a:hover {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--text-blue);
 }
 
 #main-nav a:nth-of-type(1) {
@@ -34,9 +40,8 @@ header {
   padding: 3px 5px;
 }
 
-#main-nav a:hover {
+#main-nav a:nth-of-type(4) {
   padding: 2px 0;
-  border-bottom: 1px solid var(--text-blue);
 }
 
 .home {
