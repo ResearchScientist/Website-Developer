@@ -104,4 +104,16 @@ function rotateSatellite() {
   requestAnimationFrame(rotateSatellite);
 };
 
-canvasSatellite.addEventListener('click',rotateSatellite);
+// canvasSatellite.addEventListener('click',rotateSatellite);
+
+const throttleSatellite = (fun,delay) => {
+  let priorTime = 0;
+  return (...args) => {
+    const currentTime = new Date().getTime();
+    if (currentTime - priorTime < delay) return;
+    priorTime = currentTime;
+    fun(...args);
+  }
+}
+
+canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000));
