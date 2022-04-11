@@ -11,7 +11,7 @@ window.onblur = function() {
 // MAIN NAVIGATION UNDERLINE
 
 const navigationSections = document.getElementsByClassName('navigation-section');
-const sectionInView = { threshold: 0.7 };
+const sectionInView = { threshold: 0.5 };
 let observer = new IntersectionObserver(navigationUnderline,sectionInView);
 
 Array.from(navigationSections).forEach(section => {
