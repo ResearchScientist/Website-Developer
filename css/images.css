@@ -15,6 +15,7 @@ img > * {
   grid-row: 1/2;
   justify-self: center;
   align-self: flex-end;
+  animation: space-walk 1s ease-in-out infinite alternate;
 }
 
 .show-dialogue-screen {
@@ -49,6 +50,11 @@ img > * {
 }
 
 /* ANIMATION */
+
+@keyframes space-walk {
+  from {transform: translate(0,0);}
+  to {transform: translate(0,5px);}
+}
 
 #thrust {
   width: 20px;
