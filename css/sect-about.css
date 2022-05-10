@@ -40,27 +40,6 @@
   display: none;
 }
 
-.bldg {
-  background-color: rgb(180,180,180);
-  height: 25px;
-  width: 40px;
-}
-
-.roof {
-  width: 0;
-  height: 0;
-  border-left: 22px solid transparent;
-  border-right: 22px solid transparent;
-  border-bottom: 20px solid white;
-  transform: translate(-2px,-20px);
-}
-
-.window {
-  background: radial-gradient(orange,rgb(200,150,50) 60%);
-  width: 8px;
-  height: 8px;
-}
-
 #building-1 {
   grid-column: 1/1;
   grid-row: 1/1;
@@ -95,10 +74,3 @@
   transform: translate(10px,-40px) rotate(45deg);
 }
 
-.window {
-  transform: translate(0px,-10px);
-}
-
-.window:nth-of-type(2) {
-  transform: translate(25px,-10px);
-}
