@@ -52,6 +52,24 @@
   transform: translate(96px,4px) rotate(45deg);
 }
 
+#building-3 {
+  grid-column: 2/2;
+  grid-row: 2/3;
+  transform: translate(148px,-25px) rotate(90deg);
+}
+
+#building-4 {
+  grid-column: 2/2;
+  grid-row: 1/1;
+  transform: translate(96px,4px) rotate(45deg);
+}
+
+#building-5 {
+  grid-column: 1/1;
+  grid-row: 1/1;
+  transform: translate(4px,4px) rotate(-45deg);
+}
+
 #building:hover {
   fill: orange;
   stroke: orange;
