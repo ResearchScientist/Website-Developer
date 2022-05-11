@@ -10,7 +10,6 @@ img > * {
 }
 
 #astronaut {
-  /* width: 20vh; */
   width: 150px;
   grid-column: -3/-1;
   grid-row: 1/2;
