@@ -92,3 +92,8 @@
   transform: translate(10px,-40px) rotate(45deg);
 }
 
+#UCSC {
+  grid-column: 2/2;
+  grid-row: 2/3;
+  transform: translate(200px,-10px);
+}
