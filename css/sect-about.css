@@ -40,7 +40,7 @@
   display: none;
 }
 
-#building-1 {
+#building {
   grid-column: 1/1;
   grid-row: 1/1;
   transform: translate(4px,4px) rotate(-45deg);
@@ -51,67 +51,32 @@
   stroke: orange;
 }
 
-.bldg-title {
-  color: white;
+.building-title {
   white-space: nowrap;
 }
 
-#QD {
-  /* background-color: gray; */
-  grid-column: 1/1;
-  grid-row: 1/1;
-  transform: translate(-30px,-20px);
-}
-
-#QD text {
+.building-title text {
   font-family: 'Roboto';
   font-size: 14px;
   fill: transparent;
-  stroke: white;
+  opacity: 0;
+  stroke: var(--text-blue);
   text-anchor: start;
   animation: smoke-text 3s linear forwards;
 }
 
-@keyframes smoke-text {
-  0% {stroke-dasharray: 0 100%;}
-  50% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; fill: white; opacity: 1;}
-  75% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; fill: white; opacity: 1;}
-  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; fill: white; opacity: 0;}
-}
-
-#QDtext {
-  transform: translate(0px,50px);
-}
-
-.q {
-  stroke: var(--text-white);
-  fill: transparent;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: smoking 3s linear forwards;
-}
-
-@keyframes smoking {
-  0% {stroke-dashoffset: 1; opacity: 1;}
-  50% {stroke-dashoffset: 0; fill: var(--text-white); opacity: 1;}
-  75% {stroke-dashoffset: 0; fill: var(--text-white); opacity: 1;}
-  100% {stroke-dashoffset: 0; fill: var(--text-white); opacity: 0;}
-}
-
-/* #QD {
+#QD,#TSRI,#UCSC {
   grid-column: 1/1;
   grid-row: 1/1;
-  transform: translate(-20px,-40px);
-} */
-
-/* #TSRI {
-  grid-column: 2/2;
-  grid-row: 1/1;
-  transform: translate(10px,-40px) rotate(45deg);
+  transform: translate(-35px,-20px);
 }
 
-#UCSC {
-  grid-column: 2/2;
-  grid-row: 2/3;
-  transform: translate(200px,-10px);
-} */
+#TSRI text {animation-delay: 3s;}
+#UCSC text {animation-delay: 6s;}
+
+@keyframes smoke-text {
+  0% {stroke-dasharray: 0 100%;}
+  50% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
+  75% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
+  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
+}
