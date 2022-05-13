@@ -64,16 +64,38 @@
 }
 
 #QD text {
+  font-family: 'Roboto';
+  font-size: 14px;
   fill: transparent;
-  stroke-width: 1px;
   stroke: white;
   text-anchor: start;
-  animation: smoke-text 2s linear forwards;
+  animation: smoke-text 3s linear forwards;
 }
 
 @keyframes smoke-text {
-  from {stroke-dasharray: 0 70%;}
-  to {stroke-dasharray: 50% 0; stroke-dashoffset: 10%;}
+  0% {stroke-dasharray: 0 100%;}
+  50% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; fill: white; opacity: 1;}
+  75% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; fill: white; opacity: 1;}
+  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; fill: white; opacity: 0;}
+}
+
+#QDtext {
+  transform: translate(0px,50px);
+}
+
+.q {
+  stroke: var(--text-white);
+  fill: transparent;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: smoking 3s linear forwards;
+}
+
+@keyframes smoking {
+  0% {stroke-dashoffset: 1; opacity: 1;}
+  50% {stroke-dashoffset: 0; fill: var(--text-white); opacity: 1;}
+  75% {stroke-dashoffset: 0; fill: var(--text-white); opacity: 1;}
+  100% {stroke-dashoffset: 0; fill: var(--text-white); opacity: 0;}
 }
 
 /* #QD {
