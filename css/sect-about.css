@@ -57,12 +57,32 @@
 }
 
 #QD {
+  /* background-color: gray; */
   grid-column: 1/1;
   grid-row: 1/1;
-  transform: translate(-20px,-40px) rotate(-45deg);
+  transform: translate(-30px,-20px);
 }
 
-#TSRI {
+#QD text {
+  fill: transparent;
+  stroke-width: 1px;
+  stroke: white;
+  text-anchor: start;
+  animation: smoke-text 2s linear forwards;
+}
+
+@keyframes smoke-text {
+  from {stroke-dasharray: 0 70%;}
+  to {stroke-dasharray: 50% 0; stroke-dashoffset: 10%;}
+}
+
+/* #QD {
+  grid-column: 1/1;
+  grid-row: 1/1;
+  transform: translate(-20px,-40px);
+} */
+
+/* #TSRI {
   grid-column: 2/2;
   grid-row: 1/1;
   transform: translate(10px,-40px) rotate(45deg);
@@ -72,4 +92,4 @@
   grid-column: 2/2;
   grid-row: 2/3;
   transform: translate(200px,-10px);
-}
+} */
