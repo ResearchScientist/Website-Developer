@@ -7,5 +7,6 @@
   --text-watermark: rgba(50,50,50,8%);
   --main-dark: #101010;
   --primary-blue: rgb(100,150,250);
+  --accent-orange: orange;
   --planet-dark: rgb(50,50,50),rgb(10,10,10);
 }

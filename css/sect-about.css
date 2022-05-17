@@ -46,9 +46,8 @@
   transform: translate(4px,4px) rotate(-45deg);
 }
 
-#building:hover {
-  fill: orange;
-  stroke: orange;
+#building:hover #window-l,#building:hover #window-r {
+  fill: var(--accent-orange);
 }
 
 .building-title {
