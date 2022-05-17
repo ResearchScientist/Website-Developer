@@ -62,17 +62,18 @@
   opacity: 0;
   stroke: var(--text-blue);
   text-anchor: start;
+  animation: smoke-text 28s linear infinite;
 }
 
-#QD,#TSRI,#UCSC {
+#QD,#TSRI,#PGRD,#UCSC {
   grid-column: 1/1;
   grid-row: 1/1;
   transform: translate(-35px,-20px);
 }
 
-#QD text {animation: smoke-text-1 9s linear infinite;}
-#TSRI text {animation: smoke-text-2 9s linear infinite; animation-delay: 3s;}
-#UCSC text {animation: smoke-text-3 9s linear infinite; animation-delay: 6s;}
+#TSRI text {animation-delay: 7s;}
+#PGRD text {animation-delay: 14s;}
+#UCSC text {animation-delay: 21s;}
 
 /* FOR OBTAINING THE BASIC ANIMATION TIMING */
 
@@ -83,26 +84,10 @@
   100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
 } */
 
-@keyframes smoke-text-1 {
+@keyframes smoke-text {
   0% {stroke-dasharray: 0 100%;}
-  16.6% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  25% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  33.3% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
-  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
-}
-
-@keyframes smoke-text-2 {
-  0% {stroke-dasharray: 0 100%;}
-  16.6% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  25% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  33.3% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
-  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
-}
-
-@keyframes smoke-text-3 {
-  0% {stroke-dasharray: 0 100%;}
-  16.6% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  25% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  33.3% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
+  12.5% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
+  18.75% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
+  25% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
   100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
 }
