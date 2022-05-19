@@ -30,6 +30,6 @@
   z-index: 1;
 }
 
-#starship:hover #saucer {
-  fill: black;
+#starship:hover #dome {
+  fill: orange;
 }
