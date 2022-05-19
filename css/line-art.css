@@ -21,3 +21,15 @@
   grid-column: 1/-1;
   grid-row: 1/2;
 }
+
+#starship {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  fill: var(--text-blue);
+  stroke: var(--text-blue);
+  z-index: 1;
+}
+
+#starship:hover #saucer {
+  fill: black;
+}
