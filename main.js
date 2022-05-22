@@ -104,8 +104,6 @@ function rotateSatellite() {
   requestAnimationFrame(rotateSatellite);
 };
 
-// canvasSatellite.addEventListener('click',rotateSatellite);
-
 const throttleSatellite = (fun,delay) => {
   let priorTime = 0;
   return (...args) => {
@@ -117,3 +115,14 @@ const throttleSatellite = (fun,delay) => {
 }
 
 canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000));
+
+// STARSHIP
+
+const starship = document.getElementById('starship');
+
+function warp() {
+  starship.classList.add('warp');
+  starship.removeEventListener('click',warp);
+}
+
+starship.addEventListener('click',warp);

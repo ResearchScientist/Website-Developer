@@ -33,3 +33,13 @@
 #starship:hover #dome {
   fill: orange;
 }
+
+.warp {
+  transform: translate(50px,0);
+  animation: warp 2.5s ease-in forwards;
+}
+
+@keyframes warp {
+  from {transform: translateX(0);}
+  to {transform: translateX(100vw);}
+}
