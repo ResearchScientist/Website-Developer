@@ -43,3 +43,14 @@
   from {transform: translateX(0);}
   to {transform: translateX(100vw);}
 }
+
+#tardis {
+  grid-column: -2/-1;
+  grid-row: 3/4;
+  transition: opacity 1s;
+  z-index: 1;
+}
+
+#tardis:hover {
+  opacity: 0;
+}
