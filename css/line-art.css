@@ -60,4 +60,16 @@
   grid-column: 1/2;
   grid-row: -2/-1;
   align-self: flex-end;
+  z-index: 1;
+}
+
+.exterminate {
+  transition: transform 2s;
+  animation: exterminate 2s ease-in-out forwards;
+}
+
+@keyframes exterminate {
+  0% {transform: translateX(0);}
+  50% {transform: translateX(75vw);}
+  100% {transform: translateX(0);}
 }

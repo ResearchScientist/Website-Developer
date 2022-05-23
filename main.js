@@ -126,3 +126,20 @@ function warp() {
 }
 
 starship.addEventListener('click',warp);
+
+
+// DALEK
+
+const dalek = document.getElementById('dalek');
+const tardis = document.getElementById('tardis');
+
+function exterminate() {
+  dalek.classList.add('exterminate');
+  setTimeout(reexterminate,2000);
+}
+
+function reexterminate() {
+  dalek.classList.remove('exterminate');
+}
+
+dalek.addEventListener('click',exterminate);
