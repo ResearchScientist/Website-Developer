@@ -135,11 +135,13 @@ const tardis = document.getElementById('tardis');
 
 function exterminate() {
   dalek.classList.add('exterminate');
-  setTimeout(reexterminate,2000);
+  tardis.classList.add('materialisation');
+  setTimeout(reexterminate,4000);
 }
 
 function reexterminate() {
   dalek.classList.remove('exterminate');
+  tardis.classList.remove('materialisation');
 }
 
 dalek.addEventListener('click',exterminate);

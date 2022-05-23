@@ -56,6 +56,17 @@
   opacity: 0;
 }
 
+.materialisation {
+  animation: materialisation 4s ease-in-out forwards;
+}
+
+@keyframes materialisation {
+  0% {opacity: 1;}
+  30% {opacity: 0;}
+  70% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 #dalek {
   grid-column: 1/2;
   grid-row: -2/-1;
@@ -64,12 +75,13 @@
 }
 
 .exterminate {
-  transition: transform 2s;
-  animation: exterminate 2s ease-in-out forwards;
+  animation: exterminate 4s ease-in-out forwards;
 }
 
 @keyframes exterminate {
   0% {transform: translateX(0);}
-  50% {transform: translateX(75vw);}
+  40% {transform: translateX(75vw);}
+  50% {transform: translateX(70vw);}
+  60% {transform: translateX(75vw);}
   100% {transform: translateX(0);}
 }
