@@ -46,11 +46,20 @@
 
 #tardis {
   grid-column: -2/-1;
-  grid-row: 3/4;
+  grid-row: -2/-1;
+  justify-self: flex-start;
+  align-self: flex-end;
   transition: opacity 1s;
   z-index: 1;
 }
 
 #tardis:hover {
   opacity: 0;
+}
+
+#dalek {
+  grid-column: 1/2;
+  grid-row: -2/-1;
+  justify-self: flex-end;
+  align-self: flex-end;
 }
