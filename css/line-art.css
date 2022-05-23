@@ -47,7 +47,6 @@
 #tardis {
   grid-column: -2/-1;
   grid-row: -2/-1;
-  justify-self: flex-start;
   align-self: flex-end;
   transition: opacity 1s;
   z-index: 1;
@@ -60,6 +59,5 @@
 #dalek {
   grid-column: 1/2;
   grid-row: -2/-1;
-  justify-self: flex-end;
   align-self: flex-end;
 }
