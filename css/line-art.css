@@ -19,6 +19,24 @@
 #x-wing {
   grid-column: 3/5;
   grid-row: 3/4;
+  z-index: 1;
+}
+
+#cockpit {
+  fill: var(--primary-blue);
+}
+
+.wing {
+  transform: translateX(5px);
+  transition: 1s transform;
+}
+
+#x-wing:hover #cockpit {
+  fill: orange;
+}
+
+.foils {
+  transform: translateX(0px);
 }
 
 #satellite {

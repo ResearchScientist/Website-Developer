@@ -116,6 +116,19 @@ const throttleSatellite = (fun,delay) => {
 
 canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000));
 
+// X WING
+
+const xwing = document.getElementById('x-wing');
+const wing1 = document.getElementById('wing1');
+const wing2 = document.getElementById('wing2');
+
+function foil() {
+  wing1.classList.toggle('foils');
+  wing2.classList.toggle('foils');
+}
+
+xwing.addEventListener('click',foil);
+
 // STARSHIP
 
 const starship = document.getElementById('starship');
@@ -126,7 +139,6 @@ function warp() {
 }
 
 starship.addEventListener('click',warp);
-
 
 // DALEK
 
