@@ -16,6 +16,8 @@
   to {transform: rotate(10deg);}
 }
 
+/* X WING */
+
 #x-wing {
   grid-column: 3/5;
   grid-row: 3/4;
@@ -31,7 +33,7 @@
   transition: 1s transform;
 }
 
-#x-wing:hover #cockpit {
+#x-wing:hover #x-cockpit {
   fill: orange;
 }
 
@@ -39,11 +41,30 @@
   transform: translateX(0px);
 }
 
+/* TIE FIGHTER */
+
+#tie-fighter {
+  grid-column: 4/5;
+  grid-row: 3/4;
+  z-index: 1;
+}
+
+#tie-fighter:hover #t-cockpit {
+  fill: var(--primary-blue);
+}
+
+.try-spinning {
+  transition: 2s transform;
+  transform: rotate(720deg);
+}
+
 #satellite {
   width: 100%;
   grid-column: 1/-1;
   grid-row: 1/2;
 }
+
+/* STARSHIP */
 
 #starship {
   grid-column: 1/2;

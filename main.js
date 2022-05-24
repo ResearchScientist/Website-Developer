@@ -129,6 +129,21 @@ function foil() {
 
 xwing.addEventListener('click',foil);
 
+// TIE FIGHTER
+
+const tiefighter = document.getElementById('tie-fighter');
+
+function trySpinning () {
+  tiefighter.classList.add('try-spinning');
+  setTimeout(respin,2000);
+}
+
+function respin () {
+  tiefighter.classList.remove('try-spinning');
+}
+
+tiefighter.addEventListener('click',trySpinning);
+
 // STARSHIP
 
 const starship = document.getElementById('starship');
