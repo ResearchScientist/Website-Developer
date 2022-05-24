@@ -16,6 +16,11 @@
   to {transform: rotate(10deg);}
 }
 
+#x-wing {
+  grid-column: 3/5;
+  grid-row: 3/4;
+}
+
 #satellite {
   width: 100%;
   grid-column: 1/-1;
