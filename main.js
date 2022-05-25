@@ -116,6 +116,17 @@ const throttleSatellite = (fun,delay) => {
 
 canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000));
 
+// UFO
+
+const ufo = document.getElementById('ufo');
+const beam = document.getElementById('beam');
+
+function beaming() {
+  beam.classList.toggle('beam');
+}
+
+ufo.addEventListener('click',beaming);
+
 // X WING
 
 const xwing = document.getElementById('x-wing');
