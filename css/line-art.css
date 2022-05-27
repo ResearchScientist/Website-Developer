@@ -2,8 +2,9 @@
 
 #ufo {
   width: 25px;
-  grid-column: -2;
-  grid-row: 4/5;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  justify-self: center;
   animation: ease-in-out 1s infinite alternate glide;
   animation-play-state: paused;
   z-index: 1;
