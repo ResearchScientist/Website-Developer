@@ -4,7 +4,7 @@
   justify-self: center;
   align-self: center;
   text-align: center;
-  background-color: gray;
+  /* background-color: gray; */
 }
 
 .resume-info-card:nth-of-type(1) {
@@ -24,6 +24,20 @@
 
 .card-title {
   font-size: 30px;
+  font-weight: 100;
+  font-family: 'Lato',sans-serif;
+}
+
+.card-legend {
+  font-size: 12px;
+  font-weight: 100;
+  font-family: 'Lato',sans-serif;
+}
+
+.card-details {
+  margin: 20px 0 0;
+  font-size: 14px;
+  font-weight: 100;
 }
 
 #resume a {
