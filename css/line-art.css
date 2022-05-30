@@ -87,6 +87,8 @@
   width: 30px;
   grid-column: 1/2;
   grid-row: 4/5;
+  align-self: flex-start;
+  margin: 15vh 0 0;
   transform: translateX(15px);
   fill: var(--text-blue);
   stroke: var(--text-blue);
@@ -115,16 +117,17 @@
   height: 1px;
   grid-column: 1/2;
   grid-row: 4/5;
+  align-self: flex-start;
   background-color: var(--primary-blue);
   animation: warp-signature 3.75s ease-in forwards;
 }
 
 .warp-signature:nth-of-type(1) {
-  margin: -11px 0 0;
+  margin: calc(15vh + 4px) 0 0;
 }
 
 .warp-signature:nth-of-type(2) {
-  margin: 11px 0 0;
+  margin: calc(15vh + 15px) 0 0;
 }
 
 @keyframes warp-signature {
