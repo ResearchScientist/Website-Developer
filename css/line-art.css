@@ -87,23 +87,50 @@
   width: 30px;
   grid-column: 1/2;
   grid-row: 4/5;
+  transform: translateX(15px);
   fill: var(--text-blue);
   stroke: var(--text-blue);
   z-index: 1;
 }
 
-#starship:hover #dome {
-  fill: orange;
+#starship:hover #dome, #starship:hover .nacelle {
+  fill: var(--primary-blue);
+}
+
+.nacelle {
+  width: 8px;
+  height: 1px;
 }
 
 .warp {
-  transform: translate(50px,0);
   animation: warp 2.5s ease-in forwards;
 }
 
 @keyframes warp {
-  from {transform: translateX(0);}
+  from {transform: translateX(15px);}
   to {transform: translateX(100vw);}
+}
+
+.warp-signature {
+  height: 1px;
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background-color: var(--primary-blue);
+  animation: warp-signature 3.75s ease-in forwards;
+}
+
+.warp-signature:nth-of-type(1) {
+  margin: -11px 0 0;
+}
+
+.warp-signature:nth-of-type(2) {
+  margin: 11px 0 0;
+}
+
+@keyframes warp-signature {
+  0% {width: 1px; transform: translateX(0); opacity: .5;}
+  66% {width: 100vw; transform: translateX(50vw); opacity: .5;}
+  100% {width: 100vw; transform: translateX(50vw); opacity: 0;}
 }
 
 #tardis {

@@ -158,9 +158,13 @@ tiefighter.addEventListener('click',trySpinning);
 // STARSHIP
 
 const starship = document.getElementById('starship');
+const nacelle1 = document.getElementById('nacelle1');
+const nacelle2 = document.getElementById('nacelle2');
 
 function warp() {
   starship.classList.add('warp');
+  nacelle1.classList.add('warp-signature');
+  nacelle2.classList.add('warp-signature');
   starship.removeEventListener('click',warp);
 }
 
