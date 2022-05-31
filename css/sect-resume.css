@@ -4,7 +4,6 @@
   justify-self: center;
   align-self: center;
   text-align: center;
-  /* background-color: gray; */
 }
 
 .resume-info-card:nth-of-type(1) {
@@ -69,13 +68,18 @@
   grid-column: 2/-1;
   grid-row: 2/-1;
   display: grid;
-  grid-template-columns: repeat(4,25%);
-  grid-template-rows: repeat(4,25%);
+  justify-self: flex-start;
+  align-self: flex-end;
 }
 
-#trajectory-line {
-  width: 100%;
-  height: 100%;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
+#skill-trajectory-svg {
+  max-width: 100%;
+  max-height: 100%;
+  justify-self: flex-start;
+  align-self: flex-end;
+}
+
+#skill-trajectory-svg text {
+  font-size: 0.2em;
+  fill: #CCCCFF;
 }
