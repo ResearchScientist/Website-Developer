@@ -53,15 +53,6 @@
   color: var(--primary-blue);
 }
 
-#skill-trajectory-title {
-  margin-right: 10px;
-  grid-column: 1/2;
-  grid-row: 3/-1;
-  justify-self: flex-end;
-  align-self: center;
-  font-size: 12px;
-}
-
 #skill-trajectory {
   width: 100%;
   height: 100%;
@@ -70,11 +61,12 @@
   display: grid;
   justify-self: flex-start;
   align-self: flex-end;
+  z-index: 1;
 }
 
 #skill-trajectory-svg {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 380px;
   justify-self: flex-start;
   align-self: flex-end;
 }
@@ -83,3 +75,7 @@
   font-size: 0.2em;
   fill: #CCCCFF;
 }
+
+/* #vr-text:hover {
+  fill: #FF1111;
+} */
