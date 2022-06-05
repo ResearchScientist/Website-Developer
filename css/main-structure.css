@@ -16,10 +16,3 @@ main {
   align-items: center;
   overflow: hidden;
 }
-
-/* REMOVE MANUAL SCROLL */
-
-/* body {
-  height: 100vh;
-  overflow: hidden;
-} */
