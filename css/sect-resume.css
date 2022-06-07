@@ -85,7 +85,6 @@
 #resume button:nth-of-type(3) { grid-column: 3/4; }
 
 #skills-trajectory-items {
-  /* width: 115px; */
   grid-column: 2/-2;
   grid-row: -3/-1;
   text-align: center;
@@ -93,51 +92,108 @@
   align-self: flex-start;
 }
 
-.trajectory-items p {
-  margin: 0 auto;
-  background-color: gray;
+.trajectory-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-/* .trajectory-lights {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  content: ".";
-  background-color: var(--primary-blue);
-} */
+.trajectory-item:nth-of-type(1) {
+  width: 140px;
+  margin: 50px auto 0;
+}
 
-.trajectory-items p:nth-of-type(1) {
+.trajectory-item:nth-of-type(2) {
+  width: 160px;
+  margin: 10px auto 0;
+}
+
+.trajectory-item:nth-of-type(3) {
+  width: 180px;
+  margin: 10px auto 0;
+}
+
+.trajectory-item:nth-of-type(4) {
+  width: 200px;
+  margin: 10px auto 0;
+}
+
+.trajectory-item:nth-of-type(5) {
+  width: 220px;
+  margin: 10px auto 0;
+}
+
+.trajectory-item:nth-of-type(6) {
+  width: 240px;
+  margin: 10px auto 0;
+}
+
+.trajectory-items p {
+  margin: 0 auto;
+}
+
+.trajectory-items div:nth-of-type(1) p {
   width: 120px;
-  margin-top: 50px;
   font-size: 10px;
 }
 
-.trajectory-items p:nth-of-type(2) {
+.trajectory-items div:nth-of-type(2) p {
   width: 140px;
-  margin-top: 10px;
   font-size: 12px;
 }
 
-.trajectory-items p:nth-of-type(3) {
+.trajectory-items div:nth-of-type(3) p {
   width: 160px;
-  margin-top: 10px;
   font-size: 14px;
 }
 
-.trajectory-items p:nth-of-type(4) {
+.trajectory-items div:nth-of-type(4) p {
   width: 180px;
-  margin-top: 10px;
   font-size: 16px;
 }
 
-.trajectory-items p:nth-of-type(5) {
+.trajectory-items div:nth-of-type(5) p {
   width: 200px;
-  margin-top: 10px;
   font-size: 18px;
 }
 
-.trajectory-items p:nth-of-type(6) {
+.trajectory-items div:nth-of-type(6) p {
   width: 220px;
-  margin-top: 10px;
   font-size: 20px;
+}
+
+.trajectory-item aside {
+  border-radius: 50%;
+  background-color: white;
+}
+
+.light-6-l,.light-6-r {
+  width: 4px;
+  height: 4px;
+}
+
+.light-5-l,.light-5-r {
+  width: 6px;
+  height: 6px;
+}
+
+.light-4-l,.light-4-r {
+  width: 8px;
+  height: 8px;
+}
+
+.light-3-l,.light-3-r {
+  width: 10px;
+  height: 10px;
+}
+
+.light-2-l,.light-2-r {
+  width: 12px;
+  height: 12px;
+}
+
+.light-1-l,.light-1-r {
+  width: 14px;
+  height: 14px;
 }
