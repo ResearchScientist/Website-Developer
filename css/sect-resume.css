@@ -67,6 +67,7 @@
   text-align: center;
   justify-self: center;
   align-self: flex-start;
+  z-index: 1;
 }
 
 .trajectory-item {
@@ -146,6 +147,10 @@
   opacity: 1;
   animation: lights 6s ease-in-out infinite;
   animation-play-state: paused;
+}
+
+.strobe {
+  animation-play-state: running;
 }
 
 #light-6-l,#light-6-r {

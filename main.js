@@ -127,6 +127,18 @@ function beaming() {
 
 ufo.addEventListener('click',beaming);
 
+// TRAJECTORY LIGHTS
+
+const trajectory = document.getElementById('trajectory-items');
+const light = document.getElementById('light-1-r');
+
+function strobing() {
+  console.log('clicked');
+  light.classList.toggle('strobe');
+}
+
+trajectory.addEventListener('click',strobing);
+
 // X WING
 
 const xwing = document.getElementById('x-wing');
