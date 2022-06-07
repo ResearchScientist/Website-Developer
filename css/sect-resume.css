@@ -57,34 +57,11 @@
   color: var(--primary-blue);
 }
 
-#skill-trajectory {
-  width: 100%;
-  height: 100%;
-  grid-column: 2/-1;
-  grid-row: 2/-1;
-  display: grid;
-  justify-self: flex-start;
-  align-self: flex-end;
-  z-index: 1;
-}
-
-#skill-trajectory-svg {
-  max-width: 100%;
-  max-height: 380px;
-  justify-self: flex-start;
-  align-self: flex-end;
-}
-
-#skill-trajectory-svg text {
-  font-size: 0.2em;
-  fill: #CCCCFF;
-}
-
 #resume button:nth-of-type(1) { grid-column: 1/2; }
 #resume button:nth-of-type(2) { grid-column: 2/3; }
 #resume button:nth-of-type(3) { grid-column: 3/4; }
 
-#skills-trajectory-items {
+#trajectory-items {
   grid-column: 2/-2;
   grid-row: -3/-1;
   text-align: center;
@@ -129,36 +106,36 @@
   margin: 10px auto 0;
 }
 
-.trajectory-items p {
+#trajectory-items p {
   margin: 0 auto;
 }
 
-.trajectory-items div:nth-of-type(1) p {
+#trajectory-items div:nth-of-type(1) p {
   width: 120px;
   font-size: 10px;
 }
 
-.trajectory-items div:nth-of-type(2) p {
+#trajectory-items div:nth-of-type(2) p {
   width: 140px;
   font-size: 12px;
 }
 
-.trajectory-items div:nth-of-type(3) p {
+#trajectory-items div:nth-of-type(3) p {
   width: 160px;
   font-size: 14px;
 }
 
-.trajectory-items div:nth-of-type(4) p {
+#trajectory-items div:nth-of-type(4) p {
   width: 180px;
   font-size: 16px;
 }
 
-.trajectory-items div:nth-of-type(5) p {
+#trajectory-items div:nth-of-type(5) p {
   width: 200px;
   font-size: 18px;
 }
 
-.trajectory-items div:nth-of-type(6) p {
+#trajectory-items div:nth-of-type(6) p {
   width: 220px;
   font-size: 20px;
 }
@@ -169,7 +146,6 @@
   opacity: 1;
   animation: lights 6s ease-in-out infinite;
   animation-play-state: paused;
-  
 }
 
 #light-6-l,#light-6-r {
