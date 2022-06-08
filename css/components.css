@@ -46,6 +46,7 @@ body {
 
 #resume button {
   width: 58px;
+  margin-bottom: 10px;
   grid-row: -1/-2;
   justify-self: center;
   align-self: flex-end;
