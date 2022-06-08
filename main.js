@@ -142,19 +142,37 @@ trajectory.addEventListener('click',strobing);
 
 // TRAJECTORY NAMES
 
-const academicArray = [' ','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science',' '];
+const academicButton = document.getElementById('academicButton');
+const skillsButton = document.getElementById('skillsButton');
+const loveButton = document.getElementById('loveButton');
+
+const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
-const loveArray = ['coffee',' ','sailing','gelato',' ','cats'];
+const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
 
 let nameList = document.getElementsByClassName('tn');
 
-function updateTrajectoryNames() {
+function updateTrajectoryAcademic() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = academicArray[i];
+  }
+}
+
+function updateTrajectorySkills() {
   for (var i=0 ; i < nameList.length ; i++) {
     nameList[i].textContent = skillsArray[i];
   }
 }
 
-updateTrajectoryNames();
+function updateTrajectoryLove() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = loveArray[i];
+  }
+}
+
+academicButton.addEventListener('click',updateTrajectoryAcademic);
+skillsButton.addEventListener('click',updateTrajectorySkills);
+loveButton.addEventListener('click',updateTrajectoryLove);
 
 // X WING
 
