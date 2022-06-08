@@ -140,6 +140,22 @@ function strobing() {
 
 trajectory.addEventListener('click',strobing);
 
+// TRAJECTORY NAMES
+
+const academicArray = [' ','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science',' '];
+const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
+const loveArray = ['coffee',' ','sailing','gelato',' ','cats'];
+
+let nameList = document.getElementsByClassName('tn');
+
+function updateTrajectoryNames() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = skillsArray[i];
+  }
+}
+
+updateTrajectoryNames();
+
 // X WING
 
 const xwing = document.getElementById('x-wing');
