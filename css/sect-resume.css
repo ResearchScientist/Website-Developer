@@ -149,7 +149,7 @@
   animation-play-state: paused;
 }
 
-.strobe {
+.trajectory-item .strobe {
   animation-play-state: running;
 }
 

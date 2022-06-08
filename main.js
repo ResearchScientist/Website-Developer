@@ -130,11 +130,12 @@ ufo.addEventListener('click',beaming);
 // TRAJECTORY LIGHTS
 
 const trajectory = document.getElementById('trajectory-items');
-const light = document.getElementById('light-1-r');
+const lightList = trajectory.getElementsByClassName('light');
 
 function strobing() {
-  console.log('clicked');
-  light.classList.toggle('strobe');
+  for (var i=0 ; i < lightList.length ; i++) {
+    lightList[i].classList.toggle('strobe');
+  }
 }
 
 trajectory.addEventListener('click',strobing);
