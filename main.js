@@ -154,19 +154,25 @@ let nameList = document.getElementsByClassName('tn');
 
 function updateTrajectoryAcademic() {
   for (var i=0 ; i < nameList.length ; i++) {
+    // nameList[i].classList.add('lights-off');
     nameList[i].textContent = academicArray[i];
+    // nameList[i].classList.add('lights-on');
   }
 }
 
 function updateTrajectorySkills() {
   for (var i=0 ; i < nameList.length ; i++) {
+    // nameList[i].classList.add('lights-off');
     nameList[i].textContent = skillsArray[i];
+    // nameList[i].classList.add('lights-on');
   }
 }
 
 function updateTrajectoryLove() {
   for (var i=0 ; i < nameList.length ; i++) {
+    // nameList[i].classList.add('lights-off');
     nameList[i].textContent = loveArray[i];
+    // nameList[i].classList.add('lights-on');
   }
 }
 

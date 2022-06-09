@@ -193,3 +193,36 @@
   50% {opacity: 0;}
   100% {opacity: 1;}
 }
+
+/* POSSIBLE ITEM NAME ANIMATION */
+
+/* .tn {
+  transition: 1s opacity;
+  opacity: 0;
+} */
+
+#trajectory-name-2 {animation-delay: .1s;}
+#trajectory-name-3 {animation-delay: .2s;}
+#trajectory-name-4 {animation-delay: .3s;}
+#trajectory-name-5 {animation-delay: .4s;}
+#trajectory-name-6 {animation-delay: .5s;}
+
+.lights-on {
+  animation: lights-on .5s ease-in forwards;
+}
+
+.lights-off {
+  animation: lights-off .5s ease-in forwards;
+}
+
+
+
+@keyframes lights-on {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes lights-off {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
