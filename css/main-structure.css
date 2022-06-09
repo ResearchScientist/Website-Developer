@@ -3,6 +3,7 @@
 html {
   background-color: var(--main-dark);
   scroll-behavior: smooth;
+  overflow: hidden; /* makes page non scrollable */
 }
 
 main {

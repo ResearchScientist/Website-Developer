@@ -5,9 +5,9 @@ body {
 .scroll-down {
   height: 50px;
   grid-column: 1/-1;
-  grid-row: 3/4;
+  grid-row: 1/2;
   text-decoration: none;
-  align-self: flex-end;
+  align-self: flex-start;
   margin: 0 auto 1%;
   z-index: 1;
 }
