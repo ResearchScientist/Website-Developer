@@ -154,25 +154,35 @@ let nameList = document.getElementsByClassName('tn');
 
 function updateTrajectoryAcademic() {
   for (var i=0 ; i < nameList.length ; i++) {
-    // nameList[i].classList.add('lights-off');
     nameList[i].textContent = academicArray[i];
-    // nameList[i].classList.add('lights-on');
   }
+  trajectoryNameFade();
 }
 
 function updateTrajectorySkills() {
   for (var i=0 ; i < nameList.length ; i++) {
-    // nameList[i].classList.add('lights-off');
-    nameList[i].textContent = skillsArray[i];
-    // nameList[i].classList.add('lights-on');
+    nameList[i].textContent = skillsArray[i];;
   }
+  trajectoryNameFade();
 }
 
 function updateTrajectoryLove() {
   for (var i=0 ; i < nameList.length ; i++) {
-    // nameList[i].classList.add('lights-off');
     nameList[i].textContent = loveArray[i];
-    // nameList[i].classList.add('lights-on');
+  }
+  trajectoryNameFade();
+}
+
+function trajectoryNameFade() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].classList.add('name-fade');
+    setTimeout(resetFade,600)
+  }
+}
+
+function resetFade() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].classList.remove('name-fade');
   }
 }
 

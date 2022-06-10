@@ -2,6 +2,8 @@
   grid-template-rows: 33% 16.5% 16.5% 33%;
 }
 
+/* INFO CARDS */
+
 .resume-info-card {
   width: 100px;
   height: 140px;
@@ -57,9 +59,7 @@
   color: var(--primary-blue);
 }
 
-#resume button:nth-of-type(1) { grid-column: 1/2; }
-#resume button:nth-of-type(2) { grid-column: 2/3; }
-#resume button:nth-of-type(3) { grid-column: 3/4; }
+/* TRAJECTORIES */
 
 #trajectory-items {
   grid-column: 2/-2;
@@ -194,35 +194,25 @@
   100% {opacity: 1;}
 }
 
-/* POSSIBLE ITEM NAME ANIMATION */
-
-/* .tn {
-  transition: 1s opacity;
-  opacity: 0;
-} */
-
 #trajectory-name-2 {animation-delay: .1s;}
 #trajectory-name-3 {animation-delay: .2s;}
 #trajectory-name-4 {animation-delay: .3s;}
 #trajectory-name-5 {animation-delay: .4s;}
 #trajectory-name-6 {animation-delay: .5s;}
 
-.lights-on {
-  animation: lights-on .5s ease-in forwards;
+.name-fade {
+  animation: name-fade .5s ease-in forwards;
 }
 
 .lights-off {
   animation: lights-off .5s ease-in forwards;
 }
 
-
-
-@keyframes lights-on {
+@keyframes name-fade {
   from {opacity: 0;}
   to {opacity: 1;}
 }
 
-@keyframes lights-off {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
+#resume button:nth-of-type(1) { grid-column: 1/2; }
+#resume button:nth-of-type(2) { grid-column: 2/3; }
+#resume button:nth-of-type(3) { grid-column: 3/4; }
