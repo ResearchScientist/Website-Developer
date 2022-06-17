@@ -146,7 +146,7 @@ const academicButton = document.getElementById('academicButton');
 const skillsButton = document.getElementById('skillsButton');
 const loveButton = document.getElementById('loveButton');
 
-const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science'];
+const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
 

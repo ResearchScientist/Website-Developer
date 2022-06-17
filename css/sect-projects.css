@@ -107,3 +107,10 @@
   z-index: inherit;
   opacity: 0;
 }
+
+#updated {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  color: var(--text-white);
+}
