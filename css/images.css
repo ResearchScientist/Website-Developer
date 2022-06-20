@@ -13,7 +13,7 @@ img > * {
   width: 150px;
   margin: -250px 0 0;
   grid-column: 1/2;
-  grid-row: 2/-1;
+  grid-row: 1/-1;
   justify-self: center;
   /* align-self: center; */
   animation: space-walk 1s ease-in-out infinite alternate;
