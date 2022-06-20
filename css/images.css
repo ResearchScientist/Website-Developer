@@ -11,10 +11,11 @@ img > * {
 
 #astronaut {
   width: 150px;
-  grid-column: -3/-1;
-  grid-row: 1/2;
+  margin: -250px 0 0;
+  grid-column: 1/2;
+  grid-row: 2/-1;
   justify-self: center;
-  align-self: flex-end;
+  /* align-self: center; */
   animation: space-walk 1s ease-in-out infinite alternate;
 }
 
