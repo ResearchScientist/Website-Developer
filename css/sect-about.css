@@ -45,7 +45,7 @@
   grid-row: 1/1;
   justify-self: flex-end;
   align-self: flex-start;
-  transform: translate(-10px,-10px) rotate(42deg);
+  transform: translate(-8px,2px) rotate(42deg);
 }
 
 #building {
