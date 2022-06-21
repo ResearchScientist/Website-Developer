@@ -61,6 +61,24 @@ function toggleDialogueScreen() {
   }
 }
 
+// TELESCOPE VIEW ANIMATION
+
+const telescope = document.getElementById('telescope');
+const telescopeView = document.getElementById('telescope-view');
+
+telescope.addEventListener('click',telescopePan);
+
+function telescopePan() {
+  if (telescopeView.className !== 'telescope-pan') {
+    telescopeView.classList.add('telescope-pan');
+    setTimeout(resetTelescope,6500);
+  }
+}
+
+function resetTelescope() {
+  telescopeView.classList.remove('telescope-pan');
+}
+
 // ROCKET ANIMATION
 
 const rocket = document.getElementById('rocket');
