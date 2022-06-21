@@ -54,7 +54,12 @@
   grid-column: 1/-1;
   grid-row: 1/2;
   background-color: rgba(100,100,200,.2);
-  clip-path: circle(10vh at calc(100% - 10vh) );
+  animation: telescope-pan 3s linear infinite alternate-reverse;
+}
+
+@keyframes telescope-pan {
+  from {clip-path: circle(10vh at calc(0% + 10vh));}
+  to {clip-path: circle(10vh at calc(100% - 10vh));}
 }
 
 #building {
