@@ -95,13 +95,17 @@
   z-index: 1;
 }
 
+.nacelle {
+  width: 8px;
+  height: 1px;
+}
+
 #starship:hover #dome, #starship:hover .nacelle {
   fill: var(--primary-blue);
 }
 
-.nacelle {
-  width: 8px;
-  height: 1px;
+.warp-on {
+  fill: var(--primary-blue);
 }
 
 .warp {
