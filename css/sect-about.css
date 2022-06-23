@@ -55,17 +55,39 @@
   align-self: flex-start;
   grid-column: 1/-1;
   grid-row: 2/3;
+  display: grid;
+  grid-template-columns: repeat(5,20%);
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-items: center;
   background-color: rgba(100,100,250,.1);
   opacity: 0;
 }
 
 .telescope-pan {
-  animation: telescope-pan 3s linear 2 alternate-reverse forwards;
+  animation: telescope-pan 7s linear forwards;
 }
 
 @keyframes telescope-pan {
-  from {opacity: 1; clip-path: circle(10vh at calc(0% + 10vh));}
-  to {opacity: 1; clip-path: circle(10vh at calc(100% - 10vh));}
+  0% {opacity: 1; clip-path: circle(0vh at calc(100% - 10vh));}
+  5% {opacity: 1; clip-path: circle(10vh at calc(100% - 10vh));}
+  10% {opacity: 1; clip-path: circle(10vh at calc(100% - 10vh));}
+  25% {opacity: 1; clip-path: circle(10vh at 25%);}
+  30% {opacity: 1; clip-path: circle(10vh at 30%);}
+  65% {opacity: 1; clip-path: circle(10vh at 30%);}
+  70% {opacity: 1; clip-path: circle(10vh at calc(0% + 10vh));}
+  75% {opacity: 1; clip-path: circle(10vh at calc(0% + 10vh));}
+  90% {opacity: 1; clip-path: circle(10vh at calc(100% - 10vh));}
+  95% {opacity: 1; clip-path: circle(10vh at calc(100% - 10vh));}
+  100% {opacity: 1; clip-path: circle(0vh at calc(100% - 10vh));}
+}
+
+#ani-ufo {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  grid-column: 2/3;
+  background-color: salmon;
 }
 
 #building {
