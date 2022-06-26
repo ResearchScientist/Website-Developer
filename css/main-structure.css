@@ -3,7 +3,7 @@
 html {
   background-color: var(--main-dark);
   scroll-behavior: smooth;
-  /* overflow: hidden; */
+  overflow: hidden; /* to prevent manual scrolling */
 }
 
 main {
