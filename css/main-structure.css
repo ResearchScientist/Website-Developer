@@ -3,8 +3,6 @@
 html {
   background-color: var(--main-dark);
   scroll-behavior: smooth;
-  /* overflow: hidden;  */
-  /* to prevent manual scrolling */
 }
 
 main {
@@ -16,9 +14,8 @@ main {
   grid-template-rows: repeat(5,100vh) 26vh;
   justify-items: center;
   align-items: center;
-  /* overflow: hidden; */
 }
 
 body {
-  overflow: hidden;
+  overflow: hidden; /* to prevent manual scrolling */
 }
