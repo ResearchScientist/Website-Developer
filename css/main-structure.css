@@ -17,3 +17,7 @@ main {
   align-items: center;
   overflow: hidden;
 }
+
+body {
+  overflow: hidden;
+}
