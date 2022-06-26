@@ -60,6 +60,7 @@ body {
   grid-column: 1/2;
   justify-self: flex-start;
   align-self: flex-end;
+  z-index: 1;
 }
 
 .nxt {
@@ -67,6 +68,7 @@ body {
   grid-column: -2/-1;
   justify-self: flex-end;
   align-self: flex-end;
+  z-index: 1;
 }
 
 #prv-1 , #nxt-1{ grid-row: 2/3; }
