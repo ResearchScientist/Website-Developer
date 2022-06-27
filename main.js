@@ -44,6 +44,8 @@ function mergeTopFoot() {
   toTop.style['left'] = 'calc(50% - 35px)';
   prv.style['opacity'] = '0';
   nxt.style['opacity'] = '0';
+  footerSection.dataset.footer = 'active';
+  console.log(footerSection.dataset.footer);
   setTimeout(moveTopFoot,1000);
 }
 
@@ -65,6 +67,10 @@ function backToTop() {
 }
 
 toTop.addEventListener('click',backToTop);
+
+const footerSection = document.getElementById('footer-section');
+
+console.log(footerSection.dataset.footer);
 
 // ASTRONAUT DIALOGUE
 
