@@ -30,6 +30,42 @@ function navigationUnderline(movingSections) {
   });
 }
 
+// NAVIGATION FOOTER TOP
+
+const flexScrollTF = document.getElementById('flex-scroll-t-f');
+const toFooter = document.getElementById('scroll-to-footer');
+const toTop = document.getElementById('scroll-to-top');
+const prv = document.getElementById('prv-4');
+const nxt = document.getElementById('nxt-4');
+
+function mergeTopFoot() {
+  toFooter.style['left'] = 'calc(50% - 35px)';
+  toFooter.style['opacity'] = '0';
+  toTop.style['left'] = 'calc(50% - 35px)';
+  prv.style['opacity'] = '0';
+  nxt.style['opacity'] = '0';
+  setTimeout(moveTopFoot,1000);
+}
+
+function moveTopFoot() {
+  flexScrollTF.style['transform'] = 'translate(0px,50px)';
+  toFooter.style['display'] = 'none';
+}
+
+toFooter.addEventListener('click',mergeTopFoot);
+
+function backToTop() {
+  toFooter.style['opacity'] = '1';
+  toFooter.style['display'] = 'inline-block';
+  toFooter.style['left'] = '0%';
+  toTop.style['left'] = 'calc(100% - 75px)';
+  flexScrollTF.style['transform'] = 'translate(0px,0px)';
+  prv.style['opacity'] = '1';
+  nxt.style['opacity'] = '1';
+}
+
+toTop.addEventListener('click',backToTop);
+
 // ASTRONAUT DIALOGUE
 
 const astronaut = document.getElementById('astronaut');
