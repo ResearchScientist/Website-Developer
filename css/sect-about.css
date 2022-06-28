@@ -72,11 +72,13 @@
   0% {opacity: 1; clip-path: circle(0vh at calc(100% - 5vh));}
   2% {opacity: 1; clip-path: circle(5vh at calc(100% - 5vh));}
   5% {opacity: 1; clip-path: circle(5vh at calc(100% - 5vh));}
-  25% {opacity: 1; clip-path: circle(5vh at 25%);}
-  30% {opacity: 1; clip-path: circle(5vh at 30%);}
-  65% {opacity: 1; clip-path: circle(5vh at 30%);}
-  70% {opacity: 1; clip-path: circle(5vh at calc(0% + 5vh));}
-  75% {opacity: 1; clip-path: circle(5vh at calc(0% + 5vh));}
+  25% {opacity: 1; clip-path: circle(5vh at 70%);}
+  30% {opacity: 1; clip-path: circle(5vh at 70%);}
+  45% {opacity: 1; clip-path: circle(5vh at 50%);}
+  50% {opacity: 1; clip-path: circle(5vh at 50%);}
+  65% {opacity: 1; clip-path: circle(5vh at 20%);}
+  80% {opacity: 1; clip-path: circle(5vh at 20%);}
+  85% {opacity: 1; clip-path: circle(5vh at calc(0% + 5vh));}
   95% {opacity: 1; clip-path: circle(5vh at calc(100% - 5vh));}
   98% {opacity: 1; clip-path: circle(5vh at calc(100% - 5vh));}
   100% {opacity: 1; clip-path: circle(0vh at calc(100% - 5vh));}
