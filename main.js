@@ -37,6 +37,7 @@ const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');
 const prv = document.getElementById('prv-4');
 const nxt = document.getElementById('nxt-4');
+const footerSection = document.getElementById('footer-section');
 
 function mergeTopFoot() {
   toFooter.style['left'] = 'calc(50% - 35px)';
@@ -55,6 +56,7 @@ function moveTopFoot() {
 }
 
 toFooter.addEventListener('click',mergeTopFoot);
+nxt.addEventListener('click',mergeTopFoot);
 
 function backToTop() {
   toFooter.style['opacity'] = '1';
@@ -64,11 +66,13 @@ function backToTop() {
   flexScrollTF.style['transform'] = 'translate(0px,0px)';
   prv.style['opacity'] = '1';
   nxt.style['opacity'] = '1';
+  footerSection.dataset.footer = 'inactive';
+  console.log('footer is now ' + footerSection.dataset.footer);
 }
 
 toTop.addEventListener('click',backToTop);
 
-const footerSection = document.getElementById('footer-section');
+
 
 console.log(footerSection.dataset.footer);
 
