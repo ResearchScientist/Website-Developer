@@ -32,6 +32,7 @@ function navigationUnderline(movingSections) {
 
 // NAVIGATION FOOTER TOP
 
+const mainNavigation = document.getElementById('main-nav');
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
 const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');
@@ -45,8 +46,7 @@ function mergeTopFoot() {
   toTop.style['left'] = 'calc(50% - 35px)';
   prv.style['opacity'] = '0';
   nxt.style['opacity'] = '0';
-  footerSection.dataset.footer = 'active';
-  console.log(footerSection.dataset.footer);
+  // footerSection.dataset.footer = 'active';
   setTimeout(moveTopFoot,1000);
 }
 
@@ -54,9 +54,6 @@ function moveTopFoot() {
   flexScrollTF.style['transform'] = 'translate(0px,50px)';
   toFooter.style['display'] = 'none';
 }
-
-toFooter.addEventListener('click',mergeTopFoot);
-nxt.addEventListener('click',mergeTopFoot);
 
 function backToTop() {
   toFooter.style['opacity'] = '1';
@@ -66,15 +63,13 @@ function backToTop() {
   flexScrollTF.style['transform'] = 'translate(0px,0px)';
   prv.style['opacity'] = '1';
   nxt.style['opacity'] = '1';
-  footerSection.dataset.footer = 'inactive';
-  console.log('footer is now ' + footerSection.dataset.footer);
+  // footerSection.dataset.footer = 'inactive';
 }
 
+toFooter.addEventListener('click',mergeTopFoot);
+nxt.addEventListener('click',mergeTopFoot);
+mainNavigation.addEventListener('click',backToTop);
 toTop.addEventListener('click',backToTop);
-
-
-
-console.log(footerSection.dataset.footer);
 
 // ASTRONAUT DIALOGUE
 
