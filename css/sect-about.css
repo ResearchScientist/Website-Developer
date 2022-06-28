@@ -82,18 +82,18 @@
   100% {opacity: 1; clip-path: circle(0vh at calc(100% - 5vh));}
 }
 
-#moon {
-  height: 50%;
-  grid-column: 4/5;
+#ring-planet {
+  height: 80%;
+  grid-column: 3/4;
 }
 
-#ani-ufo {
-  width: 10vh;
-  height: 10vh;
-  border-radius: 50%;
-  grid-column: 2/3;
-  background-color: salmon;
+#moon {
+  height: 40%;
+  grid-column: 4/5;
+  fill: #FAE6A0;
 }
+
+
 
 #building {
   grid-column: 1/1;
