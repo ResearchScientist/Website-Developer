@@ -61,7 +61,7 @@
   align-items: center;
   justify-items: center;
   background-color: rgba(100,100,250,.1);
-  opacity: 0;
+  opacity: 1;
 }
 
 .telescope-pan {
@@ -84,18 +84,24 @@
   100% {opacity: 1; clip-path: circle(0vh at calc(100% - 5vh));}
 }
 
-#ring-planet {
-  height: 80%;
-  grid-column: 3/4;
-}
-
 #moon {
-  height: 40%;
+  grid-row: 1/-1;
   grid-column: 4/5;
+  height: 50%;
   fill: #FAE6A0;
 }
 
+#satellite-icon {
+  grid-row: 1/-1;
+  grid-column: 4/6;
+  height: 20%;
+}
 
+#galaxy {
+  grid-row: 1/-1;
+  grid-column: 3/4;
+  height: 60%;
+}
 
 #building {
   grid-column: 1/1;
