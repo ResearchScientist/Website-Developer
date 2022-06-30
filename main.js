@@ -120,6 +120,10 @@ function resetTelescope() {
   telescopeView.classList.remove('telescope-pan');
 }
 
+// UFO ANIMATION
+
+
+
 // ROCKET ANIMATION
 
 const rocket = document.getElementById('rocket');
