@@ -112,7 +112,7 @@ telescope.addEventListener('click',telescopePan);
 function telescopePan() {
   if (telescopeView.className !== 'telescope-pan') {
     telescopeView.classList.add('telescope-pan');
-    setTimeout(resetTelescope,10500);
+    setTimeout(resetTelescope,15500);
   }
 }
 
