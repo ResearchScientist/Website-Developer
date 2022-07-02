@@ -61,7 +61,7 @@
   align-items: center;
   justify-items: center;
   background-color: rgba(100,150,250,.05);
-  opacity: 1;
+  opacity: 0;
 }
 
 .telescope-pan {
@@ -118,8 +118,11 @@
   grid-row: 1/-1;
   grid-column: 1/3;
   align-self: flex-end;
-  animation: ufo-leave 4s forwards;
   animation-delay: 9s;
+}
+
+.ufo-leave-ani {
+  animation: ufo-leave 4s forwards;
 }
 
 @keyframes ufo-leave {
@@ -130,8 +133,11 @@
 
 #ufo-body {
   transform-origin: 50%;
-  animation: glide ease-in-out 1.5s 2.5 alternate;
   animation-delay: 6s;
+}
+
+.ufo-body-ani {
+  animation: glide ease-in-out 1.5s 2.5 alternate;
 }
 
 @keyframes glide {
@@ -142,8 +148,11 @@
 #exclamation-mark {
   fill: var(--text-white);
   opacity: 0;
-  animation: exclamation-surprise .8s linear forwards;
   animation-delay: 9.75s;
+}
+
+.exclamation-mark-ani {
+  animation: exclamation-surprise .8s linear forwards;
 }
 
 @keyframes exclamation-surprise {
@@ -154,8 +163,11 @@
 }
 
 #beam {
-  animation: beaming 5s linear forwards;
   animation-delay: 6.25s;
+}
+
+.beam-ani {
+  animation: beaming 5s linear forwards;
 }
 
 @keyframes beaming {

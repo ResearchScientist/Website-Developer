@@ -112,17 +112,36 @@ telescope.addEventListener('click',telescopePan);
 function telescopePan() {
   if (telescopeView.className !== 'telescope-pan') {
     telescopeView.classList.add('telescope-pan');
+    ufoSurpriseLeave();
     setTimeout(resetTelescope,15500);
   }
 }
 
 function resetTelescope() {
   telescopeView.classList.remove('telescope-pan');
+  resetUfo();
 }
 
 // UFO ANIMATION
 
+const ufo = document.getElementById('ufo');
+const ufoBody = document.getElementById('ufo-body');
+const exclamationMark = document.getElementById('exclamation-mark');
+const beam = document.getElementById('beam');
 
+function ufoSurpriseLeave() {
+  ufo.classList.add('ufo-leave-ani');
+  ufoBody.classList.add('ufo-body-ani');
+  exclamationMark.classList.add('exclamation-mark-ani');
+  beam.classList.add('beam-ani');
+}
+
+function resetUfo() {
+  ufo.classList.remove('ufo-leave-ani');
+  ufoBody.classList.remove('ufo-body-ani');
+  exclamationMark.classList.remove('exclamation-mark-ani');
+  beam.classList.remove('beam-ani');
+}
 
 // ROCKET ANIMATION
 
