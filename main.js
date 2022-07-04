@@ -113,7 +113,7 @@ function telescopePan() {
   if (telescopeView.className !== 'telescope-pan') {
     telescopeView.classList.add('telescope-pan');
     ufoSurpriseLeave();
-    setTimeout(resetTelescope,15500);
+    setTimeout(resetTelescope,16500);
   }
 }
 
