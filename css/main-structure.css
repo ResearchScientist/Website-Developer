@@ -14,7 +14,6 @@ main {
   grid-template-rows: repeat(5,100vh) 26vh;
   justify-items: center;
   align-items: center;
-  overflow: hidden; /* to prevent animation adding scroll bars */
 }
 
 body {
