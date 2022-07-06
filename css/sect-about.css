@@ -72,11 +72,9 @@
   0% {opacity: 1; clip-path: circle(0vh at calc(100% - 5vh));}
   2% {opacity: 1; clip-path: circle(5vh at calc(100% - 5vh));}
   5% {opacity: 1; clip-path: circle(5vh at calc(100% - 5vh));}
-  10% {opacity: 1; clip-path: circle(5vh at 90%);}
-  15% {opacity: 1; clip-path: circle(5vh at 90%);}
-  20% {opacity: 1; clip-path: circle(5vh at 70%);}
-  25% {opacity: 1; clip-path: circle(5vh at 70%);}
-  30% {opacity: 1; clip-path: circle(5vh at 50%);}
+  15% {opacity: 1; clip-path: circle(5vh at 70%);}
+  22% {opacity: 1; clip-path: circle(5vh at 70%);}
+  27% {opacity: 1; clip-path: circle(5vh at 50%);}
   40% {opacity: 1; clip-path: circle(5vh at 50%);}
   50% {opacity: 1; clip-path: circle(5vh at 15%);}
   55% {opacity: 1; clip-path: circle(5vh at 20%);}
