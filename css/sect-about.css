@@ -1,13 +1,4 @@
-#about-wrapper { /* add wrapper to about section since overflow y hidden makes overflow x auto */
-  /* width: 100%;
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  overflow: hidden; */
-}
-
 #about {
-  /* margin: 0 auto;  */
-  /* add to center within wrapper */
   z-index: 1;
 }
 
