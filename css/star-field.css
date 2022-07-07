@@ -1,6 +1,6 @@
 /* STAR FIELD */
 
-#far-field, #mid-field, #near-field {
+#far-field, #near-field {
   width: 100%;
   height: 100%;
   grid-column: 1/-1;
@@ -13,16 +13,17 @@
   background-attachment: fixed;
 }
 
-/* #mid-field {
+#mid-field {
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   background-color: rgba(100,100,200,.25);
   transition: transform 1s;
-  transform: translateY(10vh);
-} */
+  z-index: -1;
+  /* transform: translateY(-30vh); */
+}
 
 #near-field {
   animation: linear 50s infinite fall;
