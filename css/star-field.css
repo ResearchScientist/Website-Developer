@@ -13,9 +13,16 @@
   background-attachment: fixed;
 }
 
-#mid-field {
-  animation: linear 100s infinite fall;
-}
+/* #mid-field {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(100,100,200,.25);
+  transition: transform 1s;
+  transform: translateY(10vh);
+} */
 
 #near-field {
   animation: linear 50s infinite fall;
