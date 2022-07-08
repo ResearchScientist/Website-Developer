@@ -15,8 +15,9 @@
 
 #mid-field {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100vw;
   height: 120vh;
   background-color: rgba(100,100,200,.25);
