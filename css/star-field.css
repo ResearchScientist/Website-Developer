@@ -20,10 +20,15 @@
   right: 0;
   width: 100vw;
   height: 120vh;
-  background-color: rgba(100,100,200,.25);
-  transition: transform 1s;
+  /* background-color: rgba(100,100,200,.25); */
+  /* transition: transform 1s; */
   z-index: -1;
-  /* transform: translateY(-30vh); */
+  /* animation: star-move 2s forwards; */
+}
+
+@keyframes star-move {
+  from {transform: translateY(0);}
+  to {transform: translateY(-2vh);}
 }
 
 #near-field {

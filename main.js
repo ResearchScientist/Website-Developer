@@ -30,9 +30,30 @@ function navigationUnderline(movingSections) {
   });
 }
 
+// STARFIELD SCROLL
+
+// const mainNavigation = document.getElementById('main-nav');
+// const midFieldSVG = document.getElementById('mid-field-svg');
+// const midFieldViewBox = midFieldSVG.viewBox.baseVal;
+
+// function toMidProjects() {
+//   midFieldViewBox.y = -.5;
+// }
+
+// mainNavigation.addEventListener('click',toMidProjects);
+
+// const mainNavigation = document.getElementById('main-nav');
+// const midProjects = document.getElementById('mid-projects');
+
+// function scrollStarfield() {
+//   console.log('main nav clicked');
+//   midProjects.scrollIntoView({behavior: "smooth"});
+// }
+
+// mainNavigation.addEventListener('click',scrollStarfield);
+
 // NAVIGATION FOOTER TOP
 
-const mainNavigation = document.getElementById('main-nav');
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
 const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');
@@ -68,7 +89,6 @@ function backToTop() {
 
 toFooter.addEventListener('click',mergeTopFoot);
 nxt.addEventListener('click',mergeTopFoot);
-mainNavigation.addEventListener('click',backToTop);
 toTop.addEventListener('click',backToTop);
 
 // ASTRONAUT DIALOGUE
