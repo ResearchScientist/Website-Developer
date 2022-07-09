@@ -1,25 +1,23 @@
 /* STAR FIELD */
 
-#far-field, #near-field {
+#far-field {
   width: 100%;
   height: 100%;
   grid-column: 1/-1;
   grid-row: 1/-1;
-}
-
-#far-field {
   background-image: url("../img/background-stars.svg");
   background-size: cover;
   background-attachment: fixed;
 }
 
-#mid-field {
+#mid-field,#near-field {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100vw;
   height: 120vh;
+  /* transform: translateY(-20vh); */
   /* background-color: rgba(100,100,200,.25); */
   /* transition: transform 1s; */
   z-index: -1;
@@ -31,9 +29,9 @@
   to {transform: translateY(-2vh);}
 }
 
-#near-field {
+/* #near-field {
   animation: linear 50s infinite fall;
-}
+} */
 
 @keyframes fall {
   from {transform: translateY(0);}
