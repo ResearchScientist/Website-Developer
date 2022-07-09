@@ -54,6 +54,7 @@ function navigationUnderline(movingSections) {
 
 // NAVIGATION FOOTER TOP
 
+const mainNavigation = document.getElementById('main-nav');
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
 const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');
@@ -89,6 +90,7 @@ function backToTop() {
 
 toFooter.addEventListener('click',mergeTopFoot);
 nxt.addEventListener('click',mergeTopFoot);
+mainNavigation.addEventListener('click',scrollStarfield);
 toTop.addEventListener('click',backToTop);
 
 // ASTRONAUT DIALOGUE
