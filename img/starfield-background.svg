@@ -2,11 +2,11 @@
 <circle cx="1" cy="1" r="0.05" fill="#FAFAFA"/>
 <circle cx="2" cy="20" r="0.05" fill="#FAFAFA"/>
 <circle cx="3" cy="40" r="0.05" fill="#FAFAFA"/>
-<circle cx="3" cy="150" r="0.05" fill="red"/>
+<circle cx="3" cy="92" r="0.05" fill="#FAFAFA"/>
 <circle cx="4" cy="15" r="0.05" fill="#FAFAFA"/>
-<circle cx="4" cy="180" r="0.05" fill="#FAFAFA"/>
-<circle cx="5" cy="200" r="0.05" fill="#FAFAFA"/>
-<circle cx="6" cy="120" r="0.05" fill="#FAFAFA"/>
+<circle cx="30" cy="100" r="0.05" fill="#FAFAFA"/>
+<circle cx="5" cy="98" r="0.05" fill="#FAFAFA"/>
+<circle cx="6" cy="85" r="0.05" fill="#FAFAFA"/>
 <circle cx="7" cy="80" r="0.05" fill="#FAFAFA"/>
 <circle cx="8" cy="5" r="0.05" fill="#FAFAFA"/>
 <circle cx="12" cy="30" r="0.05" fill="#FAFAFA"/>
