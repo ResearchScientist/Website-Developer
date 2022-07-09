@@ -90,7 +90,7 @@ function backToTop() {
 
 toFooter.addEventListener('click',mergeTopFoot);
 nxt.addEventListener('click',mergeTopFoot);
-mainNavigation.addEventListener('click',scrollStarfield);
+mainNavigation.addEventListener('click',backToTop);
 toTop.addEventListener('click',backToTop);
 
 // ASTRONAUT DIALOGUE
