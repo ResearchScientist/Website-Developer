@@ -32,6 +32,27 @@ function navigationUnderline(movingSections) {
 
 // STARFIELD SCROLL
 
+const midField = document.getElementById('mid-field');
+const nearField = document.getElementById('near-field');
+const aboutNav = document.getElementById('main-nav-about');
+
+const mainNavAnchors = document.querySelectorAll('.main-nav-a');
+console.log(mainNavAnchors);
+
+mainNavAnchors.forEach((anchor) => {
+  anchor.addEventListener('click',logIt);
+});
+
+function logIt(e) {
+  console.log('clicked on data target ' + e.target.dataset.mainnav);
+}
+
+function scrollStarfield() {
+  console.log('clicked main nav');
+}
+
+aboutNav.addEventListener('click',scrollStarfield);
+
 // const mainNavigation = document.getElementById('main-nav');
 // const midFieldSVG = document.getElementById('mid-field-svg');
 // const midFieldViewBox = midFieldSVG.viewBox.baseVal;
@@ -85,7 +106,6 @@ function backToTop() {
   flexScrollTF.style['transform'] = 'translate(0px,0px)';
   prv.style['opacity'] = '1';
   nxt.style['opacity'] = '1';
-  // footerSection.dataset.footer = 'inactive';
 }
 
 toFooter.addEventListener('click',mergeTopFoot);
