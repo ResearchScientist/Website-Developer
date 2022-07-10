@@ -45,13 +45,16 @@ mainNavAnchors.forEach((anchor) => {
 
 function logIt(e) {
   console.log('clicked on data target ' + e.target.dataset.mainnav);
+  if (e.target.dataset.mainnav == 'about') {
+    console.log('yes its about');
+  }
 }
 
-function scrollStarfield() {
-  console.log('clicked main nav');
-}
+// function scrollStarfield() {
+//   console.log('clicked main nav');
+// }
 
-aboutNav.addEventListener('click',scrollStarfield);
+// aboutNav.addEventListener('click',scrollStarfield);
 
 // const mainNavigation = document.getElementById('main-nav');
 // const midFieldSVG = document.getElementById('mid-field-svg');
