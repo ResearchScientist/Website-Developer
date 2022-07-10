@@ -34,19 +34,30 @@ function navigationUnderline(movingSections) {
 
 const midField = document.getElementById('mid-field');
 const nearField = document.getElementById('near-field');
-const aboutNav = document.getElementById('main-nav-about');
+// const mainNavAnchors = document.querySelectorAll('.main-nav-a');
+// console.log(mainNavAnchors);
 
-const mainNavAnchors = document.querySelectorAll('.main-nav-a');
-console.log(mainNavAnchors);
+// mainNavAnchors.forEach((anchor) => {
+//   anchor.addEventListener('click',logIt);
+// });
+const mainNavigation = document.getElementById('main-nav');
 
-mainNavAnchors.forEach((anchor) => {
-  anchor.addEventListener('click',logIt);
-});
+mainNavigation.addEventListener('click',logIt);
 
 function logIt(e) {
-  console.log('clicked on data target ' + e.target.dataset.mainnav);
-  if (e.target.dataset.mainnav == 'about') {
+  var mainNavAnchor = e.target.dataset.mainnav;
+
+  if (mainNavAnchor == 'about') {
     console.log('yes its about');
+  }
+  if (mainNavAnchor == 'projects') {
+    console.log('yes its projects');
+  }
+  if (mainNavAnchor == 'resume') {
+    console.log('yes its resume');
+  }
+  if (mainNavAnchor == 'contact') {
+    console.log('yes its contact');
   }
 }
 
@@ -78,7 +89,7 @@ function logIt(e) {
 
 // NAVIGATION FOOTER TOP
 
-const mainNavigation = document.getElementById('main-nav');
+// const mainNavigation = document.getElementById('main-nav');
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
 const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');
