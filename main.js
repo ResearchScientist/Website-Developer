@@ -37,12 +37,22 @@ const nearField = document.getElementById('near-field');
 
 const mainNavigation = document.getElementById('main-nav');
 
-// const mainNavAnchors = document.querySelectorAll('.main-nav-a');
-// console.log(mainNavAnchors);
+const arrowNavAnchors = document.querySelectorAll('.arrow-nav-a');
+// console.log(arrowNavAnchors);
 
-// mainNavAnchors.forEach((anchor) => {
-//   anchor.addEventListener('click',logIt);
+// arrowNavAnchors.forEach((anchor) => {
+//   anchor.addEventListener('click',scrollStarFieldTwo);
 // });
+
+// function scrollStarFieldTwo(e) {
+//   var arrowNavAnchor = e.target.dataset.arrownav;
+//   console.log(arrowNavAnchor);
+// if (arrowNavAnchor == 'about') {
+//   console.log('yes its about');
+//   midField.style.transform = 'translateY(-2vh)';
+//   nearField.style.transform = 'translateY(-5vh)';
+// }
+// }
 
 mainNavigation.addEventListener('click',scrollStarField);
 
@@ -70,32 +80,6 @@ function scrollStarField(e) {
     nearField.style.transform = 'translateY(-20vh)';
   }
 }
-
-// function scrollStarfield() {
-//   console.log('clicked main nav');
-// }
-
-// aboutNav.addEventListener('click',scrollStarfield);
-
-// const mainNavigation = document.getElementById('main-nav');
-// const midFieldSVG = document.getElementById('mid-field-svg');
-// const midFieldViewBox = midFieldSVG.viewBox.baseVal;
-
-// function toMidProjects() {
-//   midFieldViewBox.y = -.5;
-// }
-
-// mainNavigation.addEventListener('click',toMidProjects);
-
-// const mainNavigation = document.getElementById('main-nav');
-// const midProjects = document.getElementById('mid-projects');
-
-// function scrollStarfield() {
-//   console.log('main nav clicked');
-//   midProjects.scrollIntoView({behavior: "smooth"});
-// }
-
-// mainNavigation.addEventListener('click',scrollStarfield);
 
 // NAVIGATION FOOTER TOP
 
