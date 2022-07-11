@@ -34,30 +34,40 @@ function navigationUnderline(movingSections) {
 
 const midField = document.getElementById('mid-field');
 const nearField = document.getElementById('near-field');
+
+const mainNavigation = document.getElementById('main-nav');
+
 // const mainNavAnchors = document.querySelectorAll('.main-nav-a');
 // console.log(mainNavAnchors);
 
 // mainNavAnchors.forEach((anchor) => {
 //   anchor.addEventListener('click',logIt);
 // });
-const mainNavigation = document.getElementById('main-nav');
 
-mainNavigation.addEventListener('click',logIt);
+mainNavigation.addEventListener('click',scrollStarField);
 
-function logIt(e) {
+function scrollStarField(e) {
   var mainNavAnchor = e.target.dataset.mainnav;
 
   if (mainNavAnchor == 'about') {
     console.log('yes its about');
+    midField.style.transform = 'translateY(-2vh)';
+    nearField.style.transform = 'translateY(-5vh)';
   }
   if (mainNavAnchor == 'projects') {
     console.log('yes its projects');
+    midField.style.transform = 'translateY(-4vh)';
+    nearField.style.transform = 'translateY(-10vh)';
   }
   if (mainNavAnchor == 'resume') {
     console.log('yes its resume');
+    midField.style.transform = 'translateY(-6vh)';
+    nearField.style.transform = 'translateY(-15vh)';
   }
   if (mainNavAnchor == 'contact') {
     console.log('yes its contact');
+    midField.style.transform = 'translateY(-8vh)';
+    nearField.style.transform = 'translateY(-20vh)';
   }
 }
 
@@ -89,7 +99,6 @@ function logIt(e) {
 
 // NAVIGATION FOOTER TOP
 
-// const mainNavigation = document.getElementById('main-nav');
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
 const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');

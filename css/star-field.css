@@ -19,16 +19,17 @@
   right: 0;
   background-size: cover;
   background-attachment: fixed;
-  transition: transform 1s;
+  transition: transform 1.5s;
   /* transform: translateY(10vh); */
   /* animation: star-move 2s forwards; */
   z-index: -1;
+  /* overflow: hidden; */
 }
 
 #mid-field {background-image: url("../img/starfield-mid.svg");}
 #near-field {background-image: url("../img/starfield-near.svg");}
 
-@keyframes star-move {
+/* @keyframes star-move {
   from {transform: translateY(0);}
   to {transform: translateY(-2vh);}
-}
+} */
