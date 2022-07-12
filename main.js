@@ -38,21 +38,6 @@ const nearField = document.getElementById('near-field');
 const mainNavigation = document.getElementById('main-nav');
 
 const arrowNavAnchors = document.querySelectorAll('.arrow-nav-a');
-// console.log(arrowNavAnchors);
-
-// arrowNavAnchors.forEach((anchor) => {
-//   anchor.addEventListener('click',scrollStarFieldTwo);
-// });
-
-// function scrollStarFieldTwo(e) {
-//   var arrowNavAnchor = e.target.dataset.arrownav;
-//   console.log(arrowNavAnchor);
-// if (arrowNavAnchor == 'about') {
-//   console.log('yes its about');
-//   midField.style.transform = 'translateY(-2vh)';
-//   nearField.style.transform = 'translateY(-5vh)';
-// }
-// }
 
 mainNavigation.addEventListener('click',scrollStarField);
 
