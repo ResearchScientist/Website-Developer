@@ -74,7 +74,7 @@ function mergeTopFoot() {
   toFooter.style['left'] = 'calc(50% - 35px)';
   toFooter.style['opacity'] = '0';
   toTop.style['left'] = 'calc(50% - 35px)';
-  // footerSection.dataset.footer = 'active';
+  footerSection.dataset.footerview = 'active';
   setTimeout(moveTopFoot,1000);
 }
 
@@ -89,11 +89,18 @@ function backToTop() {
   toFooter.style['left'] = '0%';
   toTop.style['left'] = 'calc(100% - 75px)';
   flexScrollTF.style['transform'] = 'translate(0px,0px)';
+  footerSection.dataset.footerview = 'inactive';
+}
+
+function starsToTop() {
+  midField.style.transform = 'translateY(0vh)';
+  nearField.style.transform = 'translateY(0vh)';
 }
 
 toFooter.addEventListener('click',mergeTopFoot);
 mainNavigation.addEventListener('click',backToTop);
 toTop.addEventListener('click',backToTop);
+toTop.addEventListener('click',starsToTop);
 
 // ASTRONAUT DIALOGUE
 
