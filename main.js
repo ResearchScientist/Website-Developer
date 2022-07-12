@@ -32,12 +32,9 @@ function navigationUnderline(movingSections) {
 
 // STARFIELD SCROLL
 
+const mainNavigation = document.getElementById('main-nav');
 const midField = document.getElementById('mid-field');
 const nearField = document.getElementById('near-field');
-
-const mainNavigation = document.getElementById('main-nav');
-
-const arrowNavAnchors = document.querySelectorAll('.arrow-nav-a');
 
 mainNavigation.addEventListener('click',scrollStarField);
 
@@ -71,16 +68,12 @@ function scrollStarField(e) {
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
 const toFooter = document.getElementById('scroll-to-footer');
 const toTop = document.getElementById('scroll-to-top');
-const prv = document.getElementById('prv-4');
-const nxt = document.getElementById('nxt-4');
 const footerSection = document.getElementById('footer-section');
 
 function mergeTopFoot() {
   toFooter.style['left'] = 'calc(50% - 35px)';
   toFooter.style['opacity'] = '0';
   toTop.style['left'] = 'calc(50% - 35px)';
-  prv.style['opacity'] = '0';
-  nxt.style['opacity'] = '0';
   // footerSection.dataset.footer = 'active';
   setTimeout(moveTopFoot,1000);
 }
@@ -96,12 +89,9 @@ function backToTop() {
   toFooter.style['left'] = '0%';
   toTop.style['left'] = 'calc(100% - 75px)';
   flexScrollTF.style['transform'] = 'translate(0px,0px)';
-  prv.style['opacity'] = '1';
-  nxt.style['opacity'] = '1';
 }
 
 toFooter.addEventListener('click',mergeTopFoot);
-nxt.addEventListener('click',mergeTopFoot);
 mainNavigation.addEventListener('click',backToTop);
 toTop.addEventListener('click',backToTop);
 

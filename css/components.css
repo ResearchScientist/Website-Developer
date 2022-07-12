@@ -44,38 +44,6 @@ body {
   to {opacity: 1; transform: translateY(10px) rotateZ(-45deg);}
 }
 
-.previous , .next {
-  width: 15px;
-  height: 15px;
-  border: transparent;
-  border-left: 1px solid var(--text-blue);
-  border-bottom: 1px solid var(--text-blue);
-}
-
-.previous { transform: rotateZ(135deg); }
-.next { transform: rotateZ(-45deg); }
-
-.prv {
-  margin: 0 20px 10px;
-  grid-column: 1/2;
-  justify-self: flex-start;
-  align-self: flex-end;
-  z-index: 1;
-}
-
-.nxt {
-  margin: 0 20px 20px;
-  grid-column: -2/-1;
-  justify-self: flex-end;
-  align-self: flex-end;
-  z-index: 1;
-}
-
-#prv-1 , #nxt-1{ grid-row: 2/3; }
-#prv-2 , #nxt-2{ grid-row: 3/4; }
-#prv-3 , #nxt-3{ grid-row: 4/5; transition: opacity .5s}
-#prv-4 , #nxt-4{ grid-row: 5/6; transition: opacity .5s}
-
 #resume button {
   width: 58px;
   margin-bottom: 20px;
