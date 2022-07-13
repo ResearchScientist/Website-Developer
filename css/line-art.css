@@ -115,6 +115,10 @@
   opacity: 0;
 }
 
+#tardis:hover #t-light {
+  fill: var(--primary-blue);
+}
+
 .materialisation {
   animation: materialisation 4s ease-in-out forwards;
 }
@@ -131,6 +135,10 @@
   grid-row: -2/-1;
   align-self: flex-end;
   z-index: 1;
+}
+
+#dalek:hover .dalek-lights {
+  fill: var(--accent-orange);
 }
 
 .exterminate {
