@@ -35,6 +35,7 @@ function navigationUnderline(movingSections) {
 const mainNavigation = document.getElementById('main-nav');
 const midField = document.getElementById('mid-field');
 const nearField = document.getElementById('near-field');
+const scrollToAboutButton = document.getElementById('scroll-down-to-about');
 
 mainNavigation.addEventListener('click',scrollStarField);
 
@@ -61,6 +62,13 @@ function scrollStarField(e) {
     midField.style.transform = 'translateY(-8vh)';
     nearField.style.transform = 'translateY(-20vh)';
   }
+}
+
+scrollToAboutButton.addEventListener('click', scrollToAbout);
+
+function scrollToAbout() {
+  midField.style.transform = 'translateY(-2vh)';
+  nearField.style.transform = 'translateY(-5vh)';
 }
 
 // NAVIGATION FOOTER TOP
