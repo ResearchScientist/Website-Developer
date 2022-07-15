@@ -8,7 +8,8 @@
 }
 
 #flex-scroll-t-f {
-  width: calc(33% + 70px);
+  /* width: calc(33% + 70px); */
+  width: 200px;
   height: 20px;
   grid-column: 1/-1;
   grid-row: -2/-1;
@@ -18,12 +19,14 @@
   z-index: 1;
   position: relative;
   transition: transform 1s;
+  /* background-color: pink; */
 }
 
 .scroll-t-f {
   width: 75px;
   position: absolute;
   transition: left 1s , opacity 1s;
+  /* background-color: gray; */
 }
 
 #scroll-to-footer { left: 0%; }
