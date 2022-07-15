@@ -9,6 +9,7 @@
 
 #flex-scroll-t-f {
   width: calc(33% + 70px);
+  height: 20px;
   grid-column: 1/-1;
   grid-row: -2/-1;
   justify-self: center;
