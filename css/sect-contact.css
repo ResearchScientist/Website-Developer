@@ -19,15 +19,13 @@
   z-index: 1;
   position: relative;
   transition: transform 1s;
-  /* background-color: pink; */
 }
 
 .scroll-t-f {
-  width: 75px;
+  width: 80px;
   position: absolute;
   transition: left 1s , opacity 1s;
-  /* background-color: gray; */
 }
 
 #scroll-to-footer { left: 0%; }
-#scroll-to-top { left: calc(100% - 75px); }
+#scroll-to-top { left: calc(100% - 80px); }
