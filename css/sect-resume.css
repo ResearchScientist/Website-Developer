@@ -50,7 +50,8 @@
 }
 
 #download-resume {
-  width: 120px;
+  width: 150px;
+  height: 20px;
   grid-column: 1/-1;
   grid-row: 2/-2;
   justify-self: center;
