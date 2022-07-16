@@ -79,9 +79,9 @@ const toTop = document.getElementById('scroll-to-top');
 const footerSection = document.getElementById('footer-section');
 
 function mergeTopFoot() {
-  toFooter.style['left'] = 'calc(50% - 40px)';
+  toFooter.style['left'] = 'calc(50% - 50px)';
   toFooter.style['opacity'] = '0';
-  toTop.style['left'] = 'calc(50% - 40px)';
+  toTop.style['left'] = 'calc(50% - 50px)';
   footerSection.dataset.footerview = 'active';
   setTimeout(moveTopFoot,1000);
 }
@@ -95,7 +95,7 @@ function backToTop() {
   toFooter.style['opacity'] = '1';
   toFooter.style['display'] = 'inline-block';
   toFooter.style['left'] = '0%';
-  toTop.style['left'] = 'calc(100% - 80px)';
+  toTop.style['left'] = 'calc(100% - 100px)';
   flexScrollTF.style['transform'] = 'translate(0px,0px)';
   footerSection.dataset.footerview = 'inactive';
 }

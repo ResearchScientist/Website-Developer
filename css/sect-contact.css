@@ -9,7 +9,7 @@
 
 #flex-scroll-t-f {
   /* width: calc(33% + 70px); */
-  width: 200px;
+  width: 250px;
   height: 20px;
   grid-column: 1/-1;
   grid-row: -2/-1;
@@ -22,10 +22,10 @@
 }
 
 .scroll-t-f {
-  width: 80px;
+  width: 100px;
   position: absolute;
   transition: left 1s , opacity 1s;
 }
 
 #scroll-to-footer { left: 0%; }
-#scroll-to-top { left: calc(100% - 80px); }
+#scroll-to-top { left: calc(100% - 100px); margin-left: 12px;}
