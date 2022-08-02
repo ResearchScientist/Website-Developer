@@ -51,6 +51,7 @@ function scrollStarField(e) {
     console.log('yes its projects');
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
+    planetMoonSlide();
   }
   if (mainNavAnchor == 'resume') {
     console.log('yes its resume');
@@ -69,6 +70,16 @@ scrollToAboutButton.addEventListener('click', scrollToAbout);
 function scrollToAbout() {
   midField.style.transform = 'translateY(-2vh)';
   nearField.style.transform = 'translateY(-5vh)';
+}
+
+// PLANET MOON MOVEMENT
+
+const planetE = document.getElementById('planet-e');
+const moonE = document.getElementById('moon-e');
+
+function planetMoonSlide() {
+  planetE.classList.add('animate-planet');
+  moonE.classList.add('animate-moon');
 }
 
 // NAVIGATION FOOTER TOP
