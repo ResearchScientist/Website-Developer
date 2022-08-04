@@ -71,16 +71,37 @@
 
 .project-skills {
   width: 150px;
-  grid-column: 1/2;
-  grid-row: -2/-1;
+  /* height: 6px; */
   display: flex;
   color: white;
+  overflow: hidden;
+  /* border-bottom: 1px solid white; */
   /* animation: skills-slide 2s linear forwards; */
 }
 
+#pr-sk-1 {
+  grid-column: 1/2;
+  grid-row: -2/-1;
+}
+
+#pr-sk-2 {
+  grid-column: -2/-1;
+  grid-row: 1/2;
+}
+
+#pr-sk-3 {
+  grid-column: -2/-1;
+  grid-row: -2/-1;
+}
+
+.project-skills p {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .project-skills p:nth-of-type(1) {
-  /* font-weight: 900; */
-  font-family: 'Roboto';
+  font-weight: 100;
   margin-right: 10px;
 }
 
