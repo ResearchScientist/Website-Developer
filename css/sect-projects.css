@@ -1,47 +1,53 @@
 #planet-e {
-  width: 95vh;
-  height: 95vh;
+  width: 95vw;
+  height: 95vw;
+  max-width: 625px;
+  max-height: 625px;
   border-radius: 50%;
   grid-column: 1/-1;
   grid-row: 2/3;
   justify-self: center;
   align-self: center;
   background: radial-gradient(circle at top, var(--planet-e) 62%);
-  transform: translateX(95vh);
-  /* animation: planet-slide 3s linear forwards; */
+  transform: translateX(95vw);
 }
 
 #moon-e {
-  width: 25vh;
-  height: 25vh;
+  width: 25vw;
+  height: 25vw;
+  max-width: 165px;
+  max-height: 165px;
   border-radius: 50%;
   grid-column: 1/-1;
   grid-row: 2/3;
   justify-self: center;
   align-self: center;
   background: radial-gradient(circle at top, var(--planet-e) 60%);
-  transform: translateX(-95vh);
-  /* animation: moon-slide 3s linear forwards; */
+  transform: translateX(-75vw);
 }
 
 .animate-planet {
-  animation: planet-slide 3s linear forwards;
+  animation: planet-slide 4s linear forwards;
 }
 
 .animate-moon {
-  animation: moon-slide 6s linear forwards;
+  animation: moon-slide 8s linear forwards;
 }
 
 #planet-shine {
-  width: 95vh;
-  height: 95vh;
+  width: 95vw;
+  height: 95vw;
+  max-width: 625px;
+  max-height: 625px;
   border-radius: 50%;
   box-shadow: inset 0 5px 1px -3px rgba(250,250,250,.7);
 }
 
 #moon-shine {
-  width: 25vh;
-  height: 25vh;
+  width: 25vw;
+  height: 25vw;
+  max-width: 165px;
+  max-height: 165px;
   border-radius: 50%;
   box-shadow: inset 0 4px 1px -3px rgba(250,250,250,.7);
 }
@@ -52,15 +58,15 @@
 }
 
 @keyframes planet-slide {
-  from {transform: translateX(95vh);}
-  to {transform: translateX(0vh);}
+  from {transform: translateX(95vw);}
+  to {transform: translateX(0vw);}
 }
 
 @keyframes moon-slide {
-  0% {transform: translateX(-95vh);}
-  50% {transform: translateX(0vh);}
-  70% {transform: translateX(0vh);}
-  100% {transform: translateX(65vh);}
+  0% {transform: translateX(-75vw);}
+  50% {transform: translateX(0vw);}
+  60% {transform: translateX(0vw);}
+  100% {transform: translateX(75vw);}
 }
 
 .project-skills {
@@ -69,12 +75,13 @@
   grid-row: -2/-1;
   display: flex;
   color: white;
+  /* animation: skills-slide 2s linear forwards; */
 }
 
 .project-skills p:nth-of-type(1) {
-  font-weight: 900;
+  /* font-weight: 900; */
+  font-family: 'Roboto';
   margin-right: 10px;
-  animation: skills-slide 2s linear forwards;
 }
 
 @keyframes skills-slide {
