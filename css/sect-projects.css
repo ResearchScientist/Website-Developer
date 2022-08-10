@@ -27,7 +27,7 @@
 }
 
 .animate-planet {
-  animation: planet-slide 4s linear forwards;
+  animation: planet-slide 4s linear forwards, planet-shrink 2s 32s linear forwards;
 }
 
 .animate-moon {
@@ -67,6 +67,11 @@
   50% {transform: translateX(0vw);}
   60% {transform: translateX(0vw);}
   100% {transform: translateX(75vw);}
+}
+
+@keyframes planet-shrink {
+  from {transform: scale(1)}
+  to {transform: scale(.7)}
 }
 
 .project-skills {
