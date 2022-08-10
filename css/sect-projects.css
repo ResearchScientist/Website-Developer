@@ -80,7 +80,6 @@
   justify-content: center;
   z-index: 1;
   /* border: 1px solid white; */
-  animation: project-types-appear 4s linear forwards;
 }
 
 @keyframes project-types-appear {
@@ -88,6 +87,10 @@
   25% {opacity: 1;}
   75% {opacity: 1;}
   0% {opacity: 0;}
+}
+
+.animate-project-types {
+  animation: project-types-appear 4s linear forwards;
 }
 
 #pr-sk-1 {

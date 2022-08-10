@@ -52,6 +52,7 @@ function scrollStarField(e) {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
     planetMoonSlide();
+    projectSkillsAppear();
   }
   if (mainNavAnchor == 'resume') {
     console.log('yes its resume');
@@ -84,7 +85,13 @@ function planetMoonSlide() {
 
 // PROJECT TYPES APPEAR
 
+const projectSkills = document.querySelectorAll('.project-skills');
 
+function projectSkillsAppear() {
+  projectSkills.forEach((projectSkill) => {
+    projectSkill.classList.add('animate-project-types');
+  });
+}
 
 // NAVIGATION FOOTER TOP
 
