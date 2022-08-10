@@ -82,6 +82,10 @@ function planetMoonSlide() {
   moonE.classList.add('animate-moon');
 }
 
+// PROJECT TYPES APPEAR
+
+
+
 // NAVIGATION FOOTER TOP
 
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
