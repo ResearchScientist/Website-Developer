@@ -73,14 +73,16 @@ function scrollToAbout() {
   nearField.style.transform = 'translateY(-5vh)';
 }
 
-// PLANET MOON MOVEMENT
+// PLANET ALIGNMENT
 
 const planetE = document.getElementById('planet-e');
 const moonE = document.getElementById('moon-e');
+const planetE1 =document.getElementById('planet-e1');
 
 function planetMoonSlide() {
   planetE.classList.add('animate-planet');
   moonE.classList.add('animate-moon');
+  planetE1.classList.add('animate-planet-align');
 }
 
 // PROJECT TYPES APPEAR

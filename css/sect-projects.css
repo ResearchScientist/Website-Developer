@@ -12,6 +12,20 @@
   transform: translateX(95vw);
 }
 
+#planet-e1 , #planet-e2 {
+  width: 45vw;
+  height: 45vw;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  background: radial-gradient(circle at top, var(--planet-e) 62%);
+  transform: translateY(calc(-50vh - 22.5vw));
+}
+
 #moon-e {
   width: 25vw;
   height: 25vw;
@@ -32,6 +46,10 @@
 
 .animate-moon {
   animation: moon-slide 8s linear forwards;
+}
+
+.animate-planet-align {
+  animation: planet-align 4s 32s linear forwards;
 }
 
 #planet-shine {
@@ -72,6 +90,11 @@
 @keyframes planet-shrink {
   from {transform: scale(1)}
   to {transform: scale(.7)}
+}
+
+@keyframes planet-align {
+  from {transform: translateY(calc(-50vh - 22.5vw));}
+  to {transform: translateY(0);}
 }
 
 .project-skills {
