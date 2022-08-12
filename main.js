@@ -78,11 +78,13 @@ function scrollToAbout() {
 const planetE = document.getElementById('planet-e');
 const moonE = document.getElementById('moon-e');
 const planetE1 =document.getElementById('planet-e1');
+const planetE2 =document.getElementById('planet-e2');
 
 function planetMoonSlide() {
   planetE.classList.add('animate-planet');
   moonE.classList.add('animate-moon');
-  planetE1.classList.add('animate-planet-align');
+  planetE1.classList.add('animate-planet-e1-align');
+  planetE2.classList.add('animate-planet-e2-align');
 }
 
 // PROJECT TYPES APPEAR
