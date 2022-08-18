@@ -9,7 +9,7 @@
   justify-self: center;
   align-self: center;
   background: radial-gradient(circle at top, var(--planet-e) 62%);
-  transform: translateX(95vw);
+  /* transform: translateX(95vw); */
 }
 
 #planet-e1-space , #planet-e2-space {
@@ -120,19 +120,19 @@
 
 #planet-lights div:nth-of-type(1) {top: 50%; left: 26%;}
 #planet-lights div:nth-of-type(2) {top: 51%; left: 28%;}
-#planet-lights div:nth-of-type(3) {top: 51.75%; left: 30%;}
-#planet-lights div:nth-of-type(4) {top: 52.5%; left: 32%;}
+#planet-lights div:nth-of-type(3) {top: 52%; left: 30%;}
+#planet-lights div:nth-of-type(4) {top: 52.75%; left: 32%;}
 #planet-lights div:nth-of-type(5) {top: 53.25%; left: 34%;}
-#planet-lights div:nth-of-type(6) {top: 53%; left: 28%;}
-#planet-lights div:nth-of-type(7) {top: 53.75%; left: 30%;}
-#planet-lights div:nth-of-type(8) {top: 54.5%; left: 32%;}
-#planet-lights div:nth-of-type(9) {top: 55.25%; left: 34%;}
-#planet-lights div:nth-of-type(10) {top: 55.75%; left: 30%;}
-#planet-lights div:nth-of-type(11) {top: 56.5%; left: 32%;}
-#planet-lights div:nth-of-type(12) {top: 57.25%; left: 34%;}
-#planet-lights div:nth-of-type(13) {top: 58.5%; left: 32%;}
-#planet-lights div:nth-of-type(14) {top: 59.25%; left: 34%;}
-#planet-lights div:nth-of-type(15) {top: 61.25%; left: 34%;}
+#planet-lights div:nth-of-type(6) {top: 53.75%; left: 36%;}
+#planet-lights div:nth-of-type(7) {top: 53.5%; left: 28%;}
+#planet-lights div:nth-of-type(8) {top: 54.25%; left: 30%;}
+#planet-lights div:nth-of-type(9) {top: 55%; left: 32%;}
+#planet-lights div:nth-of-type(10) {top: 55.5%; left: 34%;}
+#planet-lights div:nth-of-type(11) {top: 56.5%; left: 54%;}
+#planet-lights div:nth-of-type(12) {top: 56.5%; left: 56%;}
+#planet-lights div:nth-of-type(13) {top: 58.5%; left: 70%;}
+#planet-lights div:nth-of-type(14) {top: 58.25%; left: 72%;}
+#planet-lights div:nth-of-type(15) {top: 57.5%; left: 74%;}
 #planet-lights div:nth-of-type(16) {top: 80%; left: 16%;}
 #planet-lights div:nth-of-type(17) {top: 81.5%; left: 17.5%;}
 #planet-lights div:nth-of-type(18) {top: 83%; left: 19%;}
@@ -141,7 +141,17 @@
 #planet-lights div:nth-of-type(21) {top: 52%; left: 98.4%;}
 #planet-lights div:nth-of-type(22) {top: 54%; left: 98.5%;}
 #planet-lights div:nth-of-type(23) {top: 56%; left: 98.2%;}
-/* #planet-lights div:nth-of-type(24) {top: 58%; left: 97.5%;} */
+#planet-lights div:nth-of-type(24) {top: 70%; left: 48%;}
+#planet-lights div:nth-of-type(25) {top: 70.4%; left: 50%;}
+#planet-lights div:nth-of-type(26) {top: 70%; left: 52%;}
+#planet-lights div:nth-of-type(27) {top: 98%; left: 48%;}
+#planet-lights div:nth-of-type(28) {top: 98.3%; left: 50%;}
+#planet-lights div:nth-of-type(29) {top: 98%; left: 52%;}
+#planet-lights div:nth-of-type(30) {top: 97.8%; left: 46%;}
+#planet-lights div:nth-of-type(31) {top: 97.8%; left: 54%;}
+#planet-lights div:nth-of-type(32) {top: 80%; left: 80%;}
+#planet-lights div:nth-of-type(33) {top: 50%; left: 4%;}
+#planet-lights div:nth-of-type(34) {top: 60%; left: 10%;}
 
 @keyframes planet-slide {
   from {transform: translateX(95vw);}
