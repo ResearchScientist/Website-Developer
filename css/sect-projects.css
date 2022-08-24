@@ -98,16 +98,16 @@
   box-shadow: inset 0 4px 1px -3px rgba(250,250,250,.7);
 }
 
-#planet-curves {
-  width: 100%;
-  height: 100%;
-}
-
 #planet-curves path {
+  stroke: white;
+  stroke-width: 0.3;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   animation: dashing 2s linear forwards;
 }
+
+#planet-curves path:nth-of-type(2) {animation-delay: .5s;}
+#planet-curves path:nth-of-type(3) {animation-delay: .75s; stroke: orange;}
 
 @keyframes dashing {
   0% {stroke-dashoffset: 1;}
