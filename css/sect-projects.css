@@ -103,6 +103,18 @@
   height: 100%;
 }
 
+#planet-curves path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dashing 2s linear forwards;
+}
+
+@keyframes dashing {
+  0% {stroke-dashoffset: 1;}
+  50% {stroke-dashoffset: 0;}
+  100% {stroke-dashoffset: -1;}
+}
+
 #planet-lights {
   width: 100%;
   height: 100%;
