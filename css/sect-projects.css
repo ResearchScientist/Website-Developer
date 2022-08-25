@@ -9,7 +9,7 @@
   justify-self: center;
   align-self: center;
   background: radial-gradient(circle at top, var(--planet-e) 62%);
-  /* transform: translateX(95vw); */
+  transform: translateX(95vw);
 }
 
 #planet-e1-space , #planet-e2-space {
@@ -103,16 +103,17 @@
   stroke-width: 0.3;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: dashing 2s linear forwards;
 }
 
-#planet-curves path:nth-of-type(2) {animation-delay: .5s;}
-#planet-curves path:nth-of-type(3) {animation-delay: .75s; stroke: var(--text-white); stroke-width: 0.4;}
-#planet-curves path:nth-of-type(4) {animation-delay: .2s;}
-#planet-curves path:nth-of-type(5) {animation-delay: .5s; stroke: var(--text-black); stroke-width: 0.2;}
-#planet-curves path:nth-of-type(6) {animation-delay: .4s; stroke: var(--text-white); stroke-width: 0.4;}
-#planet-curves path:nth-of-type(7) {animation-delay: .3s;}
-#planet-curves path:nth-of-type(9) {animation-delay: .5s; stroke: var(--text-black); stroke-width: 0.2;}
+.animate-planet-curve {animation: dashing 2s 7s linear forwards;}
+
+#planet-curves path:nth-of-type(2) {animation-delay: 7.5s;}
+#planet-curves path:nth-of-type(3) {animation-delay: 7.75s; stroke: var(--text-white); stroke-width: 0.4;}
+#planet-curves path:nth-of-type(4) {animation-delay: 7.2s;}
+#planet-curves path:nth-of-type(5) {animation-delay: 7.5s; stroke: var(--text-black); stroke-width: 0.2;}
+#planet-curves path:nth-of-type(6) {animation-delay: 7.4s; stroke: var(--text-white); stroke-width: 0.4;}
+#planet-curves path:nth-of-type(7) {animation-delay: 7.3s;}
+#planet-curves path:nth-of-type(9) {animation-delay: 7.5s; stroke: var(--text-black); stroke-width: 0.2;}
 
 @keyframes dashing {
   0% {stroke-dashoffset: 1;}

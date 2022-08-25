@@ -52,6 +52,7 @@ function scrollStarField(e) {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
     planetMoonSlide();
+    planetCurvesAppear();
     projectSkillsAppear();
   }
   if (mainNavAnchor == 'resume') {
@@ -85,6 +86,16 @@ function planetMoonSlide() {
   moonE.classList.add('animate-moon');
   planetE1.classList.add('animate-planet-e1-align');
   planetE2.classList.add('animate-planet-e2-align');
+}
+
+// PLANET CURVES
+
+const planetCurves = document.querySelectorAll('.planet-curve');
+
+function planetCurvesAppear() {
+  planetCurves.forEach((planetCurve) => {
+    planetCurve.classList.add('animate-planet-curve');
+  });
 }
 
 // PROJECT TYPES APPEAR
