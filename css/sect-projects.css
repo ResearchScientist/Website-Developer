@@ -99,7 +99,7 @@
 }
 
 #planet-curves path {
-  stroke: white;
+  stroke: var(--text-blue);
   stroke-width: 0.3;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
@@ -107,7 +107,12 @@
 }
 
 #planet-curves path:nth-of-type(2) {animation-delay: .5s;}
-#planet-curves path:nth-of-type(3) {animation-delay: .75s; stroke: orange;}
+#planet-curves path:nth-of-type(3) {animation-delay: .75s; stroke: var(--text-white); stroke-width: 0.4;}
+#planet-curves path:nth-of-type(4) {animation-delay: .2s;}
+#planet-curves path:nth-of-type(5) {animation-delay: .5s; stroke: var(--text-black); stroke-width: 0.2;}
+#planet-curves path:nth-of-type(6) {animation-delay: .4s; stroke: var(--text-white); stroke-width: 0.4;}
+#planet-curves path:nth-of-type(7) {animation-delay: .3s;}
+#planet-curves path:nth-of-type(9) {animation-delay: .5s; stroke: var(--text-black); stroke-width: 0.2;}
 
 @keyframes dashing {
   0% {stroke-dashoffset: 1;}
@@ -118,7 +123,6 @@
 #planet-lights {
   width: 100%;
   height: 100%;
-  /* border: 1px solid white; */
   position: relative;
 }
 
