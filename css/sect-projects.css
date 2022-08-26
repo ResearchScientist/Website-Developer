@@ -221,7 +221,7 @@
 }
 
 .animate-project-types {
-  animation: project-types-appear 4s linear forwards;
+  animation: project-types-appear 3s linear forwards;
 }
 
 #pr-sk-1 {
@@ -236,7 +236,7 @@
   grid-row: -2/-1;
   align-self: flex-start;
   justify-self: center;
-  animation-delay: 16s;
+  animation-delay: 15s;
 }
 
 #pr-sk-3 {
@@ -244,7 +244,7 @@
   grid-row: 1/2;
   align-self: flex-end;
   justify-self: center;
-  animation-delay: 20s;
+  animation-delay: 18s;
 }
 
 #pr-sk-4 {
@@ -252,7 +252,7 @@
   grid-row: 2/3;
   align-self: flex-start;
   justify-self: center;
-  animation-delay: 24s;
+  animation-delay: 21s;
 }
 
 #pr-sk-5 {
@@ -260,7 +260,7 @@
   grid-row: 2/3;
   align-self: flex-end;
   justify-self: center;
-  animation-delay: 28s;
+  animation-delay: 24s;
 }
 
 .project-skills p {
