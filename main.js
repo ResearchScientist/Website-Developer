@@ -53,6 +53,7 @@ function scrollStarField(e) {
     nearField.style.transform = 'translateY(-10vh)';
     planetMoonSlide();
     planetCurvesAppear();
+    planetLightsOn();
     projectSkillsAppear();
   }
   if (mainNavAnchor == 'resume') {
@@ -95,6 +96,16 @@ const planetCurves = document.querySelectorAll('.planet-curve');
 function planetCurvesAppear() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.add('animate-planet-curve');
+  });
+}
+
+// PLANET LIGHTS
+
+const planetLights = document.querySelectorAll('.planet-light');
+
+function planetLightsOn() {
+  planetLights.forEach((planetLight) => {
+    planetLight.classList.add('planet-lights-on');
   });
 }
 

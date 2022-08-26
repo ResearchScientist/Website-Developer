@@ -9,7 +9,7 @@
   justify-self: center;
   align-self: center;
   background: radial-gradient(circle at top, var(--planet-e) 62%);
-  /* transform: translateX(95vw); */
+  transform: translateX(95vw);
 }
 
 #planet-e1-space , #planet-e2-space {
@@ -141,31 +141,34 @@
   width: 4px;
   height: 4px;
   position: absolute;
+  opacity: 0;
   background-color: orange;
 }
 
-#planet-lights div:nth-of-type(1) {top: 50%; left: 4%;}
-#planet-lights div:nth-of-type(2) {top: 60%; left: 10%;}
-#planet-lights div:nth-of-type(3) {top: 61%; left: 30%;}
-#planet-lights div:nth-of-type(4) {top: 62%; left: 34%;}
-#planet-lights div:nth-of-type(5) {top: 63%; left: 70%;}
-#planet-lights div:nth-of-type(6) {top: 60%; left: 80%;}
-#planet-lights div:nth-of-type(7) {top: 54%; left: 90%;}
-#planet-lights div:nth-of-type(8) {top: 70%; left: 22%;}
-#planet-lights div:nth-of-type(9) {top: 80%; left: 40%;}
-#planet-lights div:nth-of-type(10) {top: 81.5%; left: 17.5%;}
-#planet-lights div:nth-of-type(11) {top: 83%; left: 19%;}
-#planet-lights div:nth-of-type(12) {top: 84.5%; left: 20.5%;}
-#planet-lights div:nth-of-type(13) {top: 70%; left: 48%;}
-#planet-lights div:nth-of-type(14) {top: 70.4%; left: 50%;}
-#planet-lights div:nth-of-type(15) {top: 70%; left: 52%;}
-#planet-lights div:nth-of-type(16) {top: 98%; left: 48%;}
-#planet-lights div:nth-of-type(17) {top: 98.3%; left: 50%;}
-#planet-lights div:nth-of-type(18) {top: 98%; left: 52%;}
-#planet-lights div:nth-of-type(19) {top: 97.8%; left: 46%;}
-#planet-lights div:nth-of-type(20) {top: 97.8%; left: 54%;}
-#planet-lights div:nth-of-type(21) {top: 80%; left: 80%;}
-#planet-lights div:nth-of-type(22) {top: 60%; left: 10%;}
+.planet-lights-on {animation: planetLightsOn 1s 9s linear forwards;}
+
+#planet-lights div:nth-of-type(1) {top: 50%; left: 4%; animation-delay: 9.1s;}
+#planet-lights div:nth-of-type(2) {top: 60%; left: 10%; animation-delay: 9.2s;}
+#planet-lights div:nth-of-type(3) {top: 61%; left: 30%; animation-delay: 9.3s;}
+#planet-lights div:nth-of-type(4) {top: 62%; left: 34%; animation-delay: 9.4s;}
+#planet-lights div:nth-of-type(5) {top: 63%; left: 70%; animation-delay: 9.5s;}
+#planet-lights div:nth-of-type(6) {top: 60%; left: 80%; animation-delay: 9.6s;}
+#planet-lights div:nth-of-type(7) {top: 54%; left: 90%; animation-delay: 9.7s;}
+#planet-lights div:nth-of-type(8) {top: 70%; left: 22%; animation-delay: 9.8s;}
+#planet-lights div:nth-of-type(9) {top: 80%; left: 40%; animation-delay: 9.9s;}
+#planet-lights div:nth-of-type(10) {top: 81.5%; left: 17.5%; animation-delay: 10s;}
+#planet-lights div:nth-of-type(11) {top: 83%; left: 19%; animation-delay: 10.1s;}
+#planet-lights div:nth-of-type(12) {top: 84.5%; left: 20.5%; animation-delay: 10.2s;}
+#planet-lights div:nth-of-type(13) {top: 70%; left: 48%; animation-delay: 10.3s;}
+#planet-lights div:nth-of-type(14) {top: 70.4%; left: 50%; animation-delay: 10.4s;}
+#planet-lights div:nth-of-type(15) {top: 70%; left: 52%; animation-delay: 10.5s;}
+#planet-lights div:nth-of-type(16) {top: 98%; left: 48%; animation-delay: 10.6s;}
+#planet-lights div:nth-of-type(17) {top: 98.3%; left: 50%; animation-delay: 10.7s;}
+#planet-lights div:nth-of-type(18) {top: 98%; left: 52%; animation-delay: 10.8s;}
+#planet-lights div:nth-of-type(19) {top: 97.8%; left: 46%; animation-delay: 10.9s;}
+#planet-lights div:nth-of-type(20) {top: 97.8%; left: 54%; animation-delay: 11s;}
+#planet-lights div:nth-of-type(21) {top: 80%; left: 80%; animation-delay: 11.1s;}
+#planet-lights div:nth-of-type(22) {top: 60%; left: 10%; animation-delay: 11.2s;}
 
 @keyframes planet-slide {
   from {transform: translateX(95vw);}
@@ -177,6 +180,11 @@
   50% {transform: translateX(0vw);}
   60% {transform: translateX(0vw);}
   100% {transform: translateX(75vw);}
+}
+
+@keyframes planetLightsOn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @keyframes planet-shrink {
@@ -196,7 +204,6 @@
 
 .project-skills {
   width: 180px;
-  /* height: 2px; */
   display: flex;
   color: white;
   opacity: 0;
@@ -204,7 +211,6 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  /* border: 1px solid white; */
 }
 
 @keyframes project-types-appear {
@@ -381,11 +387,4 @@
   color: white;
   z-index: inherit;
   opacity: 0;
-}
-
-#updated {
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-  justify-self: center;
-  color: var(--text-white);
 }
