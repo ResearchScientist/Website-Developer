@@ -37,7 +37,7 @@
 }
 
 #planet-e2 {
-  transform: translateY(calc(50vh - 22.5vw));
+  transform: translateY(50vh);
   z-index: 1;
 }
 
