@@ -37,7 +37,7 @@
 }
 
 #planet-e2 {
-  transform: translateY(100vh);
+  transform: translateY(calc(50vh - 22.5vw));
   z-index: 1;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .animate-planet {
-  animation: planet-slide 4s linear forwards, planet-shrink 2s 28s linear forwards;
+  animation: planet-slide 4s linear forwards, planet-shrink 2s 27s linear forwards;
 }
 
 .animate-moon {
@@ -64,11 +64,11 @@
 }
 
 .animate-planet-e1-align {
-  animation: planet-e1-align 4s 28s linear forwards;
+  animation: planet-e1-align 4s 29s linear forwards;
 }
 
 .animate-planet-e2-align {
-  animation: planet-e2-align 4s 28s linear forwards;
+  animation: planet-e2-align 4s 29s linear forwards;
 }
 
 #planet-shine {
@@ -199,7 +199,7 @@
 
 @keyframes planet-e2-align {
   from {transform: translateY(100vh);}
-  to {transform: translateY(60vh);}
+  to {transform: translateY(50vh);}
 }
 
 .project-skills {
