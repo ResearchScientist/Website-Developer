@@ -12,9 +12,9 @@
 /* } */
 
 @media screen and (orientation: landscape) {
+  #planet-e {width: 95vh; height: 95vh;}
+  #planet-e1 {width: 45vh; height: 45vh; transform: translateY(27.5vh);}
   #planet-e2 {width: 45vh; height: 45vh; transform: translateY(27.5vh);}
+  #planet-shine {width: 95vh; height: 95vh;}
+  #planet-e1-shine , #planet-e2-shine {width: 45vh; height: 45vh;}
 }
-
-/* @media screen and (min-width: 100vh)  {
-  #planet-e2 {width: 45vh; height: 45vh;}
-} */

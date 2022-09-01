@@ -1,15 +1,13 @@
 #planet-e {
   width: 95vw;
   height: 95vw;
-  max-width: 625px;
-  max-height: 625px;
   border-radius: 50%;
   grid-column: 1/-1;
   grid-row: 2/3;
   justify-self: center;
   align-self: center;
   background: radial-gradient(circle at top, var(--planet-e) 62%);
-  transform: translateX(95vw);
+  transform: translateX(100vw);
 }
 
 #planet-e1-space , #planet-e2-space {
@@ -26,8 +24,6 @@
 #planet-e1 , #planet-e2 {
   width: 45vw;
   height: 45vw;
-  max-width: 300px;
-  max-height: 300px;
   border-radius: 50%;
   justify-self: center;
   align-self: flex-start;
@@ -37,7 +33,7 @@
 }
 
 #planet-e2 {
-  transform: translateY(50vh);
+  transform: translateY(100vh);
   z-index: 1;
 }
 
@@ -74,8 +70,6 @@
 #planet-shine {
   width: 95vw;
   height: 95vw;
-  max-width: 625px;
-  max-height: 625px;
   border-radius: 50%;
   box-shadow: inset 0 5px 1px -3px rgba(250,250,250,.7);
   display: grid;
@@ -86,8 +80,6 @@
 #planet-e1-shine , #planet-e2-shine {
   width: 45vw;
   height: 45vw;
-  max-width: 300px;
-  max-height: 300px;
   border-radius: 50%;
   box-shadow: inset 0 5px 1px -3px rgba(250,250,250,.7);
 }
@@ -171,7 +163,7 @@
 #planet-lights div:nth-of-type(22) {top: 60%; left: 10%; animation-delay: 11.2s;}
 
 @keyframes planet-slide {
-  from {transform: translateX(95vw);}
+  from {transform: translateX(100vw);}
   to {transform: translateX(0vw);}
 }
 
@@ -193,13 +185,13 @@
 }
 
 @keyframes planet-e1-align {
-  from {transform: translateY(calc(0vh - 22.5vw));}
-  to {transform: translateY(18vh);}
+  from {transform: translateY(-45vw);}
+  to {transform: translateY(calc(50vh - 22.5vw));}
 }
 
 @keyframes planet-e2-align {
   from {transform: translateY(100vh);}
-  to {transform: translateY(50vh);}
+  to {transform: translateY(calc(50vh - 22.5vw));}
 }
 
 .project-skills {
