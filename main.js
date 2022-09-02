@@ -81,12 +81,14 @@ const planetE = document.getElementById('planet-e');
 const moonE = document.getElementById('moon-e');
 const planetE1 =document.getElementById('planet-e1');
 const planetE2 =document.getElementById('planet-e2');
+const planetAirglow = document.getElementById('planet-airglow');
 
 function planetMoonSlide() {
   planetE.classList.add('animate-planet');
   moonE.classList.add('animate-moon');
   planetE1.classList.add('animate-planet-e1-align');
   planetE2.classList.add('animate-planet-e2-align');
+  planetAirglow.classList.add('animate-planet-airglow');
 }
 
 // PLANET CURVES
