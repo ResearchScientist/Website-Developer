@@ -11,6 +11,14 @@ a {
   color: var(--text-black);
 }
 
+button {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
 html,main {
   height: 100%;
 }
