@@ -121,6 +121,23 @@ function projectSkillsAppear() {
   });
 }
 
+// PROJECT NAVIGATION
+
+const projectWindowSection = document.getElementById('project-window-section');
+const projectWindow = document.getElementById('project-window');
+const researchButton = document.getElementById('pwb-research');
+const designButton = document.getElementById('pwb-design');
+const developmentButton = document.getElementById('pwb-development');
+
+researchButton.addEventListener('click',projectWindowDown);
+designButton.addEventListener('click',projectWindowDown);
+developmentButton.addEventListener('click',projectWindowDown);
+
+function projectWindowDown() {
+  projectWindow.classList.add('project-window-down');
+  projectWindowSection.style.zIndex = '2';
+}
+
 // NAVIGATION FOOTER TOP
 
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
