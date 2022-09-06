@@ -125,6 +125,7 @@ function projectSkillsAppear() {
 
 const projectWindowSection = document.getElementById('project-window-section');
 const projectWindow = document.getElementById('project-window');
+const projectWindowButtonClose = document.getElementById('project-window-button-close');
 const researchButton = document.getElementById('pwb-research');
 const designButton = document.getElementById('pwb-design');
 const developmentButton = document.getElementById('pwb-development');
@@ -132,10 +133,22 @@ const developmentButton = document.getElementById('pwb-development');
 researchButton.addEventListener('click',projectWindowDown);
 designButton.addEventListener('click',projectWindowDown);
 developmentButton.addEventListener('click',projectWindowDown);
+projectWindowButtonClose.addEventListener('click',projectWindowUp);
 
 function projectWindowDown() {
+  projectWindow.classList.remove('project-window-up');
   projectWindow.classList.add('project-window-down');
   projectWindowSection.style.zIndex = '2';
+}
+
+function projectWindowUp() {
+  projectWindow.classList.add('project-window-up');
+  projectWindow.classList.remove('project-window-down');
+  setTimeout(resetZindex,1000);
+}
+
+function resetZindex() {
+  projectWindowSection.style.zIndex = '1';
 }
 
 // NAVIGATION FOOTER TOP
