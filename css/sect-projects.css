@@ -283,12 +283,15 @@
   justify-self: center;
   align-self: center;
   grid-column: 2/-2;
-  background-color: var(--text-black);
+  color: var(--primary-blue);
+  background-color: var(--main-dark);
+  box-shadow: 0 0 10px var(--primary-blue);
   z-index: 2;
 }
 
 .project-window-button:hover {
-  background-color: var(--primary-blue);
+  /* background-color: var(--primary-blue); */
+  box-shadow: 0 0 20px var(--primary-blue);
 }
 
 /* .project-window-button:active {
@@ -299,9 +302,9 @@
   border: 1px solid var(--primary-blue);
 }
 
-#projects button:nth-of-type(1) {grid-row: 1/2;}
+#projects button:nth-of-type(1) {grid-row: 1/2; align-self: flex-end;}
 #projects button:nth-of-type(2) {grid-row: 2/3;}
-#projects button:nth-of-type(3) {grid-row: 3/4;}
+#projects button:nth-of-type(3) {grid-row: 3/4; align-self: flex-start;}
 
 #project-window-section {
   width: 100%;
