@@ -278,11 +278,12 @@
 }
 
 .project-window-button {
-  width: 100px;
+  width: 120px;
   height: 50px;
   justify-self: center;
   align-self: center;
   grid-column: 2/-2;
+  font-family: 'Lato', sans-serif;
   color: var(--primary-blue);
   background-color: var(--main-dark);
   box-shadow: 0 0 10px var(--primary-blue);
@@ -347,5 +348,4 @@
   height: 200vh;
   width: 100%;
   background-color: orange;
-  
 }
