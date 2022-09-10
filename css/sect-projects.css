@@ -363,6 +363,17 @@
   to {transform: translateY(-100vh);}
 }
 
+#project-window header {
+  width: 100%;
+  max-width: 100%;
+  background-color: pink;
+}
+
+#project-window header h3 {
+  margin: 0 auto;
+  text-align: center;
+}
+
 #window-stuff {
   height: 200vh;
   width: 100%;
