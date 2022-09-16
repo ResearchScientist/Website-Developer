@@ -55,6 +55,7 @@ function scrollStarField(e) {
     planetCurvesAppear();
     planetLightsOn();
     projectSkillsAppear();
+    projectWindowButtonSlide();
   }
   if (mainNavAnchor == 'resume') {
     console.log('yes its resume');
@@ -118,6 +119,16 @@ const projectSkills = document.querySelectorAll('.project-skills');
 function projectSkillsAppear() {
   projectSkills.forEach((projectSkill) => {
     projectSkill.classList.add('animate-project-types');
+  });
+}
+
+// PROJECT BUTTONS SLIDE
+
+const projectWindowButtons = document.querySelectorAll('.project-window-button');
+
+function projectWindowButtonSlide() {
+  projectWindowButtons.forEach((projectWindowButton) => {
+    projectWindowButton.classList.add('animate-project-window-buttons');
   });
 }
 

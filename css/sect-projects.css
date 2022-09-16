@@ -287,10 +287,11 @@
   grid-template-rows: repeat(3,33%);
   align-items: center;
   justify-items: center;
+  overflow: hidden;
 }
 
-#project-window-buttons-nav button:nth-of-type(1) {grid-row: 1/2; align-self: flex-end;}
-#project-window-buttons-nav button:nth-of-type(2) {grid-row: 2/3;}
+#project-window-buttons-nav button:nth-of-type(1) {grid-row: 1/2; align-self: flex-end; animation-delay: 34.4s;}
+#project-window-buttons-nav button:nth-of-type(2) {grid-row: 2/3; animation-delay: 34.2s;}
 #project-window-buttons-nav button:nth-of-type(3) {grid-row: 3/4; align-self: flex-start;}
 
 .project-window-button {
@@ -301,8 +302,7 @@
   background-color: var(--main-dark);
   box-shadow: 0 0 10px var(--primary-blue);
   z-index: 2;
-  /* visibility: hidden; */
-  /* transform: translateY(-100vh); */
+  transform: translateY(-100vh);
 }
 
 .project-window-button:hover {
@@ -316,6 +316,15 @@
 
 .project-window-button:focus {
   border: 1px solid var(--primary-blue);
+}
+
+.animate-project-window-buttons { 
+  animation: buttons-slide 1s 34s ease-out forwards;
+}
+
+@keyframes buttons-slide {
+  from {transform: translateY(-100vh);}
+  to {transform: translateY(0);}
 }
 
 /* PROJECT WINDOW */
