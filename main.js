@@ -124,7 +124,7 @@ function projectSkillsAppear() {
 // PROJECT NAVIGATION
 
 const projectWindowSection = document.getElementById('project-window-section');
-const projectWindow = document.getElementById('project-window');
+const projectWindow = document.getElementById('project-window-research');
 const projectWindowButtonClose = document.getElementById('project-window-button-close');
 const researchButton = document.getElementById('pwb-research');
 const designButton = document.getElementById('pwb-design');
