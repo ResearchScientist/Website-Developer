@@ -135,38 +135,50 @@ function projectWindowButtonSlide() {
 // PROJECT NAVIGATION
 
 const projectWindowSection = document.getElementById('project-window-section');
-const projectWindow = document.getElementById('project-window-research');
+// var projectWindow = document.getElementById('project-window-research');
 const projectWindowButtonClose = document.getElementById('project-window-button-close');
 const projectWindowButtonsNav = document.getElementById('project-window-buttons-nav');
-const researchButton = document.getElementById('pwb-research');
-const designButton = document.getElementById('pwb-design');
-const developmentButton = document.getElementById('pwb-development');
+// const researchButton = document.getElementById('pwb-research');
+// const designButton = document.getElementById('pwb-design');
+// const developmentButton = document.getElementById('pwb-development');
 
 projectWindowButtonsNav.addEventListener('click',tellMe);
 // researchButton.addEventListener('click',projectWindowDown);
 // designButton.addEventListener('click',projectWindowDown);
 // developmentButton.addEventListener('click',projectWindowDown);
-projectWindowButtonClose.addEventListener('click',projectWindowUp);
+projectWindowButtonClose.addEventListener('click',projectWindowUp());
+
+
 
 function tellMe(evt) {
   var projectButtonClicked = evt.target.id;
   projectButtonClicked = projectButtonClicked.slice(4);
-  console.log(projectButtonClicked);
-  projectWindowDown();
-  // return projectButtonClicked;
+  var buttonId = 'project-window'.concat('-',projectButtonClicked);
+  windowId = document.getElementById(`${buttonId}`);
+  console.log('window id is', windowId);
+  projectWindowDown(windowId);
 }
 
 // console.log(projectButtonClicked);
 
-function projectWindowDown() {
-  projectWindow.classList.remove('project-window-up');
-  projectWindow.classList.add('project-window-down');
+function projectWindowDown(windowId) {
+  // var projectWindow = document.getElementById('project-window-research');
+  // var projectWindow = document.getElementById(buttonId);
+  // console.log(projectWindow);
+  // projectWindow.classList.remove('project-window-up');
+  // projectWindow.classList.add('project-window-down');
+  windowId.classList.remove('project-window-up');
+  windowId.classList.add('project-window-down');
   projectWindowSection.style.zIndex = '2';
+  // console.log(buttonId);
+  // console.log(projectButtonClicked);
 }
 
 function projectWindowUp() {
-  projectWindow.classList.add('project-window-up');
-  projectWindow.classList.remove('project-window-down');
+  // projectWindow.classList.add('project-window-up');
+  // projectWindow.classList.remove('project-window-down');
+  windowId.classList.add('project-window-up');
+  windowId.classList.remove('project-window-down');
   setTimeout(resetZindex,1000);
 }
 
