@@ -143,14 +143,20 @@ const designButton = document.getElementById('pwb-design');
 const developmentButton = document.getElementById('pwb-development');
 
 projectWindowButtonsNav.addEventListener('click',tellMe);
-researchButton.addEventListener('click',projectWindowDown);
-designButton.addEventListener('click',projectWindowDown);
-developmentButton.addEventListener('click',projectWindowDown);
+// researchButton.addEventListener('click',projectWindowDown);
+// designButton.addEventListener('click',projectWindowDown);
+// developmentButton.addEventListener('click',projectWindowDown);
 projectWindowButtonClose.addEventListener('click',projectWindowUp);
 
 function tellMe(evt) {
-  console.log(evt.target.id);
+  var projectButtonClicked = evt.target.id;
+  projectButtonClicked = projectButtonClicked.slice(4);
+  console.log(projectButtonClicked);
+  projectWindowDown();
+  // return projectButtonClicked;
 }
+
+// console.log(projectButtonClicked);
 
 function projectWindowDown() {
   projectWindow.classList.remove('project-window-up');
