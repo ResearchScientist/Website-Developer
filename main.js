@@ -137,6 +137,7 @@ function projectWindowButtonSlide() {
 const projectWindowSection = document.getElementById('project-window-section');
 var projectWindow = document.getElementById('project-window-research');
 const projectWindowButtonClose = document.getElementById('project-window-button-close');
+const projectWindowButtonsClose = document.getElementsByClassName('project-window-button-close');
 const projectWindowButtonsNav = document.getElementById('project-window-buttons-nav');
 // const researchButton = document.getElementById('pwb-research');
 // const designButton = document.getElementById('pwb-design');
@@ -146,17 +147,23 @@ projectWindowButtonsNav.addEventListener('click',tellMe);
 // researchButton.addEventListener('click',projectWindowDown);
 // designButton.addEventListener('click',projectWindowDown);
 // developmentButton.addEventListener('click',projectWindowDown);
-projectWindowButtonClose.addEventListener('click',projectWindowUp());
+// var windowId;
+projectWindowButtonClose.addEventListener('click',projectWindowUp);
 
-var windowId;
+
 
 function tellMe(evt) {
   var projectButtonClicked = evt.target.id;
   projectButtonClicked = projectButtonClicked.slice(4);
   var buttonId = 'project-window'.concat('-',projectButtonClicked);
   windowId = document.getElementById(`${buttonId}`);
-  console.log('window id is', windowId);
+  // console.log('tellMe says windowID is', windowId);
+  // console.log('target is ', evt.target.id);
+  // console.log('target is ', projectButtonClicked);
+  console.log('button is ', buttonId);
+  console.log('window id is ', windowId);
   projectWindowDown(windowId);
+  // return windowId;
 }
 
 function projectWindowDown(windowId) {
@@ -171,7 +178,6 @@ function projectWindowDown(windowId) {
   // console.log(buttonId);
   // console.log(projectButtonClicked);
   console.log('window id is', windowId);
-  return windowId;
 }
 
 
@@ -180,8 +186,13 @@ function projectWindowUp() {
   // projectWindow.classList.add('project-window-up');
   // projectWindow.classList.remove('project-window-down');
   console.log("clicked on " , windowId);
-  // windowId.classList.add('project-window-up');
-  // windowId.classList.remove('project-window-down');
+  windowId.classList.add('project-window-up');
+  windowId.classList.remove('project-window-down');
+  console.log("window now up " , windowId);
+  // look more at this one
+  projectWindowButtonsClose.forEach((wID) => {
+    console.log({wID});
+  });
   setTimeout(resetZindex,1000);
 }
 
