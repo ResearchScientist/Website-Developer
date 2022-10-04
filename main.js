@@ -43,12 +43,10 @@ function scrollStarField(e) {
   var mainNavAnchor = e.target.dataset.mainnav;
 
   if (mainNavAnchor == 'about') {
-    console.log('yes its about');
     midField.style.transform = 'translateY(-2vh)';
     nearField.style.transform = 'translateY(-5vh)';
   }
   if (mainNavAnchor == 'projects') {
-    console.log('yes its projects');
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
     planetMoonSlide();
@@ -58,12 +56,10 @@ function scrollStarField(e) {
     projectWindowButtonSlide();
   }
   if (mainNavAnchor == 'resume') {
-    console.log('yes its resume');
     midField.style.transform = 'translateY(-6vh)';
     nearField.style.transform = 'translateY(-15vh)';
   }
   if (mainNavAnchor == 'contact') {
-    console.log('yes its contact');
     midField.style.transform = 'translateY(-8vh)';
     nearField.style.transform = 'translateY(-20vh)';
   }
@@ -156,13 +152,11 @@ function projectWindowDown() {
   windowId.classList.remove('project-window-up');
   windowId.classList.add('project-window-down');
   projectWindowSection.style.zIndex = '2';
-  console.log('window down id is ', windowId);
 }
 
 function projectWindowUp() {
   windowId.classList.add('project-window-up');
   windowId.classList.remove('project-window-down');
-  console.log("window up id is" , windowId);
   setTimeout(resetZindex,1000);
 }
 
