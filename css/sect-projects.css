@@ -348,12 +348,10 @@
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 10vh 10vh 10vh 40vh 30vh 100vh;
+  grid-template-rows: 10vh 10vh 10vh 40vh 30vh;
   align-items: center;
   justify-items: center;
   background-color: rgb(30,30,30);
-  overflow-y: scroll;
-  scroll-behavior: smooth;
   transform: translateY(-100vh);
 }
 
@@ -468,17 +466,6 @@
   padding: 2px 6px;
   font-size: 10px;
   background: rgb(175,175,175);
-}
-
-#top-bar {
-  width: calc(100vw - 6.75vh - 34px);
-  height: 5vh;
-  margin: 0 0 0 2.25vh;
-  grid-row: 1/2;
-  grid-column: 1/-1;
-  background-color: var(--text-black);
-  box-shadow: inset 0px 6px 6px rgba(50,50,50,.75);
-  justify-self: flex-start;
 }
 
 #project-window-footer {
