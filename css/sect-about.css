@@ -218,6 +218,8 @@
   animation: smoke-text 28s linear infinite;
 }
 
+/* change this to animate on click */
+
 #QD,#TSRI,#PGRD,#UCSC {
   grid-column: 1/1;
   grid-row: 1/1;
