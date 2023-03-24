@@ -21,3 +21,7 @@ Decided to make the houses on the planet as line drawings. This will keep with t
 `{ 9f46cbd1 }`
 
 Really wanted a variable content drop down section on click. Initially was going to use the shadow dom and custom elements but since those are not indexable by search bots I decided to save their implementation for another project. Instead I made use of flex grid and overflow hidden to obtain the effect I wanted. Pretty happy with the result.
+
+> Thur 23 Mar
+
+Issues with vs code not able to clone or make new repos on github.
