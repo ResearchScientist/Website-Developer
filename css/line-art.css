@@ -67,23 +67,21 @@
 }
 
 #nacelle1 {
-  width: 50px;
+  width: 1px;
   height: 1px;
   margin-top: 4px;
   grid-column: 1/-1;
   grid-row: 1/-1;
   align-self: flex-start;
-  background-color: red;
 }
 
 #nacelle2 {
-  width: 100px;
+  width: 1px;
   height: 1px;
   margin-bottom: 4px;
   grid-column: 1/-1;
   grid-row: 1/-1;
   align-self: flex-end;
-  background-color: red;
 }
 
 .nacelle {
@@ -110,24 +108,13 @@
 
 .warp-signature {
   height: 1px;
-  /* grid-column: 1/-1;
-  grid-row: 2/3; */
-  /* align-self: flex-start; */
   background-color: var(--primary-blue);
   animation: warp-signature 3.75s ease-in forwards;
 }
 
-/* .warp-signature:nth-of-type(1) {
-  margin: calc(15vh + 4px) 0 0;
-}
-
-.warp-signature:nth-of-type(2) {
-  margin: calc(15vh + 15px) 0 0;
-} */
-
 @keyframes warp-signature {
-  0% {width: 1px; transform: translateX(0); opacity: .5;}
-  66% {width: 100vw; transform: translateX(50vw); opacity: .5;}
+  0% {width: 1px; transform: translateX(15px); opacity: .5;}
+  66% {width: 50vw; transform: translateX(50vw); opacity: .5;}
   100% {width: 100vw; transform: translateX(50vw); opacity: 0;}
 }
 
