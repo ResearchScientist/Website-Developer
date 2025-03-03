@@ -1,5 +1,5 @@
 #resume {
-  grid-template-rows: 33% 16.5% 16.5% 33%;
+  grid-template-rows: 70px 33% 33% calc(33% - 70px);
 }
 
 /* INFO CARDS */
