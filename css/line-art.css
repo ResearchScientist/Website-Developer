@@ -47,17 +47,20 @@
 /* STARSHIP */
 
 #starship-path {
-  height: 20px;
+  height: 22px;
   grid-column: 1/-1;
   grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 20px;
+  background-color: rgba(100,200,200,.5);
 }
 
 #starship {
   width: 30px;
-  /* grid-column: 1/2;
-  grid-row: 2/3;
-  align-self: flex-start; */
-  /* margin: 15vh 0 0; */
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  align-self: center;
   transform: translateX(15px);
   fill: var(--text-blue);
   stroke: var(--text-blue);
@@ -66,7 +69,20 @@
 
 #nacelle1 {
   width: 50px;
-  height: 2px;
+  height: 1px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  align-self: flex-start;
+  background-color: red;
+}
+
+#nacelle2 {
+  width: 100px;
+  height: 1px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  align-self: flex-end;
+  background-color: red;
 }
 
 .nacelle {
@@ -93,8 +109,8 @@
 
 .warp-signature {
   height: 1px;
-  grid-column: 1/-1;
-  grid-row: 2/3;
+  /* grid-column: 1/-1;
+  grid-row: 2/3; */
   /* align-self: flex-start; */
   background-color: var(--primary-blue);
   animation: warp-signature 3.75s ease-in forwards;
