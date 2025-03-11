@@ -9,6 +9,14 @@ img > * {
   pointer-events: none;
 }
 
+#spaceport {
+  width: 500px;
+  grid-column: 1/-1;
+  grid-row: 2/-1;
+  justify-self: center;
+  align-self: flex-end;
+}
+
 #astronaut {
   width: 150px;
   margin: -160px 0 0;
@@ -92,16 +100,4 @@ img > * {
 @keyframes rocketThrust {
   from {transform: rotate(54deg) translate(2px,35px);}
   to {transform: rotate(54deg) translate(2px,70px);}
-}
-
-.nebula:nth-of-type(1) {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  opacity: .3;
-}
-
-.illustration {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  z-index: 10;
 }
