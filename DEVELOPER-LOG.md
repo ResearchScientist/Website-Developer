@@ -26,8 +26,14 @@ Really wanted a variable content drop down section on click. Initially was going
 
 Issues with vs code not able to clone or make new repos on github.
 
+<<<<<<< HEAD
 # Development Workflow Change
 
 For improved workflow and separation of concerns I implemented separate logs for development and feature branches.
 
 Will no longer be adding entries to this particular log.
+=======
+> Mar 2025
+
+Including development and feature branches in workflow.
+>>>>>>> projects
