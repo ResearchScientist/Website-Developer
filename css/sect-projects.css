@@ -1,17 +1,31 @@
 #ship-section {
+  /* grid-column: 1/-1;
+  grid-row: 1/-1; */
+  width: 100%;
+  height: 100%;
   grid-column: 1/-1;
-  grid-row: 1/-1;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
 #bay-doors {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: 100vh;
   overflow: hidden;
-  margin-top: -100px;
+  /* margin-top: -100px; */
+  /* transform: translateY(-100vh); */
 }
 
-#planet-e {
+/* #planet-e {
   width: 95vw;
   height: 95vw;
   border-radius: 50%;
@@ -25,7 +39,7 @@
   background: radial-gradient(circle at top, var(--planet-e) 62%);
   box-shadow: inset 0 5px 1px -3px rgba(250,250,250,.7);
   transform: translateX(100vw);
-}
+} */
 
 #planet-airglow {
   width: 95vw;
@@ -37,7 +51,7 @@
   opacity: 0;
 }
 
-#planet-e1-space , #planet-e2-space {
+/* #planet-e1-space , #planet-e2-space {
   width: 100%;
   height: 100%;
   grid-column: 1/-1;
@@ -46,9 +60,9 @@
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   overflow-y: hidden;
-}
+} */
 
-#planet-e1 , #planet-e2 {
+/* #planet-e1 , #planet-e2 {
   width: 45vw;
   height: 45vw;
   border-radius: 50%;
@@ -58,7 +72,7 @@
   transform: translateY(-45vw);
   z-index: -1;
   box-shadow: inset 0 5px 1px -3px rgba(250,250,250,.7);
-}
+} */
 
 #planet-e2 {
   transform: translateY(100vh);
@@ -80,7 +94,7 @@
   transform: translateX(-75vw);
 }
 
-.animate-planet {
+/* .animate-planet {
   animation: planet-slide 4s linear forwards, planet-shrink 2s 27s linear forwards, planet-fade 1s 33s linear forwards;
 }
 
@@ -98,7 +112,7 @@
 
 .animate-planet-airglow {
   animation: planet-airglow 2s 31s linear forwards, planet-fade 1s 33s linear forwards;
-}
+} */
 
 #planet-curves {
   width: 100%;
@@ -171,7 +185,7 @@
 #planet-lights div:nth-of-type(21) {top: 80%; left: 80%; animation-delay: 11.1s;}
 #planet-lights div:nth-of-type(22) {top: 60%; left: 10%; animation-delay: 11.2s;}
 
-@keyframes planet-slide {
+/* @keyframes planet-slide {
   from {transform: translateX(100vw);}
   to {transform: translateX(0vw);}
 }
@@ -181,19 +195,19 @@
   50% {transform: translateX(0vw);}
   60% {transform: translateX(0vw);}
   100% {transform: translateX(75vw);}
-}
+} */
 
 @keyframes planetLightsOn {
   from {opacity: 0;}
   to {opacity: 1;}
 }
 
-@keyframes planet-shrink {
+/* @keyframes planet-shrink {
   from {transform: scale(1)}
   to {transform: scale(.7)}
-}
+} */
 
-@keyframes planet-e1-align {
+/* @keyframes planet-e1-align {
   from {transform: translateY(-45vw);}
   to {transform: translateY(calc(50vh - 22.5vw));}
 }
@@ -201,17 +215,17 @@
 @keyframes planet-e2-align {
   from {transform: translateY(100vh);}
   to {transform: translateY(calc(50vh - 22.5vw));}
-}
+} */
 
 @keyframes planet-airglow {
   from {opacity: 0;}
   to {opacity: 1;}
 }
 
-@keyframes planet-fade {
+/* @keyframes planet-fade {
   from {opacity: 1;}
   to {opacity: 0;}
-}
+} */
 
 .project-skills {
   width: 180px;

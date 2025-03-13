@@ -14,7 +14,7 @@
 
 #landing {grid-row: 1/2;}
 #about {grid-row: 2/3;}
-#projects {grid-row: 3/4; max-width: 100%;}
+#projects {grid-row: 3/4;}
 #resume {grid-row: 4/5;}
 #contact {grid-row: 5/6;}
 

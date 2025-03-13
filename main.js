@@ -49,10 +49,10 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
-    planetMoonSlide();
-    planetCurvesAppear();
-    planetLightsOn();
-    projectSkillsAppear();
+    // planetMoonSlide();
+    // planetCurvesAppear();
+    // planetLightsOn();
+    // projectSkillsAppear();
     projectWindowButtonSlide();
   }
   if (mainNavAnchor == 'resume') {
@@ -74,19 +74,19 @@ function scrollToAbout() {
 
 // PLANET ALIGNMENT
 
-const planetE = document.getElementById('planet-e');
-const moonE = document.getElementById('moon-e');
-const planetE1 =document.getElementById('planet-e1');
-const planetE2 =document.getElementById('planet-e2');
-const planetAirglow = document.getElementById('planet-airglow');
+// const planetE = document.getElementById('planet-e');
+// const moonE = document.getElementById('moon-e');
+// const planetE1 =document.getElementById('planet-e1');
+// const planetE2 =document.getElementById('planet-e2');
+// const planetAirglow = document.getElementById('planet-airglow');
 
-function planetMoonSlide() {
-  planetE.classList.add('animate-planet');
-  moonE.classList.add('animate-moon');
-  planetE1.classList.add('animate-planet-e1-align');
-  planetE2.classList.add('animate-planet-e2-align');
-  planetAirglow.classList.add('animate-planet-airglow');
-}
+// function planetMoonSlide() {
+//   planetE.classList.add('animate-planet');
+//   moonE.classList.add('animate-moon');
+//   planetE1.classList.add('animate-planet-e1-align');
+//   planetE2.classList.add('animate-planet-e2-align');
+//   planetAirglow.classList.add('animate-planet-airglow');
+// }
 
 // PLANET CURVES
 
@@ -100,13 +100,13 @@ function planetCurvesAppear() {
 
 // PLANET LIGHTS
 
-const planetLights = document.querySelectorAll('.planet-light');
+// const planetLights = document.querySelectorAll('.planet-light');
 
-function planetLightsOn() {
-  planetLights.forEach((planetLight) => {
-    planetLight.classList.add('planet-lights-on');
-  });
-}
+// function planetLightsOn() {
+//   planetLights.forEach((planetLight) => {
+//     planetLight.classList.add('planet-lights-on');
+//   });
+// }
 
 // PROJECT TYPES APPEAR
 
