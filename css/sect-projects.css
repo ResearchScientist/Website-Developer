@@ -1,3 +1,11 @@
+#bay-doors {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 100vh;
+}
+
 #planet-e {
   width: 95vw;
   height: 95vw;
