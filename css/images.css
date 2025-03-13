@@ -49,7 +49,7 @@ img > * {
 #rocket {
   width: 170px;
   grid-column: 1/-1;
-  grid-row: -2/-1;
+  grid-row: 1/-1;
   transform: rotateZ(30deg);
   justify-self: center;
   align-self: center;

@@ -134,7 +134,7 @@ const projectWindowSection = document.getElementById('project-window-section');
 const projectWindowButtonsNav = document.getElementById('project-window-buttons-nav');
 const projectWindowButtonsClose = document.getElementsByClassName('project-window-button-close');
 
-projectWindowButtonsNav.addEventListener('click',tellMe);
+// projectWindowButtonsNav.addEventListener('click',tellMe);
 
 Array.from(projectWindowButtonsClose).forEach((closeButton) => {
   closeButton.addEventListener('click',projectWindowUp);
