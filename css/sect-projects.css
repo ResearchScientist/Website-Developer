@@ -1,9 +1,14 @@
-#bay-doors {
+#ship-section {
   grid-column: 1/-1;
   grid-row: 1/-1;
+}
+
+#bay-doors {
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: 100vh;
+  overflow: hidden;
+  margin-top: -100px;
 }
 
 #planet-e {
