@@ -59,7 +59,14 @@ img > * {
   height: 100%;
   grid-column: 1/-1;
   grid-row: 1/2;
-  margin-left: -31vw;
+  margin-left: -20.75vw;
+}
+
+#bay-door-R {
+  height: 100%;
+  grid-column: -1/1;
+  grid-row: 1/2;
+  margin-left: 20.75vw;
 }
 
 #satellite-3d {
