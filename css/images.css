@@ -97,23 +97,3 @@ img > * {
   from {transform: translate(0,0);}
   to {transform: translate(0,5px);}
 }
-
-#thrust {
-  width: 20px;
-  height: 40px;
-  grid-column: 1/-1;
-  grid-row: -2/-1;
-  justify-self: center;
-  transform: rotate(54deg) translate(2px,35px);
-  background-image: radial-gradient(farthest-side at 10px 0px,rgb(100,150,250),transparent);
-  border-radius: 0 0 50% 50%;
-}
-
-.rocket-thrust {
-  animation: rocketThrust .25s ease-in forwards;
-}
-
-@keyframes rocketThrust {
-  from {transform: rotate(54deg) translate(2px,35px);}
-  to {transform: rotate(54deg) translate(2px,70px);}
-}
