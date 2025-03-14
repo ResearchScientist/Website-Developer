@@ -12,4 +12,4 @@ Implementing a ships command module for displaying the projects via user interac
 
 These changes improve the visitor's experience by giving them more control over what they choose to interact with. Without superflous animations slowing down their mobile devices or having them wait for animations to complete the visitors can more quickly navigate the site.
 
-Doing a test. Completed test.
+While refactoring moved previous unused code to a temporary directory. You know, just in case.
