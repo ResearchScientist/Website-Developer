@@ -57,18 +57,18 @@ img > * {
 
 #bay-door-L {
   height: 100%;
-  grid-column: 1/-1;
+  grid-column: 1/2;
   grid-row: 1/2;
-  justify-self: flex-start;
-  margin-left: 0vw;
+  justify-self: flex-end;
+  margin-right: -19vh;
 }
 
 #bay-door-R {
   height: 100%;
-  grid-column: -1/1;
+  grid-column: 2/3;
   grid-row: 1/2;
-  justify-self: flex-end;
-  margin-right: -1.5vw;
+  justify-self: flex-start;
+  margin-left: -19vh;
 }
 
 #satellite-3d {
@@ -96,24 +96,4 @@ img > * {
 @keyframes space-walk {
   from {transform: translate(0,0);}
   to {transform: translate(0,5px);}
-}
-
-#thrust {
-  width: 20px;
-  height: 40px;
-  grid-column: 1/-1;
-  grid-row: -2/-1;
-  justify-self: center;
-  transform: rotate(54deg) translate(2px,35px);
-  background-image: radial-gradient(farthest-side at 10px 0px,rgb(100,150,250),transparent);
-  border-radius: 0 0 50% 50%;
-}
-
-.rocket-thrust {
-  animation: rocketThrust .25s ease-in forwards;
-}
-
-@keyframes rocketThrust {
-  from {transform: rotate(54deg) translate(2px,35px);}
-  to {transform: rotate(54deg) translate(2px,70px);}
 }
