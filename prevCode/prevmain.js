@@ -49,7 +49,11 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
+    // planetMoonSlide();
     // planetCurvesAppear();
+    // planetLightsOn();
+    // projectSkillsAppear();
+    // projectWindowButtonSlide();
   }
   if (mainNavAnchor == 'resume') {
     midField.style.transform = 'translateY(-6vh)';
@@ -68,11 +72,39 @@ function scrollToAbout() {
   nearField.style.transform = 'translateY(-5vh)';
 }
 
-// const planetCurves = document.querySelectorAll('.planet-curve');
+// PLANET ALIGNMENT
 
-// function planetCurvesAppear() {
-//   planetCurves.forEach((planetCurve) => {
-//     planetCurve.classList.add('animate-planet-curve');
+// const planetE = document.getElementById('planet-e');
+// const moonE = document.getElementById('moon-e');
+// const planetE1 =document.getElementById('planet-e1');
+// const planetE2 =document.getElementById('planet-e2');
+// const planetAirglow = document.getElementById('planet-airglow');
+
+// function planetMoonSlide() {
+//   planetE.classList.add('animate-planet');
+//   moonE.classList.add('animate-moon');
+//   planetE1.classList.add('animate-planet-e1-align');
+//   planetE2.classList.add('animate-planet-e2-align');
+//   planetAirglow.classList.add('animate-planet-airglow');
+// }
+
+// PLANET CURVES
+
+const planetCurves = document.querySelectorAll('.planet-curve');
+
+function planetCurvesAppear() {
+  planetCurves.forEach((planetCurve) => {
+    planetCurve.classList.add('animate-planet-curve');
+  });
+}
+
+// PLANET LIGHTS
+
+// const planetLights = document.querySelectorAll('.planet-light');
+
+// function planetLightsOn() {
+//   planetLights.forEach((planetLight) => {
+//     planetLight.classList.add('planet-lights-on');
 //   });
 // }
 
@@ -86,31 +118,27 @@ function projectSkillsAppear() {
   });
 }
 
-// BAY DOORS DOWN & UP
+// PROJECT BUTTONS SLIDE
+
+// const projectWindowButtons = document.querySelectorAll('.project-window-button');
+
+// function projectWindowButtonSlide() {
+//   projectWindowButtons.forEach((projectWindowButton) => {
+//     projectWindowButton.classList.add('animate-project-window-buttons');
+//   });
+// }
+
+// BAY DOORS DOWN
 
 const rocket = document.getElementById('rocket');
-const shipSection = document.getElementById('ship-section');
 const bayDoors = document.getElementById('bay-doors');
 
 function lowerBayDoors() {
   console.log('rocket click');
-  bayDoors.classList.remove('bay-doors-up');
-  bayDoors.classList.add('bay-doors-down');
-  shipSection.style.zIndex = '2';
 }
 
 rocket.addEventListener('click',lowerBayDoors);
 
-
-function raiseBayDoors() {
-  bayDoors.classList.add('bay-doors-up');
-  bayDoors.classList.remove('bay-doors-down');
-  setTimeout(resetZindex,1000);
-}
-
-function resetZindex() {
-  shipSection.style.zIndex = '1';
-}
 
 // PROJECT NAVIGATION
 
@@ -130,6 +158,22 @@ function tellMe(evt) {
   var buttonId = 'project-window'.concat('-',projectButtonClicked);
   windowId = document.getElementById(`${buttonId}`); // global
   projectWindowDown();
+}
+
+function projectWindowDown() {
+  windowId.classList.remove('project-window-up');
+  windowId.classList.add('project-window-down');
+  projectWindowSection.style.zIndex = '2';
+}
+
+function projectWindowUp() {
+  windowId.classList.add('project-window-up');
+  windowId.classList.remove('project-window-down');
+  setTimeout(resetZindex,1000);
+}
+
+function resetZindex() {
+  projectWindowSection.style.zIndex = '1';
 }
 
 // NAVIGATION FOOTER TOP
