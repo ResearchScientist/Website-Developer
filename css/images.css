@@ -60,7 +60,7 @@ img > * {
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: flex-end;
-  /* margin-right: 0vh; */
+  /* transform: translateX(-80%); */
 }
 
 #ship-door-R {
@@ -68,7 +68,7 @@ img > * {
   grid-column: 2/3;
   grid-row: 1/2;
   justify-self: flex-start;
-  /* margin-left: 0vh; */
+  /* transform: translateX(50%); */
 }
 
 #satellite-3d {

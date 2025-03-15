@@ -102,8 +102,8 @@ function lowerShipDoors() {
 
 rocket.addEventListener('click',lowerShipDoors);
 
-
 function raiseShipDoors() {
+  // closeShipDoors();
   shipDoors.classList.add('ship-doors-up');
   shipDoors.classList.remove('ship-doors-down');
   setTimeout(resetZindex,1000);
@@ -115,15 +115,49 @@ function resetZindex() {
 
 shipExitButton.addEventListener('click',raiseShipDoors);
 
-// BAY DOORS LEFT & RIGHT
+// SHIP DOORS LEFT & RIGHT
 
-const bayDoorL = document.getElementById('bay-door-L');
-const bayDoorR = document.getElementById('bay-door-R');
+const shipDoorL = document.getElementById('ship-door-L');
+const shipDoorR = document.getElementById('ship-door-R');
+const shipDoorsActivateButton = document.getElementById('ship-doors-activate');
+let areShipDoorsOpen = false;
 
-function openBayDoors() {
-  bayDoorL
-  bayDoorR
-}
+shipDoorsActivateButton.addEventListener('click',activateShipDoors);
+
+function activateShipDoors() {
+  areShipDoorsOpen = !areShipDoorsOpen;
+
+  if(areShipDoorsOpen) {
+    shipDoorL.classList.add('ship-door-L-open');
+    shipDoorR.classList.add('ship-door-R-open');
+    shipDoorL.classList.remove('ship-door-L-close');
+    shipDoorR.classList.remove('ship-door-R-close');
+    shipDoorsActivateButton.textContent = 'CLOSE';
+  }
+  else {
+    shipDoorL.classList.add('ship-door-L-close');
+    shipDoorR.classList.add('ship-door-R-close');
+    shipDoorL.classList.remove('ship-door-L-open');
+    shipDoorR.classList.remove('ship-door-R-open');
+    shipDoorsActivateButton.textContent = 'OPEN';
+  }
+};
+
+// function openShipDoors() {
+//   shipDoorL.classList.add('ship-door-L-open');
+//   shipDoorR.classList.add('ship-door-R-open');
+//   shipDoorL.classList.remove('ship-door-L-close');
+//   shipDoorR.classList.remove('ship-door-R-close');
+// }
+
+// shipDoorsActivateButton.addEventListener('click',openShipDoors);
+
+// function closeShipDoors() {
+//   shipDoorL.classList.add('ship-door-L-close');
+//   shipDoorR.classList.add('ship-door-R-close');
+//   shipDoorL.classList.remove('ship-door-L-open');
+//   shipDoorR.classList.remove('ship-door-R-open');
+// }
 
 // PROJECT NAVIGATION
 

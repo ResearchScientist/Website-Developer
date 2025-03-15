@@ -21,7 +21,7 @@
   transform: translateY(-100vh);
 }
 
-#ship-doors-activate , #ship-doors-exit {
+#ship-doors-exit , #ship-doors-activate {
   width: 40px;
   height: 40px;
   grid-column: 1/-1;
@@ -37,6 +37,60 @@
   justify-self: flex-end;
   clip-path: polygon(50% 0% , 100% 100% , 0% 100%);
   /* filter: drop-shadow(0px 0px 15px rgba(50,50,100,0.75)); */
+}
+
+.ship-doors-down {
+  animation: ship-doors-down 1s ease-in-out forwards;
+}
+
+.ship-doors-up {
+  animation: ship-doors-up 1s ease-in-out forwards;
+}
+
+@keyframes ship-doors-down {
+  from {transform: translateY(-100vh);}
+  to {transform: translateY(0);}
+}
+
+@keyframes ship-doors-up {
+  from {transform: translateY(0);}
+  to {transform: translateY(-100vh);}
+}
+
+.ship-door-L-open {
+  animation: ship-door-L-open 1s ease-in-out forwards;
+}
+
+.ship-door-R-open {
+  animation: ship-door-R-open 1s ease-in-out forwards;
+}
+
+.ship-door-L-close {
+  animation: ship-door-L-close 1s ease-in-out forwards;
+}
+
+.ship-door-R-close {
+  animation: ship-door-R-close 1s ease-in-out forwards;
+}
+
+@keyframes ship-door-L-open {
+  from {transform: translateX(0%);}
+  to {transform: translateX(-100%);}
+}
+
+@keyframes ship-door-R-open {
+  from {transform: translateX(0%);}
+  to {transform: translateX(100%);}
+}
+
+@keyframes ship-door-L-close {
+  from {transform: translateX(-100%);}
+  to {transform: translateX(0%);}
+}
+
+@keyframes ship-door-R-close {
+  from {transform: translateX(100%);}
+  to {transform: translateX(0%);}
 }
 
 #planet-airglow {
@@ -277,22 +331,4 @@
   justify-items: center;
   background-color: rgb(30,30,30);
   transform: translateY(-100vh);
-}
-
-.ship-doors-down {
-  animation: ship-doors-down 1s ease-in-out forwards;
-}
-
-.ship-doors-up {
-  animation: ship-doors-up 1s ease-in-out forwards;
-}
-
-@keyframes ship-doors-down {
-  from {transform: translateY(-100vh);}
-  to {transform: translateY(0);}
-}
-
-@keyframes ship-doors-up {
-  from {transform: translateY(0);}
-  to {transform: translateY(-100vh);}
 }
