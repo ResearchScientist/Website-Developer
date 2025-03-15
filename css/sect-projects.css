@@ -21,6 +21,24 @@
   transform: translateY(-100vh);
 }
 
+#ship-doors-activate , #ship-doors-exit {
+  width: 40px;
+  height: 40px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: flex-start;
+  /* margin-left: -.1vw; */
+  background-color: rgb(150,150,150);
+  box-shadow: black 0 0 15px 2px;
+  z-index: 2;
+}
+
+#ship-doors-exit {
+  justify-self: flex-end;
+  clip-path: polygon(50% 0% , 100% 100% , 0% 100%);
+  /* filter: drop-shadow(0px 0px 15px rgba(50,50,100,0.75)); */
+}
+
 #planet-airglow {
   width: 95vw;
   height: 95vw;

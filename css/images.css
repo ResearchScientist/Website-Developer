@@ -60,7 +60,7 @@ img > * {
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: flex-end;
-  margin-right: -19vh;
+  /* margin-right: 0vh; */
 }
 
 #bay-door-R {
@@ -68,7 +68,7 @@ img > * {
   grid-column: 2/3;
   grid-row: 1/2;
   justify-self: flex-start;
-  margin-left: -19vh;
+  /* margin-left: 0vh; */
 }
 
 #satellite-3d {

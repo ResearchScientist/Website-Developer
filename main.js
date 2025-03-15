@@ -91,6 +91,7 @@ function projectSkillsAppear() {
 const rocket = document.getElementById('rocket');
 const shipSection = document.getElementById('ship-section');
 const bayDoors = document.getElementById('bay-doors');
+const shipExitButton = document.getElementById('ship-doors-exit');
 
 function lowerBayDoors() {
   console.log('rocket click');
@@ -111,6 +112,12 @@ function raiseBayDoors() {
 function resetZindex() {
   shipSection.style.zIndex = '1';
 }
+
+shipExitButton.addEventListener('click',raiseBayDoors);
+
+// BAY DOORS LEFT & RIGHT
+
+
 
 // PROJECT NAVIGATION
 
