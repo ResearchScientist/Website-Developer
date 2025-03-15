@@ -110,7 +110,7 @@ function raiseBayDoors() {
 }
 
 function resetZindex() {
-  shipSection.style.zIndex = '1';
+  shipSection.style.zIndex = '0';
 }
 
 shipExitButton.addEventListener('click',raiseBayDoors);
