@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-#bay-doors {
+#ship-doors {
   width: 100%;
   height: 100%;
   grid-column: 1/-1;
@@ -279,97 +279,20 @@
   transform: translateY(-100vh);
 }
 
-#project-window-button-close {
-  width: 34px;
-  height: 34px;
-  margin: 0 2.25vh 0 0;
-  grid-column: 1/-1;
-  grid-row: 1/2;
-  justify-self: flex-end;
-  font-size: 24px;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 300;
-  border-radius: 50%;
-  border: 2px solid var(--primary-blue);
-  color: var(--primary-blue);
-  background: none;
+.ship-doors-down {
+  animation: ship-doors-down 1s ease-in-out forwards;
 }
 
-#project-window-button-close:hover {
-  background-color: var(--dark-blue);
+.ship-doors-up {
+  animation: ship-doors-up 1s ease-in-out forwards;
 }
 
-.bay-doors-down {
-  animation: bay-doors-down 1s ease-in-out forwards;
-}
-
-.bay-doors-up {
-  animation: bay-doors-up 1s ease-in-out forwards;
-}
-
-@keyframes bay-doors-down {
+@keyframes ship-doors-down {
   from {transform: translateY(-100vh);}
   to {transform: translateY(0);}
 }
 
-@keyframes bay-doors-up {
+@keyframes ship-doors-up {
   from {transform: translateY(0);}
   to {transform: translateY(-100vh);}
-}
-
-.project-window h3 {
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  font-size: 72px;
-  font-family: 'Roboto',sans-serif;
-  color: var(--text-black);
-}
-
-#project-list-description {
-  grid-column: 1/-1;
-  grid-row: 3/4;
-  margin: 0 10px;
-}
-
-.project-preview {
-  width: 280px;
-  height: 150px;
-  padding: 20px;
-  border-radius: 20px;
-  background: rgb(220,220,220);
-  box-shadow: 0px 12px 12px black;
-}
-
-.project-preview:nth-of-type(2) {
-  align-self: flex-start;
-}
-
-.project-preview h4 {
-  margin: -5px 0 0;
-  color: var(--dark-blue);
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  text-align: center;
-}
-
-.project-preview p {
-  margin: 10px 0 0;
-  color: black;
-}
-
-.project-preview-tech {
-  margin: 15px 0 0;
-  display: flex;
-}
-
-.project-preview-tech p {
-  margin: 0 10px 0 0;
-  padding: 2px 6px;
-  font-size: 10px;
-  background: rgb(175,175,175);
-}
-
-#project-2 p {
-  font-size: 12px;
 }

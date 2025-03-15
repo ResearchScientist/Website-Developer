@@ -55,7 +55,7 @@ img > * {
   align-self: center;
 }
 
-#bay-door-L {
+#ship-door-L {
   height: 100%;
   grid-column: 1/2;
   grid-row: 1/2;
@@ -63,7 +63,7 @@ img > * {
   /* margin-right: 0vh; */
 }
 
-#bay-door-R {
+#ship-door-R {
   height: 100%;
   grid-column: 2/3;
   grid-row: 1/2;

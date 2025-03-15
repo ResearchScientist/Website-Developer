@@ -86,26 +86,26 @@ function projectSkillsAppear() {
   });
 }
 
-// BAY DOORS DOWN & UP
+// SHIP DOORS DOWN & UP
 
 const rocket = document.getElementById('rocket');
 const shipSection = document.getElementById('ship-section');
-const bayDoors = document.getElementById('bay-doors');
+const shipDoors = document.getElementById('ship-doors');
 const shipExitButton = document.getElementById('ship-doors-exit');
 
-function lowerBayDoors() {
+function lowerShipDoors() {
   console.log('rocket click');
-  bayDoors.classList.remove('bay-doors-up');
-  bayDoors.classList.add('bay-doors-down');
+  shipDoors.classList.remove('ship-doors-up');
+  shipDoors.classList.add('ship-doors-down');
   shipSection.style.zIndex = '2';
 }
 
-rocket.addEventListener('click',lowerBayDoors);
+rocket.addEventListener('click',lowerShipDoors);
 
 
-function raiseBayDoors() {
-  bayDoors.classList.add('bay-doors-up');
-  bayDoors.classList.remove('bay-doors-down');
+function raiseShipDoors() {
+  shipDoors.classList.add('ship-doors-up');
+  shipDoors.classList.remove('ship-doors-down');
   setTimeout(resetZindex,1000);
 }
 
@@ -113,11 +113,17 @@ function resetZindex() {
   shipSection.style.zIndex = '0';
 }
 
-shipExitButton.addEventListener('click',raiseBayDoors);
+shipExitButton.addEventListener('click',raiseShipDoors);
 
 // BAY DOORS LEFT & RIGHT
 
+const bayDoorL = document.getElementById('bay-door-L');
+const bayDoorR = document.getElementById('bay-door-R');
 
+function openBayDoors() {
+  bayDoorL
+  bayDoorR
+}
 
 // PROJECT NAVIGATION
 
