@@ -55,20 +55,20 @@ img > * {
   align-self: center;
 }
 
-#bay-door-L {
+#ship-door-L {
   height: 100%;
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: flex-end;
-  margin-right: -19vh;
+  /* transform: translateX(-80%); */
 }
 
-#bay-door-R {
+#ship-door-R {
   height: 100%;
   grid-column: 2/3;
   grid-row: 1/2;
   justify-self: flex-start;
-  margin-left: -19vh;
+  /* transform: translateX(50%); */
 }
 
 #satellite-3d {
