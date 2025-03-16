@@ -86,31 +86,84 @@ function projectSkillsAppear() {
   });
 }
 
-// BAY DOORS DOWN & UP
+// SHIP DOORS
 
 const rocket = document.getElementById('rocket');
 const shipSection = document.getElementById('ship-section');
-const bayDoors = document.getElementById('bay-doors');
+const shipDoors = document.getElementById('ship-doors');
+const shipDoorL = document.getElementById('ship-door-L');
+const shipDoorR = document.getElementById('ship-door-R');
+const shipDoorsActivateButton = document.getElementById('ship-doors-activate');
+const shipExitButton = document.getElementById('ship-doors-exit');
 
-function lowerBayDoors() {
-  console.log('rocket click');
-  bayDoors.classList.remove('bay-doors-up');
-  bayDoors.classList.add('bay-doors-down');
+let areShipDoorsUp = false;
+let areShipDoorsOpen = false;
+
+function lowerShipDoors() {
+  shipDoors.classList.remove('ship-doors-up');
+  shipDoors.classList.add('ship-doors-down');
   shipSection.style.zIndex = '2';
+  console.log('rocket lowered ship doors')
 }
 
-rocket.addEventListener('click',lowerBayDoors);
+rocket.addEventListener('click',lowerShipDoors);
 
-
-function raiseBayDoors() {
-  bayDoors.classList.add('bay-doors-up');
-  bayDoors.classList.remove('bay-doors-down');
+function raiseShipDoors() {
+  if (areShipDoorsOpen) {
+    areShipDoorsOpen = false;
+    shipDoorL.classList.add('ship-door-L-close');
+    shipDoorR.classList.add('ship-door-R-close');
+    shipDoorL.classList.remove('ship-door-L-open');
+    shipDoorR.classList.remove('ship-door-R-open');
+    shipDoorsActivateButton.textContent = 'OPEN';
+    setTimeout(() => {
+      areShipDoorsUp = true;
+      shipDoors.classList.add('ship-doors-up');
+      shipDoors.classList.remove('ship-doors-down');
+      setTimeout(resetZindex,1000);
+    }, 1000);
+    return;
+  }
+  else if (areShipDoorsUp) {
+    areShipDoorsUp = false;
+    shipDoors.classList.add('ship-doors-down');
+    shipDoors.classList.remove('ship-doors-up');
+  }
+  else
+  areShipDoorsUp = true;
+  shipDoors.classList.add('ship-doors-up');
+  shipDoors.classList.remove('ship-doors-down');
   setTimeout(resetZindex,1000);
 }
 
 function resetZindex() {
-  shipSection.style.zIndex = '1';
+  shipSection.style.zIndex = '0';
 }
+
+shipExitButton.addEventListener('click',raiseShipDoors);
+shipDoorsActivateButton.addEventListener('click',activateShipDoors);
+
+function activateShipDoors() {
+  areShipDoorsOpen = !areShipDoorsOpen;
+  if(areShipDoorsOpen) {
+    console.log(areShipDoorsOpen);
+    shipDoorL.classList.add('ship-door-L-open');
+    shipDoorR.classList.add('ship-door-R-open');
+    shipDoorL.classList.remove('ship-door-L-close');
+    shipDoorR.classList.remove('ship-door-R-close');
+    shipDoorsActivateButton.textContent = 'CLOSE';
+    // shipDoorsActivateButton.style.color = 'red';
+  }
+  else {
+    console.log(areShipDoorsOpen);
+    shipDoorL.classList.add('ship-door-L-close');
+    shipDoorR.classList.add('ship-door-R-close');
+    shipDoorL.classList.remove('ship-door-L-open');
+    shipDoorR.classList.remove('ship-door-R-open');
+    shipDoorsActivateButton.textContent = 'OPEN';
+    // shipDoorsActivateButton.style.color = 'green';
+  }
+};
 
 // PROJECT NAVIGATION
 
