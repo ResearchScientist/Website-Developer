@@ -90,6 +90,7 @@ function projectSkillsAppear() {
 
 const rocket = document.getElementById('rocket');
 const shipSection = document.getElementById('ship-section');
+const shipBridge = document.getElementById('ship-bridge');
 const shipDoors = document.getElementById('ship-doors');
 const shipDoorL = document.getElementById('ship-door-L');
 const shipDoorR = document.getElementById('ship-door-R');
@@ -102,8 +103,9 @@ let areShipDoorsOpen = false;
 function lowerShipDoors() {
   shipDoors.classList.remove('ship-doors-up');
   shipDoors.classList.add('ship-doors-down');
+  shipBridge.classList.remove('ship-doors-up');
+  shipBridge.classList.add('ship-doors-down');
   shipSection.style.zIndex = '2';
-  console.log('rocket lowered ship doors')
 }
 
 rocket.addEventListener('click',lowerShipDoors);
@@ -122,6 +124,8 @@ function raiseShipDoors() {
       areShipDoorsUp = true;
       shipDoors.classList.add('ship-doors-up');
       shipDoors.classList.remove('ship-doors-down');
+      shipBridge.classList.add('ship-doors-up');
+      shipBridge.classList.remove('ship-doors-down');
       setTimeout(resetZindex,1000);
     }, 1000);
     return;
@@ -135,6 +139,8 @@ function raiseShipDoors() {
   areShipDoorsUp = true;
   shipDoors.classList.add('ship-doors-up');
   shipDoors.classList.remove('ship-doors-down');
+  shipBridge.classList.add('ship-doors-up');
+  shipBridge.classList.remove('ship-doors-down');
   setTimeout(resetZindex,1000);
 }
 
