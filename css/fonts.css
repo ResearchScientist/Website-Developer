@@ -25,4 +25,5 @@ p {
 
 #ship-doors-activate , #ship-doors-exit {
   font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
