@@ -116,6 +116,8 @@ function raiseShipDoors() {
     shipDoorL.classList.remove('ship-door-L-open');
     shipDoorR.classList.remove('ship-door-R-open');
     shipDoorsActivateButton.textContent = 'OPEN';
+    shipDoorsActivateButton.classList.remove('ship-door-sign-red');
+    shipDoorsActivateButton.classList.add('ship-door-sign-green');
     setTimeout(() => {
       areShipDoorsUp = true;
       shipDoors.classList.add('ship-doors-up');
@@ -146,22 +148,22 @@ shipDoorsActivateButton.addEventListener('click',activateShipDoors);
 function activateShipDoors() {
   areShipDoorsOpen = !areShipDoorsOpen;
   if(areShipDoorsOpen) {
-    console.log(areShipDoorsOpen);
     shipDoorL.classList.add('ship-door-L-open');
     shipDoorR.classList.add('ship-door-R-open');
     shipDoorL.classList.remove('ship-door-L-close');
     shipDoorR.classList.remove('ship-door-R-close');
     shipDoorsActivateButton.textContent = 'CLOSE';
-    // shipDoorsActivateButton.style.color = 'red';
+    shipDoorsActivateButton.classList.remove('ship-door-sign-green');
+    shipDoorsActivateButton.classList.add('ship-door-sign-red');
   }
   else {
-    console.log(areShipDoorsOpen);
     shipDoorL.classList.add('ship-door-L-close');
     shipDoorR.classList.add('ship-door-R-close');
     shipDoorL.classList.remove('ship-door-L-open');
     shipDoorR.classList.remove('ship-door-R-open');
     shipDoorsActivateButton.textContent = 'OPEN';
-    // shipDoorsActivateButton.style.color = 'green';
+    shipDoorsActivateButton.classList.remove('ship-door-sign-red');
+    shipDoorsActivateButton.classList.add('ship-door-sign-green');
   }
 };
 

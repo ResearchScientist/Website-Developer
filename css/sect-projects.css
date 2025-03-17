@@ -36,13 +36,23 @@
 
 #ship-doors-activate {
   transform: translateX(-60px) translateY(-10px) rotateZ(-45deg);
-  color: var(--highlight-green);
-  text-shadow: 0 0 0px var(--highlight-green), 0 0 5px var(--highlight-green), 0 0 10px rgb(50,150,50), 0 0 20px rgb(50,150,50);
+  /* color: var(--highlight-green); */
+  /* text-shadow: 0 0 0px var(--highlight-green), 0 0 5px var(--highlight-green), 0 0 10px rgb(50,150,50), 0 0 20px rgb(50,150,50); */
 }
 
 #ship-doors-exit {
   justify-self: flex-end;
   transform: translateX(60px) translateY(-10px) rotateZ(45deg);
+  /* color: var(--highlight-red);
+  text-shadow: 0 0 0px var(--highlight-red), 0 0 5px var(--highlight-red), 0 0 10px rgb(150,50,50), 0 0 20px rgb(150,50,50); */
+}
+
+.ship-door-sign-green {
+  color: var(--highlight-green);
+  text-shadow: 0 0 0px var(--highlight-green), 0 0 5px var(--highlight-green), 0 0 10px rgb(50,150,50), 0 0 20px rgb(50,150,50);
+}
+
+.ship-door-sign-red {
   color: var(--highlight-red);
   text-shadow: 0 0 0px var(--highlight-red), 0 0 5px var(--highlight-red), 0 0 10px rgb(150,50,50), 0 0 20px rgb(150,50,50);
 }
