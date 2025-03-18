@@ -60,7 +60,6 @@ img > * {
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: flex-end;
-  /* transform: translateX(-80%); */
 }
 
 #ship-door-R {
@@ -68,7 +67,26 @@ img > * {
   grid-column: 2/3;
   grid-row: 1/2;
   justify-self: flex-start;
-  /* transform: translateX(50%); */
+}
+
+#ship-door-corner-L {
+  width: 100px;
+  height: 100px;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  justify-self: flex-start;
+  align-self: start;
+  z-index: 2;
+}
+
+#ship-door-corner-R {
+  width: 100px;
+  height: 100px;
+  grid-column: -1/1;
+  grid-row: 1/2;
+  justify-self: flex-end;
+  align-self: start;
+  z-index: 2;
 }
 
 #satellite-3d {
