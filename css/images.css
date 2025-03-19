@@ -60,6 +60,8 @@ img > * {
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: flex-end;
+  /* object-fit: cover;
+  object-position: right center; */
 }
 
 #ship-door-R {
