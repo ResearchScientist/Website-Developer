@@ -1,12 +1,10 @@
 #ship-section {
   width: 100%;
-  /* height: 100%; */
   height: 100dvh;
   grid-column: 1/-1;
   grid-row: 3/4;
   display: grid;
   grid-template-columns: 100%;
-  /* grid-template-rows: 100%; */
   grid-template-rows: 100dvh;
   overflow: hidden;
 }
@@ -15,16 +13,13 @@
 
 #ship-doors {
   width: 100%;
-  /* height: 100%; */
   height: 100dvh;
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 50vw 50vw;
-  /* grid-template-rows: 100vh; */
   grid-template-rows: 100dvh;
   overflow: hidden;
-  /* transform: translateY(-100vh); */
   transform: translateY(-100dvh);
 }
 
@@ -118,28 +113,36 @@
 
 #ship-bridge {
   width: 100%;
-  /* height: 100%; */
   height: 100dvh;
   grid-column: 1/-1;
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 30vw 40vw 30vw;
-  grid-template-rows: 5% 45% 25% 25%;
-  /* transform: translateY(-100vh); */
+  grid-template-rows: 5% 50% 30% 15%;
   transform: translateY(-100dvh);
   background-color: rgb(0, 75, 150);
 }
 
 #display {
-  width: 320px;
-  height: 180px;
-  grid-column: 2/3;
-  grid-row: 2/3;
+  width: 98%;
+  max-width: 650px;
+  /* max-width: 405px; 405px */
+  aspect-ratio: 16/9;
+  grid-column: 1/-1;
+  grid-row: 1/3;
   justify-self: center;
   align-self: center;
   border-radius: 50px 50px 50px 50px;
   background-color: black;
 }
+
+/* #dis-top {
+  grid-column: 1/-1;
+  width: 100%;
+  height: 25px;
+  background-color: var(--primary-blue);
+  box-shadow: 0px 5px 10px black;
+} */
 
 #science-station {
   grid-column: 1/2;
