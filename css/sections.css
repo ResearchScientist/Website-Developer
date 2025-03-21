@@ -2,7 +2,8 @@
 
 #landing,#about,#projects,#contact,#resume {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   max-width: 800px;
   grid-column: 1/-1;
   display: grid;
