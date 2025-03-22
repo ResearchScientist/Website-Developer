@@ -19,7 +19,6 @@
   display: grid;
   grid-template-columns: repeat(2,50%);
   grid-template-rows: repeat(2,50%);
-  /* background: radial-gradient(circle at top, var(--planet-dark) 62%); */
 }
 
 #astronaut-dialogue-screen {
