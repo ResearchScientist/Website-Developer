@@ -178,13 +178,12 @@ function activateShipDoors() {
 const viewButton = document.getElementById('view-button');
 const planeteFrozen = document.getElementById('planete-frozen');
 
+viewButton.addEventListener('click',viewFrozenPlanete);
+
 function viewFrozenPlanete() {
   console.log('planete clicked');
-  
   planeteFrozen.classList.add('show-frozen-planete');
 }
-
-viewButton.addEventListener('click',viewFrozenPlanete);
 
 // PROJECT NAVIGATION
 
