@@ -173,6 +173,19 @@ function activateShipDoors() {
   }
 };
 
+// SHIP BUTTONS
+
+const viewButton = document.getElementById('view-button');
+const planeteFrozen = document.getElementById('planete-frozen');
+
+function viewFrozenPlanete() {
+  console.log('planete clicked');
+  
+  planeteFrozen.classList.add('show-frozen-planete');
+}
+
+viewButton.addEventListener('click',viewFrozenPlanete);
+
 // PROJECT NAVIGATION
 
 const projectWindowSection = document.getElementById('project-window-section');
