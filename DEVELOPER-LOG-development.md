@@ -14,6 +14,4 @@ These changes improve the visitor's experience by giving them more control over 
 
 While refactoring moved previous unused code to a temporary directory. You know, just in case.
 
-Added images on launch branch. Then needed to update dev and feature branches.
-
-Used webp for the largest images. Kept the smallest images as png, mostly due to keeping the images sharp at various resolutions. Testing different formats and sizes for various device resolutions.
+Used webp for the largest images. Kept the smallest images as png, mostly due to keeping the images sharp at various resolutions. Testing different formats and sizes for various device resolutions. Using 1250x1080 as the highest resoluton. May need higher to accomodate some longer mobile devices. If so will use the `picture` element. Making higher resolution images depends on my blender installation being able to render them.
