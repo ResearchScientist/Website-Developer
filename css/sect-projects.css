@@ -190,9 +190,14 @@
   grid-row: 1/2;
 }
 
-.bridge-station-button-section {
+#bridge-stations section .bridge-station-button-section {
   grid-column: 1/-1;
   grid-row: 2/-1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  background-color: gray;
 }
 
 /* #science-station {
