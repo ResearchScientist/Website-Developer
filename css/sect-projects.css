@@ -166,16 +166,25 @@
   width: 100%;
   grid-column: 1/-1;
   grid-row: 3/4;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr minmax(30%,400px) minmax(40%,500px) minmax(30%,400px) 1fr;
+  grid-template-rows: 100%;
 }
 
-#bridge-stations > * {
-  flex: 1 1 0;
+#bridge-stations section:nth-of-type(1) {
+  grid-column: 2/3;
+  grid-row: 1/-1;
 }
 
 #bridge-stations section:nth-of-type(2) {
-  flex: 1.25 1 0;
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  background-color: teal;
+}
+
+#bridge-stations section:nth-of-type(3) {
+  grid-column: 4/5;
+  grid-row: 1/-1;
 }
 
 #bridge-stations section {
@@ -188,16 +197,18 @@
   text-align: center;
   grid-column: 1/-1;
   grid-row: 1/2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
 }
 
 #bridge-stations section .bridge-station-button-section {
   grid-column: 1/-1;
   grid-row: 2/-1;
   display: flex;
-  justify-content: space-around;
+  gap: 0px 25px;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: gray;
 }
 
 /* #science-station {
