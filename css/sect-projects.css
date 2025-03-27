@@ -18,9 +18,7 @@
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 50vw 50vw;
-  /* grid-template-rows: 100dvh; */
-  /* grid-template-columns: 30vw 40vw 30vw; */
-  grid-template-rows: 5dvh 50dvh 30dvh 15dvh;
+  grid-template-rows: 5dvh 50dvh 5dvh 30dvh 10dvh;
   overflow: hidden;
   transform: translateY(-100dvh);
 }
@@ -165,34 +163,56 @@
 #bridge-stations {
   width: 100%;
   grid-column: 1/-1;
-  grid-row: 3/4;
-  display: flex;
-  flex-direction: row;
+  grid-row: 4/5;
+  display: grid;
+  /* grid-template-columns: 1fr repeat(3,minmax(10%,400px)) 1fr; */
+  grid-template-columns: 1fr repeat(3,300px) 1fr;
+  grid-template-rows: 100%;
+  gap: 20px;
 }
 
-#bridge-stations > * {
-  flex: 1 1 0;
+#bridge-stations section:nth-of-type(1) {
+  grid-column: 2/3;
+  grid-row: 1/-1;
 }
 
 #bridge-stations section:nth-of-type(2) {
-  flex: 1.25 1 0;
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  /* background-color: teal; */
+}
+
+#bridge-stations section:nth-of-type(3) {
+  grid-column: 4/5;
+  grid-row: 1/-1;
 }
 
 #bridge-stations section {
+  width: 100%;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 50px 1fr;
+  clip-path: polygon(0% 20% , 10% 0% , 90% 0% , 100% 20% , 100% 80% , 90% 100% , 10% 100% , 0% 80%);
+  background-color: rgb(0, 65, 140);
 }
 
 #bridge-stations section h2 {
+  margin: 20px 0 0;
   text-align: center;
   grid-column: 1/-1;
   grid-row: 1/2;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
 }
 
-.bridge-station-button-section {
+#bridge-stations section .bridge-station-button-section {
   grid-column: 1/-1;
   grid-row: 2/-1;
+  display: flex;
+  gap: 0px 25px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 /* #science-station {
