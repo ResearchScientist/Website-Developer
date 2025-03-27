@@ -49,7 +49,6 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
-    // planetCurvesAppear();
   }
   if (mainNavAnchor == 'resume') {
     midField.style.transform = 'translateY(-6vh)';
@@ -181,28 +180,7 @@ const planeteFrozen = document.getElementById('planete-frozen');
 viewButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
-  console.log('planete clicked');
   planeteFrozen.classList.add('show-frozen-planete');
-}
-
-// PROJECT NAVIGATION
-
-const projectWindowSection = document.getElementById('project-window-section');
-const projectWindowButtonsNav = document.getElementById('project-window-buttons-nav');
-const projectWindowButtonsClose = document.getElementsByClassName('project-window-button-close');
-
-// projectWindowButtonsNav.addEventListener('click',tellMe);
-
-Array.from(projectWindowButtonsClose).forEach((closeButton) => {
-  closeButton.addEventListener('click',projectWindowUp);
-});
-
-function tellMe(evt) {
-  var projectButtonClicked = evt.target.id;
-  projectButtonClicked = projectButtonClicked.slice(4);
-  var buttonId = 'project-window'.concat('-',projectButtonClicked);
-  windowId = document.getElementById(`${buttonId}`); // global
-  projectWindowDown();
 }
 
 // NAVIGATION FOOTER TOP
