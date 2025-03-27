@@ -165,10 +165,8 @@
   grid-column: 1/-1;
   grid-row: 4/5;
   display: grid;
-  /* grid-template-columns: 1fr repeat(3,minmax(10%,400px)) 1fr; */
-  grid-template-columns: 1fr repeat(3,220px) 1fr;
+  grid-template-columns: 1fr 220px 4dvw 220px 4dvw 220px 1fr;
   grid-template-rows: 200px;
-  gap: 20px;
 }
 
 #bridge-stations section:nth-of-type(1) {
@@ -177,13 +175,13 @@
 }
 
 #bridge-stations section:nth-of-type(2) {
-  grid-column: 3/4;
+  grid-column: 4/5;
   grid-row: 1/-1;
   /* background-color: teal; */
 }
 
 #bridge-stations section:nth-of-type(3) {
-  grid-column: 4/5;
+  grid-column: 6/7;
   grid-row: 1/-1;
 }
 
