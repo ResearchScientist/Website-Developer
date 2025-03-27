@@ -75,16 +75,6 @@ function scrollToAbout() {
 //   });
 // }
 
-// PROJECT TYPES APPEAR
-
-const projectSkills = document.querySelectorAll('.project-skills');
-
-function projectSkillsAppear() {
-  projectSkills.forEach((projectSkill) => {
-    projectSkill.classList.add('animate-project-types');
-  });
-}
-
 // SHIP DOORS
 
 const rocket = document.getElementById('rocket');
@@ -174,13 +164,23 @@ function activateShipDoors() {
 
 // SHIP BUTTONS
 
+// DISPLAY PLANETE AND SKILLS
+
 const viewButton = document.getElementById('view-button');
 const planeteFrozen = document.getElementById('planete-frozen');
+const skills = document.querySelectorAll('.skills');
 
 viewButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
   planeteFrozen.classList.add('show-frozen-planete');
+  displaySkills();
+}
+
+function displaySkills() {
+  skills.forEach((skill) => {
+    skill.classList.add('show-skills');
+  });
 }
 
 // NAVIGATION FOOTER TOP
