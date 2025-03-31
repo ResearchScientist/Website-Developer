@@ -166,14 +166,14 @@ viewButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
   planeteFrozen.classList.add('show-frozen-planete');
-  displaySkills();
+  setTimeout(displaySkills,3000);
 }
 
 function displaySkills() {
   skills.forEach((skill) => {
     skill.classList.add('show-skills');
   });
-  setTimeout(planetCurvesAppear,15000);
+  setTimeout(planetCurvesAppear,6500);
 }
 
 

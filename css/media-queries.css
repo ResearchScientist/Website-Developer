@@ -9,8 +9,8 @@
 
 
 @media screen and (max-width: 720px) {
-  #bridge-stations {grid-template-columns: 100vw; grid-template-rows: 150px 10px 150px 10px 150px;}
-  #bridge-stations > section {width: 90%; justify-self: center;}
+  #bridge-stations {grid-template-columns: 100vw; grid-template-rows: 110px 5px 110px 5px 110px;}
+  #bridge-stations > section {width: 90%; justify-self: center; grid-template-rows: 40px 50px 10px;}
   #bridge-stations > section:nth-of-type(1) {grid-column: 1/-1; grid-row: 1/2;}
   #bridge-stations > section:nth-of-type(2) {grid-column: 1/-1; grid-row: 3/4;}
   #bridge-stations > section:nth-of-type(3) {grid-column: 1/-1; grid-row: 5/6;}
