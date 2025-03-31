@@ -224,11 +224,20 @@
 /* INSET BUTTONS */
 
 #inset-buttons {
-  width: min(90%,650px);
+  width: min(97%,650px);
   height: 60px;
   grid-column: 1/-1;
   grid-row: 3/4;
   justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#inset-buttons button {
+  width: 70px;
+  height: 48px;
+  background-color: gray;
 }
 
 /* BRIDGE STATIONS */
