@@ -67,14 +67,6 @@ function scrollToAbout() {
   nearField.style.transform = 'translateY(-5vh)';
 }
 
-// const planetCurves = document.querySelectorAll('.planet-curve');
-
-// function planetCurvesAppear() {
-//   planetCurves.forEach((planetCurve) => {
-//     planetCurve.classList.add('animate-planet-curve');
-//   });
-// }
-
 // SHIP DOORS
 
 const rocket = document.getElementById('rocket');
@@ -180,6 +172,16 @@ function viewFrozenPlanete() {
 function displaySkills() {
   skills.forEach((skill) => {
     skill.classList.add('show-skills');
+  });
+  setTimeout(planetCurvesAppear,15000);
+}
+
+
+const planetCurves = document.querySelectorAll('.planet-curve');
+
+function planetCurvesAppear() {
+  planetCurves.forEach((planetCurve) => {
+    planetCurve.classList.add('animate-planet-curve');
   });
 }
 
