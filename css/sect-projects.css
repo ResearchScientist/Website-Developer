@@ -118,7 +118,7 @@
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 30vw 40vw 30vw;
-  grid-template-rows: 5px min(100vw/1.7, 365px) 1fr;
+  grid-template-rows: 12px min(100vw/1.7, 365px) 1fr;
   transform: translateY(-100dvh);
   background-color: rgb(0, 75, 150);
 }
