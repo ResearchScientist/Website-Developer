@@ -18,7 +18,7 @@
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 50vw 50vw;
-  grid-template-rows: 12px min(100vw/1.7, 365px) 60px 1fr 50px 1px;
+  grid-template-rows: 20px min(100vw/1.7, 365px) 60px 1fr 50px 1px;
   overflow: hidden;
   transform: translateY(-100dvh);
 }
@@ -118,9 +118,9 @@
   grid-row: 1/-1;
   display: grid;
   grid-template-columns: 30vw 40vw 30vw;
-  grid-template-rows: 12px min(100vw/1.7, 365px) 1fr;
+  grid-template-rows: 20px min(100vw/1.7, 365px) 1fr;
   transform: translateY(-100dvh);
-  background-color: rgb(0, 75, 150);
+  background-color: var(--bridge-wall);
 }
 
 #display {
@@ -224,7 +224,31 @@
 #inset-buttons button {
   width: 70px;
   height: 45px;
-  background-color: gray;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, rgb(0,50,100) 70%, rgb(50,125,200) 100%);
+}
+
+#inset-buttons p {
+  width: 66px;
+  height: 41px;
+  padding: 4px 0 0;
+  margin: 0 auto;
+  border-radius: 5px;
+  border-top: 2px solid rgba(250,250,250,.2);
+  border-bottom: 2px solid rgba(0,0,50,.8);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,.8);
+  /* color: var(--text-blue); */
+  color: rgb(175,175,225);
+  background-color: var(--bridge-wall);
+}
+
+#inset-button-1 p {
+  filter: brightness(.9);
+  border-top: 2px solid var(--bridge-wall);
+  border-bottom: 1px solid rgba(0,0,50,.8);
+  box-shadow: none;
+  color: var(--text-blue);
+  text-shadow: 0 0 0px var(--text-blue), 0 0 5px var(--text-blue);
 }
 
 /* BRIDGE STATIONS */
@@ -320,6 +344,16 @@
   height: 50px;
   /* background-color: teal; */
   background-color: rgba(0, 75, 150,.1);
+}
+
+/* TOOLBOX BUTTON */
+
+#bridge-floor #toolbox-button {
+  width: 50px;
+  height: 50px;
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  background-color: teal;
 }
 
 /* BIG RED BUTTON */
