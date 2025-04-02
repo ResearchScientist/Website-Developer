@@ -322,6 +322,16 @@
   background-color: rgba(0, 75, 150,.1);
 }
 
+/* TOOLBOX BUTTON */
+
+#toolbox-button {
+  width: 50px;
+  height: 50px;
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  background-color: teal;
+}
+
 /* BIG RED BUTTON */
 
 #big-red-button {
