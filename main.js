@@ -185,6 +185,17 @@ function planetCurvesAppear() {
   });
 }
 
+// BIG RED BUTTON
+
+const bigRedButton = document.getElementById('big-red-button');
+const bigRedButtonHatch = document.getElementById('big-red-button-hatch');
+
+function openHatch() {
+  bigRedButtonHatch.classList.add('open-hatch');
+}
+
+bigRedButton.addEventListener('click',openHatch);
+
 // NAVIGATION FOOTER TOP
 
 const flexScrollTF = document.getElementById('flex-scroll-t-f');
