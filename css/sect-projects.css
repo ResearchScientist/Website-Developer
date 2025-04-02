@@ -343,8 +343,18 @@
   grid-row: 1/2;
   justify-self: flex-end;
   transform-origin: left center;
-  transform: translateY(-5px) rotateZ(90deg);
+  transform: translateY(-5px) rotateZ(0deg);
   background-color: rgb(200, 200, 200);
+}
+
+.open-hatch {animation: open-hatch .8s linear forwards;}
+
+@keyframes open-hatch {
+  0% {transform: translateY(-5px) rotateZ(0deg);}
+  30% {transform: translateY(-5px) rotateZ(145deg);}
+  60% {transform: translateY(-5px) rotateZ(60deg);}
+  80% {transform: translateY(-5px) rotateZ(100deg);}
+  100% {transform: translateY(-5px) rotateZ(90deg);}
 }
 
 /* ANIMATIONS */
@@ -394,9 +404,4 @@
 @keyframes planet-airglow {
   from {opacity: 0;}
   to {opacity: 1;}
-}
-
-@keyframes skills-slide {
-  from {transform: translateX(-30vw);}
-  to {transform: translateX(0vw);}
 }
