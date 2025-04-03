@@ -169,9 +169,18 @@ const insetButtons = document.querySelector('#inset-buttons');
 insetButtons.addEventListener('click',activateInsetButton);
 
 function activateInsetButton(e) {
-  console.log(`${e.target}`);
   const insetButton = e.target.closest('button');
   if (insetButton) {
+    const insetButtonsAllP = insetButtons.querySelectorAll('p');
+    insetButtonsAllP.forEach(p => {
+      p.style['filter'] = 'none';
+      p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
+      p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
+      p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
+      p.style['padding'] = '4px 0 0';
+      p.style['color'] = 'rgb(175,175,225)';
+      p.style['textShadow'] = 'none';
+    })
     const insetButtonP = insetButton.querySelector('p');
     insetButtonP.style['filter'] = 'brightness(.9)';
     insetButtonP.style['borderTop'] = '2px solid var(--bridge-wall)';
