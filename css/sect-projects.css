@@ -226,6 +226,7 @@
   height: 45px;
   border-radius: 5px;
   background: linear-gradient(to bottom, rgb(0,50,100) 70%, rgb(50,125,200) 100%);
+  -webkit-tap-highlight-color: transparent;
 }
 
 #inset-buttons p {
