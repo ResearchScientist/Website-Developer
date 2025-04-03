@@ -156,19 +156,31 @@ function activateShipDoors() {
 
 // SHIP BUTTONS
 
-
 // INSET BUTTONS
 
-const insetButton1 = document.getElementById('inset-button-1');
-const insetButton2 = document.getElementById('inset-button-2');
-const insetButton3 = document.getElementById('inset-button-3');
-const insetButton4 = document.getElementById('inset-button-4');
+const insetButtons = document.querySelector('#inset-buttons');
+// const insetButton1 = document.getElementById('inset-button-1');
+// const insetButton2 = document.getElementById('inset-button-2');
+// const insetButton3 = document.getElementById('inset-button-3');
+// const insetButton4 = document.getElementById('inset-button-4');
 
-insetButton1.addEventListener('click',showButton1);
+// const insetButton1P = insetButton1.getElementsByTagName('p');
 
-function showButton1() {
-  console.log('clicked inset button 1');
-  
+insetButtons.addEventListener('click',activateInsetButton);
+
+function activateInsetButton(e) {
+  console.log(`${e.target}`);
+  const insetButton = e.target.closest('button');
+  if (insetButton) {
+    const insetButtonP = insetButton.querySelector('p');
+    insetButtonP.style['filter'] = 'brightness(.9)';
+    insetButtonP.style['borderTop'] = '2px solid var(--bridge-wall)';
+    insetButtonP.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
+    insetButtonP.style['boxShadow'] = 'none';
+    insetButtonP.style['padding'] = '5px 0 0';
+    insetButtonP.style['color'] = 'var(--text-blue)';
+    insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 5px var(--text-blue)';
+  }
 }
 
 // DISPLAY PLANETE AND SKILLS
@@ -190,7 +202,6 @@ function displaySkills() {
   });
   setTimeout(planetCurvesAppear,6500);
 }
-
 
 const planetCurves = document.querySelectorAll('.planet-curve');
 
