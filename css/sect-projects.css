@@ -237,18 +237,8 @@
   border-top: 2px solid rgba(250,250,250,.2);
   border-bottom: 2px solid rgba(0,0,50,.8);
   box-shadow: 0px 1px 2px 0px rgba(0,0,0,.8);
-  /* color: var(--text-blue); */
   color: rgb(175,175,225);
   background-color: var(--bridge-wall);
-}
-
-#inset-button-1 p {
-  filter: brightness(.9);
-  border-top: 2px solid var(--bridge-wall);
-  border-bottom: 1px solid rgba(0,0,50,.8);
-  box-shadow: none;
-  color: var(--text-blue);
-  text-shadow: 0 0 0px var(--text-blue), 0 0 5px var(--text-blue);
 }
 
 /* BRIDGE STATIONS */
