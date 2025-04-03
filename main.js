@@ -156,6 +156,21 @@ function activateShipDoors() {
 
 // SHIP BUTTONS
 
+
+// INSET BUTTONS
+
+const insetButton1 = document.getElementById('inset-button-1');
+const insetButton2 = document.getElementById('inset-button-2');
+const insetButton3 = document.getElementById('inset-button-3');
+const insetButton4 = document.getElementById('inset-button-4');
+
+insetButton1.addEventListener('click',showButton1);
+
+function showButton1() {
+  console.log('clicked inset button 1');
+  
+}
+
 // DISPLAY PLANETE AND SKILLS
 
 const viewButton = document.getElementById('view-button');
