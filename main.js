@@ -75,6 +75,8 @@ const shipBridge = document.getElementById('ship-bridge');
 const shipDoors = document.getElementById('ship-doors');
 const shipDoorL = document.getElementById('ship-door-L');
 const shipDoorR = document.getElementById('ship-door-R');
+const shipDoorOverlayL = document.querySelector('#ship-door-button-overlay-L');
+const shipDoorOverlayR = document.querySelector('#ship-door-button-overlay-R');
 const shipDoorsActivateButton = document.getElementById('ship-doors-activate');
 const shipExitButton = document.getElementById('ship-doors-exit');
 
@@ -98,6 +100,10 @@ function raiseShipDoors() {
     shipDoorR.classList.add('ship-door-R-close');
     shipDoorL.classList.remove('ship-door-L-open');
     shipDoorR.classList.remove('ship-door-R-open');
+    shipDoorOverlayL.classList.add('ship-door-overlay-L-close');
+    shipDoorOverlayR.classList.add('ship-door-overlay-R-close');
+    shipDoorOverlayL.classList.remove('ship-door-overlay-L-open');
+    shipDoorOverlayR.classList.remove('ship-door-overlay-R-open');
     shipDoorsActivateButton.textContent = 'OPEN';
     shipDoorsActivateButton.classList.remove('ship-door-sign-red');
     shipDoorsActivateButton.classList.add('ship-door-sign-green');
@@ -131,6 +137,8 @@ function resetZindex() {
 
 shipExitButton.addEventListener('click',raiseShipDoors);
 shipDoorsActivateButton.addEventListener('click',activateShipDoors);
+shipDoorOverlayL.addEventListener('click',activateShipDoors);
+shipDoorOverlayR.addEventListener('click',activateShipDoors);
 
 function activateShipDoors() {
   areShipDoorsOpen = !areShipDoorsOpen;
@@ -139,6 +147,10 @@ function activateShipDoors() {
     shipDoorR.classList.add('ship-door-R-open');
     shipDoorL.classList.remove('ship-door-L-close');
     shipDoorR.classList.remove('ship-door-R-close');
+    shipDoorOverlayL.classList.add('ship-door-overlay-L-open');
+    shipDoorOverlayR.classList.add('ship-door-overlay-R-open');
+    shipDoorOverlayL.classList.remove('ship-door-overlay-L-close');
+    shipDoorOverlayR.classList.remove('ship-door-overlay-R-close');
     shipDoorsActivateButton.textContent = 'CLOSE';
     shipDoorsActivateButton.classList.remove('ship-door-sign-green');
     shipDoorsActivateButton.classList.add('ship-door-sign-red');
@@ -148,6 +160,10 @@ function activateShipDoors() {
     shipDoorR.classList.add('ship-door-R-close');
     shipDoorL.classList.remove('ship-door-L-open');
     shipDoorR.classList.remove('ship-door-R-open');
+    shipDoorOverlayL.classList.add('ship-door-overlay-L-close');
+    shipDoorOverlayR.classList.add('ship-door-overlay-R-close');
+    shipDoorOverlayL.classList.remove('ship-door-overlay-L-open');
+    shipDoorOverlayR.classList.remove('ship-door-overlay-R-open');
     shipDoorsActivateButton.textContent = 'OPEN';
     shipDoorsActivateButton.classList.remove('ship-door-sign-red');
     shipDoorsActivateButton.classList.add('ship-door-sign-green');
