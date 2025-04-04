@@ -8,7 +8,8 @@
 }
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 650px) {
+  #ship-doors {grid-template-rows: 70px min(100vw/1.7, 365px) 60px 1fr 50px 1px;}
   #bridge-stations {grid-template-columns: 100vw; grid-template-rows: 100px 5px 100px 5px 100px;}
   #bridge-stations > section {width: 90%; justify-self: center; grid-template-rows: 40px 50px 10px;}
   #bridge-stations > section:nth-of-type(1) {grid-column: 1/-1; grid-row: 1/2;}

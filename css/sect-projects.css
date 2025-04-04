@@ -23,6 +23,26 @@
   transform: translateY(-100dvh);
 }
 
+#ship-door-button-overlay-L, #ship-door-button-overlay-R {
+  width: 20.5dvh;
+  height: 7.5dvh;
+  grid-row: 1/-1;
+  align-self: center;
+  background-color: rgba(200,200,200,.01);
+  z-index: 1;
+}
+
+#ship-door-button-overlay-L {
+  grid-column: 1/2;
+  justify-self: flex-end;
+  transform: translateX(-4dvh);
+}
+
+#ship-door-button-overlay-R {
+  grid-column: -1/-2;
+  transform: translateX(4dvh);
+}
+
  #ship-doors-activate , #ship-doors-exit {
   width: 170px;
   height: 70px;
@@ -107,6 +127,42 @@
 @keyframes ship-door-R-close {
   from {transform: translateX(100%);}
   to {transform: translateX(0%);}
+}
+
+.ship-door-overlay-L-open {
+  animation: ship-door-overlay-L-open 1s ease-in-out forwards;
+}
+
+.ship-door-overlay-R-open {
+  animation: ship-door-overlay-R-open 1s ease-in-out forwards;
+}
+
+.ship-door-overlay-L-close {
+  animation: ship-door-overlay-L-close 1s ease-in-out forwards;
+}
+
+.ship-door-overlay-R-close {
+  animation: ship-door-overlay-R-close 1s ease-in-out forwards;
+}
+
+@keyframes ship-door-overlay-L-open {
+  from {transform: translateX(-4dvh);}
+  to {transform: translateX(-100dvh);}
+}
+
+@keyframes ship-door-overlay-R-open {
+  from {transform: translateX(4dvh);}
+  to {transform: translateX(100dvh);}
+}
+
+@keyframes ship-door-overlay-L-close {
+  from {transform: translateX(-100dvh);}
+  to {transform: translateX(-4dvh);}
+}
+
+@keyframes ship-door-overlay-R-close {
+  from {transform: translateX(100dvh);}
+  to {transform: translateX(4dvh);}
 }
 
 /* SHIP BRIDGE */
