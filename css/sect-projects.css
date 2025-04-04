@@ -23,6 +23,26 @@
   transform: translateY(-100dvh);
 }
 
+#ship-door-button-overlay-L, #ship-door-button-overlay-R {
+  width: 20.5dvh;
+  height: 7.5dvh;
+  grid-row: 1/-1;
+  align-self: center;
+  background-color: rgba(200,200,200,.5);
+  z-index: 1;
+}
+
+#ship-door-button-overlay-L {
+  grid-column: 1/2;
+  justify-self: flex-end;
+  transform: translateX(-4dvh);
+}
+
+#ship-door-button-overlay-R {
+  grid-column: -1/-2;
+  transform: translateX(4dvh);
+}
+
  #ship-doors-activate , #ship-doors-exit {
   width: 170px;
   height: 70px;

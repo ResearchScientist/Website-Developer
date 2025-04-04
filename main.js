@@ -77,6 +77,8 @@ const shipDoorL = document.getElementById('ship-door-L');
 const shipDoorR = document.getElementById('ship-door-R');
 const shipDoorsActivateButton = document.getElementById('ship-doors-activate');
 const shipExitButton = document.getElementById('ship-doors-exit');
+const shipDoorOverlayL = document.querySelector('#ship-door-button-overlay-L');
+const shipDoorOverlayR = document.querySelector('#ship-door-button-overlay-R');
 
 let areShipDoorsUp = false;
 let areShipDoorsOpen = false;
