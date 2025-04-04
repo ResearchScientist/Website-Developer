@@ -159,12 +159,8 @@ function activateShipDoors() {
 // INSET BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
-// const insetButton1 = document.getElementById('inset-button-1');
-// const insetButton2 = document.getElementById('inset-button-2');
-// const insetButton3 = document.getElementById('inset-button-3');
-// const insetButton4 = document.getElementById('inset-button-4');
-
-// const insetButton1P = insetButton1.getElementsByTagName('p');
+const launchSequence = ['4','3','2','1'];
+let currentSequence = [];
 
 insetButtons.addEventListener('click',activateInsetButton);
 
@@ -189,6 +185,25 @@ function activateInsetButton(e) {
     insetButtonP.style['padding'] = '5px 0 0';
     insetButtonP.style['color'] = 'var(--text-blue)';
     insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 5px var(--text-blue)';
+    checkSequence(insetButton);
+  }
+}
+
+function checkSequence(insetButton) {
+  const sequenceNumber = insetButton.dataset.sequenceNumber;
+  currentSequence.push(sequenceNumber);
+  console.log(sequenceNumber);
+  console.log(currentSequence);
+  if (currentSequence.length === launchSequence.length) {
+    if (currentSequence.join('') === launchSequence.join('')) {
+      document.getElementById('display').textContent = 'launch';
+      console.log('launching');
+    }
+    else {
+      document.getElementById('display').textContent = '';
+      console.log('not launching');
+    }
+    currentSequence = [];
   }
 }
 
