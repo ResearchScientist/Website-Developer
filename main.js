@@ -137,6 +137,8 @@ function resetZindex() {
 
 shipExitButton.addEventListener('click',raiseShipDoors);
 shipDoorsActivateButton.addEventListener('click',activateShipDoors);
+shipDoorOverlayL.addEventListener('click',activateShipDoors);
+shipDoorOverlayR.addEventListener('click',activateShipDoors);
 
 function activateShipDoors() {
   areShipDoorsOpen = !areShipDoorsOpen;

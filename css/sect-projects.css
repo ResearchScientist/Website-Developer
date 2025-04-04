@@ -28,7 +28,7 @@
   height: 7.5dvh;
   grid-row: 1/-1;
   align-self: center;
-  background-color: rgba(200,200,200,.5);
+  background-color: rgba(200,200,200,.01);
   z-index: 1;
 }
 
