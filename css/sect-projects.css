@@ -129,6 +129,42 @@
   to {transform: translateX(0%);}
 }
 
+.ship-door-overlay-L-open {
+  animation: ship-door-overlay-L-open 1s ease-in-out forwards;
+}
+
+.ship-door-overlay-R-open {
+  animation: ship-door-overlay-R-open 1s ease-in-out forwards;
+}
+
+.ship-door-overlay-L-close {
+  animation: ship-door-overlay-L-close 1s ease-in-out forwards;
+}
+
+.ship-door-overlay-R-close {
+  animation: ship-door-overlay-R-close 1s ease-in-out forwards;
+}
+
+@keyframes ship-door-overlay-L-open {
+  from {transform: translateX(-4dvh);}
+  to {transform: translateX(-100dvh);}
+}
+
+@keyframes ship-door-overlay-R-open {
+  from {transform: translateX(4dvh);}
+  to {transform: translateX(100dvh);}
+}
+
+@keyframes ship-door-overlay-L-close {
+  from {transform: translateX(-100dvh);}
+  to {transform: translateX(-4dvh);}
+}
+
+@keyframes ship-door-overlay-R-close {
+  from {transform: translateX(100dvh);}
+  to {transform: translateX(4dvh);}
+}
+
 /* SHIP BRIDGE */
 
 #ship-bridge {
