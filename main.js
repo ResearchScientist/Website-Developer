@@ -156,7 +156,11 @@ function activateShipDoors() {
 
 // SHIP BUTTONS
 
-// INSET BUTTONS
+const screenDisplay = document.querySelector('#display');
+
+const launchSequenceMsg = document.querySelector('#launch-sequence');
+
+// SEQUENCE BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
 const launchSequence = ['4','3','2','1'];
@@ -196,11 +200,12 @@ function checkSequence(insetButton) {
   console.log(currentSequence);
   if (currentSequence.length === launchSequence.length) {
     if (currentSequence.join('') === launchSequence.join('')) {
-      document.getElementById('display').textContent = 'launch';
-      console.log('launching');
+      launchSequenceMsg.style['display'] = 'inline';
+      setTimeout(() => {
+        launchSequenceMsg.style['display'] = 'none';
+      }, 3000);
     }
     else {
-      document.getElementById('display').textContent = '';
       console.log('not launching');
     }
     currentSequence = [];
