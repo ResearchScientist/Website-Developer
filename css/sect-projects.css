@@ -206,6 +206,15 @@
   to {transform: translateY(0%);}
 }
 
+.unshow-frozen-planete {
+  animation: unshow-frozen-planete 3s ease-out forwards;
+}
+
+@keyframes unshow-frozen-planete {
+  from {transform: translateY(0%);}
+  to {transform: translateY(105%);}
+}
+
 .skills {
   height: 100%;
   display: flex;
