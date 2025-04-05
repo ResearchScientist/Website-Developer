@@ -212,7 +212,6 @@ function activateInsetButton(e) {
 function checkSequence(insetButton) {
   const sequenceNumber = insetButton.dataset.sequenceNumber;
   currentSequence.push(sequenceNumber);
-  console.log(sequenceNumber);
   console.log(currentSequence);
   if (currentSequence.length === launchSequence.length) {
     if (currentSequence.join('') === launchSequence.join('')) {
@@ -237,6 +236,7 @@ const skills = document.querySelectorAll('.skills');
 viewButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
+  planeteFrozen.classList.remove('unshow-frozen-planete');
   planeteFrozen.classList.add('show-frozen-planete');
   setTimeout(displaySkills,3000);
 }
@@ -253,6 +253,18 @@ const planetCurves = document.querySelectorAll('.planet-curve');
 function planetCurvesAppear() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.add('animate-planet-curve');
+  });
+  setTimeout(unviewFrozenPlanete,3000);
+}
+
+function unviewFrozenPlanete() {
+  planeteFrozen.classList.add('unshow-frozen-planete');
+  planeteFrozen.classList.remove('show-frozen-planete');
+  skills.forEach((skill) => {
+    skill.classList.remove('show-skills');
+  });
+  planetCurves.forEach((planetCurve) => {
+    planetCurve.classList.remove('animate-planet-curve');
   });
 }
 
