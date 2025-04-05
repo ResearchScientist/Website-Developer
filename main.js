@@ -193,7 +193,7 @@ function activateInsetButton(e) {
       p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
       p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
       p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      p.style['padding'] = '4px 0 0';
+      p.style['padding'] = '6px 0 0';
       p.style['color'] = 'rgb(175,175,225)';
       p.style['textShadow'] = 'none';
     })
@@ -202,7 +202,7 @@ function activateInsetButton(e) {
     insetButtonP.style['borderTop'] = '2px solid var(--bridge-wall)';
     insetButtonP.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
     insetButtonP.style['boxShadow'] = 'none';
-    insetButtonP.style['padding'] = '5px 0 0';
+    insetButtonP.style['padding'] = '7px 0 0';
     insetButtonP.style['color'] = 'var(--text-blue)';
     insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 5px var(--text-blue)';
     checkSequence(insetButton);
