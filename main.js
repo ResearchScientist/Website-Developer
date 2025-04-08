@@ -232,10 +232,12 @@ function checkSequence(insetButton) {
 const viewButton = document.getElementById('view-button');
 const planeteFrozen = document.getElementById('planete-frozen');
 const skills = document.querySelectorAll('.skills');
+const planetCurves = document.querySelectorAll('.planet-curve');
 
 viewButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
+  viewButton.disabled = true;
   planeteFrozen.classList.remove('unshow-frozen-planete');
   planeteFrozen.classList.add('show-frozen-planete');
   setTimeout(displaySkills,3000);
@@ -247,8 +249,6 @@ function displaySkills() {
   });
   setTimeout(planetCurvesAppear,6500);
 }
-
-const planetCurves = document.querySelectorAll('.planet-curve');
 
 function planetCurvesAppear() {
   planetCurves.forEach((planetCurve) => {
@@ -266,6 +266,9 @@ function unviewFrozenPlanete() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.remove('animate-planet-curve');
   });
+  setTimeout(() => {
+    viewButton.disabled = false;
+  }, 3000);
 }
 
 // BIG RED BUTTON

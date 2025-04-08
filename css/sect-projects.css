@@ -433,7 +433,7 @@
   height: 50px;
   grid-column: 3/4;
   grid-row: 1/-1;
-  background-color: teal;
+  /* background-color: teal; */
 }
 
 /* BIG RED BUTTON */
