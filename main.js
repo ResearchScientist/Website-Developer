@@ -271,16 +271,29 @@ function unviewFrozenPlanete() {
   }, 3000);
 }
 
+// TOOLBOX BUTTON
+
+const toolboxButton = document.querySelector('#toolbox-button');
+const toolboxItems = document.querySelector('#toolbox-items');
+
+toolboxButton.addEventListener('click',openToolbox);
+
+function openToolbox() {
+  console.log('open toolbox');
+  toolboxItems.classList.add('show-toolbox-items');
+}
+
+
 // BIG RED BUTTON
 
 const bigRedButton = document.getElementById('big-red-button');
 const bigRedButtonHatch = document.getElementById('big-red-button-hatch');
 
+bigRedButton.addEventListener('click',openHatch);
+
 function openHatch() {
   bigRedButtonHatch.classList.add('open-hatch');
 }
-
-bigRedButton.addEventListener('click',openHatch);
 
 // NAVIGATION FOOTER TOP
 
