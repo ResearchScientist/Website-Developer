@@ -446,64 +446,67 @@
   position: relative;
 }
 
-.show-toolbox-items {animation: showToolboxItems .5s linear forwards;}
+.show-toolbox-items {animation: showToolboxItems .15s ease-out forwards;}
 
 @keyframes showToolboxItems {
-  0% {transform: translateY(0px) scale(.4);}
-  10% {transform: translateY(-10px) scale(.4);}
-  40% {transform: translateY(-10px) scale(.4);}
-  65% {transform: translateY(-10px) scale(1.5);}
+  0% {transform: translateY(0px) scale(0);}
   100% {transform: translateY(-10px) scale(1);}
 }
 
-#toolbox-items p {
+.hide-toolbox-items {animation: hideToolboxItems .15s ease-in forwards;}
+
+@keyframes hideToolboxItems {
+  0% {transform: translateY(-10px) scale(1);}
+  100% {transform: translateY(0px) scale(0);}
+}
+
+#toolbox-items svg {
   width: 30px;
   height: 30px;
-  background-color: mediumslateblue;
   position: absolute;
 }
 
-#toolbox-items p:nth-of-type(1) {
+#toolbox-items svg:nth-of-type(1) {
   left: 0;
   bottom: 20%;
 }
 
-#toolbox-items p:nth-of-type(2) {
+#toolbox-items svg:nth-of-type(2) {
   left: calc(15% - 15px);
   bottom: 60%;
 }
 
-#toolbox-items p:nth-of-type(3) {
+#toolbox-items svg:nth-of-type(3) {
   left: calc(30% - 15px);
   bottom: 90%;
 }
 
-#toolbox-items p:nth-of-type(4) {
+#toolbox-items svg:nth-of-type(4) {
   left: calc(50% - 15px);
   bottom: 100%;
 }
 
-#toolbox-items p:nth-of-type(5) {
+#toolbox-items svg:nth-of-type(5) {
   left: calc(70% - 15px);
   bottom: 90%;
 }
 
-#toolbox-items p:nth-of-type(6) {
+#toolbox-items svg:nth-of-type(6) {
   left: calc(85% - 15px);
   bottom: 60%;
 }
 
-#toolbox-items p:nth-of-type(7) {
+#toolbox-items svg:nth-of-type(7) {
   left: calc(100% - 30px);
   bottom: 20%;
 }
 
-#toolbox-items p:nth-of-type(8) {
+#toolbox-items svg:nth-of-type(8) {
   left: calc(40% - 15px);
   bottom: 50%;
 }
 
-#toolbox-items p:nth-of-type(9) {
+#toolbox-items svg:nth-of-type(9) {
   left: calc(60% - 15px);
   bottom: 50%;
 }

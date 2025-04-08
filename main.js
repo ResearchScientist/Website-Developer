@@ -279,10 +279,9 @@ const toolboxItems = document.querySelector('#toolbox-items');
 toolboxButton.addEventListener('click',openToolbox);
 
 function openToolbox() {
-  console.log('open toolbox');
-  toolboxItems.classList.add('show-toolbox-items');
+  toolboxItems.classList.toggle('show-toolbox-items');
+  toolboxItems.classList.toggle('hide-toolbox-items');
 }
-
 
 // BIG RED BUTTON
 
