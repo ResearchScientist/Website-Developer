@@ -446,14 +446,18 @@
   position: relative;
 }
 
-.show-toolbox-items {animation: showToolboxItems .5s linear forwards;}
+.show-toolbox-items {animation: showToolboxItems .15s ease-out forwards;}
 
 @keyframes showToolboxItems {
-  0% {transform: translateY(0px) scale(.4);}
-  10% {transform: translateY(-10px) scale(.4);}
-  40% {transform: translateY(-10px) scale(.4);}
-  65% {transform: translateY(-10px) scale(1.5);}
+  0% {transform: translateY(0px) scale(0);}
   100% {transform: translateY(-10px) scale(1);}
+}
+
+.hide-toolbox-items {animation: hideToolboxItems .15s ease-in forwards;}
+
+@keyframes hideToolboxItems {
+  0% {transform: translateY(-10px) scale(1);}
+  100% {transform: translateY(0px) scale(0);}
 }
 
 #toolbox-items p {
