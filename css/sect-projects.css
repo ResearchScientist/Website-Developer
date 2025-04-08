@@ -422,7 +422,6 @@
 #bridge-floor button {
   width: 50px;
   height: 50px;
-  /* background-color: teal; */
   background-color: rgba(0, 75, 150,.1);
 }
 
@@ -433,7 +432,80 @@
   height: 50px;
   grid-column: 3/4;
   grid-row: 1/-1;
-  /* background-color: teal; */
+  z-index: 1;
+}
+
+#toolbox-items {
+  width: 250px;
+  height: 100px;
+  transform: translateY(0) scale(0);
+  grid-column: 3/4;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: flex-end;
+  position: relative;
+}
+
+.show-toolbox-items {animation: showToolboxItems .5s linear forwards;}
+
+@keyframes showToolboxItems {
+  0% {transform: translateY(0px) scale(.4);}
+  10% {transform: translateY(-10px) scale(.4);}
+  40% {transform: translateY(-10px) scale(.4);}
+  65% {transform: translateY(-10px) scale(1.5);}
+  100% {transform: translateY(-10px) scale(1);}
+}
+
+#toolbox-items p {
+  width: 30px;
+  height: 30px;
+  background-color: mediumslateblue;
+  position: absolute;
+}
+
+#toolbox-items p:nth-of-type(1) {
+  left: 0;
+  bottom: 20%;
+}
+
+#toolbox-items p:nth-of-type(2) {
+  left: calc(15% - 15px);
+  bottom: 60%;
+}
+
+#toolbox-items p:nth-of-type(3) {
+  left: calc(30% - 15px);
+  bottom: 90%;
+}
+
+#toolbox-items p:nth-of-type(4) {
+  left: calc(50% - 15px);
+  bottom: 100%;
+}
+
+#toolbox-items p:nth-of-type(5) {
+  left: calc(70% - 15px);
+  bottom: 90%;
+}
+
+#toolbox-items p:nth-of-type(6) {
+  left: calc(85% - 15px);
+  bottom: 60%;
+}
+
+#toolbox-items p:nth-of-type(7) {
+  left: calc(100% - 30px);
+  bottom: 20%;
+}
+
+#toolbox-items p:nth-of-type(8) {
+  left: calc(40% - 15px);
+  bottom: 50%;
+}
+
+#toolbox-items p:nth-of-type(9) {
+  left: calc(60% - 15px);
+  bottom: 50%;
 }
 
 /* BIG RED BUTTON */
