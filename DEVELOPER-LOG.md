@@ -33,11 +33,9 @@ For improved workflow and separation of concerns I implemented separate logs for
 Will no longer be adding entries to this particular log.
 May delete this.
 
-> 8 Apr
-
 > March 2025
 
-I''m updating the projects page.
+I'm updating the projects page.
 
 Animations upon entering the page are a bit long and computationally expensive. I'm removing the planet sliding animations and animated drop down menu as well as the lights coming on around the planet.
 
@@ -48,3 +46,14 @@ These changes improve the visitor's experience by giving them more control over 
 While refactoring moved previous unused code to a temporary directory. You know, just in case.
 
 Used webp for the largest images. Kept the smallest images as png, mostly due to keeping the images sharp at various resolutions. Testing different formats and sizes for various device resolutions. Using 1250x1080 as the highest resoluton for each ship door. May need higher to accomodate some longer mobile devices when using landscape orientation. If so will use the `picture` element. Making higher resolution images depends on my blender installation being able to render them.
+
+> Mar 2025
+
+Implemented a multiple branch workflow. Launch , development , features.
+This will allow for ease of visualization and documentation.
+
+Using Blender for making the 3D images and optimizing as webp instead of png before adding to site.
+
+Redesigning the projects section. Current implementation has too many animations that play prior to the user being able to engage. Will redesign so that the user can engage more meaningfully at page load.
+
+Removed all animations that autoplayed.
