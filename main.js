@@ -271,6 +271,157 @@ function unviewFrozenPlanete() {
   }, 3000);
 }
 
+// PUNCH IT
+
+const punchItButton = document.querySelector('#punch-it');
+const starfieldSVG = document.querySelector('#display-starfield');
+const paths = Array.from(starfieldSVG.querySelectorAll('path'));
+const centerX = 8;
+const centerY = 4.5;
+const elongationFactor = 10;
+const animationDuration = 1500;
+let startTime;
+let animationFrameId;
+let animationPhase = 'elongate'; // 'elongate', 'color', 'reset'
+
+punchItButton.addEventListener('click',punchIt);
+
+function punchIt() {
+  console.log('punched it');
+  if (!animationFrameId) {
+    startTime = null;
+    animationPhase = 'elongate';
+    // Remove any existing color paths
+    Array.from(starfieldSVG.querySelectorAll('path[stroke="lightblue"]')).forEach(path => path.remove());
+    paths.forEach(path => {
+      path.setAttribute('stroke', '#FAFAFA');
+      path.style.strokeDasharray = '';
+      path.style.strokeDashoffset = '';
+    });
+    animationFrameId = requestAnimationFrame(animateElongation);
+  }
+}
+
+function easeInSine(t) {
+  return 1 - Math.cos((t * Math.PI) / 2);
+}
+
+function animateReset(timestamp) {
+  if (!startTime) {
+    startTime = timestamp;
+  }
+  const elapsed = timestamp - startTime;
+  const progress = Math.min(1, elapsed / animationDuration);
+  const easedProgress = easeInSine(progress);
+
+  paths.forEach(path => {
+    const originalCx = parseFloat(path.getAttribute('d').split(' ')[1]);
+    const originalCy = parseFloat(path.getAttribute('d').split(' ')[2]);
+    const originalEndX = originalCx + 0.001;
+    const originalEndY = originalCy + 0.001;
+    
+    const currentEndX = parseFloat(path.getAttribute('d').split('L')[1].split(' ')[1]);
+    const currentEndY = parseFloat(path.getAttribute('d').split('L')[1].split(' ')[2]);
+    
+    const intermediateX = currentEndX + (originalEndX - currentEndX) * easedProgress;
+    const intermediateY = currentEndY + (originalEndY - currentEndY) * easedProgress;
+    
+    path.setAttribute('d', `M ${originalCx} ${originalCy} L ${intermediateX} ${intermediateY}`);
+  });
+
+  if (progress < 1) {
+    animationFrameId = requestAnimationFrame(animateReset);
+  } else {
+    startTime = null;
+    animationFrameId = null;
+    animationPhase = 'elongate';
+  }
+}
+
+function animateSingleLineColor(path) {
+  // Create a clone of the path for the color animation
+  const colorPath = path.cloneNode(true);
+  colorPath.setAttribute('stroke', 'lightblue');
+  colorPath.style.position = 'absolute';
+  path.parentNode.appendChild(colorPath);
+
+  const totalLength = path.getTotalLength();
+  let repeatCount = 0;
+  const repeatMax = 3;
+  const animationDuration = 1000; // Duration for one color sweep
+  let startTime;
+
+  function animate(timestamp) {
+    startTime = timestamp;
+
+    function step(time) {
+      const elapsed = time - startTime;
+      const progress = Math.min(1, elapsed / animationDuration);
+
+      // Animate from start to end
+      colorPath.style.strokeDasharray = `${totalLength * progress} ${totalLength}`;
+      colorPath.style.strokeDashoffset = '0';
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else if (repeatCount < repeatMax - 1) {
+        repeatCount++;
+        requestAnimationFrame(animate); // Start the next repeat
+      } else {
+        // Remove the color path when animation is complete
+        colorPath.remove();
+        
+        // Check if this is the last path to complete animation
+        const remainingAnimations = Array.from(starfieldSVG.querySelectorAll('path')).some(p => 
+          p.getAttribute('stroke') === 'lightblue'
+        );
+        if (!remainingAnimations) {
+          animationPhase = 'reset';
+          startTime = null;
+          animationFrameId = requestAnimationFrame(animateReset);
+        }
+      }
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(animate);
+}
+
+function animateElongation(timestamp) {
+  if (!startTime) {
+    startTime = timestamp;
+  }
+  const elapsed = timestamp - startTime;
+  const progress = Math.min(1, elapsed / animationDuration);
+  const easedProgress = easeInSine(progress);
+
+  paths.forEach(path => {
+    const originalCx = parseFloat(path.getAttribute('d').split(' ')[1]);
+    const originalCy = parseFloat(path.getAttribute('d').split(' ')[2]);
+    const strokeWidth = parseFloat(path.getAttribute('stroke-width'));
+
+    const deltaX = originalCx - centerX;
+    const deltaY = originalCy - centerY;
+
+    const finalX = centerX + deltaX * elongationFactor;
+    const finalY = centerY + deltaY * elongationFactor;
+
+    const intermediateX = originalCx + (finalX - originalCx) * easedProgress;
+    const intermediateY = originalCy + (finalY - originalCy) * easedProgress;
+
+    path.setAttribute('d', `M ${originalCx} ${originalCy} L ${intermediateX} ${intermediateY}`);
+  });
+
+  if (progress < 1) {
+    animationFrameId = requestAnimationFrame(animateElongation);
+  } else {
+    startTime = null;
+    animationPhase = 'color';
+    // Start color animation for each path
+    paths.forEach(path => animateSingleLineColor(path));
+  }
+}
+
 // TOOLBOX BUTTON
 
 const toolboxButton = document.querySelector('#toolbox-button');
