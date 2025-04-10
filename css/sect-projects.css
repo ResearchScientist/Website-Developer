@@ -438,6 +438,67 @@
   100% {opacity: 1;}
 }
 
+/* HYPERJUMP BUTTON */
+
+.bridge-station-button-section #punch-it {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  /* background-color: teal; */
+}
+
+#hyperjump-handle-img {
+  width: 50px;
+  height: 25px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  transform: translateY(26px);
+}
+
+#hyperjump-handles-down-img {
+  width: 50px;
+  height: 25px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  transform: translateY(14px);
+}
+
+#hyperjump-handles-up-img {
+  width: 50px;
+  height: 25px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  transform: translateY(12px);
+  opacity: 0;
+}
+
+.punch-it {animation: punchIt .3s linear forwards;}
+
+@keyframes punchIt {
+  0% {transform: translateY(26px);}
+  100% {transform: translateY(0px);}
+}
+
+.hyperjump-down-hide {animation: hyperjumpDownHide .3s linear forwards;}
+
+@keyframes hyperjumpDownHide {
+  0% {opacity: 1;}
+  50% {opacity: 1;}
+  51% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+.hyperjump-up-hide {animation: hyperjumpUpHide .3s linear forwards;}
+
+@keyframes hyperjumpUpHide {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  51% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
 /* BRIDGE FLOOR */
 
 #bridge-floor {
