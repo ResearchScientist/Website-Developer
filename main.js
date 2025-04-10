@@ -285,6 +285,10 @@ function fluxIt() {
 // PUNCH IT
 
 const punchItButton = document.querySelector('#punch-it');
+const punchItHandle = document.querySelector('#hyperjump-handle-img');
+const punchiItHandleDown = document.querySelector('#hyperjump-handles-down-img');
+const punchiItHandleUp = document.querySelector('#hyperjump-handles-up-img');
+
 const starfieldSVG = document.querySelector('#display-starfield');
 const paths = Array.from(starfieldSVG.querySelectorAll('path'));
 const centerX = 8;
@@ -297,8 +301,16 @@ let animationPhase = 'elongate'; // 'elongate', 'color', 'reset'
 
 punchItButton.addEventListener('click',punchIt);
 
+function moveHyperspeedLever() {
+  console.log('move lever');
+  punchItHandle.classList.add('punch-it');
+  punchiItHandleDown.classList.add('hyperjump-down-hide');
+  punchiItHandleUp.classList.add('hyperjump-up-hide');
+}
+
 function punchIt() {
   console.log('punched it');
+  moveHyperspeedLever();
   if (!animationFrameId) {
     startTime = null;
     animationPhase = 'elongate';
