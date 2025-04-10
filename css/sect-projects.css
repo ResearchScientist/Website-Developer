@@ -411,8 +411,31 @@
 #bridge-stations button  {
   width: 50px;
   height: 50px;
-  background-color: var(--primary-blue);
+  background-color: rgba(0, 75, 150,.1);
   -webkit-tap-highlight-color: transparent;
+}
+
+/* NAVIGATION */
+
+/* FLUX CAPACITOR BUTTON */
+
+#flux-capacitor {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#flux-capacitor-on-img {
+  opacity: 0;
+}
+
+.flux-capacitor-on {animation: fluxCapacitorOn .1s linear forwards;}
+
+@keyframes fluxCapacitorOn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 /* BRIDGE FLOOR */

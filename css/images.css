@@ -109,6 +109,13 @@ img > * {
   z-index: 1;
 }
 
+#flux-capacitor-off-img , #flux-capacitor-on-img {
+  width: 50px;
+  height: 50px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
 #big-red-button-img {
   width: 50px;
   height: 50px;
