@@ -173,7 +173,6 @@ function activateShipDoors() {
 // SHIP BUTTONS
 
 const screenDisplay = document.querySelector('#display');
-
 const launchSequenceMsg = document.querySelector('#launch-sequence');
 
 // SEQUENCE BUTTONS
@@ -269,6 +268,18 @@ function unviewFrozenPlanete() {
   setTimeout(() => {
     viewButton.disabled = false;
   }, 3000);
+}
+
+// FLUX CAPACITOR
+
+const fluxCapacitorButton = document.querySelector('#flux-capacitor');
+const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
+
+fluxCapacitorButton.addEventListener('click',fluxIt);
+
+function fluxIt() {
+  console.log('fluxed it');
+  fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
 }
 
 // PUNCH IT
