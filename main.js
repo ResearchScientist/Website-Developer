@@ -301,28 +301,41 @@ let animationPhase = 'elongate'; // 'elongate', 'color', 'reset'
 
 punchItButton.addEventListener('click',punchIt);
 
-function moveHyperspeedLever() {
-  console.log('move lever');
+function moveHyperspeedLeverUp() {
   punchItHandle.classList.add('punch-it');
+  punchItHandle.classList.remove('un-punch-it');
   punchiItHandleDown.classList.add('hyperjump-down-hide');
+  punchiItHandleDown.classList.remove('hyperjump-down-show');
+  punchiItHandleUp.classList.add('hyperjump-up-show');
+  punchiItHandleUp.classList.remove('hyperjump-up-hide');
+}
+
+function moveHyperspeedLeverDown() {
+  punchItHandle.classList.add('un-punch-it');
+  punchItHandle.classList.remove('punch-it');
+  punchiItHandleDown.classList.remove('hyperjump-down-hide');
+  punchiItHandleDown.classList.add('hyperjump-down-show');
+  punchiItHandleUp.classList.remove('hyperjump-up-show');
   punchiItHandleUp.classList.add('hyperjump-up-hide');
 }
 
 function punchIt() {
   console.log('punched it');
-  moveHyperspeedLever();
-  if (!animationFrameId) {
-    startTime = null;
-    animationPhase = 'elongate';
-    // Remove any existing color paths
-    Array.from(starfieldSVG.querySelectorAll('path[stroke="lightblue"]')).forEach(path => path.remove());
-    paths.forEach(path => {
-      path.setAttribute('stroke', '#FAFAFA');
-      path.style.strokeDasharray = '';
-      path.style.strokeDashoffset = '';
-    });
-    animationFrameId = requestAnimationFrame(animateElongation);
-  }
+  moveHyperspeedLeverUp();
+  setTimeout(() => {
+    if (!animationFrameId) {
+      startTime = null;
+      animationPhase = 'elongate';
+      // Remove any existing color paths
+      Array.from(starfieldSVG.querySelectorAll('path[stroke="lightblue"]')).forEach(path => path.remove());
+      paths.forEach(path => {
+        path.setAttribute('stroke', '#FAFAFA');
+        path.style.strokeDasharray = '';
+        path.style.strokeDashoffset = '';
+      });
+      animationFrameId = requestAnimationFrame(animateElongation);
+    }
+  }, 500);
 }
 
 function easeInSine(t) {
@@ -402,6 +415,11 @@ function animateSingleLineColor(path) {
           animationPhase = 'reset';
           startTime = null;
           animationFrameId = requestAnimationFrame(animateReset);
+          setTimeout(moveHyperspeedLeverDown,1000)
+          // setTimeout(() => {
+          //   console.log('animation finish 1');
+
+          // }, 1000);
         }
       }
     }

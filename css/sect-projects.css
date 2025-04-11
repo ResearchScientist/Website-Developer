@@ -490,13 +490,38 @@
   100% {opacity: 0;}
 }
 
-.hyperjump-up-hide {animation: hyperjumpUpHide .3s linear forwards;}
+.hyperjump-up-show {animation: hyperjumpUpShow .3s linear forwards;}
 
-@keyframes hyperjumpUpHide {
+@keyframes hyperjumpUpShow {
   0% {opacity: 0;}
   50% {opacity: 0;}
   51% {opacity: 1;}
   100% {opacity: 1;}
+}
+
+.un-punch-it {animation: unPunchIt .3s linear forwards;}
+
+@keyframes unPunchIt {
+  0% {transform: translateY(0px);}
+  100% {transform: translateY(26px);}
+}
+
+.hyperjump-down-show {animation: hyperjumpDownShow .3s linear forwards;}
+
+@keyframes hyperjumpDownShow {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  51% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
+.hyperjump-up-hide {animation: hyperjumpUpHide .3s linear forwards;}
+
+@keyframes hyperjumpUpHide {
+  0% {opacity: 1;}
+  50% {opacity: 1;}
+  51% {opacity: 0;}
+  100% {opacity: 0;}
 }
 
 /* BRIDGE FLOOR */
