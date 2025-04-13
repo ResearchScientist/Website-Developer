@@ -438,6 +438,44 @@
   100% {opacity: 1;}
 }
 
+#speedometer-section {
+  width: 142px;
+  height: 80px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 50px 2px 50px 1fr;
+  grid-template-rows: 4px 72px 4px;
+  background-color: var(--text-blue);
+}
+
+#speedometer-setting {
+  width: 100%;
+  height: 44px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
+}
+
+#speed-num-L {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: rgb(20,20,20);
+}
+
+#speed-num-R {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-color: rgb(20,20,20);
+}
+
 /* HYPERJUMP BUTTON */
 
 .bridge-station-button-section #punch-it {

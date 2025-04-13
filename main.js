@@ -278,7 +278,7 @@ const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
 fluxCapacitorButton.addEventListener('click',fluxIt);
 
 function fluxIt() {
-  console.log('fluxed it');
+  console.log('Hold at 88.');
   fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
 }
 
