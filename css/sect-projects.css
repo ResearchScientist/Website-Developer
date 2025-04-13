@@ -439,15 +439,15 @@
 }
 
 #speedometer-section {
-  width: 142px;
-  height: 80px;
+  width: 156px;
+  height: 88px;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
   align-self: center;
   display: grid;
   grid-template-columns: 1fr 50px 2px 50px 1fr;
-  grid-template-rows: 4px 72px 4px;
+  grid-template-rows: 4px 80px 4px;
   background-color: var(--text-blue);
 }
 
@@ -465,8 +465,12 @@
 }
 
 #speed-num-L {
+  padding: 5px;
   grid-column: 2/3;
   grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 30px;
+  grid-template-rows: 30px 30px;
   background-color: rgb(20,20,20);
 }
 
@@ -474,6 +478,57 @@
   grid-column: 4/5;
   grid-row: 2/3;
   background-color: rgb(20,20,20);
+}
+
+#speed-num-L span , #speed-num-R span {
+  width: 25px;
+  height: 5px;
+  /* display: inline-block; */
+  justify-self: center;
+  background-color: orange;
+}
+
+#speed-num-L span:nth-of-type(1) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+#speed-num-L span:nth-of-type(2) {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  /* clip-path: polygon(50% 0, 100% 20%, 100% 90%, 50% 98%, 0 86%, 0 20%); */
+}
+
+#speed-num-L span:nth-of-type(3) {
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  align-self: flex-end;
+}
+
+#speed-num-L span:nth-of-type(4) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  transform: translate(-10px,15px) rotateZ(90deg);
+}
+
+#speed-num-L span:nth-of-type(5) {
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  transform: translate(-10px,15px) rotateZ(90deg);
+}
+
+#speed-num-L span:nth-of-type(6) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  transform: translate(10px,15px) rotateZ(90deg);
+}
+
+#speed-num-L span:nth-of-type(7) {
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  transform: translate(10px,15px) rotateZ(90deg);
 }
 
 /* HYPERJUMP BUTTON */
