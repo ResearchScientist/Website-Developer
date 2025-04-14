@@ -439,15 +439,16 @@
 }
 
 #speedometer-section {
-  width: 156px;
-  height: 88px;
+  width: 133px;
+  height: 76px;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
   align-self: center;
   display: grid;
-  grid-template-columns: 1fr 50px 2px 50px 1fr;
-  grid-template-rows: 4px 80px 4px;
+  grid-template-columns: 1fr 45px 1px 45px 1fr;
+  grid-template-rows: 4px 68px 4px;
+  border-radius: 2px;
   background-color: var(--text-blue);
 }
 
@@ -485,6 +486,7 @@
   justify-self: center;
   clip-path: polygon(10% 0% , 90% 0% , 100% 50% , 90% 100% , 10% 100% , 0% 50%);
   background-color: var(--dark-orange);
+  filter: brightness(.25);
 }
 
 #speed-num-L span:nth-of-type(1) , #speed-num-R span:nth-of-type(1) {
