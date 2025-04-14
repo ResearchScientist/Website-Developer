@@ -280,6 +280,75 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 function fluxIt() {
   console.log('Hold at 88.');
   fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
+  if (intervalID) {
+    clearInterval(intervalID);
+  }
+  speedMetronome();
+}
+
+// 15 , 30 , 45 , 60 , 75
+
+let speed = 0;
+let intervalID;
+let acceleration = 250;
+
+function speedMetronome() {
+  speed++;
+  console.log(speed);
+  let currentFunction = () => {};
+  switch (true) {
+    case speed > 75:
+      acceleration = 2000;
+      break;
+    case speed > 60:
+      acceleration = 1200;
+      currentFunction = gear5;
+      break;
+    case speed > 45:
+      acceleration = 1000;
+      currentFunction = gear4;
+      break;
+    case speed > 30:
+      acceleration = 750;
+      currentFunction = gear3;
+    case speed > 15:
+      acceleration = 500
+      currentFunction = gear2;
+    default:
+      acceleration = 250;
+      currentFunction = gear1;
+      break;
+  }
+
+  currentFunction();
+
+  if (speed >= 88) {
+    clearInterval(intervalID);
+    console.log('interval stop');
+  }
+  else {
+    intervalID = setTimeout(speedMetronome,acceleration);
+  }
+}
+
+function gear1() {
+  console.log('0 to 15');
+}
+
+function gear2() {
+  console.log('16 to 30');
+}
+
+function gear3() {
+  console.log('31 to 45');
+}
+
+function gear4() {
+  console.log('46 to 60');
+}
+
+function gear5() {
+  console.log('61 to 75');
 }
 
 // PUNCH IT
