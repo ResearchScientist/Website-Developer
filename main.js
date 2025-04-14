@@ -274,6 +274,7 @@ function unviewFrozenPlanete() {
 
 const fluxCapacitorButton = document.querySelector('#flux-capacitor');
 const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
+const speedometerGlass = document.querySelector('#speedometer-glass');
 const speedNumL = document.querySelector('#speed-num-L');
 const speedNumR = document.querySelector('#speed-num-R');
 
@@ -282,7 +283,7 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 function fluxIt() {
   console.log('Get to 88!');
   fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
-  showSpeedometer();
+  setTimeout(showSpeedometer,500);
 }
 
 function showSpeedometer() {
@@ -290,7 +291,8 @@ function showSpeedometer() {
     clearInterval(intervalID);
   }
   speed = 0;
-  speedMetronome();
+  speedometerGlass.classList.add('show-speedometer');
+  setTimeout(speedMetronome,2200);
 }
 
 let speed = 0;
