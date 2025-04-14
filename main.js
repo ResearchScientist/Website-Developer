@@ -344,10 +344,10 @@ function speedMetronome() {
     case speed > 40:
       acceleration = 120;
       break;
-      case speed == 40:
-        acceleration = 500;
-        // currentFunction = gear3;
-        break;
+    case speed == 40:
+      acceleration = 500;
+      // currentFunction = gear3;
+      break;
     case speed > 35:
       acceleration = 200;
       break;
