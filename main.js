@@ -282,6 +282,10 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 function fluxIt() {
   console.log('Get to 88!');
   fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
+  showSpeedometer();
+}
+
+function showSpeedometer() {
   if (intervalID) {
     clearInterval(intervalID);
   }
