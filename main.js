@@ -348,7 +348,7 @@ function updateSpeedometer(speed) {
       span.style.filter = "brightness(1)";
     }
     else {
-      span.style.filter = "brightness(.25)";
+      span.style.filter = "brightness(.2)";
     }
   });
 
@@ -357,14 +357,26 @@ function updateSpeedometer(speed) {
       span.style.filter = "brightness(1)";
     }
     else {
-      span.style.filter = "brightness(.25)";
+      span.style.filter = "brightness(.2)";
     }
   });
-
-  // console.log('left is' , speedL);
-  // console.log('right is' , speedR);
 }
 
+function getDigitSegments(digit) {
+  const segments = [
+    [1,0,1,1,1,1,1], // 0
+    [0,0,0,0,0,1,1], // 1
+    [1,1,1,0,1,1,0], // 2
+    [1,1,1,0,0,1,1], // 3
+    [0,1,0,1,0,1,1], // 4
+    [1,1,1,1,0,0,1], // 5
+    [1,1,1,1,1,0,1], // 6
+    [1,0,0,0,0,1,1], // 7
+    [1,1,1,1,1,1,1], // 8
+    [1,1,1,1,0,1,1]  // 9
+  ];
+  return segments[digit];
+}
 // function gear1() {
 //   console.log('0 to 15');
 // }

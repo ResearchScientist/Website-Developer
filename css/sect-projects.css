@@ -485,8 +485,8 @@
   height: 5px;
   justify-self: center;
   clip-path: polygon(10% 0% , 90% 0% , 100% 50% , 90% 100% , 10% 100% , 0% 50%);
-  background-color: var(--dark-orange);
-  filter: brightness(.25);
+  background-color: var(--accent-orange);
+  filter: brightness(.2);
 }
 
 /* top */
