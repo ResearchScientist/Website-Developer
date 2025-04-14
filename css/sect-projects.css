@@ -438,6 +438,99 @@
   100% {opacity: 1;}
 }
 
+#speedometer-section {
+  width: 133px;
+  height: 76px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 45px 1px 45px 1fr;
+  grid-template-rows: 4px 68px 4px;
+  border-radius: 2px;
+  background-color: var(--text-blue);
+}
+
+#speedometer-setting {
+  width: 100%;
+  height: 44px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: center;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 12px;
+  text-align: center;
+}
+
+#speed-num-L , #speed-num-R {
+  padding: 5px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 35px;
+  grid-template-rows: 30px 30px;
+  background-color: rgb(20,20,20);
+}
+
+#speed-num-R {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+
+#speed-num-L span , #speed-num-R span {
+  width: 25px;
+  height: 5px;
+  justify-self: center;
+  clip-path: polygon(10% 0% , 90% 0% , 100% 50% , 90% 100% , 10% 100% , 0% 50%);
+  background-color: var(--dark-orange);
+  filter: brightness(.25);
+}
+
+#speed-num-L span:nth-of-type(1) , #speed-num-R span:nth-of-type(1) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+#speed-num-L span:nth-of-type(2) , #speed-num-R span:nth-of-type(2) {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  align-self: center;
+}
+
+#speed-num-L span:nth-of-type(3) , #speed-num-R span:nth-of-type(3) {
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  align-self: flex-end;
+  transform: translateY(-2px);
+}
+
+#speed-num-L span:nth-of-type(4) , #speed-num-R span:nth-of-type(4) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  transform: translate(-14px,14px) rotateZ(90deg);
+}
+
+#speed-num-L span:nth-of-type(5) , #speed-num-R span:nth-of-type(5) {
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  transform: translate(-14px,10px) rotateZ(90deg);
+}
+
+#speed-num-L span:nth-of-type(6) , #speed-num-R span:nth-of-type(6) {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  transform: translate(14px,14px) rotateZ(90deg);
+}
+
+#speed-num-L span:nth-of-type(7) , #speed-num-R span:nth-of-type(7) {
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  transform: translate(14px,10px) rotateZ(90deg);
+}
+
 /* HYPERJUMP BUTTON */
 
 .bridge-station-button-section #punch-it {
