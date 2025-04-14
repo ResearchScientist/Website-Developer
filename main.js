@@ -274,82 +274,116 @@ function unviewFrozenPlanete() {
 
 const fluxCapacitorButton = document.querySelector('#flux-capacitor');
 const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
+const speedNumL = document.querySelector('#speed-num-L');
+const speedNumR = document.querySelector('#speed-num-R');
 
 fluxCapacitorButton.addEventListener('click',fluxIt);
 
 function fluxIt() {
-  console.log('Hold at 88.');
+  console.log('Get to 88!');
   fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
   if (intervalID) {
     clearInterval(intervalID);
   }
+  speed = 0;
   speedMetronome();
 }
 
-// 15 , 30 , 45 , 60 , 75
-
 let speed = 0;
 let intervalID;
-let acceleration = 250;
+let acceleration = 100;
 
 function speedMetronome() {
   speed++;
-  console.log(speed);
-  let currentFunction = () => {};
+  updateSpeedometer(speed);
+
+  // let currentFunction = () => {};
+
   switch (true) {
     case speed > 75:
-      acceleration = 2000;
+      acceleration = 750;
       break;
     case speed > 60:
-      acceleration = 1200;
-      currentFunction = gear5;
+      acceleration = 500;
+      // currentFunction = gear5;
       break;
-    case speed > 45:
-      acceleration = 1000;
-      currentFunction = gear4;
+    case speed > 50:
+      acceleration = 400;
+      // currentFunction = gear4;
       break;
+    case speed > 40:
+      acceleration = 300;
+      // currentFunction = gear3;
     case speed > 30:
-      acceleration = 750;
-      currentFunction = gear3;
-    case speed > 15:
-      acceleration = 500
-      currentFunction = gear2;
+      acceleration = 200;
+      // currentFunction = gear2;
     default:
-      acceleration = 250;
-      currentFunction = gear1;
+      acceleration = 100;
+      // currentFunction = gear1;
       break;
   }
 
-  currentFunction();
+  // currentFunction();
 
   if (speed >= 88) {
     clearInterval(intervalID);
-    console.log('interval stop');
+    console.log('hold at 88');
+    speed = 0;
   }
   else {
     intervalID = setTimeout(speedMetronome,acceleration);
   }
 }
 
-function gear1() {
-  console.log('0 to 15');
+function updateSpeedometer(speed) {
+  const speedL = Math.floor(speed / 10);
+  const speedR = speed % 10;
+  const digitL = getDigitSegments(speedL);
+  const digitR = getDigitSegments(speedR);
+  const spanL = speedNumL.querySelectorAll('span');
+  const spanR = speedNumR.querySelectorAll('span');
+
+  spanL.forEach((span,index) => {
+    if (digitL[index]) {
+      span.style.filter = "brightness(1)";
+    }
+    else {
+      span.style.filter = "brightness(.25)";
+    }
+  });
+
+  spanR.forEach((span,index) => {
+    if (digitR[index]) {
+      span.style.filter = "brightness(1)";
+    }
+    else {
+      span.style.filter = "brightness(.25)";
+    }
+  });
+
+  // console.log('left is' , speedL);
+  // console.log('right is' , speedR);
 }
 
-function gear2() {
-  console.log('16 to 30');
-}
+// function gear1() {
+//   console.log('0 to 15');
+// }
 
-function gear3() {
-  console.log('31 to 45');
-}
+// function gear2() {
+//   console.log('16 to 30');
+// }
 
-function gear4() {
-  console.log('46 to 60');
-}
+// function gear3() {
+//   console.log('31 to 45');
+// }
 
-function gear5() {
-  console.log('61 to 75');
-}
+// function gear4() {
+//   console.log('46 to 60');
+// }
+
+// function gear5() {
+//   console.log('61 to 75');
+// }
 
 // PUNCH IT
 
