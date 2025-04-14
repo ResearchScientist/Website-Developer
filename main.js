@@ -297,7 +297,7 @@ function showSpeedometer() {
 
 let speed = 0;
 let intervalID;
-let acceleration = 100;
+let acceleration = 200;
 
 function speedMetronome() {
   speed++;
@@ -306,25 +306,60 @@ function speedMetronome() {
   // let currentFunction = () => {};
 
   switch (true) {
-    case speed > 75:
-      acceleration = 750;
+    case speed == 87:
+      acceleration = 2000;
       break;
-    case speed > 60:
+    case speed == 86:
+      acceleration = 3000;
+      break;
+    case speed == 85:
+      acceleration = 1500;
+      break;
+    case speed == 84:
+      acceleration = 2000;
+      break;
+    case speed > 78:
+      acceleration = 1000;
+      break;
+    case speed > 75:
+      acceleration = 120;
+      break;
+    case speed == 75:
       acceleration = 500;
       // currentFunction = gear5;
       break;
-    case speed > 50:
-      acceleration = 400;
+    case speed > 65:
+      acceleration = 500;
+      break;
+    case speed > 60:
+      acceleration = 120;
+      break;
+    case speed == 60:
+      acceleration = 500;
       // currentFunction = gear4;
       break;
-    case speed > 40:
+    case speed > 45:
       acceleration = 300;
-      // currentFunction = gear3;
-    case speed > 30:
+      break;
+    case speed > 40:
+      acceleration = 120;
+      break;
+      case speed == 40:
+        acceleration = 500;
+        // currentFunction = gear3;
+        break;
+    case speed > 35:
       acceleration = 200;
+      break;
+    case speed > 30:
+      acceleration = 120;
+      break;
+    case speed == 30:
+      acceleration = 500;
       // currentFunction = gear2;
+      break;
     default:
-      acceleration = 100;
+      acceleration = 200;
       // currentFunction = gear1;
       break;
   }
@@ -334,6 +369,7 @@ function speedMetronome() {
   if (speed >= 88) {
     clearInterval(intervalID);
     console.log('hold at 88');
+    showLightning();
     speed = 0;
   }
   else {
@@ -383,25 +419,18 @@ function getDigitSegments(digit) {
   ];
   return segments[digit];
 }
-// function gear1() {
-//   console.log('0 to 15');
-// }
 
-// function gear2() {
-//   console.log('16 to 30');
-// }
-
-// function gear3() {
-//   console.log('31 to 45');
-// }
-
-// function gear4() {
-//   console.log('46 to 60');
-// }
-
-// function gear5() {
-//   console.log('61 to 75');
-// }
+function showLightning() {
+  console.log("ligtning flash");
+  setTimeout(() => {
+    console.log('flash 1');
+    
+  }, 1000);
+  setTimeout(() => {
+    console.log('flash 2');
+    
+  }, 1000);
+}
 
 // PUNCH IT
 
