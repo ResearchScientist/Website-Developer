@@ -181,7 +181,7 @@
 
 #display {
   width: 98%;
-  max-width: 650px;
+  max-width: 650px; /* max height 365 */
   aspect-ratio: 16/9;
   grid-column: 1/-1;
   grid-row: 2/3;
@@ -446,8 +446,8 @@
   justify-self: center;
   align-self: center;
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
+  grid-template-columns: 1fr 133px 1fr;
+  grid-template-rows: 1fr 76px 1fr;
   border-bottom: 1px solid rgba(200,200,250,.1);
   background-color: rgba(0,0,50,.1);
   backdrop-filter: blur(2px);
@@ -560,6 +560,46 @@
   grid-row: -2/-1;
   transform: translate(14px,10px) rotateZ(90deg);
 }
+
+#lightning-L-svg {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: flex-end;
+  align-self: flex-end;
+  opacity: 0;
+}
+
+#lightning-R-svg {
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  justify-self: flex-start;
+  align-self: flex-end;
+  opacity: 0;
+}
+
+.lightning-appear-L {animation: lightningAppearL .8s linear forwards;}
+
+@keyframes lightningAppearL {
+  0% {opacity: 0;}
+  40% {opacity: 0;}
+  41% {opacity: 1;}
+  70% {opacity: 1;}
+  71% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+.lightning-appear-R {animation: lightningAppearR .8s linear forwards;}
+
+@keyframes lightningAppearR {
+  0% {opacity: 0;}
+  1% {opacity: 0;}
+  2% {opacity: 1;}
+  50% {opacity: 1;}
+  51% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+/* .lightning-flash */
 
 /* HYPERJUMP BUTTON */
 
