@@ -275,8 +275,11 @@ function unviewFrozenPlanete() {
 const fluxCapacitorButton = document.querySelector('#flux-capacitor');
 const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
 const speedometerGlass = document.querySelector('#speedometer-glass');
+const speedometerBox = document.querySelector('#speedometer-box');
 const speedNumL = document.querySelector('#speed-num-L');
 const speedNumR = document.querySelector('#speed-num-R');
+const lightningLsvg = document.querySelector('#lightning-L-svg');
+const lightningRsvg = document.querySelector('#lightning-R-svg');
 
 fluxCapacitorButton.addEventListener('click',fluxIt);
 
@@ -291,6 +294,7 @@ function showSpeedometer() {
     clearInterval(intervalID);
   }
   speed = 0;
+  resetSpedometerLights();
   speedometerGlass.classList.add('show-speedometer');
   setTimeout(speedMetronome,2200);
 }
@@ -421,15 +425,33 @@ function getDigitSegments(digit) {
 }
 
 function showLightning() {
-  console.log("ligtning flash");
   setTimeout(() => {
-    console.log('flash 1');
-    
+    lightningLsvg.classList.add('lightning-appear-L');
+  }, 1200);
+  setTimeout(() => {
+    lightningRsvg.classList.add('lightning-appear-R');
   }, 1000);
   setTimeout(() => {
-    console.log('flash 2');
-    
-  }, 1000);
+    speedometerBox.style.display = 'none';
+    speedometerGlass.style.backgroundColor = 'white';
+  }, 2000);
+  setTimeout(() => {
+    speedometerGlass.classList.remove('show-speedometer');
+    speedometerGlass.style.transform = 'translateY(-100%)';
+    speedometerGlass.style.backgroundColor = 'rgba(0,0,50,.1)';
+    speedometerBox.style.display = 'grid';
+  }, 2500);
+}
+
+function resetSpedometerLights() {
+  const spanL = speedNumL.querySelectorAll('span');
+  const spanR = speedNumR.querySelectorAll('span');
+  spanL.forEach(span => {
+    span.style.filter = 'brightness(.25)';
+  });
+  spanR.forEach(span => {
+    span.style.filter = 'brightness(.25)';
+  });
 }
 
 // PUNCH IT
