@@ -433,14 +433,14 @@ function showLightning() {
   }, 1000);
   setTimeout(() => {
     speedometerBox.style.display = 'none';
-    speedometerGlass.style.backgroundColor = 'white';
+    speedometerGlass.style.backgroundColor = 'var(--text-blue)';
   }, 2000);
   setTimeout(() => {
     speedometerGlass.classList.remove('show-speedometer');
     speedometerGlass.style.transform = 'translateY(-100%)';
     speedometerGlass.style.backgroundColor = 'rgba(0,0,50,.1)';
     speedometerBox.style.display = 'grid';
-  }, 2500);
+  }, 2100);
 }
 
 function resetSpedometerLights() {
