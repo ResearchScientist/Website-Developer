@@ -599,7 +599,154 @@
   100% {opacity: 0;}
 }
 
-/* .lightning-flash */
+/* TRAJECTORIES */
+
+#trajectory-items-section {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  text-align: center;
+  justify-self: center;
+  align-self: flex-end;
+  margin: 0 auto 30px;
+}
+
+.trajectory-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.trajectory-item:nth-of-type(1) {
+  width: 130px;
+}
+
+.trajectory-item:nth-of-type(2) {
+  width: 142px;
+}
+
+.trajectory-item:nth-of-type(3) {
+  width: 160px;
+}
+
+.trajectory-item:nth-of-type(4) {
+  width: 180px;
+}
+
+.trajectory-item:nth-of-type(5) {
+  width: 200px;
+}
+
+.trajectory-item:nth-of-type(6) {
+  width: 220px;
+}
+
+#trajectory-items-section p {
+  margin: 0 auto;
+}
+
+#trajectory-items-section div:nth-of-type(1) p {
+  width: 120px;
+  font-size: 8px;
+}
+
+#trajectory-items-section div:nth-of-type(2) p {
+  width: 140px;
+  font-size: 10px;
+}
+
+#trajectory-items-section div:nth-of-type(3) p {
+  width: 160px;
+  font-size: 12px;
+}
+
+#trajectory-items-section div:nth-of-type(4) p {
+  width: 180px;
+  font-size: 14px;
+}
+
+#trajectory-items-section div:nth-of-type(5) p {
+  width: 200px;
+  font-size: 16px;
+}
+
+#trajectory-items-section div:nth-of-type(6) p {
+  width: 220px;
+  font-size: 18px;
+}
+
+.trajectory-item aside {
+  border-radius: 50%;
+  background-color: var(--text-blue);
+  opacity: 1;
+  animation: lights 6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.trajectory-item .strobe {
+  animation-play-state: running;
+}
+
+#light-6-l,#light-6-r {
+  width: 4px;
+  height: 4px;
+  animation-delay: 2.5s;
+}
+
+#light-5-l,#light-5-r {
+  width: 6px;
+  height: 6px;
+  animation-delay: 2s;
+}
+
+#light-4-l,#light-4-r {
+  width: 8px;
+  height: 8px;
+  animation-delay: 1.5s;
+}
+
+#light-3-l,#light-3-r {
+  width: 10px;
+  height: 10px;
+  animation-delay: 1s;
+}
+
+#light-2-l,#light-2-r {
+  width: 12px;
+  height: 12px;
+  animation-delay: .5s;
+}
+
+#light-1-l,#light-1-r {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes lights {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#trajectory-name-2 {animation-delay: .1s;}
+#trajectory-name-3 {animation-delay: .2s;}
+#trajectory-name-4 {animation-delay: .3s;}
+#trajectory-name-5 {animation-delay: .4s;}
+#trajectory-name-6 {animation-delay: .5s;}
+
+.name-fade {
+  animation: name-fade .5s ease-in forwards;
+}
+
+.lights-off {
+  animation: lights-off .5s ease-in forwards;
+}
+
+@keyframes name-fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
 /* HYPERJUMP BUTTON */
 

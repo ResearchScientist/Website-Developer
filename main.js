@@ -815,7 +815,7 @@ canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000)
 
 // TRAJECTORY LIGHTS
 
-const trajectory = document.getElementById('trajectory-items');
+const trajectory = document.getElementById('trajectory-items-section');
 const lightList = trajectory.getElementsByClassName('light');
 
 function strobing() {
