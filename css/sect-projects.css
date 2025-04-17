@@ -811,9 +811,9 @@
   animation: name-fade .5s ease-in forwards;
 }
 
-.lights-off {
+/* .lights-off {
   animation: lights-off .5s ease-in forwards;
-}
+} */
 
 @keyframes name-fade {
   from {opacity: 0;}

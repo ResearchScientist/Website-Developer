@@ -541,19 +541,20 @@ const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animatio
 const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
 let nameList = document.getElementsByClassName('tn');
 
-// insetButton1.addEventListener('click',updateTrajectoryAcademic);
-// skillsButton.addEventListener('click',updateTrajectorySkills);
-// loveButton.addEventListener('click',updateTrajectoryLove);
-// resetFluxButton.addEventListener('click',resetFlux);
-
 function updateButtonNames() {
   insetButton1.querySelector('p').textContent = "Academic";
   insetButton2.querySelector('p').textContent = "Skills";
   insetButton3.querySelector('p').textContent = "Love";
   insetButton4.querySelector('p').textContent = "clear";
+  updateInsetButtonsToTrajectories();
 }
 
-
+function updateInsetButtonsToTrajectories() {
+  insetButton1.addEventListener('click',updateTrajectoryAcademic);
+  insetButton2.addEventListener('click',updateTrajectorySkills);
+  insetButton3.addEventListener('click',updateTrajectoryLove);
+  insetButton4.addEventListener('click',resetTrajectories);
+}
 
 function updateTrajectoryAcademic() {
   for (var i=0 ; i < nameList.length ; i++) {
