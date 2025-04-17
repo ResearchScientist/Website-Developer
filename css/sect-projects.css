@@ -688,7 +688,6 @@
 
 #trajectory-items-section p {
   margin: 0 auto;
-  /* display: none; */
   opacity: 0;
 }
 
@@ -728,12 +727,6 @@
   opacity: 0;
   /* animation: lights 6s ease-in-out infinite; */
   /* animation-play-state: paused; */
-  /* animation: showLights 3s linear forwards; */
-}
-
-@keyframes showLights {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
 }
 
 /* #trajectory-items-section .trajectory-item:nth-of-type(1) .light {

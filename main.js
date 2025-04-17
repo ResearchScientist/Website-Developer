@@ -476,7 +476,8 @@ function resetDeloreanStream() {
 
 // TRAJECTORY LIGHTS
 
-const trajectory = document.getElementById('trajectory-items-section');
+const trajectory = document.querySelector('#trajectory-items-section');
+const trajectoryNames = trajectory.querySelectorAll('p');
 const lightList = trajectory.getElementsByClassName('light');
 
 function showLights() {
@@ -504,7 +505,16 @@ function showLights() {
     lightList[1].style.opacity = "1";
     lightList[0].style.opacity = "1";
   }, 250);
+  setTimeout(showTrajectoryNames,800);
 }
+
+function showTrajectoryNames() {
+  trajectoryNames.forEach(name => {
+    name.style.opacity = '1';
+  });
+}
+
+
 
 function strobing() {
   for (var i=0 ; i < lightList.length ; i++) {
