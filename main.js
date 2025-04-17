@@ -521,22 +521,17 @@ function showTrajectoryNames() {
 
 
 
-function strobing() {
-  for (var i=0 ; i < lightList.length ; i++) {
-    lightList[i].classList.toggle('strobe');
-  }
-}
+// function strobing() {
+//   for (var i=0 ; i < lightList.length ; i++) {
+//     lightList[i].classList.toggle('strobe');
+//   }
+// }
 
-trajectory.addEventListener('click',strobing);
+// trajectory.addEventListener('click',strobing);
 
 // TRAJECTORY NAMES
 
-// const academicButton = document.getElementById('academicButton');
-// const skillsButton = document.getElementById('skillsButton');
-// const loveButton = document.getElementById('loveButton');
-
-
-const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
+const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
 let nameList = document.getElementsByClassName('tn');
@@ -565,7 +560,7 @@ function updateTrajectoryAcademic() {
 
 function updateTrajectorySkills() {
   for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = skillsArray[i];;
+    nameList[i].textContent = skillsArray[i];
   }
   trajectoryNameFade();
 }
@@ -575,6 +570,10 @@ function updateTrajectoryLove() {
     nameList[i].textContent = loveArray[i];
   }
   trajectoryNameFade();
+}
+
+function resetTrajectories() {
+  console.log('reset trajectories');
 }
 
 function trajectoryNameFade() {

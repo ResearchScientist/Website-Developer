@@ -600,7 +600,7 @@
   100% {opacity: 0;}
 }
 
-/* DELO */
+/* DELOREAN */
 
 #delorean-div {
   width: 120px;
@@ -664,27 +664,27 @@
 }
 
 .trajectory-item:nth-of-type(1) {
-  width: 75px;
+  width: 133px;
 }
 
 .trajectory-item:nth-of-type(2) {
-  width: 90px;
+  width: 145px;
 }
 
 .trajectory-item:nth-of-type(3) {
-  width: 110px;
+  width: 160px;
 }
 
 .trajectory-item:nth-of-type(4) {
-  width: 130px;
+  width: 180px;
 }
 
 .trajectory-item:nth-of-type(5) {
-  width: 150px;
+  width: 200px;
 }
 
 .trajectory-item:nth-of-type(6) {
-  width: 180px;
+  width: 220px;
 }
 
 #trajectory-items-section p {
@@ -693,32 +693,32 @@
 }
 
 #trajectory-items-section div:nth-of-type(1) p {
-  width: 60px;
+  width: 118px;
   font-size: 8px;
 }
 
 #trajectory-items-section div:nth-of-type(2) p {
-  width: 80px;
+  width: 130px;
   font-size: 10px;
 }
 
 #trajectory-items-section div:nth-of-type(3) p {
-  width: 100px;
+  width: 140px;
   font-size: 12px;
 }
 
 #trajectory-items-section div:nth-of-type(4) p {
-  width: 120px;
+  width: 160px;
   font-size: 14px;
 }
 
 #trajectory-items-section div:nth-of-type(5) p {
-  width: 140px;
+  width: 180px;
   font-size: 16px;
 }
 
 #trajectory-items-section div:nth-of-type(6) p {
-  width: 160px;
+  width: 200px;
   font-size: 18px;
 }
 
@@ -810,10 +810,6 @@
 .name-fade {
   animation: name-fade .5s ease-in forwards;
 }
-
-/* .lights-off {
-  animation: lights-off .5s ease-in forwards;
-} */
 
 @keyframes name-fade {
   from {opacity: 0;}
@@ -1053,7 +1049,7 @@
 
 /* ANIMATIONS */
 
-#planet-airglow {
+/* #planet-airglow {
   width: 95vw;
   height: 95vw;
   border-radius: 50%;
@@ -1061,7 +1057,7 @@
   grid-row: 1/-1;
   box-shadow: 0px -10px 10px var(--primary-blue);
   opacity: 0;
-}
+} */
 
 #planet-curves {
   width: 48%;
@@ -1095,7 +1091,7 @@
   100% {stroke-dashoffset: -1;}
 }
 
-@keyframes planet-airglow {
+/* @keyframes planet-airglow {
   from {opacity: 0;}
   to {opacity: 1;}
-}
+} */
