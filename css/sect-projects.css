@@ -626,7 +626,7 @@
   grid-row: 1/-1;
 }
 
-.delorean-stream {animation: deloreanStream 2s linear forwards;}
+.delorean-stream {animation: deloreanStream 3s linear forwards;}
 
 @keyframes deloreanStream {
   0% {transform: translateY(130px) scale(1.5); opacity: 1;}
@@ -634,13 +634,13 @@
   100% {transform: translateY(-95px) scale(.5); opacity: 0;}
 }
 
-.delorean-flash {animation: deloreanFlash 2s linear forwards;}
+.delorean-flash {animation: deloreanFlash 3s linear forwards;}
 
 @keyframes deloreanFlash {
-  0% {opacity: 0;}
-  90% {opacity: 0;}
-  95% {opacity: 1;}
-  100% {opacity: 0;}
+  0% {opacity: 0; filter: brightness(1);}
+  96% {opacity: 0; filter: brightness(1);}
+  98% {opacity: 1; filter: brightness(4);}
+  100% {opacity: 0; filter: brightness(1);}
 }
 
 /* TRAJECTORIES */
@@ -652,6 +652,7 @@
   justify-self: center;
   align-self: flex-end;
   margin: 0 auto 30px;
+  display: none;
 }
 
 .trajectory-item {
