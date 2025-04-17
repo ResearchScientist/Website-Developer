@@ -294,7 +294,7 @@ function showSpeedometer() {
     clearInterval(intervalID);
   }
   speed = 0;
-  resetSpedometerLights();
+  resetSpeedometerLights();
   speedometerGlass.classList.add('show-speedometer');
   setTimeout(speedMetronome,2200);
 }
@@ -438,12 +438,25 @@ function showLightning() {
   setTimeout(() => {
     speedometerGlass.classList.remove('show-speedometer');
     speedometerGlass.style.transform = 'translateY(-100%)';
+    lightningLsvg.classList.remove('lightning-appear-L');
+    lightningRsvg.classList.remove('lightning-appear-R');
     speedometerGlass.style.backgroundColor = 'rgba(0,0,50,.1)';
     speedometerBox.style.display = 'grid';
+    deloreanStream();
   }, 2100);
 }
 
-function resetSpedometerLights() {
+// DELOREAN
+
+const deloreanDIV = document.querySelector('#delorean-div');
+const deloreanFlash = document.querySelector('#delorean-flash-img');
+
+function deloreanStream() {
+  deloreanDIV.classList.add('delorean-stream');
+  deloreanFlash.classList.add('delorean-flash');
+}
+
+function resetSpeedometerLights() {
   const spanL = speedNumL.querySelectorAll('span');
   const spanR = speedNumR.querySelectorAll('span');
   spanL.forEach(span => {
