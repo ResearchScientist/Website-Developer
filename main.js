@@ -170,14 +170,18 @@ function activateShipDoors() {
   }
 };
 
-// SHIP BUTTONS
+// SHIP DISPLAY
 
 const screenDisplay = document.querySelector('#display');
-const launchSequenceMsg = document.querySelector('#launch-sequence');
 
 // SEQUENCE BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
+const insetButton1 = document.querySelector('#inset-button-1');
+const insetButton2 = document.querySelector('#inset-button-2');
+const insetButton3 = document.querySelector('#inset-button-3');
+const insetButton4 = document.querySelector('#inset-button-4');
+const launchSequenceMsg = document.querySelector('#launch-sequence');
 const launchSequence = ['4','3','2','1'];
 let currentSequence = [];
 
@@ -192,7 +196,7 @@ function activateInsetButton(e) {
       p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
       p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
       p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      p.style['padding'] = '6px 0 0';
+      p.style['padding'] = '8px 0 0';
       p.style['color'] = 'rgb(175,175,225)';
       p.style['textShadow'] = 'none';
     })
@@ -201,9 +205,9 @@ function activateInsetButton(e) {
     insetButtonP.style['borderTop'] = '2px solid var(--bridge-wall)';
     insetButtonP.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
     insetButtonP.style['boxShadow'] = 'none';
-    insetButtonP.style['padding'] = '7px 0 0';
+    insetButtonP.style['padding'] = '9px 0 0';
     insetButtonP.style['color'] = 'var(--text-blue)';
-    insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 5px var(--text-blue)';
+    insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 2px var(--text-blue)';
     checkSequence(insetButton);
   }
 }
@@ -295,6 +299,7 @@ function showSpeedometer() {
   }
   speed = 0;
   resetSpeedometerLights();
+  resetDeloreanStream();
   speedometerGlass.classList.add('show-speedometer');
   setTimeout(speedMetronome,2200);
 }
@@ -446,16 +451,6 @@ function showLightning() {
   }, 2100);
 }
 
-// DELOREAN
-
-const deloreanDIV = document.querySelector('#delorean-div');
-const deloreanFlash = document.querySelector('#delorean-flash-img');
-
-function deloreanStream() {
-  deloreanDIV.classList.add('delorean-stream');
-  deloreanFlash.classList.add('delorean-flash');
-}
-
 function resetSpeedometerLights() {
   const spanL = speedNumL.querySelectorAll('span');
   const spanR = speedNumR.querySelectorAll('span');
@@ -465,6 +460,133 @@ function resetSpeedometerLights() {
   spanR.forEach(span => {
     span.style.filter = 'brightness(.25)';
   });
+}
+
+// DELOREAN
+
+const deloreanDIV = document.querySelector('#delorean-div');
+const deloreanFlash = document.querySelector('#delorean-flash-img');
+
+function deloreanStream() {
+  deloreanDIV.classList.add('delorean-stream');
+  deloreanFlash.classList.add('delorean-flash');
+  setTimeout(showLights,3000);
+}
+
+function resetDeloreanStream() {
+  deloreanDIV.classList.remove('delorean-stream');
+  deloreanFlash.classList.remove('delorean-flash');
+}
+
+// TRAJECTORY LIGHTS
+
+const trajectory = document.querySelector('#trajectory-items-section');
+const trajectoryNames = trajectory.querySelectorAll('p');
+const lightList = trajectory.getElementsByClassName('light');
+
+function showLights() {
+  setTimeout(() => {
+    lightList[11].style.opacity = "1";
+    lightList[10].style.opacity = "1";
+  }, 0);
+  setTimeout(() => {
+    lightList[9].style.opacity = "1";
+    lightList[8].style.opacity = "1";
+  }, 50);
+  setTimeout(() => {
+    lightList[7].style.opacity = "1";
+    lightList[6].style.opacity = "1";
+  }, 100);
+  setTimeout(() => {
+    lightList[5].style.opacity = "1";
+    lightList[4].style.opacity = "1";
+  }, 150);
+  setTimeout(() => {
+    lightList[3].style.opacity = "1";
+    lightList[2].style.opacity = "1";
+  }, 200);
+  setTimeout(() => {
+    lightList[1].style.opacity = "1";
+    lightList[0].style.opacity = "1";
+  }, 250);
+  setTimeout(showTrajectoryNames,800);
+}
+
+function showTrajectoryNames() {
+  trajectoryNames.forEach(name => {
+    name.style.opacity = '1';
+  });
+  updateButtonNames();
+}
+
+
+
+function strobing() {
+  for (var i=0 ; i < lightList.length ; i++) {
+    lightList[i].classList.toggle('strobe');
+  }
+}
+
+trajectory.addEventListener('click',strobing);
+
+// TRAJECTORY NAMES
+
+// const academicButton = document.getElementById('academicButton');
+// const skillsButton = document.getElementById('skillsButton');
+// const loveButton = document.getElementById('loveButton');
+
+
+const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
+const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
+const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
+let nameList = document.getElementsByClassName('tn');
+
+// insetButton1.addEventListener('click',updateTrajectoryAcademic);
+// skillsButton.addEventListener('click',updateTrajectorySkills);
+// loveButton.addEventListener('click',updateTrajectoryLove);
+// resetFluxButton.addEventListener('click',resetFlux);
+
+function updateButtonNames() {
+  insetButton1.querySelector('p').textContent = "Academic";
+  insetButton2.querySelector('p').textContent = "Skills";
+  insetButton3.querySelector('p').textContent = "Love";
+  insetButton4.querySelector('p').textContent = "clear";
+}
+
+
+
+function updateTrajectoryAcademic() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = academicArray[i];
+  }
+  trajectoryNameFade();
+}
+
+function updateTrajectorySkills() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = skillsArray[i];;
+  }
+  trajectoryNameFade();
+}
+
+function updateTrajectoryLove() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = loveArray[i];
+  }
+  trajectoryNameFade();
+}
+
+function trajectoryNameFade() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].classList.add('name-fade');
+    setTimeout(resetFade,600)
+  }
+}
+
+function resetFade() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].classList.remove('name-fade');
+  }
 }
 
 // PUNCH IT
@@ -825,69 +947,6 @@ const throttleSatellite = (fun,delay) => {
 }
 
 canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000));
-
-// TRAJECTORY LIGHTS
-
-const trajectory = document.getElementById('trajectory-items-section');
-const lightList = trajectory.getElementsByClassName('light');
-
-function strobing() {
-  for (var i=0 ; i < lightList.length ; i++) {
-    lightList[i].classList.toggle('strobe');
-  }
-}
-
-trajectory.addEventListener('click',strobing);
-
-// TRAJECTORY NAMES
-
-const academicButton = document.getElementById('academicButton');
-const skillsButton = document.getElementById('skillsButton');
-const loveButton = document.getElementById('loveButton');
-
-const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
-const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
-const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
-
-let nameList = document.getElementsByClassName('tn');
-
-function updateTrajectoryAcademic() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = academicArray[i];
-  }
-  trajectoryNameFade();
-}
-
-function updateTrajectorySkills() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = skillsArray[i];;
-  }
-  trajectoryNameFade();
-}
-
-function updateTrajectoryLove() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = loveArray[i];
-  }
-  trajectoryNameFade();
-}
-
-function trajectoryNameFade() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].classList.add('name-fade');
-    setTimeout(resetFade,600)
-  }
-}
-
-function resetFade() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].classList.remove('name-fade');
-  }
-}
-
-academicButton.addEventListener('click',updateTrajectoryAcademic);
-skillsButton.addEventListener('click',updateTrajectorySkills);
-loveButton.addEventListener('click',updateTrajectoryLove);
 
 // X WING
 

@@ -304,12 +304,13 @@
 #inset-buttons p {
   width: 66px;
   height: 41px;
-  padding: 6px 0 0;
+  padding: 8px 0 0;
   margin: 0 auto;
   border-radius: 5px;
   border-top: 2px solid rgba(250,250,250,.2);
   border-bottom: 2px solid rgba(0,0,50,.8);
   box-shadow: 0px 1px 2px 0px rgba(0,0,0,.8);
+  font-size: 12px;
   color: rgb(175,175,225);
   background-color: var(--bridge-wall);
 }
@@ -652,7 +653,6 @@
   justify-self: center;
   align-self: flex-end;
   margin: 0 auto 30px;
-  display: none;
 }
 
 .trajectory-item {
@@ -689,7 +689,7 @@
 
 #trajectory-items-section p {
   margin: 0 auto;
-  /* background-color: teal; */
+  opacity: 0;
 }
 
 #trajectory-items-section div:nth-of-type(1) p {
@@ -722,13 +722,39 @@
   font-size: 18px;
 }
 
-.trajectory-item aside {
+.trajectory-item .light {
   border-radius: 50%;
   background-color: var(--text-blue);
-  opacity: 1;
-  animation: lights 6s ease-in-out infinite;
-  animation-play-state: paused;
+  opacity: 0;
+  /* animation: lights 6s ease-in-out infinite; */
+  /* animation-play-state: paused; */
 }
+
+/* #trajectory-items-section .trajectory-item:nth-of-type(1) .light {
+  opacity: 1;
+}
+
+#trajectory-items-section .trajectory-item:nth-of-type(2) .light {
+  opacity: 0;
+}
+
+#trajectory-items-section .trajectory-item:nth-of-type(3) .light {
+  opacity: 0;
+}
+
+#trajectory-items-section .trajectory-item:nth-of-type(4) .light {
+  opacity: 0;
+}
+
+#trajectory-items-section .trajectory-item:nth-of-type(5) .light {
+  opacity: 1;
+}
+
+#trajectory-items-section .trajectory-item:nth-of-type(6) .light {
+  opacity: 0;
+} */
+
+
 
 .trajectory-item .strobe {
   animation-play-state: running;
@@ -737,31 +763,31 @@
 #light-6-l,#light-6-r {
   width: 4px;
   height: 4px;
-  animation-delay: 2.5s;
+  /* animation-delay: 2.5s; */
 }
 
 #light-5-l,#light-5-r {
   width: 6px;
   height: 6px;
-  animation-delay: 2s;
+  /* animation-delay: 2s; */
 }
 
 #light-4-l,#light-4-r {
   width: 8px;
   height: 8px;
-  animation-delay: 1.5s;
+  /* animation-delay: 1.5s; */
 }
 
 #light-3-l,#light-3-r {
   width: 10px;
   height: 10px;
-  animation-delay: 1s;
+  /* animation-delay: 1s; */
 }
 
 #light-2-l,#light-2-r {
   width: 12px;
   height: 12px;
-  animation-delay: .5s;
+  /* animation-delay: .5s; */
 }
 
 #light-1-l,#light-1-r {
