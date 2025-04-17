@@ -289,7 +289,7 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 
 function fluxIt() {
   console.log('Get to 88!');
-  fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
+  fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
   setTimeout(showSpeedometer,500);
 }
 
@@ -577,8 +577,24 @@ function updateTrajectoryLove() {
 }
 
 function resetTrajectories() {
-  console.log('reset trajectories');
-  
+  fluxCapacitorOnIMG.classList.remove('flux-capacitor-on');
+  trajectoryGroupName.style.opacity = "0";
+  trajectoryGroupName.textContent = "";
+  trajectoryNames.forEach(name => {
+    name.style.opacity = "0";
+  });
+  for (var i=0 ; i < lightList.length ; i++) {
+    lightList[i].classList.remove('lights-strobe');
+    lightList[i].style.opacity = "0";
+  }
+  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
+  insetButton2.removeEventListener('click',updateTrajectorySkills);
+  insetButton3.removeEventListener('click',updateTrajectoryLove);
+  insetButton4.removeEventListener('click',resetTrajectories);
+  insetButton1.querySelector('p').textContent = "ready";
+  insetButton2.querySelector('p').textContent = "ready";
+  insetButton3.querySelector('p').textContent = "ready";
+  insetButton4.querySelector('p').textContent = "ready";
 }
 
 function trajectoryNameFade() {
