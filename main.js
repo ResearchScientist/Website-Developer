@@ -177,6 +177,10 @@ const screenDisplay = document.querySelector('#display');
 // SEQUENCE BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
+const insetButton1 = document.querySelector('#inset-button-1');
+const insetButton2 = document.querySelector('#inset-button-2');
+const insetButton3 = document.querySelector('#inset-button-3');
+const insetButton4 = document.querySelector('#inset-button-4');
 const launchSequenceMsg = document.querySelector('#launch-sequence');
 const launchSequence = ['4','3','2','1'];
 let currentSequence = [];
@@ -192,7 +196,7 @@ function activateInsetButton(e) {
       p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
       p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
       p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      p.style['padding'] = '6px 0 0';
+      p.style['padding'] = '8px 0 0';
       p.style['color'] = 'rgb(175,175,225)';
       p.style['textShadow'] = 'none';
     })
@@ -201,9 +205,9 @@ function activateInsetButton(e) {
     insetButtonP.style['borderTop'] = '2px solid var(--bridge-wall)';
     insetButtonP.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
     insetButtonP.style['boxShadow'] = 'none';
-    insetButtonP.style['padding'] = '7px 0 0';
+    insetButtonP.style['padding'] = '9px 0 0';
     insetButtonP.style['color'] = 'var(--text-blue)';
-    insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 5px var(--text-blue)';
+    insetButtonP.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 2px var(--text-blue)';
     checkSequence(insetButton);
   }
 }
@@ -512,6 +516,7 @@ function showTrajectoryNames() {
   trajectoryNames.forEach(name => {
     name.style.opacity = '1';
   });
+  updateButtonNames();
 }
 
 
@@ -526,15 +531,29 @@ trajectory.addEventListener('click',strobing);
 
 // TRAJECTORY NAMES
 
-const academicButton = document.getElementById('academicButton');
-const skillsButton = document.getElementById('skillsButton');
-const loveButton = document.getElementById('loveButton');
+// const academicButton = document.getElementById('academicButton');
+// const skillsButton = document.getElementById('skillsButton');
+// const loveButton = document.getElementById('loveButton');
+
 
 const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
-
 let nameList = document.getElementsByClassName('tn');
+
+// insetButton1.addEventListener('click',updateTrajectoryAcademic);
+// skillsButton.addEventListener('click',updateTrajectorySkills);
+// loveButton.addEventListener('click',updateTrajectoryLove);
+// resetFluxButton.addEventListener('click',resetFlux);
+
+function updateButtonNames() {
+  insetButton1.querySelector('p').textContent = "Academic";
+  insetButton2.querySelector('p').textContent = "Skills";
+  insetButton3.querySelector('p').textContent = "Love";
+  insetButton4.querySelector('p').textContent = "clear";
+}
+
+
 
 function updateTrajectoryAcademic() {
   for (var i=0 ; i < nameList.length ; i++) {
@@ -569,11 +588,6 @@ function resetFade() {
     nameList[i].classList.remove('name-fade');
   }
 }
-
-academicButton.addEventListener('click',updateTrajectoryAcademic);
-skillsButton.addEventListener('click',updateTrajectorySkills);
-loveButton.addEventListener('click',updateTrajectoryLove);
-
 
 // PUNCH IT
 
