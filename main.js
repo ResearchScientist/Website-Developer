@@ -517,17 +517,14 @@ function showTrajectoryNames() {
     name.style.opacity = '1';
   });
   updateButtonNames();
+  strobeLights();
 }
 
-
-
-// function strobing() {
-//   for (var i=0 ; i < lightList.length ; i++) {
-//     lightList[i].classList.toggle('strobe');
-//   }
-// }
-
-// trajectory.addEventListener('click',strobing);
+function strobeLights() {
+  for (var i=0 ; i < lightList.length ; i++) {
+    lightList[i].classList.add('lights-strobe');
+  }
+}
 
 // TRAJECTORY NAMES
 
