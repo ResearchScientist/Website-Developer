@@ -466,6 +466,7 @@ const deloreanFlash = document.querySelector('#delorean-flash-img');
 function deloreanStream() {
   deloreanDIV.classList.add('delorean-stream');
   deloreanFlash.classList.add('delorean-flash');
+  setTimeout(showLights,3000);
 }
 
 function resetDeloreanStream() {
@@ -473,6 +474,95 @@ function resetDeloreanStream() {
   deloreanFlash.classList.remove('delorean-flash');
 }
 
+// TRAJECTORY LIGHTS
+
+const trajectory = document.getElementById('trajectory-items-section');
+const lightList = trajectory.getElementsByClassName('light');
+
+function showLights() {
+  setTimeout(() => {
+    lightList[11].style.opacity = "1";
+    lightList[10].style.opacity = "1";
+  }, 0);
+  setTimeout(() => {
+    lightList[9].style.opacity = "1";
+    lightList[8].style.opacity = "1";
+  }, 50);
+  setTimeout(() => {
+    lightList[7].style.opacity = "1";
+    lightList[6].style.opacity = "1";
+  }, 100);
+  setTimeout(() => {
+    lightList[5].style.opacity = "1";
+    lightList[4].style.opacity = "1";
+  }, 150);
+  setTimeout(() => {
+    lightList[3].style.opacity = "1";
+    lightList[2].style.opacity = "1";
+  }, 200);
+  setTimeout(() => {
+    lightList[1].style.opacity = "1";
+    lightList[0].style.opacity = "1";
+  }, 250);
+}
+
+function strobing() {
+  for (var i=0 ; i < lightList.length ; i++) {
+    lightList[i].classList.toggle('strobe');
+  }
+}
+
+trajectory.addEventListener('click',strobing);
+
+// TRAJECTORY NAMES
+
+const academicButton = document.getElementById('academicButton');
+const skillsButton = document.getElementById('skillsButton');
+const loveButton = document.getElementById('loveButton');
+
+const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
+const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
+const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
+
+let nameList = document.getElementsByClassName('tn');
+
+function updateTrajectoryAcademic() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = academicArray[i];
+  }
+  trajectoryNameFade();
+}
+
+function updateTrajectorySkills() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = skillsArray[i];;
+  }
+  trajectoryNameFade();
+}
+
+function updateTrajectoryLove() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].textContent = loveArray[i];
+  }
+  trajectoryNameFade();
+}
+
+function trajectoryNameFade() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].classList.add('name-fade');
+    setTimeout(resetFade,600)
+  }
+}
+
+function resetFade() {
+  for (var i=0 ; i < nameList.length ; i++) {
+    nameList[i].classList.remove('name-fade');
+  }
+}
+
+academicButton.addEventListener('click',updateTrajectoryAcademic);
+skillsButton.addEventListener('click',updateTrajectorySkills);
+loveButton.addEventListener('click',updateTrajectoryLove);
 
 
 // PUNCH IT
@@ -833,69 +923,6 @@ const throttleSatellite = (fun,delay) => {
 }
 
 canvasSatellite.addEventListener('click',throttleSatellite(rotateSatellite,2000));
-
-// TRAJECTORY LIGHTS
-
-const trajectory = document.getElementById('trajectory-items-section');
-const lightList = trajectory.getElementsByClassName('light');
-
-function strobing() {
-  for (var i=0 ; i < lightList.length ; i++) {
-    lightList[i].classList.toggle('strobe');
-  }
-}
-
-trajectory.addEventListener('click',strobing);
-
-// TRAJECTORY NAMES
-
-const academicButton = document.getElementById('academicButton');
-const skillsButton = document.getElementById('skillsButton');
-const loveButton = document.getElementById('loveButton');
-
-const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
-const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
-const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
-
-let nameList = document.getElementsByClassName('tn');
-
-function updateTrajectoryAcademic() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = academicArray[i];
-  }
-  trajectoryNameFade();
-}
-
-function updateTrajectorySkills() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = skillsArray[i];;
-  }
-  trajectoryNameFade();
-}
-
-function updateTrajectoryLove() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = loveArray[i];
-  }
-  trajectoryNameFade();
-}
-
-function trajectoryNameFade() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].classList.add('name-fade');
-    setTimeout(resetFade,600)
-  }
-}
-
-function resetFade() {
-  for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].classList.remove('name-fade');
-  }
-}
-
-academicButton.addEventListener('click',updateTrajectoryAcademic);
-skillsButton.addEventListener('click',updateTrajectorySkills);
-loveButton.addEventListener('click',updateTrajectoryLove);
 
 // X WING
 
