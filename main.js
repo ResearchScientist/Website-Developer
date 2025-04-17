@@ -170,14 +170,14 @@ function activateShipDoors() {
   }
 };
 
-// SHIP BUTTONS
+// SHIP DISPLAY
 
 const screenDisplay = document.querySelector('#display');
-const launchSequenceMsg = document.querySelector('#launch-sequence');
 
 // SEQUENCE BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
+const launchSequenceMsg = document.querySelector('#launch-sequence');
 const launchSequence = ['4','3','2','1'];
 let currentSequence = [];
 
@@ -295,6 +295,7 @@ function showSpeedometer() {
   }
   speed = 0;
   resetSpeedometerLights();
+  resetDeloreanStream();
   speedometerGlass.classList.add('show-speedometer');
   setTimeout(speedMetronome,2200);
 }
@@ -446,16 +447,6 @@ function showLightning() {
   }, 2100);
 }
 
-// DELOREAN
-
-const deloreanDIV = document.querySelector('#delorean-div');
-const deloreanFlash = document.querySelector('#delorean-flash-img');
-
-function deloreanStream() {
-  deloreanDIV.classList.add('delorean-stream');
-  deloreanFlash.classList.add('delorean-flash');
-}
-
 function resetSpeedometerLights() {
   const spanL = speedNumL.querySelectorAll('span');
   const spanR = speedNumR.querySelectorAll('span');
@@ -466,6 +457,23 @@ function resetSpeedometerLights() {
     span.style.filter = 'brightness(.25)';
   });
 }
+
+// DELOREAN
+
+const deloreanDIV = document.querySelector('#delorean-div');
+const deloreanFlash = document.querySelector('#delorean-flash-img');
+
+function deloreanStream() {
+  deloreanDIV.classList.add('delorean-stream');
+  deloreanFlash.classList.add('delorean-flash');
+}
+
+function resetDeloreanStream() {
+  deloreanDIV.classList.remove('delorean-stream');
+  deloreanFlash.classList.remove('delorean-flash');
+}
+
+
 
 // PUNCH IT
 
