@@ -289,7 +289,7 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 
 function fluxIt() {
   console.log('Get to 88!');
-  fluxCapacitorOnIMG.classList.toggle('flux-capacitor-on');
+  fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
   setTimeout(showSpeedometer,500);
 }
 
@@ -517,45 +517,41 @@ function showTrajectoryNames() {
     name.style.opacity = '1';
   });
   updateButtonNames();
+  strobeLights();
 }
 
-
-
-function strobing() {
+function strobeLights() {
   for (var i=0 ; i < lightList.length ; i++) {
-    lightList[i].classList.toggle('strobe');
+    lightList[i].classList.add('lights-strobe');
   }
 }
 
-trajectory.addEventListener('click',strobing);
-
 // TRAJECTORY NAMES
 
-// const academicButton = document.getElementById('academicButton');
-// const skillsButton = document.getElementById('skillsButton');
-// const loveButton = document.getElementById('loveButton');
-
-
-const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci (goal)','M.S. HCI (goal)','B.A. Linguistics','B.S. Cognitive Science'];
+const trajectoryGroupName = document.querySelector('#trajectory-group-name');
+const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
 let nameList = document.getElementsByClassName('tn');
-
-// insetButton1.addEventListener('click',updateTrajectoryAcademic);
-// skillsButton.addEventListener('click',updateTrajectorySkills);
-// loveButton.addEventListener('click',updateTrajectoryLove);
-// resetFluxButton.addEventListener('click',resetFlux);
 
 function updateButtonNames() {
   insetButton1.querySelector('p').textContent = "Academic";
   insetButton2.querySelector('p').textContent = "Skills";
   insetButton3.querySelector('p').textContent = "Love";
   insetButton4.querySelector('p').textContent = "clear";
+  updateInsetButtonsToTrajectories();
 }
 
-
+function updateInsetButtonsToTrajectories() {
+  insetButton1.addEventListener('click',updateTrajectoryAcademic);
+  insetButton2.addEventListener('click',updateTrajectorySkills);
+  insetButton3.addEventListener('click',updateTrajectoryLove);
+  insetButton4.addEventListener('click',resetTrajectories);
+}
 
 function updateTrajectoryAcademic() {
+  trajectoryGroupName.style.opacity = "1";
+  trajectoryGroupName.textContent = "Academic Trajectory";
   for (var i=0 ; i < nameList.length ; i++) {
     nameList[i].textContent = academicArray[i];
   }
@@ -563,17 +559,42 @@ function updateTrajectoryAcademic() {
 }
 
 function updateTrajectorySkills() {
+  trajectoryGroupName.style.opacity = "1";
+  trajectoryGroupName.textContent = "Skills Trajectory";
   for (var i=0 ; i < nameList.length ; i++) {
-    nameList[i].textContent = skillsArray[i];;
+    nameList[i].textContent = skillsArray[i];
   }
   trajectoryNameFade();
 }
 
 function updateTrajectoryLove() {
+  trajectoryGroupName.style.opacity = "1";
+  trajectoryGroupName.textContent = "Love Trajectory";
   for (var i=0 ; i < nameList.length ; i++) {
     nameList[i].textContent = loveArray[i];
   }
   trajectoryNameFade();
+}
+
+function resetTrajectories() {
+  fluxCapacitorOnIMG.classList.remove('flux-capacitor-on');
+  trajectoryGroupName.style.opacity = "0";
+  trajectoryGroupName.textContent = "";
+  trajectoryNames.forEach(name => {
+    name.style.opacity = "0";
+  });
+  for (var i=0 ; i < lightList.length ; i++) {
+    lightList[i].classList.remove('lights-strobe');
+    lightList[i].style.opacity = "0";
+  }
+  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
+  insetButton2.removeEventListener('click',updateTrajectorySkills);
+  insetButton3.removeEventListener('click',updateTrajectoryLove);
+  insetButton4.removeEventListener('click',resetTrajectories);
+  insetButton1.querySelector('p').textContent = "ready";
+  insetButton2.querySelector('p').textContent = "ready";
+  insetButton3.querySelector('p').textContent = "ready";
+  insetButton4.querySelector('p').textContent = "ready";
 }
 
 function trajectoryNameFade() {
