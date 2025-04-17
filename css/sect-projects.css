@@ -722,6 +722,37 @@
   font-size: 18px;
 }
 
+#trajectory-group-name {
+  width: 140px;
+  height: 20px;
+  grid-column: 1/-1;
+  grid-row: 1/3;
+  justify-self: center;
+  align-self: flex-start;
+  text-align: center;
+  font-family: 'Lato',sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(200,200,250,.1);
+  color: var(--text-blue);
+  background-color: rgba(0, 75, 150,.1);
+  backdrop-filter: blur(2px);
+}
+
+#trajectory-name-2 {animation-delay: .1s;}
+#trajectory-name-3 {animation-delay: .2s;}
+#trajectory-name-4 {animation-delay: .3s;}
+#trajectory-name-5 {animation-delay: .4s;}
+#trajectory-name-6 {animation-delay: .5s;}
+
+.name-fade {
+  animation: name-fade .5s ease-in forwards;
+}
+
+@keyframes name-fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .trajectory-item .light {
   border-radius: 50%;
   background-color: var(--text-blue);
@@ -769,21 +800,6 @@
 #light-1-l,#light-1-r {
   width: 14px;
   height: 14px;
-}
-
-#trajectory-name-2 {animation-delay: .1s;}
-#trajectory-name-3 {animation-delay: .2s;}
-#trajectory-name-4 {animation-delay: .3s;}
-#trajectory-name-5 {animation-delay: .4s;}
-#trajectory-name-6 {animation-delay: .5s;}
-
-.name-fade {
-  animation: name-fade .5s ease-in forwards;
-}
-
-@keyframes name-fade {
-  from {opacity: 0;}
-  to {opacity: 1;}
 }
 
 /* HYPERJUMP BUTTON */
