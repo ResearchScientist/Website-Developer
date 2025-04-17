@@ -528,6 +528,7 @@ function strobeLights() {
 
 // TRAJECTORY NAMES
 
+const trajectoryGroupName = document.querySelector('#trajectory-group-name');
 const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
@@ -549,6 +550,8 @@ function updateInsetButtonsToTrajectories() {
 }
 
 function updateTrajectoryAcademic() {
+  trajectoryGroupName.style.opacity = "1";
+  trajectoryGroupName.textContent = "Academic Trajectory";
   for (var i=0 ; i < nameList.length ; i++) {
     nameList[i].textContent = academicArray[i];
   }
@@ -556,6 +559,8 @@ function updateTrajectoryAcademic() {
 }
 
 function updateTrajectorySkills() {
+  trajectoryGroupName.style.opacity = "1";
+  trajectoryGroupName.textContent = "Skills Trajectory";
   for (var i=0 ; i < nameList.length ; i++) {
     nameList[i].textContent = skillsArray[i];
   }
@@ -563,6 +568,8 @@ function updateTrajectorySkills() {
 }
 
 function updateTrajectoryLove() {
+  trajectoryGroupName.style.opacity = "1";
+  trajectoryGroupName.textContent = "Love Trajectory";
   for (var i=0 ; i < nameList.length ; i++) {
     nameList[i].textContent = loveArray[i];
   }
@@ -571,6 +578,7 @@ function updateTrajectoryLove() {
 
 function resetTrajectories() {
   console.log('reset trajectories');
+  
 }
 
 function trajectoryNameFade() {

@@ -736,6 +736,8 @@
   color: var(--text-blue);
   background-color: rgba(0, 75, 150,.1);
   backdrop-filter: blur(2px);
+  transition: all .5s;
+  opacity: 0;
 }
 
 #trajectory-name-2 {animation-delay: .1s;}
