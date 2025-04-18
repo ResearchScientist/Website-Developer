@@ -174,6 +174,18 @@ function activateShipDoors() {
 
 const screenDisplay = document.querySelector('#display');
 
+function disableDisplayButtons() {
+  viewButton.disabled = true;
+  fluxCapacitorButton.disabled = true;
+  punchItButton.disabled = true;
+}
+
+function enableDisplayButtons() {
+  viewButton.disabled = false;
+  fluxCapacitorButton.disabled = false;
+  punchItButton.disabled = false;
+}
+
 // SEQUENCE BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
@@ -240,7 +252,7 @@ const planetCurves = document.querySelectorAll('.planet-curve');
 viewButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
-  viewButton.disabled = true;
+  disableDisplayButtons();
   planeteFrozen.classList.remove('unshow-frozen-planete');
   planeteFrozen.classList.add('show-frozen-planete');
   setTimeout(displaySkills,3000);
@@ -269,9 +281,7 @@ function unviewFrozenPlanete() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.remove('animate-planet-curve');
   });
-  setTimeout(() => {
-    viewButton.disabled = false;
-  }, 3000);
+  setTimeout(enableDisplayButtons,3000);
 }
 
 // FLUX CAPACITOR
@@ -289,6 +299,9 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 
 function fluxIt() {
   console.log('Get to 88!');
+  // fluxCapacitorButton.disabled = true;
+  disableDisplayButtons();
+  viewButton.disabled = true;
   fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
   setTimeout(showSpeedometer,500);
 }
@@ -595,6 +608,7 @@ function resetTrajectories() {
   insetButton2.querySelector('p').textContent = "ready";
   insetButton3.querySelector('p').textContent = "ready";
   insetButton4.querySelector('p').textContent = "ready";
+  enableDisplayButtons(); 
 }
 
 function trajectoryNameFade() {
@@ -649,6 +663,7 @@ function moveHyperspeedLeverDown() {
 
 function punchIt() {
   console.log('punched it');
+  disableDisplayButtons();
   moveHyperspeedLeverUp();
   setTimeout(() => {
     if (!animationFrameId) {
@@ -743,7 +758,8 @@ function animateSingleLineColor(path) {
           animationPhase = 'reset';
           startTime = null;
           animationFrameId = requestAnimationFrame(animateReset);
-          setTimeout(moveHyperspeedLeverDown,1000)
+          setTimeout(moveHyperspeedLeverDown,1000);
+          setTimeout(enableDisplayButtons,1000);
           // setTimeout(() => {
           //   console.log('animation finish 1');
 
