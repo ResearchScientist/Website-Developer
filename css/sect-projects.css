@@ -420,23 +420,15 @@
 
 /* SHIP WHEEL */
 
-#avast-planete {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
-  justify-content: center;
-  align-items: center;
+.ship-wheel-spin {
+  animation: shipWheelSpin 1s ease-in-out forwards;
 }
 
-#ship-wheel-on-img {
-  opacity: 0;
-}
-
-.ship-wheel-on {animation: shipWheelOn .1s linear forwards;}
-
-@keyframes shipWheelOn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+@keyframes shipWheelSpin {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(-45deg);}
+  75% {transform: rotate(45deg);}
+  100% {transform: rotate(0deg);}
 }
 
 /* FLUX CAPACITOR BUTTON */
