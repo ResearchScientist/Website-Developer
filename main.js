@@ -245,7 +245,7 @@ function checkSequence(insetButton) {
 // DISPLAY PLANETE AND SKILLS
 
 const avastPlaneteButton = document.getElementById('avast-planete');
-const shipWheelOnIMG = document.getElementById('ship-wheel-on-img');
+const shipWheelIMG = document.getElementById('ship-wheel-img');
 const planeteFrozen = document.getElementById('planete-frozen');
 const skills = document.querySelectorAll('.skills');
 const planetCurves = document.querySelectorAll('.planet-curve');
@@ -254,7 +254,7 @@ avastPlaneteButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
   disableDisplayButtons();
-  shipWheelOnIMG.classList.add('ship-wheel-on');
+  shipWheelIMG.classList.add('ship-wheel-spin');
   planeteFrozen.classList.remove('unshow-frozen-planete');
   planeteFrozen.classList.add('show-frozen-planete');
   setTimeout(displaySkills,3000);
@@ -275,6 +275,7 @@ function planetCurvesAppear() {
 }
 
 function unviewFrozenPlanete() {
+  shipWheelIMG.classList.remove('ship-wheel-spin');
   planeteFrozen.classList.add('unshow-frozen-planete');
   planeteFrozen.classList.remove('show-frozen-planete');
   skills.forEach((skill) => {
@@ -283,9 +284,6 @@ function unviewFrozenPlanete() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.remove('animate-planet-curve');
   });
-  setTimeout(() => {
-    shipWheelOnIMG.classList.remove('ship-wheel-on');
-  }, 3000);
   setTimeout(enableDisplayButtons,3000);
 }
 
