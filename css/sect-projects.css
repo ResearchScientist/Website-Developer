@@ -418,6 +418,27 @@
 
 /* NAVIGATION */
 
+/* SHIP WHEEL */
+
+#avast-planete {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#ship-wheel-on-img {
+  opacity: 0;
+}
+
+.ship-wheel-on {animation: shipWheelOn .1s linear forwards;}
+
+@keyframes shipWheelOn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 /* FLUX CAPACITOR BUTTON */
 
 #flux-capacitor {
