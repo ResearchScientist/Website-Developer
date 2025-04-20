@@ -61,3 +61,7 @@ Removed all animations that autoplayed.
 > April 2025
 
 Reverted back to one dev log. Maintaining multiple ones was cumbersome. Will need to restructure the dev log.
+
+# Ship Wheel Animation
+
+Decided on using `transform rotate` on one img instead of making a sprite sheet for the ship wheel spinning animation. Since the img is being rendered at 50px by 50px any fine details at such a small resolution will be difficutl to see. Additionally, performance is better when animating one img vs a sprite sheet of many images. I was mostly concerned with the lighting and shadows on the wheel but at such a small resolution and at such a short animation the trade off between the lack of realism and the performance gain is worth it at that scale.
