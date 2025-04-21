@@ -254,10 +254,12 @@ avastPlaneteButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
   disableDisplayButtons();
-  shipWheelIMG.classList.add('ship-wheel-spin');
   planeteFrozen.classList.remove('unshow-frozen-planete');
-  planeteFrozen.classList.add('show-frozen-planete');
-  setTimeout(displaySkills,3000);
+  shipWheelIMG.classList.add('ship-wheel-spin');
+  setTimeout(() => {
+    planeteFrozen.classList.add('show-frozen-planete');
+    setTimeout(displaySkills,3000);
+  }, 1000);
 }
 
 function displaySkills() {
