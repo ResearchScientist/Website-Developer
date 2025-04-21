@@ -65,3 +65,7 @@ Reverted back to one dev log. Maintaining multiple ones was cumbersome. Will nee
 # Ship Wheel Animation
 
 Decided on using `transform rotate` on one img instead of making a sprite sheet for the ship wheel spinning animation. Since the img is being rendered at 50px by 50px any fine details at such a small resolution will be difficutl to see. Additionally, performance is better when animating one img vs a sprite sheet of many images. I was mostly concerned with the lighting and shadows on the wheel but at such a small resolution and at such a short animation the trade off between the lack of realism and the performance gain is worth it at that scale.
+
+# Lever Animation
+
+Very happy with the lever animation. Used 3 images. Animated the lever moving up or down and switched the braces when the lever was halfway through the animation. Quick and performant.
