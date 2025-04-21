@@ -1053,3 +1053,16 @@ function reexterminate() {
 }
 
 dalek.addEventListener('click',exterminate);
+
+// ASTEROID SHIP
+
+const asteroidShipBubble = document.querySelector('#asteroid-ship-bubble');
+const asteroidShip = document.querySelector('#asteroid-ship-svg');
+
+asteroidShip.addEventListener('click',blastAsteroids);
+
+function blastAsteroids() {
+  console.log('asteroids');
+  asteroidShip.classList.add('asteroid-ship-spin');
+  asteroidShipBubble.classList.add('asteroid-ship-move');
+}
