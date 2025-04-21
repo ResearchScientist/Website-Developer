@@ -305,7 +305,6 @@ fluxCapacitorButton.addEventListener('click',fluxIt);
 function fluxIt() {
   console.log('Get to 88!');
   disableDisplayButtons();
-  // viewButton.disabled = true;
   fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
   setTimeout(showSpeedometer,500);
 }
@@ -323,7 +322,7 @@ function showSpeedometer() {
 
 let speed = 0;
 let intervalID;
-let acceleration = 200;
+let acceleration = 100;
 
 function speedMetronome() {
   speed++;
@@ -342,50 +341,53 @@ function speedMetronome() {
       acceleration = 1500;
       break;
     case speed == 84:
+      acceleration = 1000;
+      break;
+    case speed == 83:
       acceleration = 2000;
       break;
-    case speed > 78:
+    case speed > 79:
       acceleration = 1000;
       break;
     case speed > 75:
-      acceleration = 120;
+      acceleration = 100;
       break;
     case speed == 75:
       acceleration = 500;
       // currentFunction = gear5;
       break;
     case speed > 65:
-      acceleration = 500;
+      acceleration = 250;
       break;
     case speed > 60:
-      acceleration = 120;
+      acceleration = 100;
       break;
     case speed == 60:
       acceleration = 500;
       // currentFunction = gear4;
       break;
     case speed > 45:
-      acceleration = 300;
+      acceleration = 200;
       break;
     case speed > 40:
-      acceleration = 120;
+      acceleration = 100;
       break;
     case speed == 40:
       acceleration = 500;
       // currentFunction = gear3;
       break;
     case speed > 35:
-      acceleration = 200;
+      acceleration = 150;
       break;
     case speed > 30:
-      acceleration = 120;
+      acceleration = 100;
       break;
     case speed == 30:
       acceleration = 500;
       // currentFunction = gear2;
       break;
     default:
-      acceleration = 200;
+      acceleration = 100;
       // currentFunction = gear1;
       break;
   }
@@ -548,7 +550,7 @@ function strobeLights() {
 const trajectoryGroupName = document.querySelector('#trajectory-group-name');
 const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B.A. Linguistics','B.S. Cognitive Science'];
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
-const loveArray = ['coffee','coffee','coffee','sailing','gelato','cats'];
+const loveArray = ['coffee','gelato','chocolate','cats','sailing','dancing'];
 let nameList = document.getElementsByClassName('tn');
 
 function updateButtonNames() {
