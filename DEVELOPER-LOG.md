@@ -69,3 +69,7 @@ Decided on using `transform rotate` on one img instead of making a sprite sheet 
 # Lever Animation
 
 Very happy with the lever animation. Used 3 images. Animated the lever moving up or down and switched the braces when the lever was halfway through the animation. Quick and performant.
+
+# Asteroid Ship Animation
+
+For fun I made an animatio of the asteroid ship from the game asteroids. On click it spins, shoots, then thrusts away before crashing into the title icon in the header nav and falling apart. The `filter: brightness()` did not brighten the svg path enough, so I added a filter matrix directly to the svg instead.
