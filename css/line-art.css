@@ -183,11 +183,8 @@
 }
 
 #asteroid-ship-svg {
-  /* width: 20px;
-  height: 29px; */
   grid-column: 1/-1;
   grid-row: 1/-1;
-  /* filter: brightness(2); */
   z-index: 1;
 }
 
@@ -199,8 +196,8 @@
 
 @keyframes asteroidShipSpin {
   0% {transform: rotate(0deg);}
-  50% {transform: rotate(-410deg);}
-  100% {transform: rotate(-410deg);}
+  50% {transform: rotate(-400deg);}
+  100% {transform: rotate(-400deg);}
 }
 
 .asteroid-ship-move {animation: asteroidShipMove 5s linear forwards;}
