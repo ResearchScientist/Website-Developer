@@ -187,7 +187,7 @@
   height: 29px;
   grid-column: 1/-1;
   grid-row: 1/-1;
-  filter: brightness(2);
+  /* filter: brightness(2); */
   z-index: 1;
 }
 
