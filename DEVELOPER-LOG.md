@@ -65,3 +65,7 @@ Reverted back to one dev log. Maintaining multiple ones was cumbersome. Will nee
 # Ship Wheel Animation
 
 Decided on using `transform rotate` on one img instead of making a sprite sheet for the ship wheel spinning animation. Since the img is being rendered at 50px by 50px any fine details at such a small resolution will be difficutl to see. Additionally, performance is better when animating one img vs a sprite sheet of many images. I was mostly concerned with the lighting and shadows on the wheel but at such a small resolution and at such a short animation the trade off between the lack of realism and the performance gain is worth it at that scale.
+
+# Asteroid Ship Animation
+
+For fun I made an animatio of the asteroid ship from the game asteroids. On click it spins, shoots, then thrusts away before crashing into the title icon in the header nav and falling apart. The `filter: brightness()` did not brighten the svg path enough, so I added a filter matrix directly to the svg instead.
