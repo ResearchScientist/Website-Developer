@@ -183,12 +183,16 @@
 }
 
 #asteroid-ship-svg {
-  width: 20px;
-  height: 29px;
+  /* width: 20px;
+  height: 29px; */
   grid-column: 1/-1;
   grid-row: 1/-1;
-  filter: brightness(2);
+  /* filter: brightness(2); */
   z-index: 1;
+}
+
+#asteroid-ship-thrust {
+  opacity: 0;
 }
 
 .asteroid-ship-spin {animation: asteroidShipSpin 2s linear forwards;}
@@ -199,10 +203,41 @@
   100% {transform: rotate(-410deg);}
 }
 
-.asteroid-ship-move {animation: asteroidShipMove 2s linear forwards;}
+.asteroid-ship-move {animation: asteroidShipMove 5s linear forwards;}
 
 @keyframes asteroidShipMove {
   0% {transform: translate(0,0);}
-  50% {transform: translate(0,0);}
-  100% {transform: translate(calc(-100% + 60px),calc(-100% + 80px));}
+  100% {transform: translate(calc(-100% + 67px),calc(-100% + 87px));}
+}
+
+.asteroid-ship-spin-out {animation: asteroidShipSpinOut 5s linear forwards;}
+
+@keyframes asteroidShipSpinOut {
+  0% {transform: rotate(-400deg);}
+  25% {transform: rotate(-400deg);}
+  50% {transform: rotate(0deg);}
+  62.5% {transform: rotate(0deg);}
+  75% {transform: rotate(-200deg);}
+  100% {transform: rotate(-200deg);}
+}
+
+.hull-L-apart {animation: hullLapart 1s linear forwards;}
+
+@keyframes hullLapart {
+  0% {transform: translate(0,0); opacity: 1;}
+  100% {transform: translate(-20px,0px); opacity: 0;}
+}
+
+.hull-R-apart {animation: hullRapart 1s linear forwards;}
+
+@keyframes hullRapart {
+  0% {transform: translate(0,0); opacity: 1;}
+  100% {transform: translate(20px,0px); opacity: 0;}
+}
+
+.hull-AFT-apart {animation: hullAFTapart 1s linear forwards;}
+
+@keyframes hullAFTapart {
+  0% {transform: translate(0,0); opacity: 1;}
+  100% {transform: translate(0,-20px); opacity: 0;}
 }
