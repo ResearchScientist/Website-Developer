@@ -20,14 +20,14 @@ footer section h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 14px;
-  color: rgb(150,150,150);
+  color: rgb(180,180,180);
 }
 
 footer section a {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 12px;
-  color: rgb(100,100,100);
+  color: rgb(130,130,130);
 }
 
 #f-code {
@@ -53,7 +53,7 @@ footer section a {
 #f-services p {
   margin: 5px 0 0;
   font-size: 12px;
-  color: rgb(100,100,100);
+  color: rgb(130,130,130);
 }
 
 #sign-off {
@@ -63,5 +63,5 @@ footer section a {
   text-align: center;
   align-self: center;
   font-size: 12px;
-  color: rgb(100,100,100);
+  color: rgb(130,130,130);
 }
