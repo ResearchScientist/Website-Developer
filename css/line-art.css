@@ -168,7 +168,7 @@
   100% {transform: translateX(0);}
 }
 
-#asteroid-ship-bubble {
+#asteroid-ship-bubble , #pew-pew-3-bubble {
   width: 100%;
   height: 100%;
   grid-column: 1/2;
@@ -182,10 +182,15 @@
   align-items: flex-end;
 }
 
+#pew-pew-3-bubble {
+  transform: translate(calc(-50% + 37px),calc(-50% + 47px));
+}
+
 #asteroid-ship-svg {
   grid-column: 1/-1;
   grid-row: 1/-1;
   z-index: 1;
+  transform: rotate(0deg);
 }
 
 #asteroid-ship-thrust {
@@ -237,4 +242,52 @@
 @keyframes hullAFTapart {
   0% {transform: translate(0,0); opacity: 1;}
   100% {transform: translate(0,-20px); opacity: 0;}
+}
+
+.asteroid-ship-pew-pew {
+  width: 3px;
+  height: 3px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: flex-end;
+  align-self: flex-end;
+  border-radius: 50%;
+  background-color: var(--text-blue);
+  opacity: 0;
+}
+
+#asteroid-ship-pew-pew-1 {
+  transform: translate(-12px,-5px);
+}
+
+.aspp1 {animation: aspp1 6s linear forwards; animation-delay: .5s;}
+
+@keyframes aspp1 {
+  0% {transform: translate(-12px,-5px); opacity: 1;}
+  80% {opacity: 1;}
+  100% {transform: translate(15dvw,80dvh); opacity: 0;}
+}
+
+#asteroid-ship-pew-pew-2 {
+  transform: translate(-4px,-30px);
+}
+
+.aspp2 {animation: aspp2 5s linear forwards; animation-delay: .7s;}
+
+@keyframes aspp2 {
+  0% {transform: translate(-4px,-30px); opacity: 1;}
+  80% {opacity: 1;}
+  100% {transform: translate(70dvw,-50dvh); opacity: 0;}
+}
+
+#asteroid-ship-pew-pew-3 {
+  transform: translate(-30px,-10px);
+}
+
+.aspp3 {animation: aspp3 3s linear forwards; animation-delay: 2.1s;}
+
+@keyframes aspp3 {
+  0% {transform: translate(-30px,-10px); opacity: 1;}
+  80% {opacity: 1;}
+  100% {transform: translate(-50dvw,10dvh); opacity: 0;}
 }

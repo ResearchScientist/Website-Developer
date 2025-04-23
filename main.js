@@ -1059,6 +1059,9 @@ dalek.addEventListener('click',exterminate);
 const asteroidShipBubble = document.querySelector('#asteroid-ship-bubble');
 const asteroidShip = document.querySelector('#asteroid-ship-svg');
 const asteroidShipThrust = document.querySelector('#asteroid-ship-thrust');
+const asteroidShipPewPew1 = document.querySelector('#asteroid-ship-pew-pew-1');
+const asteroidShipPewPew2 = document.querySelector('#asteroid-ship-pew-pew-2');
+const asteroidShipPewPew3 = document.querySelector('#asteroid-ship-pew-pew-3');
 const hullL = document.querySelector('#hull-L');
 const hullR = document.querySelector('#hull-R');
 const hullAft = document.querySelector('#hull-aft');
@@ -1067,6 +1070,8 @@ asteroidShip.addEventListener('click',blastAsteroids);
 
 function blastAsteroids() {
   asteroidShip.classList.add('asteroid-ship-spin');
+  asteroidShipPewPew1.classList.add('aspp1');
+  asteroidShipPewPew2.classList.add('aspp2');
   setTimeout(() => {
     asteroidShipThrust.style.opacity = "1";
   }, 1500);
@@ -1079,6 +1084,7 @@ function blastAsteroids() {
   setTimeout(() => {
     asteroidShip.classList.remove('asteroid-ship-spin');
     asteroidShip.classList.add('asteroid-ship-spin-out');
+    asteroidShipPewPew3.classList.add('aspp3');
   }, 2200);
   setTimeout(() => {
     hullL.classList.add('hull-L-apart');
