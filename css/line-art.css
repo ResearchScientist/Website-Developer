@@ -186,7 +186,7 @@
   grid-column: 1/-1;
   grid-row: 1/-1;
   z-index: 1;
-  transform: rotate(160deg);
+  transform: rotate(60deg);
 }
 
 #asteroid-ship-thrust {
@@ -257,4 +257,14 @@
 @keyframes aspp1 {
   0% {transform: translate(-12px,-5px);}
   100% {transform: translate(80px,65dvh);}
+}
+
+#asteroid-ship-pew-pew-2 {
+  transform: translate(-4px,-30px);
+  animation: aspp2 3s linear forwards;
+}
+
+@keyframes aspp2 {
+  0% {transform: translate(-4px,-30px);}
+  100% {transform: translate(350px,-30dvh);}
 }
