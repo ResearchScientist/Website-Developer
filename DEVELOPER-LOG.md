@@ -32,6 +32,14 @@ For improved workflow and separation of concerns I implemented separate logs for
 
 Reverted back to using only this log.
 
+# Branches
+
+- launch
+- development
+- accessibility
+- projects
+- svgs
+
 > March 2025
 
 I'm updating the projects page.
