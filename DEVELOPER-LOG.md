@@ -30,8 +30,7 @@ Issues with vs code not able to clone or make new repos on github.
 
 For improved workflow and separation of concerns I implemented separate logs for development and feature branches.
 
-Will no longer be adding entries to this particular log.
-May delete this.
+Reverted back to using only this log.
 
 > March 2025
 
