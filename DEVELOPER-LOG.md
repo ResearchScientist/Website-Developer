@@ -80,3 +80,7 @@ For fun I made an animatio of the asteroid ship from the game asteroids. On clic
 For fun I made an animatio of the asteroid ship from the game asteroids. On click it spins, shoots, then thrusts away before crashing into the title icon in the header nav and falling apart. The `filter: brightness()` did not brighten the svg path enough, so I added a filter matrix directly to the svg instead.
 
 To have the shots come out of the ship as it is moving I placed the last shot in its own div bubble. Placed the bubble at the mid point of the ship bubble move animation position so as to have a proper reference point to account for dynamic view ports.
+
+# Spaceport Redesign
+
+Changed the camera orientation of the spaceport to a direct front view instead of an angle. By having the landing strip pointing direclty at the viewer, it changes the perspective to first person and helps immerse the viewer into the experience of arriving at the landing page as if they where literaly reaching a landing strip.
