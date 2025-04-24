@@ -83,3 +83,7 @@ To have the shots come out of the ship as it is moving I placed the last shot in
 # Spaceport Redesign
 
 Changed the camera orientation of the spaceport to a direct front view instead of an angle. By having the landing strip pointing direclty at the viewer, it changes the perspective to first person and helps immerse the viewer into the experience of arriving at the landing page as if they where literaly reaching a landing strip.
+
+# Manifest JSON
+
+Turns out github serves the `manifest.json` file one level above the root directory in the repository. So needed to update the relative path to reflect the location.
