@@ -29,6 +29,16 @@ img > * {
   align-self: flex-end;
 }
 
+#rocket {
+  width: 180px;
+  aspect-ratio: 1;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  transform: rotateZ(30deg);
+  justify-self: center;
+  align-self: center;
+}
+
 #planete-frozen {
   width: 50%;
   grid-column: 1/-1;
@@ -49,14 +59,7 @@ img > * {
   display: block;
 }
 
-#rocket {
-  width: 170px;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-  transform: rotateZ(30deg);
-  justify-self: center;
-  align-self: center;
-}
+
 
 #ship-door-L {
   height: 100%;
