@@ -86,4 +86,4 @@ Changed the camera orientation of the spaceport to a direct front view instead o
 
 # Manifest JSON
 
-Updated the `start_url` in the manifest.json file to reflect the name of the repository since it was returning `404`. Also had to update the favicon relative paths.
+Updated the `start_url` in the manifest.json file to reflect the name of the repository since it was returning `404`. Also had to update the favicon relative paths. 
