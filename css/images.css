@@ -9,20 +9,22 @@ img > * {
   pointer-events: none;
 }
 
-#spaceport {
-  width: clamp(300px,100dvw,500px);
-  grid-column: 1/-1;
-  grid-row: 2/-1;
-  justify-self: center;
-  align-self: flex-end;
-}
-
 #astronaut {
   width: 150px;
+  aspect-ratio: 1;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
   animation: space-walk 1s ease-in-out infinite alternate;
+}
+
+#spaceport {
+  width: clamp(300px,100dvw,500px);
+  aspect-ratio: 16/9;
+  grid-column: 1/-1;
+  grid-row: 2/-1;
+  justify-self: center;
+  align-self: flex-end;
 }
 
 #planete-frozen {
