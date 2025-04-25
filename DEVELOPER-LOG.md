@@ -86,4 +86,4 @@ Changed the camera orientation of the spaceport to a direct front view instead o
 
 # Manifest JSON
 
-Turns out github serves the `manifest.json` file one level above the root directory in the repository. So needed to update the relative path to reflect the location.
+Updated the `start_url` in the manifest.json file to reflect the name of the repository since it was returning `404`. Also had to update the favicon relative paths.
