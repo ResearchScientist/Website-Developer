@@ -15,6 +15,8 @@ img > * {
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
+  align-self: center;
+  margin-left: 75px;
   animation: space-walk 1s ease-in-out infinite alternate;
 }
 
