@@ -1,7 +1,6 @@
 @media screen and (max-width: 410px) {
   .title {font-size: 30px;}
   .title span:nth-last-of-type(-n+2) {font-size: 22px;}
-  /* #planet {grid-column: 1/-1; grid-row: 2/-1;} */
   /* #satellite-orbit {grid-column: 1/-1;} */
 }
 

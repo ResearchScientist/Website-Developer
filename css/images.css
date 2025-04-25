@@ -20,13 +20,21 @@ img > * {
   animation: space-walk 1s ease-in-out infinite alternate;
 }
 
-#spaceport {
-  width: clamp(256px,100dvw,512px);
-  aspect-ratio: 16/9;
+#planete-toy {
+  width: 320px;
+  aspect-ratio: 1;
   grid-column: 1/-1;
-  grid-row: 2/-1;
+  grid-row: 1/-1;
   justify-self: center;
-  align-self: flex-end;
+}
+
+#planete-frozen {
+  width: 50%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  transform: translateY(105%);
 }
 
 #rocket {
@@ -39,20 +47,13 @@ img > * {
   align-self: center;
 }
 
-#planete-frozen {
-  width: 50%;
+#spaceport {
+  width: clamp(256px,100dvw,512px);
+  aspect-ratio: 16/9;
   grid-column: 1/-1;
-  grid-row: 1/-1;
+  grid-row: 2/-1;
   justify-self: center;
-  align-self: center;
-  transform: translateY(105%);
-}
-
-#planete-toy {
-  width: 320px;
-  grid-column: 1/-1;
-  grid-row: 1/2;
-  justify-self: center;
+  align-self: flex-end;
 }
 
 .show-dialogue-screen {
