@@ -2,15 +2,16 @@
   z-index: 1;
 }
 
-#about p:nth-of-type(1) {
+#about-astronaut {
   max-width: 300px;
   grid-column: 1/-1;
   grid-row: -2/-1;
   justify-self: center;
-  align-self: center;
+  align-self: flex-start;
 }
 
 #telescope-button {
+  margin: 0 0 20px;
   grid-column: 1/-1;
   grid-row: -2/-1;
   justify-self: center;
