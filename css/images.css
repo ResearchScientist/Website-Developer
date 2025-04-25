@@ -21,7 +21,7 @@ img > * {
 }
 
 #spaceport {
-  width: clamp(300px,100dvw,500px);
+  width: clamp(256px,100dvw,512px);
   aspect-ratio: 16/9;
   grid-column: 1/-1;
   grid-row: 2/-1;
