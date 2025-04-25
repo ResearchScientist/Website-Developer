@@ -908,7 +908,7 @@ function toggleDialogueScreen() {
 
 // TELESCOPE VIEW ANIMATION
 
-const telescope = document.getElementById('telescope');
+const telescope = document.getElementById('telescope-button');
 const telescopeView = document.getElementById('telescope-view');
 
 telescope.addEventListener('click',telescopePan);

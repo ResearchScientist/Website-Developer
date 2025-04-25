@@ -10,7 +10,7 @@ img > * {
 }
 
 #spaceport {
-  width: 500px;
+  width: clamp(300px,100dvw,500px);
   grid-column: 1/-1;
   grid-row: 2/-1;
   justify-self: center;
@@ -19,9 +19,8 @@ img > * {
 
 #astronaut {
   width: 150px;
-  margin: -160px 0 0;
   grid-column: 1/-1;
-  grid-row: 1/2;
+  grid-row: 1/-1;
   justify-self: center;
   animation: space-walk 1s ease-in-out infinite alternate;
 }
