@@ -12,6 +12,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/Website-Developer/index.html",
   "display": "standalone"
 }
