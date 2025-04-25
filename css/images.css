@@ -15,11 +15,13 @@ img > * {
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
+  align-self: center;
+  margin-left: 75px;
   animation: space-walk 1s ease-in-out infinite alternate;
 }
 
 #spaceport {
-  width: clamp(300px,100dvw,500px);
+  width: clamp(256px,100dvw,512px);
   aspect-ratio: 16/9;
   grid-column: 1/-1;
   grid-row: 2/-1;
