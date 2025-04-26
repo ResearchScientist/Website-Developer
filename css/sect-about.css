@@ -1,5 +1,6 @@
 #about {
   z-index: 1;
+  overflow: hidden;
 }
 
 #about-astronaut {
@@ -8,6 +9,52 @@
   grid-row: -2/-1;
   justify-self: center;
   align-self: flex-start;
+}
+
+#comet-bubble {
+  width: 150px;
+  height: 5px;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  align-items: center;
+  justify-items: flex-start;
+  transform: translate(33dvw,-33dvh) rotate(-45deg);
+  /* transform: translate(0dvw,-33dvh) rotate(-45deg); */
+}
+
+#comet-head {
+  width: 3px;
+  height: 3px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  border-radius: 50%;
+  filter: blur(1px) brightness(2);
+  background: rgb(200,200,255);
+}
+
+#comet-tail {
+  width: 150px;
+  height: 1px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  background: linear-gradient(90deg,rgba(200,200,255,1),transparent);
+}
+
+.cometStream {animation: cometStream 2s linear forwards;}
+
+@keyframes cometStream {
+  0% {transform: translate(33dvw,-33dvh) rotate(-45deg);}
+  100% {transform: translate(-33dvw,99dvh) rotate(-45deg);}
+}
+
+@keyframes cometStream2 {
+  0% {transform: translate(0dvw,-33dvh) rotate(-45deg);}
+  100% {transform: translate(-66dvw,99dvh) rotate(-45deg);}
 }
 
 #telescope-button {
