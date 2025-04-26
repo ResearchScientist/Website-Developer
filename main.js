@@ -45,6 +45,7 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'about') {
     midField.style.transform = 'translateY(-2vh)';
     nearField.style.transform = 'translateY(-5vh)';
+    setTimeout(cometStream,1000);
   }
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
@@ -65,6 +66,17 @@ scrollToAboutButton.addEventListener('click', scrollToAbout);
 function scrollToAbout() {
   midField.style.transform = 'translateY(-2vh)';
   nearField.style.transform = 'translateY(-5vh)';
+}
+
+// COMET
+
+const comet = document.querySelector('#comet-bubble');
+
+function cometStream() {
+  comet.classList.add('cometStream');
+  setTimeout(() => {
+    comet.classList.remove('cometStream');
+  }, 2000);
 }
 
 // SHIP DOORS
