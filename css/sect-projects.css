@@ -181,7 +181,7 @@
 
 #display {
   width: 98%;
-  max-width: 650px; /* max height 365 */
+  max-width: 650px;
   aspect-ratio: 16/9;
   grid-column: 1/-1;
   grid-row: 2/3;
@@ -198,8 +198,6 @@
 #display-starfield {
   grid-column: 1/-1;
   grid-row: 1/-1;
-  /* background-size: cover;
-  background-image: url("../img/starfield-on-display.svg"); */
 }
 
 /* DISPLAY FROZEN PLANETE AND SKILLS */

@@ -20,16 +20,36 @@ img > * {
   animation: space-walk 1s ease-in-out infinite alternate;
 }
 
-#planete-toy {
-  width: 320px;
+#planete-frozen {
+  width: clamp(150px,50%,325px);
   aspect-ratio: 1;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
+  align-self: center;
+  transform: translateY(105%);
+}
+
+#planete-toy {
+  width: 320px;
+  aspect-ratio: 1;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  justify-self: center;
+}
+
+#spaceport {
+  width: clamp(256px,100dvw,512px);
+  aspect-ratio: 16/9;
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  justify-self: center;
+  align-self: center;
 }
 
 #planete-frozen {
-  width: 50%;
+  width: clamp(150px,50%,325px);
+  aspect-ratio: 1;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
@@ -47,20 +67,9 @@ img > * {
   align-self: center;
 }
 
-#spaceport {
-  width: clamp(256px,100dvw,512px);
-  aspect-ratio: 16/9;
-  grid-column: 1/-1;
-  grid-row: 2/-1;
-  justify-self: center;
-  align-self: flex-end;
-}
-
 .show-dialogue-screen {
   display: block;
 }
-
-
 
 #ship-door-L {
   height: 100%;
