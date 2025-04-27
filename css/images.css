@@ -42,8 +42,9 @@ img > * {
   width: clamp(256px,100dvw,512px);
   aspect-ratio: 16/9;
   grid-column: 1/-1;
-  grid-row: 1/-1;
+  grid-row: -2/-1;
   justify-self: center;
+
 }
 
 #planete-frozen {
