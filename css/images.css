@@ -42,9 +42,17 @@ img > * {
   width: clamp(256px,100dvw,512px);
   aspect-ratio: 16/9;
   grid-column: 1/-1;
-  grid-row: 2/-1;
+  grid-row: 1/-1;
   justify-self: center;
-  align-self: flex-end;
+}
+
+#planete-frozen {
+  width: 50%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  transform: translateY(105%);
 }
 
 #rocket {
@@ -60,8 +68,6 @@ img > * {
 .show-dialogue-screen {
   display: block;
 }
-
-
 
 #ship-door-L {
   height: 100%;
