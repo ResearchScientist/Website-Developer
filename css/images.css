@@ -44,11 +44,12 @@ img > * {
   grid-column: 1/-1;
   grid-row: -2/-1;
   justify-self: center;
-
+  align-self: center;
 }
 
 #planete-frozen {
-  width: 50%;
+  width: clamp(150px,50%,325px);
+  aspect-ratio: 1;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
