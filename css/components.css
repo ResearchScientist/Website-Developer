@@ -1,3 +1,140 @@
+/* HEADER */
+
+header {
+  width: 100%;
+  height: 70px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* NAVIGATION */
+
+#main-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#main-nav a {
+  font-family: 'Lato', sans-serif;
+  color: var(--text-blue);
+  border: 1px solid rgba(0,0,0,0);
+  transition: border 0.5s linear;
+}
+
+#main-nav a:hover {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--text-blue);
+}
+
+#main-nav a:nth-of-type(1) {
+  border: 1px solid var(--text-blue);
+}
+
+#main-nav a:nth-of-type(1):hover {
+  padding: 3px 5px;
+}
+
+.home {
+  width: 40px;
+  height: 40px;
+  padding: 3px 5px;
+  font-family: 'Lato',sans-serif;
+  font-size: 24px;
+}
+
+#main-nav .navigation-inactive {
+  padding: 2px 0;
+  border: 1px solid rgba(0,0,0,0);
+  transition: border 0.5s linear;
+}
+
+#main-nav .navigation-active {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--text-blue);
+  transition: border 0.5s linear;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 10% repeat(4,20%) 10%;
+  grid-template-rows: repeat(4,25%);
+  background: rgb(25,25,25);
+  justify-items: center;
+}
+
+footer section {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer section h2 {
+  width: 128px;
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(180,180,180);
+}
+
+footer section a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: rgb(130,130,130);
+}
+
+#f-code {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#f-design {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#f-social {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+#f-services {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+#f-services p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: rgb(130,130,130);
+}
+
+#sign-off {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  text-align: center;
+  align-self: center;
+  font-size: 12px;
+  color: rgb(130,130,130);
+}
+
+/* BUTTONS */
+
 body {
   cursor: url('../img/space-cursor.svg'),auto;
 }

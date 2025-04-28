@@ -1,0 +1,77 @@
+/* RESETS */
+
+html,body,main,header,footer,section,aside,div,nav,a,h1,h2,h3,h4,p,span,figure,button,canvas {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-black);
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  text-transform: none;
+  cursor: pointer;
+}
+
+html,main {
+  height: 100%;
+}
+
+body {
+  height: auto;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+  --text-black: #404040;
+  --text-white: #eeeeee;
+  --text-blue: #ccccff;
+  --text-watermark: rgba(50,50,50,8%);
+  --main-dark: #101010;
+  --primary-blue: rgb(100,150,250);
+  --dark-blue: rgb(80,130,230);
+  --accent-orange: orange;
+  --dark-orange: rgb(200,110,0);
+  --highlight-red: rgb(200,100,100);
+  --highlight-green: rgb(100,200,100);
+  --bridge-wall: rgb(0, 75, 150);
+}
+
+/* FONTS */
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: var(--text-blue);
+}
+
+h2,h3 {
+  font-family: 'Roboto',sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  color: var(--text-white);
+}
+
+#astronaut-dialogue-screen {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  color: var(--text-white);
+}
+
+#ship-doors-activate , #ship-doors-exit {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
