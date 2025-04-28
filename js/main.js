@@ -58,6 +58,7 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'contact') {
     midField.style.transform = 'translateY(-8vh)';
     nearField.style.transform = 'translateY(-20vh)';
+    prepSatellite();
   }
 }
 
