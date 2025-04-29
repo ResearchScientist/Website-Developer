@@ -20,8 +20,11 @@
   transition: transform 1s;
 }
 
+#flex-scroll-t-f a:hover {
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
+}
+
 .scroll-t-f {
-  width: 100px;
   position: absolute;
   transition: left 1s , opacity 1s;
 }

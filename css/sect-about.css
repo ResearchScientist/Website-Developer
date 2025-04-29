@@ -64,6 +64,7 @@
   justify-self: center;
   align-self: flex-end;
   background: none;
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #telescope-button img {
