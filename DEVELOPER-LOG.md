@@ -91,3 +91,9 @@ Updated the `start_url` in the manifest.json file to reflect the name of the rep
 # Webp Images
 
 Added `srcset` to img tags. Rerendered all images as webp files at 1x 2x 3x. This should lower the initial page load size and improve speed as only the best matched assets should download.
+
+# Cursor
+
+Added a custom cursor. The cursor is an svg of a classic spaceship. Upon hovering over an interactive image the cursor gets swapped to another svg which expands the fins out, lights up the porthole, and adds an orange flame. These changes serve as a signal to the user. Initially I had removed the pointer indicator and was hoping to surprise the user. But by adding this subtle change, it offers a hint to the user which meets their expectations on interactivity indicators and allows them to explore and still be surprised and hopefully pleased.
+
+So far I have kept the default pointer when interacting with the top navigation menu.

@@ -27,3 +27,13 @@
 .title span:nth-last-of-type(-n+2) {
   font-size: 30px;
 }
+
+#spaceport-anchor {
+  width: clamp(256px,100dvw,512px);
+  aspect-ratio: 16/9;
+  grid-column: 1/-1;
+  grid-row: -2/-1;
+  justify-self: center;
+  align-self: center;
+  cursor: url('../img/space-cursor-hover.svg'),auto;
+}
