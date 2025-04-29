@@ -47,9 +47,12 @@ body {
 /* FONTS */
 
 h1 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-family: '-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Lato';
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: 5px;
   color: var(--text-blue);
+  text-align: center;
 }
 
 h2,h3 {
@@ -63,6 +66,11 @@ p {
   line-height: 1.5;
   overflow-wrap: break-word;
   color: var(--text-white);
+}
+
+#main-nav a {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
 }
 
 #astronaut-dialogue-screen {
