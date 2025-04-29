@@ -18,6 +18,7 @@ img > * {
   align-self: center;
   margin-left: 75px;
   animation: space-walk 1s ease-in-out infinite alternate;
+  cursor: url('../img/space-cursor-hover.svg'),auto;
 }
 
 #planete-frozen {
@@ -65,6 +66,7 @@ img > * {
   transform: rotateZ(30deg);
   justify-self: center;
   align-self: center;
+  cursor: url('../img/space-cursor-hover.svg'),auto;
 }
 
 .show-dialogue-screen {
@@ -123,6 +125,7 @@ img > * {
   justify-self: center;
   align-self: center;
   z-index: 1;
+  cursor: url('../img/space-cursor-hover.svg'),auto;
 }
 
 #ship-wheel-img {
