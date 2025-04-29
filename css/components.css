@@ -39,14 +39,13 @@ header {
 }
 
 #main-nav a:nth-of-type(1):hover {
-  padding: 3px 5px;
+  padding: 2px 5px;
 }
 
 .home {
   width: 40px;
   height: 40px;
-  padding: 3px 5px;
-  font-size: 24px;
+  padding: 2px 5px;
 }
 
 #main-nav .navigation-inactive {
