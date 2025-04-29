@@ -24,6 +24,7 @@ header {
 }
 
 #main-nav a {
+  font-family: 'Lato';
   color: var(--text-blue);
   border: 1px solid rgba(0,0,0,0);
   transition: border 0.5s linear;
@@ -39,13 +40,15 @@ header {
 }
 
 #main-nav a:nth-of-type(1):hover {
-  padding: 2px 5px;
+  padding: 3px 5px;
 }
 
 .home {
   width: 40px;
   height: 40px;
-  padding: 2px 5px;
+  padding: 3px 5px;
+  font-family: 'Lato';
+  font-size: 24px;
 }
 
 #main-nav .navigation-inactive {
