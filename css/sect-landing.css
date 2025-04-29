@@ -17,15 +17,6 @@
   color: var(--primary-blue);
 }
 
-.title {
-  font-family: 'Lato',sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  letter-spacing: 5px;
-  color: var(--text-blue);
-  text-align: center;
-}
-
 .title span {
   background: linear-gradient(white,#38495a);
   background-clip: text;
