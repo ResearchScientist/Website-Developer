@@ -9,6 +9,7 @@ html,body,main,header,footer,section,aside,div,nav,a,h1,h2,h3,h4,p,span,figure,b
 a {
   text-decoration: none;
   color: var(--text-black);
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
