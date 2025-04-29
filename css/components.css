@@ -33,6 +33,7 @@ header {
 #main-nav a:hover {
   padding: 2px 0;
   border-bottom: 1px solid var(--text-blue);
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #main-nav a:nth-of-type(1) {
@@ -97,6 +98,10 @@ footer section a {
   color: rgb(130,130,130);
 }
 
+footer section a:hover {
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
+}
+
 #f-code {
   grid-column: 2;
   grid-row: 1;
@@ -136,7 +141,7 @@ footer section a {
 /* BUTTONS */
 
 body {
-  cursor: url('../img/space-cursor.svg'),auto;
+  cursor: url('../img/space-cursor.svg') 9 0,auto;
 }
 
 .scroll-down {
