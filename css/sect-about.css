@@ -225,12 +225,13 @@
 }
 
 .beam-ani {
-  animation: beaming 5s linear forwards;
+  animation: beaming 4.8s linear forwards;
 }
 
 @keyframes beaming {
   0% {opacity: 1;}
   90% {opacity: 1;}
+  98% {opacity: 0;}
   100% {opacity: 0;}
 }
 
