@@ -46,6 +46,7 @@ img > * {
   grid-row: -2/-1;
   justify-self: center;
   align-self: center;
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #planete-frozen {
