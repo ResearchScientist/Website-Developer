@@ -926,12 +926,14 @@ function toggleDialogueScreen() {
 
 const telescope = document.getElementById('telescope-button');
 const telescopeView = document.getElementById('telescope-view');
+const galaxy = document.querySelector('#galaxy');
 
 telescope.addEventListener('click',telescopePan);
 
 function telescopePan() {
   if (telescopeView.className !== 'telescope-pan') {
     telescopeView.classList.add('telescope-pan');
+    galaxy.classList.add('galaxy-rotate');
     ufoSurpriseLeave();
     setTimeout(resetTelescope,16500);
   }
@@ -939,6 +941,7 @@ function telescopePan() {
 
 function resetTelescope() {
   telescopeView.classList.remove('telescope-pan');
+  galaxy.classList.remove('galaxy-rotate');
   resetUfo();
 }
 
