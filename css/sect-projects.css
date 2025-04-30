@@ -629,11 +629,15 @@
 }
 
 #delorean-img {
+  width: 120px;
+  height: 102px;
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
 
 #delorean-flash-img {
+  width: 120px;
+  height: 102px;
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
