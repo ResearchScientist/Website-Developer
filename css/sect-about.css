@@ -162,8 +162,9 @@
   width: 70px;
   grid-row: 1/-1;
   grid-column: 3/4;
-  animation: galaxy-rotate 40s linear infinite;
 }
+
+.galaxy-rotate {animation: galaxy-rotate 40s linear infinite;}
 
 @keyframes galaxy-rotate {
   from {transform: rotate(0deg);}
@@ -224,12 +225,13 @@
 }
 
 .beam-ani {
-  animation: beaming 5s linear forwards;
+  animation: beaming 4.8s linear forwards;
 }
 
 @keyframes beaming {
   0% {opacity: 1;}
   90% {opacity: 1;}
+  98% {opacity: 0;}
   100% {opacity: 0;}
 }
 

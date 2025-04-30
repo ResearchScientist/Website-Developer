@@ -1,0 +1,26 @@
+<svg width="100" height="44" viewBox="0 0 100 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bsg">
+<path id="Rectangle 65" d="M0 17L19 12H27L35 16V28L27 32H19L0 27V17Z" fill="#CCCCFF"/>
+<rect id="Rectangle 66" x="36" y="16" width="35" height="12" fill="#CCCCFF"/>
+<path id="Rectangle 67" d="M72 16L86 12H100V19H95V25H100V32H86L72 28V16Z" fill="#CCCCFF"/>
+<g id="launch-tube-R">
+<path id="tube-R" d="M27 4L35 0H72L86 4V7L72 11H35L27 7V4Z" fill="#CCCCFF"/>
+<path id="Rectangle 79" d="M29 4L34 2V9L29 7V4Z" fill="#6496FA"/>
+<path id="Rectangle 80" d="M84 4L79 3V8L84 7V4Z" fill="#6496FA"/>
+</g>
+<g id="launch-tube-L">
+<path id="tube-l" d="M27 37L35 33H72L86 37V40L72 44H35L27 40V37Z" fill="#CCCCFF"/>
+<path id="Rectangle 77" d="M29 37L34 35V42L29 40V37Z" fill="#6496FA"/>
+<path id="Rectangle 81" d="M84 37L79 36V41L84 40V37Z" fill="#6496FA"/>
+</g>
+<rect id="Rectangle 70" x="47" y="28" width="2" height="6" fill="#CCCCFF"/>
+<rect id="Rectangle 71" x="58" y="28" width="2" height="6" fill="#CCCCFF"/>
+<rect id="Rectangle 72" x="47" y="10" width="2" height="6" fill="#CCCCFF"/>
+<rect id="Rectangle 73" x="58" y="10" width="2" height="6" fill="#CCCCFF"/>
+<rect id="Rectangle 82" x="19" y="13" width="8" height="1" fill="#6496FA"/>
+<rect id="Rectangle 86" x="19" y="30" width="8" height="1" fill="#6496FA"/>
+<rect id="Rectangle 84" x="98" y="12" width="2" height="7" fill="#6496FA"/>
+<rect id="Rectangle 85" x="98" y="25" width="2" height="7" fill="#6496FA"/>
+<rect id="Rectangle 87" x="1" y="21" width="1" height="2" fill="#6496FA"/>
+</g>
+</svg>
