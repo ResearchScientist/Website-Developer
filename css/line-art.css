@@ -47,7 +47,7 @@
 #starship-path {
   height: 20px;
   grid-column: 1/-1;
-  grid-row: 2/3;
+  grid-row: 1/2;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: 20px;
@@ -288,4 +288,11 @@
   0% {transform: translate(-30px,-10px); opacity: 1;}
   80% {opacity: 1;}
   100% {transform: translate(-50dvw,10dvh); opacity: 0;}
+}
+
+#bsg {
+  width: 50px;
+  height: 22px;
+  grid-column: -2/-1;
+  grid-row: -2/-1;
 }
