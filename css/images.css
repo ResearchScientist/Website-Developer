@@ -108,11 +108,12 @@ img > * {
 }
 
 #satellite-3d {
+  width: 230px;
+  height: 230px;
   grid-column: 1/-1;
   grid-row: 2/4;
   justify-self: center;
   align-self: center;
-  width: 230px;
   margin: -10vh 0 0;
 }
 
