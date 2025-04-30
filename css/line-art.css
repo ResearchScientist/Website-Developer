@@ -289,3 +289,10 @@
   80% {opacity: 1;}
   100% {transform: translate(-50dvw,10dvh); opacity: 0;}
 }
+
+#bsg {
+  width: 50px;
+  height: 22px;
+  grid-column: -2/-1;
+  grid-row: 1/2;
+}
