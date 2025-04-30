@@ -35,7 +35,7 @@ function navigationUnderline(movingSections) {
 const mainNavigation = document.getElementById('main-nav');
 const midField = document.getElementById('mid-field');
 const nearField = document.getElementById('near-field');
-const scrollToAboutButton = document.getElementById('scroll-down-to-about');
+// const scrollToAboutButton = document.getElementById('scroll-down-to-about');
 const spaceportAnchor = document.querySelector('#spaceport-anchor');
 
 mainNavigation.addEventListener('click',scrollStarField);
@@ -63,7 +63,7 @@ function scrollStarField(e) {
   }
 }
 
-scrollToAboutButton.addEventListener('click', scrollToAbout);
+// scrollToAboutButton.addEventListener('click', scrollToAbout);
 spaceportAnchor.addEventListener('click', scrollToAbout);
 
 function scrollToAbout() {
