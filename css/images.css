@@ -79,12 +79,6 @@ img > * {
   grid-column: 1/2;
   grid-row: 1/-1;
   justify-self: flex-end;
-  z-index: 1;
-}
-
-#ship-door-L img {
-  height: 100%;
-  width: auto;
 }
 
 #ship-door-R {
