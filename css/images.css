@@ -75,14 +75,20 @@ img > * {
 }
 
 #ship-door-L {
-  height: 100%;
+  height: 100dvh;
   grid-column: 1/2;
   grid-row: 1/-1;
   justify-self: flex-end;
+  z-index: 1;
+}
+
+#ship-door-L img {
+  height: 100%;
+  width: auto;
 }
 
 #ship-door-R {
-  height: 100%;
+  height: 100dvh;
   grid-column: 2/3;
   grid-row: 1/-1;
   justify-self: flex-start;
