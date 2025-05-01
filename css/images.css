@@ -39,32 +39,22 @@ img > * {
   justify-self: center;
 }
 
-#spaceport {
-  width: clamp(256px,100dvw,512px);
-  aspect-ratio: 16/9;
+#rocket {
+  width: 200px;
+  aspect-ratio: 1;
   grid-column: 1/-1;
-  grid-row: -2/-1;
+  grid-row: 1/-1;
+  transform: rotateZ(30deg);
   justify-self: center;
   align-self: center;
   cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
-#planete-frozen {
-  width: clamp(150px,50%,325px);
-  aspect-ratio: 1;
+#spaceport {
+  width: clamp(256px,100dvw,512px);
+  aspect-ratio: 16/9;
   grid-column: 1/-1;
-  grid-row: 1/-1;
-  justify-self: center;
-  align-self: center;
-  transform: translateY(105%);
-}
-
-#rocket {
-  width: 180px;
-  aspect-ratio: 1;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-  transform: rotateZ(30deg);
+  grid-row: -2/-1;
   justify-self: center;
   align-self: center;
   cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
