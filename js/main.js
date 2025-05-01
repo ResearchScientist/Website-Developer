@@ -51,6 +51,7 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
+    setTimeout(bsgJump,1000);
   }
   if (mainNavAnchor == 'resume') {
     midField.style.transform = 'translateY(-6vh)';
@@ -1010,6 +1011,17 @@ function warp() {
 }
 
 starship.addEventListener('click',warp);
+
+// BSG
+
+const bsg = document.querySelector('#bsg');
+
+function bsgJump() {
+  bsg.classList.add('bsg-jump');
+  setTimeout(() => {
+    bsg.classList.remove('bsg-jump');
+  }, 3300);
+}
 
 // DALEK
 
