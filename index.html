@@ -386,7 +386,13 @@
         <div id="big-red-button-hatch"></div>
         <img id="ship-door-corner-L" src="img/ship-door-corner-L.png" alt="illustration of an open and close sign in the shape of the superman logo">
         <img id="ship-door-corner-R" src="img/ship-door-corner-R.png" alt="illustration of an exit sign in the shape of the superman logo">
-        <img id="ship-door-L" src="img/ship-door-L-1250x1080.webp" alt="3d illustration of the left door of the nostronomo spaceship from the Alien movie. It's coloured blue with some white accents.">
+        <picture id="ship-door-L">
+          <source media="(max-width: 379px)" srcset="img/ship-door-L-200x676.webp 1x">
+          <source media="(min-width: 380px) and (max-width: 479px)" srcset="img/ship-door-L-240x1000.webp 1x">
+          <source media="(min-width: 480px) and (max-width: 1250px)" srcset="img/ship-door-L-1250x1080.webp 1x">
+          <img src="img/ship-door-L-1250x1080.webp" alt="3d illustration of the left door of the nostronomo spaceship from the Alien movie. It's coloured blue with some white accents.">
+        </picture>
+        <!-- <img id="ship-door-L" src="img/ship-door-L-1250x1080.webp" alt="3d illustration of the left door of the nostronomo spaceship from the Alien movie. It's coloured blue with some white accents."> -->
         <img id="ship-door-R" src="img/ship-door-R-1250x1080.webp" alt="3d illustration of the right door of the nostronomo spaceship from the Alien movie. It's coloured blue with some white accents.">
         <button id="ship-door-button-overlay-L" aria-label="open left ship door overlay"></button>
         <button id="ship-door-button-overlay-R" aria-label="open right ship door overlay"></button>
