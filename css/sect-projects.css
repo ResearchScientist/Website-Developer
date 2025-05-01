@@ -29,7 +29,6 @@
   grid-row: 1/-1;
   align-self: center;
   background-color: rgba(200,200,200,.01);
-  background-color: teal;
   z-index: 1;
 }
 
@@ -147,23 +146,23 @@
 }
 
 @keyframes ship-door-overlay-L-open {
-  from {transform: translateX(-4dvh);}
-  to {transform: translateX(-100dvh);}
+  from {transform: translateX(-9.15dvh);}
+  to {transform: translateX(-100dvw);}
 }
 
 @keyframes ship-door-overlay-R-open {
-  from {transform: translateX(4dvh);}
-  to {transform: translateX(100dvh);}
+  from {transform: translateX(9.15dvh);}
+  to {transform: translateX(100dvw);}
 }
 
 @keyframes ship-door-overlay-L-close {
-  from {transform: translateX(-100dvh);}
-  to {transform: translateX(-4dvh);}
+  from {transform: translateX(-100dvw);}
+  to {transform: translateX(-9.15dvh);}
 }
 
 @keyframes ship-door-overlay-R-close {
-  from {transform: translateX(100dvh);}
-  to {transform: translateX(4dvh);}
+  from {transform: translateX(100dvw);}
+  to {transform: translateX(9.15dvh);}
 }
 
 /* SHIP BRIDGE */
