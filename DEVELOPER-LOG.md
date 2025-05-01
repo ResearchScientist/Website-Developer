@@ -94,6 +94,8 @@ Added `srcset` to img tags. Rerendered all images as webp files at 1x 2x 3x. Thi
 
 Gave them width and height or width and aspect ratio.
 
+Except for the ship door images. These I kept at a one large size. when using the picture element with media queries it became unwieldly to capture so many different device width, heights, aspect ratios, orientations, and pixel densities. These are the only 2 images that I'm scaling down to fit devices so the overall impact on the site is relatively minimal in terms of bandwidth and initial load metrics.
+
 # Cursor
 
 Added a custom cursor. The cursor is an svg of a classic spaceship. Upon hovering over an interactive image the cursor gets swapped to another svg which expands the fins out, lights up the porthole, and adds an orange flame. These changes serve as a signal to the user. Initially I had removed the pointer indicator and was hoping to surprise the user. But by adding this subtle change, it offers a hint to the user which meets their expectations on interactivity indicators and allows them to explore and still be surprised and hopefully pleased.
