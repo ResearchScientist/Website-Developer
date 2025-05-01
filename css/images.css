@@ -21,6 +21,19 @@ img > * {
   cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
+#big-red-button-img {
+  width: 50px;
+  height: 50px;
+}
+
+
+#flux-capacitor-off-img , #flux-capacitor-on-img {
+  width: 50px;
+  height: 50px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
 #planete-frozen {
   width: clamp(150px,50%,325px);
   aspect-ratio: 1;
@@ -64,20 +77,6 @@ img > * {
   display: block;
 }
 
-#ship-door-L {
-  height: 100dvh;
-  grid-column: 1/2;
-  grid-row: 1/-1;
-  justify-self: flex-end;
-}
-
-#ship-door-R {
-  height: 100dvh;
-  grid-column: 2/3;
-  grid-row: 1/-1;
-  justify-self: flex-start;
-}
-
 #ship-door-corner-L {
   width: 100px;
   height: 100px;
@@ -96,6 +95,20 @@ img > * {
   justify-self: flex-end;
   align-self: start;
   z-index: 2;
+}
+
+#ship-door-L {
+  height: 100dvh;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  justify-self: flex-end;
+}
+
+#ship-door-R {
+  height: 100dvh;
+  grid-column: 2/3;
+  grid-row: 1/-1;
+  justify-self: flex-start;
 }
 
 #satellite-3d {
@@ -121,18 +134,6 @@ img > * {
 }
 
 #ship-wheel-img {
-  width: 50px;
-  height: 50px;
-}
-
-#flux-capacitor-off-img , #flux-capacitor-on-img {
-  width: 50px;
-  height: 50px;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-}
-
-#big-red-button-img {
   width: 50px;
   height: 50px;
 }
