@@ -1014,13 +1014,46 @@ starship.addEventListener('click',warp);
 
 // BSG
 
-const bsg = document.querySelector('#bsg');
+const battlestar = document.querySelector('#battlestar');
+const basestar = document.querySelector('#basestar');
 
 function bsgJump() {
-  bsg.classList.add('bsg-jump');
+  battlestar.classList.add('bsg-jump-in');
   setTimeout(() => {
-    bsg.classList.remove('bsg-jump');
+    basestar.classList.add('bsg-jump-in');
   }, 3300);
+  setTimeout(() => {
+    battlestar.classList.add('bsg-jump-out');
+    battlestar.classList.remove('bsg-jump-in');
+    setTimeout(() => {
+      basestar.classList.add('bsg-jump-out');
+      basestar.classList.remove('bsg-jump-in');
+    }, 1000);
+  }, 4500);
+  setTimeout(() => {
+    battlestar.style.marginLeft = '2px';
+    battlestar.style.marginBottom = 'calc(25dvh + 14px)';
+    battlestar.style.gridColumn = '1/2';
+    battlestar.style.justifySelf = 'flex-start';
+    battlestar.classList.remove('bsg-jump-out');
+    battlestar.classList.add('bsg-jump-in');
+    setTimeout(() => {
+      basestar.style.marginLeft = '75px';
+      basestar.style.marginBottom = '25dvh';
+      basestar.style.gridColumn = '1/2';
+      basestar.style.justifySelf = 'flex-start';
+      basestar.classList.remove('bsg-jump-out');
+      basestar.classList.add('bsg-jump-in');
+    }, 3300);
+  }, 6000);
+  setTimeout(() => {
+    battlestar.classList.add('bsg-jump-out');
+    battlestar.classList.remove('bsg-jump-in');
+    setTimeout(() => {
+      basestar.classList.add('bsg-jump-out');
+      basestar.classList.remove('bsg-jump-in');
+    }, 1000);
+  }, 10300);
 }
 
 // DALEK
