@@ -2,13 +2,32 @@
 
 #x-wing {
   width: 25px;
-  grid-column: 1/3;
+  height: 25px;
+  margin-top: 250px;
+  grid-column: 4/5;
   grid-row: 3/4;
+  justify-self: center;
+  align-self: center;
+  transform: rotate(-90deg);
   z-index: 1;
 }
 
-#cockpit {
-  fill: var(--primary-blue);
+#x-wing-laser-blast {
+  width: 25px;
+  height: 25px;
+  grid-column: 4/5;
+  grid-row: 3/4;
+  justify-self: center;
+  align-self: center;
+  transform: rotate(-90deg) translate(-125px,0);
+}
+
+.x-wing-laser-blast {animation: xWingLaserBlast 1s linear forwards;}
+
+@keyframes xWingLaserBlast {
+  0% {transform: rotate(-90deg) translate(-125px,0); opacity: 1;}
+  99% {transform: rotate(-90deg) translate(0px,0); opacity: 1;}
+  100% {transform: rotate(-90deg) translate(0px,0); opacity: 0;}
 }
 
 .wing {
@@ -16,18 +35,19 @@
   transition: 1s transform;
 }
 
-#x-wing:hover #x-cockpit {
-  fill: orange;
-}
-
 .foils {
   transform: translateX(0px);
+}
+
+#x-wing:hover #x-cockpit {
+  fill: orange;
 }
 
 /* TIE FIGHTER */
 
 #tie-fighter {
-  width: 25px;
+  width: 55px;
+  height: 25px;
   grid-column: 4/5;
   grid-row: 3/4;
   z-index: 1;
@@ -40,6 +60,26 @@
 .try-spinning {
   transition: 2s transform;
   transform: rotate(720deg);
+}
+
+.tie-panel-apart-L {animation: tiePanelApartL .5s ease-in forwards;}
+.tie-panel-apart-R {animation: tiePanelApartR .5s ease-in forwards;}
+.tie-fighter-poof {animation: tieFighterPoof .6s ease-in forwards;}
+
+@keyframes tiePanelApartL {
+  0% {transform: translate(0,0);}
+  100% {transform: translate(-20px,0);}
+}
+
+@keyframes tiePanelApartR {
+  0% {transform: translate(0,0);}
+  100% {transform: translate(20px,0);}
+}
+
+@keyframes tieFighterPoof {
+  0% {opacity: 1;}
+  40% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
 /* STARSHIP */
