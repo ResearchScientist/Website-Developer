@@ -967,22 +967,11 @@ function resetUfo() {
   beam.classList.remove('beam-ani');
 }
 
-// X WING
-
-const xwing = document.getElementById('x-wing');
-const wing1 = document.getElementById('wing1');
-const wing2 = document.getElementById('wing2');
-
-function foil() {
-  wing1.classList.toggle('foils');
-  wing2.classList.toggle('foils');
-}
-
-xwing.addEventListener('click',foil);
-
 // TIE FIGHTER
 
 const tiefighter = document.getElementById('tie-fighter');
+const tiePanelL = document.querySelector('#tie-panel-L');
+const tiePanelR = document.querySelector('#tie-panel-R');
 
 function trySpinning () {
   tiefighter.classList.add('try-spinning');
@@ -994,6 +983,36 @@ function respin () {
 }
 
 tiefighter.addEventListener('click',trySpinning);
+
+// X WING
+
+const xcockpit = document.getElementById('x-cockpit');
+const xwing = document.getElementById('x-wing');
+const wing1 = document.getElementById('wing1');
+const wing2 = document.getElementById('wing2');
+const xWingLaserBlast = document.querySelector('#x-wing-laser-blast');
+
+xwing.addEventListener('click',xwingAttack);
+
+function xwingAttack() {
+  xcockpit.style.fill = 'orange';
+  wing1.classList.add('foils');
+  wing2.classList.add('foils');
+  setTimeout(() => {
+    xWingLaserBlast.classList.add('x-wing-laser-blast');
+  }, 1500);
+  setTimeout(() => {
+    tiePanelL.classList.add('tie-panel-apart-L');
+    tiePanelR.classList.add('tie-panel-apart-R');
+    tiefighter.classList.add('tie-fighter-poof');
+  }, 2500);
+  setTimeout(() => {
+    wing1.classList.remove('foils');
+    wing2.classList.remove('foils');
+    // hal2001();
+  }, 3500);
+}
+
 
 // STARSHIP
 
