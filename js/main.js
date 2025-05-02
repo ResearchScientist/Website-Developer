@@ -51,7 +51,7 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
-    setTimeout(bsgJump,1000);
+    setTimeout(confirmBSGjump,1000);
   }
   if (mainNavAnchor == 'resume') {
     midField.style.transform = 'translateY(-6vh)';
@@ -1016,6 +1016,14 @@ starship.addEventListener('click',warp);
 
 const battlestar = document.querySelector('#battlestar');
 const basestar = document.querySelector('#basestar');
+let BSGjumped = false;
+
+function confirmBSGjump() {
+  if (BSGjumped == false) {
+    bsgJump();
+    BSGjumped = true;
+  }
+}
 
 function bsgJump() {
   battlestar.classList.add('bsg-jump-in');
