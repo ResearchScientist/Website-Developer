@@ -290,21 +290,43 @@
   100% {transform: translate(-50dvw,10dvh); opacity: 0;}
 }
 
-#bsg {
+#battlestar {
   width: 50px;
   height: 22px;
+  margin-bottom: 14px;
+  margin-right: 75px;
   grid-column: -2/-1;
-  grid-row: -2/-1;
+  grid-row: 3/4;
+  justify-self: flex-end;
+  align-self: flex-end;
   opacity: 0;
 }
 
-.bsg-jump {
-  animation: BSGjump 3s linear forwards;
+#basestar {
+  width: 50px;
+  height: 50px;
+  margin-right: 2px;
+  grid-column: -2/-1;
+  grid-row: 3/4;
+  justify-self: flex-end;
+  align-self: flex-end;
+  opacity: 0;
 }
 
-@keyframes BSGjump {
+.bsg-jump-in {
+  animation: BSGjumpIn .8s linear forwards;
+}
+
+@keyframes BSGjumpIn {
   0% {opacity: 0;}
-  10% {opacity: 1;}
-  90% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
+.bsg-jump-out {
+  animation: BSGjumpOut .4s linear forwards;
+}
+
+@keyframes BSGjumpOut {
+  0% {opacity: 1;}
   100% {opacity: 0;}
 }
