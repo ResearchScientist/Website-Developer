@@ -1019,6 +1019,10 @@ const hal = document.querySelector('#hal-bubble');
 
 function halSaysHi() {
   hal.classList.add('hal-says-hi');
+  setTimeout(() => {
+    hal.classList.add('hal-says-lets-go');
+    xwing.classList.add('steam-rolled');
+  }, 4000);
 }
 
 // STARSHIP

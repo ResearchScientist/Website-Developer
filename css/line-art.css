@@ -385,11 +385,23 @@
   transform: translate(calc(-25dvw - 88px),0);
 }
 
-.hal-says-hi {
-  animation: halSaysHi 4s linear forwards;
-}
+.hal-says-hi {animation: halSaysHi 4s linear forwards;}
 
 @keyframes halSaysHi {
   0% {transform: translate(calc(-25dvw - 88px),0);}
   100% {transform: translate(calc(75dvw - 88px),0);}
+}
+
+.hal-says-lets-go {animation: halSaysLetsGo 4s linear forwards;}
+
+@keyframes halSaysLetsGo {
+  0% {transform: translate(calc(75dvw - 88px),0);}
+  100% {transform: translate(calc(175dvw - 88px),0);}
+}
+
+.steam-rolled {animation: steamRolled 4s linear forwards;}
+
+@keyframes steamRolled {
+  0% {transform: translate(0,0) rotate(-90deg);}
+  100% {transform: translate(calc(100dvw),0) rotate(-90deg);}
 }
