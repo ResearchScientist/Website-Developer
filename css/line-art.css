@@ -370,3 +370,17 @@
   0% {opacity: 1;}
   100% {opacity: 0;}
 }
+
+/* HALL */
+
+#hal-bubble {
+  width: 150px;
+  height: 40px;
+  margin-top: 250px;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  justify-self: center;
+  align-self: center;
+  background-color: teal;
+  transform: translate(calc(75dvw - 88px),0);
+}
