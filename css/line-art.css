@@ -382,5 +382,14 @@
   justify-self: center;
   align-self: center;
   background-color: teal;
-  transform: translate(calc(75dvw - 88px),0);
+  transform: translate(calc(-25dvw - 88px),0);
+}
+
+.hal-says-hi {
+  animation: halSaysHi 4s linear forwards;
+}
+
+@keyframes halSaysHi {
+  0% {transform: translate(calc(-25dvw - 88px),0);}
+  100% {transform: translate(calc(75dvw - 88px),0);}
 }

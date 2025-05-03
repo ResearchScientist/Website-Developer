@@ -1009,10 +1009,17 @@ function xwingAttack() {
   setTimeout(() => {
     wing1.classList.remove('foils');
     wing2.classList.remove('foils');
-    // hal2001();
+    halSaysHi();
   }, 3500);
 }
 
+// HAL
+
+const hal = document.querySelector('#hal-bubble');
+
+function halSaysHi() {
+  hal.classList.add('hal-says-hi');
+}
 
 // STARSHIP
 
