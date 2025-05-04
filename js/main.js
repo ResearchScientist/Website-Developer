@@ -1015,7 +1015,7 @@ function xwingAttack() {
 
 // HAL
 
-const hal = document.querySelector('#hal-bubble');
+const hal = document.querySelector('#hal-ship');
 
 function halSaysHi() {
   hal.classList.add('hal-says-hi');
