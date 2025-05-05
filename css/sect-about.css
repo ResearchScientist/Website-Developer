@@ -235,12 +235,6 @@
   100% {opacity: 0;}
 }
 
-#building {
-  grid-column: 1/1;
-  grid-row: 1/1;
-  transform: translate(4px,4px) rotate(-45deg);
-}
-
 #building:hover #window-l,#building:hover #window-r {
   fill: var(--accent-orange);
 }

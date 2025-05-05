@@ -63,18 +63,22 @@
 #resume-display section {
   width: 100%;
   height: 100%;
+  padding: 60px 0 0;
   grid-column: 1/-1;
   grid-row: 1/-1;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 100%;
   opacity: 0;
 }
 
-#resume-section-sailing {
+/* #resume-section-sailing {
   background-color: teal;
-}
+} */
 
-#resume-section-house {
+/* #resume-section-house {
   background-color: tomato;
-}
+} */
 
 /* PLANETE BUTTONS */
 
