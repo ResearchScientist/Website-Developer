@@ -235,12 +235,6 @@
   100% {opacity: 0;}
 }
 
-#building {
-  grid-column: 1/1;
-  grid-row: 1/1;
-  transform: translate(4px,4px) rotate(-45deg);
-}
-
 #building:hover #window-l,#building:hover #window-r {
   fill: var(--accent-orange);
 }
@@ -257,33 +251,4 @@
   stroke: var(--text-blue);
   text-anchor: start;
   animation: smoke-text 28s linear infinite;
-}
-
-/* change this to animate on click */
-
-#QD,#TSRI,#PGRD,#UCSC {
-  grid-column: 1/1;
-  grid-row: 1/1;
-  transform: translate(-35px,-20px);
-}
-
-#TSRI text {animation-delay: 7s;}
-#PGRD text {animation-delay: 14s;}
-#UCSC text {animation-delay: 21s;}
-
-/* FOR OBTAINING THE BASIC ANIMATION TIMING */
-
-/* @keyframes smoke-text {
-  0% {stroke-dasharray: 0 100%;}
-  50% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  75% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
-} */
-
-@keyframes smoke-text {
-  0% {stroke-dasharray: 0 100%;}
-  12.5% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  18.75% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 1;}
-  25% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
-  100% {stroke-dasharray: 100% 0; stroke-dashoffset: 80%; opacity: 0;}
 }
