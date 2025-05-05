@@ -415,3 +415,14 @@
   justify-self: center;
   align-self: center;
 }
+
+/* ROCINANTE */
+
+#rocinante {
+  width: 44px;
+  height: 18px;
+  margin-left: 10px;
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  transform: rotate(90deg);
+}
