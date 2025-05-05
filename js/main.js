@@ -1152,11 +1152,31 @@ function blastAsteroids() {
 
 // RESUME
 
+const resumeInfoCards = document.querySelector('#resume-info-cards');
+const resumeSectionSailing = document.querySelector('#resume-section-sailing');
+const resumeSectionHouse = document.querySelector('#resume-section-house');
 const sailingButton = document.querySelector('#sailing-button');
+const houseButton = document.querySelector('#house-button');
 
 sailingButton.addEventListener('click',showSailing);
+houseButton.addEventListener('click',showHouse);
 
 function showSailing() {
+  clearResumeDisplay();
+  resumeSectionSailing.style.opacity = '1';
   console.log('sailing');
   
+}
+
+function showHouse() {
+  clearResumeDisplay();
+  resumeSectionHouse.style.opacity = '1';
+  console.log('houses');
+  
+}
+
+function clearResumeDisplay() {
+  resumeInfoCards.style.opacity = '0';
+  resumeSectionSailing.style.opacity = '0';
+  resumeSectionHouse.style.opacity = '0';
 }
