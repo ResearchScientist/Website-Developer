@@ -72,12 +72,22 @@
   opacity: 0;
 }
 
+#resume-display section div {
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+}
+
 /* #resume-section-sailing {
   background-color: teal;
 } */
 
-/* #resume-section-house {
-  background-color: tomato;
+/* #resume-section-house div {
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
 } */
 
 /* PLANETE BUTTONS */
