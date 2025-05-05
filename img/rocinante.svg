@@ -1,0 +1,18 @@
+<svg width="88" height="36" viewBox="0 0 88 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 11L10 14V22L0 25V11Z" fill="#CCCCFF"/>
+<path d="M11 14L15 7H23V29H15L11 22V14Z" fill="#CCCCFF"/>
+<rect x="24" y="11" width="20" height="14" fill="#CCCCFF"/>
+<path d="M45 10L48 6H56L59 10V26L56 30H48L45 26V10Z" fill="#CCCCFF"/>
+<path d="M60 11H70L80 15V21L70 25H60V11Z" fill="#CCCCFF"/>
+<line x1="80" y1="19.5" x2="85" y2="19.5" stroke="#CCCCFF"/>
+<rect x="50" width="4" height="5" fill="#CCCCFF"/>
+<rect x="54" y="1" width="4" height="1" fill="#CCCCFF"/>
+<path d="M72 25L76 23.5V28H72V25Z" fill="#CCCCFF"/>
+<rect x="76" y="26" width="4" height="1" fill="#CCCCFF"/>
+<path d="M72 8H76V12.5L72 11V8Z" fill="#CCCCFF"/>
+<rect x="76" y="9" width="4" height="1" fill="#CCCCFF"/>
+<rect x="50" y="31" width="4" height="5" fill="#CCCCFF"/>
+<rect x="54" y="34" width="4" height="1" fill="#CCCCFF"/>
+<path d="M66 15H72L78 17V19L72 21H66V15Z" fill="#6496FA"/>
+<line x1="80" y1="16.5" x2="88" y2="16.5" stroke="#CCCCFF"/>
+</svg>
