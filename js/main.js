@@ -64,7 +64,6 @@ function scrollStarField(e) {
   }
 }
 
-// scrollToAboutButton.addEventListener('click', scrollToAbout);
 spaceportAnchor.addEventListener('click', scrollToAbout);
 
 function scrollToAbout() {
@@ -1149,4 +1148,15 @@ function blastAsteroids() {
     hullR.classList.add('hull-R-apart');
     hullAft.classList.add('hull-AFT-apart');
   }, 6600);
+}
+
+// RESUME
+
+const sailingButton = document.querySelector('#sailing-button');
+
+sailingButton.addEventListener('click',showSailing);
+
+function showSailing() {
+  console.log('sailing');
+  
 }
