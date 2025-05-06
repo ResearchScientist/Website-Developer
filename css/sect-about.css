@@ -24,7 +24,6 @@
   align-items: center;
   justify-items: flex-start;
   transform: translate(33dvw,-33dvh) rotate(-45deg);
-  /* transform: translate(0dvw,-33dvh) rotate(-45deg); */
 }
 
 #comet-head {

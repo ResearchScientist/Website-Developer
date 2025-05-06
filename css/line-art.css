@@ -416,3 +416,68 @@
   align-self: center;
 }
 
+/* ROCINANTE */
+
+#rocinante-bubble {
+  width: 44px;
+  height: 100px;
+  margin-left: 10px;
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  justify-self: flex-start;
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  transform: translate(0,-100px);
+}
+
+.rocinante-strafe {animation: rocinanteStrafe 6s linear forwards;}
+
+@keyframes rocinanteStrafe {
+  0% {transform: translate(0,-100px);}
+  100% {transform: translate(0,100dvh);}
+}
+
+#rocinante {
+  width: 44px;
+  height: 18px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  transform: rotate(90deg);
+}
+
+.flip-and-burn {animation: flipAndBurn 1.4s ease-in-out forwards;}
+
+@keyframes flipAndBurn {
+  0% {transform: rotate(90deg);}
+  100% {transform: rotate(-90deg);}
+}
+
+#rocinante-plume-outer {
+  width: 30px;
+  height: 6px;
+  margin-bottom: 64px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  transform: rotate(-90deg);
+  border-radius: 0 50% 50% 0;
+  background: linear-gradient(90deg,rgba(100,100,255,.7),transparent);
+}
+
+#rocinante-plume-inner {
+  width: 10px;
+  height: 2px;
+  margin-bottom: 54px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  transform: rotate(-90deg);
+  border-radius: 0 50% 50% 0;
+  background: linear-gradient(90deg,rgba(100,100,255,1),transparent);
+}
