@@ -51,7 +51,8 @@ function scrollStarField(e) {
   if (mainNavAnchor == 'projects') {
     midField.style.transform = 'translateY(-4vh)';
     nearField.style.transform = 'translateY(-10vh)';
-    setTimeout(confirmBSGjump,1000);
+    setTimeout(confirmBSGjump,2000);
+    setTimeout(rocinanteStrafe,1000);
   }
   if (mainNavAnchor == 'resume') {
     midField.style.transform = 'translateY(-6vh)';
@@ -1095,13 +1096,30 @@ function bsgJump() {
 
 // ROCINANTE
 
+const rocinanteBubble = document.querySelector('#rocinante-bubble');
 const rocinante = document.querySelector('#rocinante');
+const rocinantePlumeOuter = document.querySelector('#rocinante-plume-outer');
+const rocinantePlumeInner = document.querySelector('#rocinante-plume-inner');
 
 rocinante.addEventListener('click',flipAndBurn);
 
+function rocinanteStrafe() {
+  rocinanteBubble.classList.add('rocinante-strafe');
+}
+
 function flipAndBurn() {
   console.log('flip it');
+  rocinantePlumeOuter.style.opacity = '0';
+  rocinantePlumeInner.style.opacity = '0';
   rocinante.classList.add('flip-and-burn');
+  setTimeout(() => {
+    rocinantePlumeOuter.style.transform = 'rotate(90deg)';
+    rocinantePlumeInner.style.transform = 'rotate(90deg)';
+    rocinantePlumeOuter.style.marginBottom = '-64px';
+    rocinantePlumeInner.style.marginBottom = '-54px';
+    rocinantePlumeOuter.style.opacity = '1';
+    rocinantePlumeInner.style.opacity = '1';
+  }, 1500);
 }
 
 // DALEK

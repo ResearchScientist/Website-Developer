@@ -424,9 +424,19 @@
   margin-left: 10px;
   grid-column: -2/-1;
   grid-row: 1/2;
+  justify-self: flex-start;
+  align-self: flex-start;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
+  transform: translate(0,-100px);
+}
+
+.rocinante-strafe {animation: rocinanteStrafe 6s linear forwards;}
+
+@keyframes rocinanteStrafe {
+  0% {transform: translate(0,-100px);}
+  100% {transform: translate(0,100dvh);}
 }
 
 #rocinante {
