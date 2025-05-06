@@ -33,6 +33,7 @@ body {
   grid-template-rows: repeat(3,33%);
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #landing {grid-row: 1/2;}
