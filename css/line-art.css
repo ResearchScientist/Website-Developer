@@ -418,11 +418,31 @@
 
 /* ROCINANTE */
 
-#rocinante {
+#rocinante-bubble {
   width: 44px;
-  height: 18px;
+  height: 120px;
   margin-left: 10px;
   grid-column: -2/-1;
   grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  background-color: teal;
+}
+
+#rocinante {
+  width: 44px;
+  height: 18px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
   transform: rotate(90deg);
+}
+
+.flip-and-burn {animation: flipAndBurn 1.4s ease-in-out forwards;}
+
+@keyframes flipAndBurn {
+  0% {transform: rotate(90deg);}
+  100% {transform: rotate(-90deg);}
 }

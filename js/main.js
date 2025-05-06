@@ -1093,6 +1093,17 @@ function bsgJump() {
   }, 10300);
 }
 
+// ROCINANTE
+
+const rocinante = document.querySelector('#rocinante');
+
+rocinante.addEventListener('click',flipAndBurn);
+
+function flipAndBurn() {
+  console.log('flip it');
+  rocinante.classList.add('flip-and-burn');
+}
+
 // DALEK
 
 const dalek = document.getElementById('dalek');
@@ -1172,7 +1183,6 @@ function showHouse() {
   clearResumeDisplay();
   resumeSectionHouse.style.opacity = '1';
   console.log('houses');
-  
 }
 
 function clearResumeDisplay() {
