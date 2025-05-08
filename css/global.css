@@ -16,6 +16,7 @@ button {
   text-decoration: none;
   border: none;
   outline: none;
+  background: none;
   text-transform: none;
   cursor: pointer;
 }

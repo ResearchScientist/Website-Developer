@@ -1182,29 +1182,53 @@ function blastAsteroids() {
 // RESUME
 
 const resumeInfoCards = document.querySelector('#resume-info-cards');
-const resumeSectionSailing = document.querySelector('#resume-section-sailing');
+const resumeSectionBooks = document.querySelector('#resume-section-books');
+const resumeSectionFilm = document.querySelector('#resume-section-film');
 const resumeSectionHouse = document.querySelector('#resume-section-house');
-const sailingButton = document.querySelector('#sailing-button');
+const resumeSectionQuill = document.querySelector('#resume-section-quill');
+const resumeSectionSailing = document.querySelector('#resume-section-sailing');
+const booksButton = document.querySelector('#books-button');
+const filmButton = document.querySelector('#film-button');
 const houseButton = document.querySelector('#house-button');
+const quillButton = document.querySelector('#quill-button');
+const sailingButton = document.querySelector('#sailing-button');
 
+booksButton.addEventListener('click',showBooks);
+filmButton.addEventListener('click',showFilm);
+quillButton.addEventListener('click',showQuill);
 sailingButton.addEventListener('click',showSailing);
 houseButton.addEventListener('click',showHouse);
 
-function showSailing() {
+function showBooks() {
   clearResumeDisplay();
-  resumeSectionSailing.style.opacity = '1';
-  console.log('sailing');
-  
+  resumeSectionBooks.style.opacity = '1';
+}
+
+function showFilm() {
+  clearResumeDisplay();
+  resumeSectionFilm.style.opacity = '1';
 }
 
 function showHouse() {
   clearResumeDisplay();
   resumeSectionHouse.style.opacity = '1';
-  console.log('houses');
+}
+
+function showQuill() {
+  clearResumeDisplay();
+  resumeSectionQuill.style.opacity = '1';
+}
+
+function showSailing() {
+  clearResumeDisplay();
+  resumeSectionSailing.style.opacity = '1';
 }
 
 function clearResumeDisplay() {
   resumeInfoCards.style.opacity = '0';
-  resumeSectionSailing.style.opacity = '0';
+  resumeSectionBooks.style.opacity = '0';
+  resumeSectionFilm.style.opacity = '0';
   resumeSectionHouse.style.opacity = '0';
+  resumeSectionQuill.style.opacity = '0';
+  resumeSectionSailing.style.opacity = '0';
 }
