@@ -104,4 +104,4 @@ So far I have kept the default pointer when interacting with the top navigation 
 
 # Resume SVGs
 
-Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg.
+Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg. 
