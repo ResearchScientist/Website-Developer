@@ -103,4 +103,4 @@ Added a custom cursor. The cursor is an svg of a classic spaceship. Upon hoverin
 So far I have kept the default pointer when interacting with the top navigation menu. Also decided to keep the finger pointer when interacting with items within the ship bridge. This is a more natural indicator since the items are inside the ship and the user would be touching the controls with their own hands. When outside the ship the cursor reverts back to an animation of a small spaceship.
 # Resume SVGs
 
-Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg.
+Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg. 
