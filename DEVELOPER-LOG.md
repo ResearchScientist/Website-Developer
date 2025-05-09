@@ -106,6 +106,8 @@ So far I have kept the default pointer when interacting with the top navigation 
 
 Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg.
 
+Animated some of the SVGs to break up the static feel of the resume page. I implemented only one animation at a time as not to overwhelm the scene. Also it's important to take opportunities to reduce cognitive load. While a user is engaging with textual content the animation should not distract from their primary goal of reading the text. So I kept the animation as subtle as necessary.
+
 # Accessibility
 
 Since the overlay buttons I placed over the planet illustrations have very short names, I added aria labels to them. These are more descriptive and should help orient users with assistive technologies.
