@@ -420,6 +420,23 @@
   align-self: center;
 }
 
+/* FILM CAMERA */
+
+#reel-L {
+  transform-origin: 13px 8px;
+  animation: playFilm 8s linear infinite;
+}
+
+#reel-R {
+  transform-origin: 29px 8px;
+  animation: playFilm 8s linear infinite;
+}
+
+@keyframes playFilm {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}
+}
+
 /* ROCINANTE */
 
 #rocinante-bubble {
