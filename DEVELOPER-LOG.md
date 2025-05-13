@@ -1,24 +1,14 @@
 # Developer Log
 
-> Tuesday 27 April
-
-`{ fc3ae008 , 0947ce38 }`
+> april
 
 Had loads of fun making the custom cursor for the website. Wanted something small that would not overwhelm the user , but still be functional and informative.
 
-> Wednesday 28 April
-
-`{ }`
-
 A happily floating astronaut , there's something zen about it.
 
-> Monday 9 May
+> may 
 
 Decided to make the houses on the planet as line drawings. This will keep with the aesthetic of contrasting full complex 3D imagery against minimal 2D art.
-
-> Wednesday 28 Sep
-
-`{ 9f46cbd1 }`
 
 Really wanted a variable content drop down section on click. Initially was going to use the shadow dom and custom elements but since those are not indexable by search bots I decided to save their implementation for another project. Instead I made use of flex grid and overflow hidden to obtain the effect I wanted. Pretty happy with the result.
 
@@ -95,6 +85,10 @@ Added `srcset` to img tags. Rerendered all images as webp files at 1x 2x 3x. Thi
 Gave them width and height or width and aspect ratio.
 
 Except for the ship door images. These I kept at a one large size. when using the picture element with media queries it became unwieldly to capture so many different device width, heights, aspect ratios, orientations, and pixel densities. These are the only 2 images that I'm scaling down to fit devices so the overall impact on the site is relatively minimal in terms of bandwidth and initial load metrics. 
+
+# 3D Images
+
+I'm really happy with the way the 3d images are turning out. Using a sketchbook for drawing out some variations, then using blender to model, sculpt, and light the scenes. And wow, blender sure has some wild idiosyncrasies. So had to allocate further time for troubleshooting and workarounds. Nonetheless, I've learnt a lot more about modeling and am very pleased with the results. Thanks blender for such an available and powerful tool. And thanks community for all the available posts and resources.
 
 # Cursor
 
