@@ -192,12 +192,14 @@ function activateShipDoors() {
 const screenDisplay = document.querySelector('#display');
 
 function disableDisplayButtons() {
+  dradisButton.disabled = true;
   avastPlaneteButton.disabled = true;
   fluxCapacitorButton.disabled = true;
   punchItButton.disabled = true;
 }
 
 function enableDisplayButtons() {
+  dradisButton.disabled = false;
   avastPlaneteButton.disabled = false;
   fluxCapacitorButton.disabled = false;
   punchItButton.disabled = false;
@@ -259,7 +261,23 @@ function checkSequence(insetButton) {
   }
 }
 
-// DISPLAY PLANETE AND SKILLS
+// DRADIS
+
+const dradisButton = document.querySelector('#dradis-button');
+const dradisOnImg = document.querySelector('#dradis-on-img');
+
+dradisButton.addEventListener('click',dradisContact);
+
+function dradisContact() {
+  disableDisplayButtons();
+  dradisOnImg.classList.add('dradis-on');
+  setTimeout(() => {
+    dradisOnImg.classList.remove('dradis-on');
+    enableDisplayButtons();
+  }, 2000);
+}
+
+// WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
 
 const avastPlaneteButton = document.getElementById('avast-planete');
 const shipWheelIMG = document.getElementById('ship-wheel-img');
@@ -631,7 +649,7 @@ function resetTrajectories() {
   insetButton2.querySelector('p').textContent = "ready";
   insetButton3.querySelector('p').textContent = "ready";
   insetButton4.querySelector('p').textContent = "ready";
-  enableDisplayButtons(); 
+  enableDisplayButtons();
 }
 
 function trajectoryNameFade() {

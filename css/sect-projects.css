@@ -429,6 +429,27 @@
   100% {transform: rotate(0deg);}
 }
 
+/* DRADIS BUTTON */
+
+#dradis-button {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#dradis-on-img {
+  opacity: 0;
+}
+
+.dradis-on {animation: dradisOn .1s linear forwards;}
+
+@keyframes dradisOn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 /* FLUX CAPACITOR BUTTON */
 
 #flux-capacitor {
