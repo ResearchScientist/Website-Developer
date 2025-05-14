@@ -464,8 +464,11 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
+  background-color: var(--dark-orange);
+  filter: brightness(3) blur(1px);
+  transition: opacity .5s;
+  opacity: 0;
   z-index: 1;
-  background-color: teal;
 }
 
 #phone-light-1 {
