@@ -280,11 +280,35 @@ function dradisContact() {
 // PHONE
 
 const phoneButton = document.querySelector('#phone-button');
+const phoneLights = document.querySelectorAll('.phone-lights');
 
 phoneButton.addEventListener('click',ringring);
 
 function ringring() {
-  console.log('ring ring');
+  ringOn();
+  setTimeout(ringOff,400);
+  setTimeout(ringOn,1400);
+  setTimeout(ringOff,1800);
+}
+
+function ringOn() {
+  phoneLights.forEach((phoneLight,index) => {
+    setTimeout(phoneLightOn,200*index,phoneLight);
+  });
+}
+
+function ringOff() {
+  phoneLights.forEach((phoneLight,index) => {
+    setTimeout(phoneLightOff,200*index,phoneLight);
+  });
+}
+
+function phoneLightOn(phoneLight) {
+  phoneLight.style.opacity = "1";
+}
+
+function phoneLightOff(phoneLight) {
+  phoneLight.style.opacity = "0";
 }
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
