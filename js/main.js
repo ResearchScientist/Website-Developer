@@ -281,47 +281,25 @@ function dradisContact() {
 
 const phoneButton = document.querySelector('#phone-button');
 const phoneLights = document.querySelectorAll('.phone-lights');
-// const phoneLight1 = document.querySelector('#phone-light-1');
-// const phoneLight2 = document.querySelector('#phone-light-2');
-// const phoneLight3 = document.querySelector('#phone-light-3');
-// const phoneLight4 = document.querySelector('#phone-light-4');
-// const phoneLight5 = document.querySelector('#phone-light-5');
-// const phoneLight6 = document.querySelector('#phone-light-6');
-// const phoneLight7 = document.querySelector('#phone-light-7');
-// const phoneLight8 = document.querySelector('#phone-light-8');
 
 phoneButton.addEventListener('click',ringring);
 
 function ringring() {
-  // phoneLight1.style.opacity = "1";
-  // setTimeout(phoneLightOn,200,phoneLight2);
-  // setTimeout(phoneLightOn,400,phoneLight3);
-  // setTimeout(phoneLightOn,600,phoneLight4);
-  // setTimeout(phoneLightOn,800,phoneLight5);
-  // setTimeout(phoneLightOn,1000,phoneLight6);
-  // setTimeout(phoneLightOn,1200,phoneLight7);
-  // setTimeout(phoneLightOn,1400,phoneLight8);
   ringOn();
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
-  // phoneLights.forEach((light,index) => {
-  //   setTimeout(phoneLightOn,200*index,light);
-  // });
-  // phoneLights.forEach((light,index) => {
-  //   setTimeout(phoneLightOff,200*index,light);
-  // });
 }
 
 function ringOn() {
-  phoneLights.forEach((light,index) => {
-    setTimeout(phoneLightOn,200*index,light);
+  phoneLights.forEach((phoneLight,index) => {
+    setTimeout(phoneLightOn,200*index,phoneLight);
   });
 }
 
 function ringOff() {
-  phoneLights.forEach((light,index) => {
-    setTimeout(phoneLightOff,200*index,light);
+  phoneLights.forEach((phoneLight,index) => {
+    setTimeout(phoneLightOff,200*index,phoneLight);
   });
 }
 
