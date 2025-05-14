@@ -277,6 +277,16 @@ function dradisContact() {
   }, 2000);
 }
 
+// PHONE
+
+const phoneButton = document.querySelector('#phone-button');
+
+phoneButton.addEventListener('click',ringring);
+
+function ringring() {
+  console.log('ring ring');
+}
+
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
 
 const avastPlaneteButton = document.getElementById('avast-planete');
