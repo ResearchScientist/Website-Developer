@@ -1014,6 +1014,21 @@
   100% {opacity: 0;}
 }
 
+/* ENGINE */
+
+#engine-button {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#engine-on-img {
+  opacity: 0;
+  transition: opacity .25s;
+}
+
 /* BRIDGE FLOOR */
 
 #bridge-floor {
