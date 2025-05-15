@@ -882,6 +882,20 @@ function animateElongation(timestamp) {
   }
 }
 
+//  ENGINE
+
+const engineButton = document.querySelector('#engine-button');
+const engineOnIMG = document.querySelector('#engine-on-img');
+
+engineButton.addEventListener('click',checkEngine);
+
+function checkEngine() {
+  engineOnIMG.style.opacity = "1";
+  setTimeout(() => {
+    engineOnIMG.style.opacity = "0";
+  }, 2000);
+}
+
 // TOOLBOX BUTTON
 
 const toolboxButton = document.querySelector('#toolbox-button');
