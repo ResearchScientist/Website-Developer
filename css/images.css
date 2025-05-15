@@ -33,7 +33,7 @@ img > * {
   grid-row: 1/-1;
 }
 
-#dradis-off-img , #dradis-on-img , #flux-capacitor-off-img , #flux-capacitor-on-img , #engine-off-img , #engine-on-img {
+#dradis-off-img , #dradis-on-img , #flux-capacitor-off-img , #flux-capacitor-on-img , #engine-off-img , #engine-on-img , #vacuum-tubes-off-img , #vacuum-tubes-on-img {
   width: 50px;
   height: 50px;
   grid-column: 1/-1;

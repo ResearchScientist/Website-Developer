@@ -1029,6 +1029,19 @@
   transition: opacity .25s;
 }
 
+#vacuum-tubes-button {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#vacuum-tubes-on-img {
+  opacity: 0;
+  transition: opacity .25s;
+}
+
 /* BRIDGE FLOOR */
 
 #bridge-floor {
