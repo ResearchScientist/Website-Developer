@@ -896,6 +896,20 @@ function checkEngine() {
   }, 2000);
 }
 
+//  VACUUM TUBES
+
+const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
+const vacuumTubesOnIMG = document.querySelector('#vacuum-tubes-on-img');
+
+vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
+
+function lightUpVacuumTubes() {
+  vacuumTubesOnIMG.style.opacity = "1";
+  setTimeout(() => {
+    vacuumTubesOnIMG.style.opacity = "0";
+  }, 2000);
+}
+
 // TOOLBOX BUTTON
 
 const toolboxButton = document.querySelector('#toolbox-button');
