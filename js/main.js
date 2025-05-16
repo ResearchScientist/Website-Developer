@@ -215,15 +215,55 @@ const punchItButton = document.querySelector('#punch-it');
 const engineButton = document.querySelector('#engine-button');
 const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
 
+
+function saySomething() {
+  console.log('say something');
+}
+
+function doSomething() {
+  console.log('do something');
+}
+
+function eatSomething() {
+  console.log('eat something');
+}
+
 const insetButtonsFunctionSets = {
-  'dradisButton': [func1a,func1b,func1c,func1d],
-  'phoneButton': [func2a,func2b,func2c,func2d],
-  'avastPlaneteButton': [func4a,func4b,func4c,func4d],
-  'fluxCapacitorButton': [func5a,func5b,func5c,func5d],
-  'punchItButton': [func6a,func6b,func6c,func6d],
-  'engineButton': [func7a,func7b,func7c,func7d],
-  'vacuumTubesButton': [func9a,func9b,func9c,func9d]
+  // 'dradisButton': [func1a,func1b,func1c,func1d],
+  // 'phoneButton': [func2a,func2b,func2c,func2d],
+  // 'avastPlaneteButton': [func4a,func4b,func4c,func4d],
+  // 'fluxCapacitorButton': [func5a,func5b,func5c,func5d],
+  // 'punchItButton': [func6a,func6b,func6c,func6d],
+  'engineButton': [eatSomething],
+  'vacuumTubesButton': [saySomething,doSomething]
 };
+
+function updateInsetButtonsNames(newInsetButtonsText) {
+  for (let i = 0; i < insetButtonsArray.length; i++) {
+    currentInsetButton = insetButtonsArray[i];
+    currentInsetButton.querySelector('p').textContent = newInsetButtonsText[i];
+  }
+}
+
+function updateInsetButtonsEventListeners(bridgeButtonID) {
+  if (insetButtonsFunctionSets.hasOwnProperty(bridgeButtonID)) {
+    console.log(bridgeButtonID);
+    removeInsetButtonsEventListeners();
+  } else {
+    console.log(`missing function set for ${bridgeButtonID}`); 
+  }
+}
+
+function removeInsetButtonsEventListeners() {
+  console.log('remove event listeners');
+  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
+  insetButton2.removeEventListener('click',updateTrajectorySkills);
+  insetButton3.removeEventListener('click',updateTrajectoryLove);
+  insetButton4.removeEventListener('click',resetTrajectories);
+}
+
+engineButton.addEventListener('click', () => updateInsetButtonsEventListeners('engineButton'));
+vacuumTubesButton.addEventListener('click', () => updateInsetButtonsEventListeners('vacuumTubesButton'));
 
 // SEQUENCE BUTTONS
 
@@ -232,6 +272,7 @@ const insetButton1 = document.querySelector('#inset-button-1');
 const insetButton2 = document.querySelector('#inset-button-2');
 const insetButton3 = document.querySelector('#inset-button-3');
 const insetButton4 = document.querySelector('#inset-button-4');
+const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 const launchSequenceMsg = document.querySelector('#launch-sequence');
 const launchSequence = ['4','3','2','1'];
 let currentSequence = [];
@@ -309,6 +350,8 @@ function ringring() {
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
+  let insetButtonsText = ["discourse","dialogue","talks","clear"];
+  updateInsetButtonsNames(insetButtonsText);
 }
 
 function ringOn() {
@@ -643,10 +686,8 @@ const loveArray = ['coffee','gelato','chocolate','cats','sailing','dancing'];
 let nameList = document.getElementsByClassName('tn');
 
 function updateButtonNames() {
-  insetButton1.querySelector('p').textContent = "Academic";
-  insetButton2.querySelector('p').textContent = "Skills";
-  insetButton3.querySelector('p').textContent = "Love";
-  insetButton4.querySelector('p').textContent = "clear";
+  let insetButtonsText = ["Academic","Skills","Love","clear"];
+  updateInsetButtonsNames(insetButtonsText);
   updateInsetButtonsToTrajectories();
 }
 
@@ -695,10 +736,7 @@ function resetTrajectories() {
     lightList[i].classList.remove('lights-strobe');
     lightList[i].style.opacity = "0";
   }
-  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
-  insetButton2.removeEventListener('click',updateTrajectorySkills);
-  insetButton3.removeEventListener('click',updateTrajectoryLove);
-  insetButton4.removeEventListener('click',resetTrajectories);
+  removeInsetButtonsEventListeners();
   insetButton1.querySelector('p').textContent = "ready";
   insetButton2.querySelector('p').textContent = "ready";
   insetButton3.querySelector('p').textContent = "ready";
@@ -911,6 +949,8 @@ engineButton.addEventListener('click',checkEngine);
 
 function checkEngine() {
   engineOnIMG.style.opacity = "1";
+  let insetButtonsText = ["unit tests","diagnostics","treats","clear"];
+  updateInsetButtonsNames(insetButtonsText);
   setTimeout(() => {
     engineOnIMG.style.opacity = "0";
   }, 2000);
