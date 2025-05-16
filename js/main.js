@@ -238,6 +238,18 @@ const insetButtonsFunctionSets = {
   'vacuumTubesButton': [saySomething,doSomething]
 };
 
+function updateInsetButtons(newInsetButtonsText) {
+  removeInsetButtonsEventListeners();
+  updateInsetButtonsNames(newInsetButtonsText)
+}
+
+function removeInsetButtonsEventListeners() {
+  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
+  insetButton2.removeEventListener('click',updateTrajectorySkills);
+  insetButton3.removeEventListener('click',updateTrajectoryLove);
+  insetButton4.removeEventListener('click',resetTrajectories);
+}
+
 function updateInsetButtonsNames(newInsetButtonsText) {
   for (let i = 0; i < insetButtonsArray.length; i++) {
     currentInsetButton = insetButtonsArray[i];
@@ -245,25 +257,15 @@ function updateInsetButtonsNames(newInsetButtonsText) {
   }
 }
 
-function updateInsetButtonsEventListeners(bridgeButtonID) {
-  if (insetButtonsFunctionSets.hasOwnProperty(bridgeButtonID)) {
-    console.log(bridgeButtonID);
-    removeInsetButtonsEventListeners();
-  } else {
-    console.log(`missing function set for ${bridgeButtonID}`); 
+function resetInsetButtonsNames() {
+  for (let i = 0; i < insetButtonsArray.length; i++) {
+    currentInsetButton = insetButtonsArray[i];
+    currentInsetButton.querySelector('p').textContent = "ready";
   }
 }
 
-function removeInsetButtonsEventListeners() {
-  console.log('remove event listeners');
-  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
-  insetButton2.removeEventListener('click',updateTrajectorySkills);
-  insetButton3.removeEventListener('click',updateTrajectoryLove);
-  insetButton4.removeEventListener('click',resetTrajectories);
-}
-
-engineButton.addEventListener('click', () => updateInsetButtonsEventListeners('engineButton'));
-vacuumTubesButton.addEventListener('click', () => updateInsetButtonsEventListeners('vacuumTubesButton'));
+// engineButton.addEventListener('click', () => updateInsetButtonsEventListeners('engineButton'));
+// vacuumTubesButton.addEventListener('click', () => updateInsetButtonsEventListeners('vacuumTubesButton'));
 
 // SEQUENCE BUTTONS
 
@@ -331,9 +333,12 @@ dradisButton.addEventListener('click',dradisContact);
 
 function dradisContact() {
   disableDisplayButtons();
+  let insetButtonsText = ["seek","find","evaluate","clear"];
+  updateInsetButtons(insetButtonsText);
   dradisOnImg.classList.add('dradis-on');
   setTimeout(() => {
     dradisOnImg.classList.remove('dradis-on');
+    resetInsetButtonsNames();
     enableDisplayButtons();
   }, 2000);
 }
@@ -351,7 +356,7 @@ function ringring() {
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
   let insetButtonsText = ["discourse","dialogue","talks","clear"];
-  updateInsetButtonsNames(insetButtonsText);
+  updateInsetButtons(insetButtonsText);
 }
 
 function ringOn() {
@@ -418,6 +423,7 @@ function unviewFrozenPlanete() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.remove('animate-planet-curve');
   });
+  setTimeout(resetInsetButtonsNames,3000);
   setTimeout(enableDisplayButtons,3000);
 }
 
@@ -737,10 +743,6 @@ function resetTrajectories() {
     lightList[i].style.opacity = "0";
   }
   removeInsetButtonsEventListeners();
-  insetButton1.querySelector('p').textContent = "ready";
-  insetButton2.querySelector('p').textContent = "ready";
-  insetButton3.querySelector('p').textContent = "ready";
-  insetButton4.querySelector('p').textContent = "ready";
   enableDisplayButtons();
 }
 
