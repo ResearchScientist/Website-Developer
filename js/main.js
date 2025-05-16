@@ -205,6 +205,26 @@ function enableDisplayButtons() {
   punchItButton.disabled = false;
 }
 
+// BRIDGE BUTTONS
+
+const dradisButton = document.querySelector('#dradis-button');
+const phoneButton = document.querySelector('#phone-button');
+const avastPlaneteButton = document.getElementById('avast-planete');
+const fluxCapacitorButton = document.querySelector('#flux-capacitor');
+const punchItButton = document.querySelector('#punch-it');
+const engineButton = document.querySelector('#engine-button');
+const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
+
+const insetButtonsFunctionSets = {
+  'dradisButton': [func1a,func1b,func1c,func1d],
+  'phoneButton': [func2a,func2b,func2c,func2d],
+  'avastPlaneteButton': [func4a,func4b,func4c,func4d],
+  'fluxCapacitorButton': [func5a,func5b,func5c,func5d],
+  'punchItButton': [func6a,func6b,func6c,func6d],
+  'engineButton': [func7a,func7b,func7c,func7d],
+  'vacuumTubesButton': [func9a,func9b,func9c,func9d]
+};
+
 // SEQUENCE BUTTONS
 
 const insetButtons = document.querySelector('#inset-buttons');
@@ -263,7 +283,7 @@ function checkSequence(insetButton) {
 
 // DRADIS
 
-const dradisButton = document.querySelector('#dradis-button');
+// const dradisButton = document.querySelector('#dradis-button');
 const dradisOnImg = document.querySelector('#dradis-on-img');
 
 dradisButton.addEventListener('click',dradisContact);
@@ -279,7 +299,7 @@ function dradisContact() {
 
 // PHONE
 
-const phoneButton = document.querySelector('#phone-button');
+// const phoneButton = document.querySelector('#phone-button');
 const phoneLights = document.querySelectorAll('.phone-lights');
 
 phoneButton.addEventListener('click',ringring);
@@ -313,7 +333,7 @@ function phoneLightOff(phoneLight) {
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
 
-const avastPlaneteButton = document.getElementById('avast-planete');
+// const avastPlaneteButton = document.getElementById('avast-planete');
 const shipWheelIMG = document.getElementById('ship-wheel-img');
 const planeteFrozen = document.getElementById('planete-frozen');
 const skills = document.querySelectorAll('.skills');
@@ -360,7 +380,7 @@ function unviewFrozenPlanete() {
 
 // FLUX CAPACITOR
 
-const fluxCapacitorButton = document.querySelector('#flux-capacitor');
+// const fluxCapacitorButton = document.querySelector('#flux-capacitor');
 const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
 const speedometerGlass = document.querySelector('#speedometer-glass');
 const speedometerBox = document.querySelector('#speedometer-box');
@@ -701,7 +721,7 @@ function resetFade() {
 
 // PUNCH IT
 
-const punchItButton = document.querySelector('#punch-it');
+// const punchItButton = document.querySelector('#punch-it');
 const punchItHandle = document.querySelector('#hyperjump-handle-img');
 const punchiItHandleDown = document.querySelector('#hyperjump-handles-down-img');
 const punchiItHandleUp = document.querySelector('#hyperjump-handles-up-img');
@@ -884,7 +904,7 @@ function animateElongation(timestamp) {
 
 //  ENGINE
 
-const engineButton = document.querySelector('#engine-button');
+// const engineButton = document.querySelector('#engine-button');
 const engineOnIMG = document.querySelector('#engine-on-img');
 
 engineButton.addEventListener('click',checkEngine);
@@ -898,7 +918,7 @@ function checkEngine() {
 
 //  VACUUM TUBES
 
-const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
+// const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
 const vacuumTubesOnIMG = document.querySelector('#vacuum-tubes-on-img');
 
 vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
