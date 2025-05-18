@@ -277,7 +277,12 @@ const insetButton2 = document.querySelector('#inset-button-2');
 const insetButton3 = document.querySelector('#inset-button-3');
 const insetButton4 = document.querySelector('#inset-button-4');
 const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
-const launchSequence = ['4','3','2','1'];
+const sequences = {
+  "1111": "When one is not enough.",
+  "2222": "2 times the fun.",
+  "4321": "Blast Off!"
+};
+const maxSequenceLength = 4;
 let currentSequence = [];
 
 insetButtons.addEventListener('click',activateInsetButton);
@@ -311,14 +316,19 @@ function checkSequence(insetButton) {
   const sequenceNumber = insetButton.dataset.sequenceNumber;
   currentSequence.push(sequenceNumber);
   console.log(currentSequence);
-  if (currentSequence.length === launchSequence.length) {
-    if (currentSequence.join('') === launchSequence.join('')) {
-      sequenceMSGtxt.textContent = "Blast Off!";
+
+  const currentSequenceString = currentSequence.join('');
+  // const maxSequenceLength = Math.max(...Object.keys(sequences).map(seq => seq.length)); if I will be using different sized sequences
+
+  for (const sequence in sequences) {
+    if (currentSequenceString === sequence && currentSequence.length === maxSequenceLength) {
+      sequenceMSGtxt.textContent = sequences[sequence];
       displaySequenceMSG();
+      currentSequence = [];
     }
-    else {
-      console.log('invalid sequence');
-    }
+  }
+  if (currentSequence.length >= maxSequenceLength) {
+    console.log('invalid sequence');
     currentSequence = [];
   }
 }
