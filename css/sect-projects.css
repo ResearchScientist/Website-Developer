@@ -316,25 +316,55 @@
 /* SCREEN DISPLAY */
 
 #sequence-display-section {
-  width: 80%;
+  width: 90%;
   height: 80%;
+  aspect-ratio: 16/9;
   justify-self: center;
   align-self: center;
   grid-column: 1/-1;
   grid-row: 1/-1;
+  background-color: rgba(100,150,250,.1);
+  border: 1px solid var(--primary-blue);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  transform: translate(0,-120%);
+  z-index: 1;
 }
 
-#sequence-display-section p {
+.show-sequence-display {animation: showSequenceDisplay 1s ease-in-out forwards;}
+
+@keyframes showSequenceDisplay {
+  0% {transform: translate(0,-120%);}
+  100% {transform: translate(0,0%);}
+}
+
+.unshow-sequence-display {animation: unshowSequenceDisplay 1s ease-in-out forwards;}
+
+@keyframes unshowSequenceDisplay {
+  0% {transform: translate(0,0%);}
+  100% {transform: translate(0,-120%);}
+}
+
+#sequence-msg {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#sequence-msg p {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
   font-family: 'Lato',sans-serif;
   font-size: 20px;
   font-weight: 300;
   text-align: center;
   color: var(--text-blue);
-}
-
-#launch-sequence {
-  display: none;
-  transition: all 1s;
 }
 
 /* BRIDGE STATIONS */

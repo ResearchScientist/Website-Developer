@@ -231,7 +231,7 @@ function eatSomething() {
 const insetButtonsFunctionSets = {
   // 'dradisButton': [func1a,func1b,func1c,func1d],
   // 'phoneButton': [func2a,func2b,func2c,func2d],
-  // 'avastPlaneteButton': [func4a,func4b,func4c,func4d],
+  // 'avastPlaneteButton': [func4a,func4b,func4c,unviewFrozenPlanete],
   // 'fluxCapacitorButton': [func5a,func5b,func5c,func5d],
   // 'punchItButton': [func6a,func6b,func6c,func6d],
   'engineButton': [eatSomething],
@@ -269,13 +269,14 @@ function resetInsetButtonsNames() {
 
 // SEQUENCE BUTTONS
 
+const sequenceDisplay = document.querySelector('#sequence-display-section');
+const sequenceMSGtxt = document.querySelector('#sequence-msg-txt');
 const insetButtons = document.querySelector('#inset-buttons');
 const insetButton1 = document.querySelector('#inset-button-1');
 const insetButton2 = document.querySelector('#inset-button-2');
 const insetButton3 = document.querySelector('#inset-button-3');
 const insetButton4 = document.querySelector('#inset-button-4');
 const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
-const launchSequenceMsg = document.querySelector('#launch-sequence');
 const launchSequence = ['4','3','2','1'];
 let currentSequence = [];
 
@@ -312,16 +313,23 @@ function checkSequence(insetButton) {
   console.log(currentSequence);
   if (currentSequence.length === launchSequence.length) {
     if (currentSequence.join('') === launchSequence.join('')) {
-      launchSequenceMsg.style['display'] = 'inline';
-      setTimeout(() => {
-        launchSequenceMsg.style['display'] = 'none';
-      }, 3000);
+      sequenceMSGtxt.textContent = "Blast Off!";
+      displaySequenceMSG();
     }
     else {
-      console.log('not launching');
+      console.log('invalid sequence');
     }
     currentSequence = [];
   }
+}
+
+function displaySequenceMSG() {
+  sequenceDisplay.classList.remove('unshow-sequence-display');
+  sequenceDisplay.classList.add('show-sequence-display');
+  setTimeout(() => {
+    sequenceDisplay.classList.add('unshow-sequence-display');
+    sequenceDisplay.classList.remove('show-sequence-display');
+  }, 3000);
 }
 
 // DRADIS
