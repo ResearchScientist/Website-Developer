@@ -193,14 +193,14 @@ const screenDisplay = document.querySelector('#display');
 
 function disableDisplayButtons() {
   dradisButton.disabled = true;
-  avastPlaneteButton.disabled = true;
+  wheelButton.disabled = true;
   fluxCapacitorButton.disabled = true;
   punchItButton.disabled = true;
 }
 
 function enableDisplayButtons() {
   dradisButton.disabled = false;
-  avastPlaneteButton.disabled = false;
+  wheelButton.disabled = false;
   fluxCapacitorButton.disabled = false;
   punchItButton.disabled = false;
 }
@@ -208,9 +208,10 @@ function enableDisplayButtons() {
 // BRIDGE BUTTONS
 
 const dradisButton = document.querySelector('#dradis-button');
+const computerButton = document.querySelector('#computer-button');
 const phoneButton = document.querySelector('#phone-button');
-const avastPlaneteButton = document.getElementById('avast-planete');
-const fluxCapacitorButton = document.querySelector('#flux-capacitor');
+const wheelButton = document.getElementById('wheel-button');
+const fluxCapacitorButton = document.querySelector('#flux-capacitor-button');
 const punchItButton = document.querySelector('#punch-it');
 const engineButton = document.querySelector('#engine-button');
 const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
@@ -231,7 +232,7 @@ function eatSomething() {
 const insetButtonsFunctionSets = {
   // 'dradisButton': [func1a,func1b,func1c,func1d],
   // 'phoneButton': [func2a,func2b,func2c,func2d],
-  // 'avastPlaneteButton': [func4a,func4b,func4c,unviewFrozenPlanete],
+  // 'wheelButton': [func4a,func4b,func4c,unviewFrozenPlanete],
   // 'fluxCapacitorButton': [func5a,func5b,func5c,func5d],
   // 'punchItButton': [func6a,func6b,func6c,func6d],
   'engineButton': [eatSomething],
@@ -361,6 +362,15 @@ function dradisContact() {
   }, 2000);
 }
 
+// COMPUTER
+
+function magnifyComputer() {
+  let insetButtonsText = ["quality","tests","models","clear"];
+  updateInsetButtons(insetButtonsText);
+}
+
+computerButton.addEventListener('click',magnifyComputer);
+
 // PHONE
 
 // const phoneButton = document.querySelector('#phone-button');
@@ -373,7 +383,7 @@ function ringring() {
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
-  let insetButtonsText = ["discourse","dialogue","talks","clear"];
+  let insetButtonsText = ["text","data vis","dialogue","clear"];
   updateInsetButtons(insetButtonsText);
 }
 
@@ -399,13 +409,13 @@ function phoneLightOff(phoneLight) {
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
 
-// const avastPlaneteButton = document.getElementById('avast-planete');
+// const wheelButton = document.getElementById('avast-planete');
 const shipWheelIMG = document.getElementById('ship-wheel-img');
 const planeteFrozen = document.getElementById('planete-frozen');
 const skills = document.querySelectorAll('.skills');
 const planetCurves = document.querySelectorAll('.planet-curve');
 
-avastPlaneteButton.addEventListener('click',viewFrozenPlanete);
+wheelButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
   disableDisplayButtons();
