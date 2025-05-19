@@ -203,6 +203,16 @@ const gaugeButton = document.querySelector('#gauge-button');
 const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
 const bridgeIMGbuttons = [dradisButton,computerButton,phoneButton,wheelButton,fluxCapacitorButton,punchItButton,engineButton,gaugeButton,vacuumTubesButton];
 
+dradisButton.addEventListener('click',dradisContact);
+computerButton.addEventListener('click',magnifyComputer);
+phoneButton.addEventListener('click',ringring);
+wheelButton.addEventListener('click',viewFrozenPlanete);
+fluxCapacitorButton.addEventListener('click',fluxIt);
+punchItButton.addEventListener('click',punchIt);
+engineButton.addEventListener('click',checkEngine);
+gaugeButton.addEventListener('click',gaugeIntoTheAbyss);
+vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
+
 function disableDisplayButtons() {
   bridgeIMGbuttons.forEach(bridgeIMGbutton => {
     bridgeIMGbutton.disabled = true;
@@ -261,6 +271,16 @@ function resetInsetButtonsNames() {
     currentInsetButton = insetButtonsArray[i];
     currentInsetButton.querySelector('p').textContent = "ready";
   }
+  const insetButtonsAllP = insetButtons.querySelectorAll('p');
+    insetButtonsAllP.forEach(p => {
+      p.style['filter'] = 'none';
+      p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
+      p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
+      p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
+      p.style['padding'] = '8px 0 0';
+      p.style['color'] = 'rgb(175,175,225)';
+      p.style['textShadow'] = 'none';
+    })
 }
 
 // engineButton.addEventListener('click', () => updateInsetButtonsEventListeners('engineButton'));
@@ -343,10 +363,7 @@ function displaySequenceMSG() {
 
 // DRADIS
 
-// const dradisButton = document.querySelector('#dradis-button');
 const dradisOnImg = document.querySelector('#dradis-on-img');
-
-dradisButton.addEventListener('click',dradisContact);
 
 function dradisContact() {
   disableDisplayButtons();
@@ -367,14 +384,9 @@ function magnifyComputer() {
   updateInsetButtons(insetButtonsText);
 }
 
-computerButton.addEventListener('click',magnifyComputer);
-
 // PHONE
 
-// const phoneButton = document.querySelector('#phone-button');
 const phoneLights = document.querySelectorAll('.phone-lights');
-
-phoneButton.addEventListener('click',ringring);
 
 function ringring() {
   ringOn();
@@ -407,13 +419,10 @@ function phoneLightOff(phoneLight) {
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
 
-// const wheelButton = document.getElementById('avast-planete');
 const shipWheelIMG = document.getElementById('ship-wheel-img');
 const planeteFrozen = document.getElementById('planete-frozen');
 const skills = document.querySelectorAll('.skills');
 const planetCurves = document.querySelectorAll('.planet-curve');
-
-wheelButton.addEventListener('click',viewFrozenPlanete);
 
 function viewFrozenPlanete() {
   disableDisplayButtons();
@@ -455,7 +464,6 @@ function unviewFrozenPlanete() {
 
 // FLUX CAPACITOR
 
-// const fluxCapacitorButton = document.querySelector('#flux-capacitor');
 const fluxCapacitorOnIMG = document.querySelector('#flux-capacitor-on-img');
 const speedometerGlass = document.querySelector('#speedometer-glass');
 const speedometerBox = document.querySelector('#speedometer-box');
@@ -463,8 +471,6 @@ const speedNumL = document.querySelector('#speed-num-L');
 const speedNumR = document.querySelector('#speed-num-R');
 const lightningLsvg = document.querySelector('#lightning-L-svg');
 const lightningRsvg = document.querySelector('#lightning-R-svg');
-
-fluxCapacitorButton.addEventListener('click',fluxIt);
 
 function fluxIt() {
   console.log('Get to 88!');
@@ -787,7 +793,6 @@ function resetFade() {
 
 // PUNCH IT
 
-// const punchItButton = document.querySelector('#punch-it');
 const punchItHandle = document.querySelector('#hyperjump-handle-img');
 const punchiItHandleDown = document.querySelector('#hyperjump-handles-down-img');
 const punchiItHandleUp = document.querySelector('#hyperjump-handles-up-img');
@@ -801,8 +806,6 @@ const animationDuration = 1500;
 let startTime;
 let animationFrameId;
 let animationPhase = 'elongate'; // 'elongate', 'color', 'reset'
-
-punchItButton.addEventListener('click',punchIt);
 
 function moveHyperspeedLeverUp() {
   punchItHandle.classList.add('punch-it');
@@ -970,10 +973,7 @@ function animateElongation(timestamp) {
 
 //  ENGINE
 
-// const engineButton = document.querySelector('#engine-button');
 const engineOnIMG = document.querySelector('#engine-on-img');
-
-engineButton.addEventListener('click',checkEngine);
 
 function checkEngine() {
   engineOnIMG.style.opacity = "1";
@@ -984,12 +984,15 @@ function checkEngine() {
   }, 2000);
 }
 
+// GAUGE
+
+function gaugeIntoTheAbyss() {
+  console.log('gauging this');
+}
+
 //  VACUUM TUBES
 
-// const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
 const vacuumTubesOnIMG = document.querySelector('#vacuum-tubes-on-img');
-
-vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
 
 function lightUpVacuumTubes() {
   disableDisplayButtons();
