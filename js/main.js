@@ -35,7 +35,6 @@ function navigationUnderline(movingSections) {
 const mainNavigation = document.getElementById('main-nav');
 const midField = document.getElementById('mid-field');
 const nearField = document.getElementById('near-field');
-// const scrollToAboutButton = document.getElementById('scroll-down-to-about');
 const spaceportAnchor = document.querySelector('#spaceport-anchor');
 
 mainNavigation.addEventListener('click',scrollStarField);
@@ -191,31 +190,30 @@ function activateShipDoors() {
 
 const screenDisplay = document.querySelector('#display');
 
-function disableDisplayButtons() {
-  dradisButton.disabled = true;
-  wheelButton.disabled = true;
-  fluxCapacitorButton.disabled = true;
-  punchItButton.disabled = true;
-}
-
-function enableDisplayButtons() {
-  dradisButton.disabled = false;
-  wheelButton.disabled = false;
-  fluxCapacitorButton.disabled = false;
-  punchItButton.disabled = false;
-}
-
 // BRIDGE BUTTONS
 
 const dradisButton = document.querySelector('#dradis-button');
 const computerButton = document.querySelector('#computer-button');
 const phoneButton = document.querySelector('#phone-button');
-const wheelButton = document.getElementById('wheel-button');
+const wheelButton = document.querySelector('#wheel-button');
 const fluxCapacitorButton = document.querySelector('#flux-capacitor-button');
 const punchItButton = document.querySelector('#punch-it');
 const engineButton = document.querySelector('#engine-button');
+const gaugeButton = document.querySelector('#gauge-button');
 const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
+const bridgeIMGbuttons = [dradisButton,computerButton,phoneButton,wheelButton,fluxCapacitorButton,punchItButton,engineButton,gaugeButton,vacuumTubesButton];
 
+function disableDisplayButtons() {
+  bridgeIMGbuttons.forEach(bridgeIMGbutton => {
+    bridgeIMGbutton.disabled = true;
+  });
+}
+
+function enableDisplayButtons() {
+  bridgeIMGbuttons.forEach(bridgeIMGbutton => {
+    bridgeIMGbutton.disabled = false;
+  });
+}
 
 function saySomething() {
   console.log('say something');
@@ -994,9 +992,11 @@ const vacuumTubesOnIMG = document.querySelector('#vacuum-tubes-on-img');
 vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
 
 function lightUpVacuumTubes() {
+  disableDisplayButtons();
   vacuumTubesOnIMG.style.opacity = "1";
   setTimeout(() => {
     vacuumTubesOnIMG.style.opacity = "0";
+    enableDisplayButtons();
   }, 2000);
 }
 
