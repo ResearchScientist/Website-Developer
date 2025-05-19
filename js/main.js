@@ -241,7 +241,7 @@ const insetButtonsFunctionSets = {
   // 'dradisButton': [func1a,func1b,func1c,func1d],
   // 'phoneButton': [func2a,func2b,func2c,func2d],
   // 'wheelButton': [func4a,func4b,func4c,unviewFrozenPlanete],
-  // 'fluxCapacitorButton': [func5a,func5b,func5c,func5d],
+  'fluxCapacitorButton': [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetTrajectories],
   // 'punchItButton': [func6a,func6b,func6c,func6d],
   'engineButton': [eatSomething],
   'vacuumTubesButton': [saySomething,doSomething]
@@ -775,6 +775,7 @@ function resetTrajectories() {
     lightList[i].style.opacity = "0";
   }
   removeInsetButtonsEventListeners();
+  resetInsetButtonsNames();
   enableDisplayButtons();
 }
 
