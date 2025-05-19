@@ -149,59 +149,6 @@ body {
   cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
-/* .scroll-mouse {
-  width: 20px;
-  height: 30px;
-  border-radius: 45% 45% 30% 30%;
-  border: 1px solid var(--text-blue);
-} */
-
-/* .scroll-mouse div {
-  width: 2px;
-  height: 4px;
-  margin: 5px auto 0;
-  border-radius: 20%;
-  content: none;
-  background: var(--text-blue);
-} */
-
-#scroll-down-to-about {
-  width: 40px;
-  height: 25px;
-  margin: 0 0 -40px;
-  grid-column: 1/-1;
-  grid-row: -2/-1;
-  justify-self: center;
-  align-self: flex-end;
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
-  background-color: teal;
-}
-
-/* #scorll-down-to-about:hover {
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
-} */
-
-/* .scroll-down {
-  height: 50px;
-  grid-column: 1/-1;
-  grid-row: 3/5;
-  text-decoration: none;
-  align-self: flex-end;
-  margin: 0 auto 1%;
-  z-index: 1;
-} */
-
-.scroll-arrow {
-  width: 10px;
-  height: 10px;
-  margin: 0 auto;
-  border: transparent;
-  border-left: 1px solid var(--text-blue);
-  border-bottom: 1px solid var(--text-blue);
-  transform: rotateZ(-45deg);
-  animation: scroll-down 1.2s infinite;
-}
-
 @keyframes scroll-down {
   from {opacity: 0; transform: translateY(0) rotateZ(-45deg);}
   to {opacity: 1; transform: translateY(10px) rotateZ(-45deg);}

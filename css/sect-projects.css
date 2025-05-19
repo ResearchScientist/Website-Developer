@@ -571,7 +571,7 @@
 
 /* FLUX CAPACITOR BUTTON */
 
-#flux-capacitor {
+#flux-capacitor-button {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
