@@ -223,15 +223,15 @@ const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 const insetButtonsConfigurations = {
   'dradisButton': {
     functions: [a1,a2,a3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    labels: ["proposal","experiment","study", "clear"]
   },
   'computerButton':  {
     functions: [b1,b2,b3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    labels: ["quality","stats","modeling", "clear"]
   },
   'phoneButton':  {
     functions: [c1,c2,c3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    labels: ["copy","data vis","discussion", "clear"]
   },
   'wheelButton':  {
     functions: [d1,d2,d3,clearAll],
@@ -291,16 +291,15 @@ const currentInsetButtonFunctions = [null,null,null,null];
 
 function updateInsetButtons(bridgeIMGbuttonName) {
   const config = insetButtonsConfigurations[bridgeIMGbuttonName];
-
   if (!config) {
     console.warn(`Config not found for ${bridgeIMGbuttonName}.`);
     removeInsetButtonsEventListeners();
-    // updateInsetButtonsLabels(["","","",""]);
+    updateInsetButtonsLabels(["","","",""]);
     return;
   }
   removeInsetButtonsEventListeners();
-
-  // updateInsetButtonsNames(newInsetButtonsText);
+  addInsetButtonsEventListeners(config.functions);
+  updateInsetButtonsLabels(config.labels);
 }
 
 function removeInsetButtonsEventListeners() {
@@ -313,6 +312,16 @@ function removeInsetButtonsEventListeners() {
   console.log('event listeners removed');
 }
 
+function addInsetButtonsEventListeners(configFunctionsArray) {
+  configFunctionsArray.forEach((func,index) => {
+    if (insetButtonsArray[index]) {
+      insetButtonsArray[index].addEventListener('click',func);
+      currentInsetButtonFunctions[index] = func;
+    }
+  });
+  console.log('event listeners added');
+}
+
 function updateInsetButtonsLabels(labelsArray) {
   if (!labelsArray || labelsArray.length !== 4) {
     console.warn("Did not receive 4 labels.");
@@ -320,25 +329,11 @@ function updateInsetButtonsLabels(labelsArray) {
   }
   insetButtonsArray.forEach((insetButton,index) => {
     if (insetButton) {
-      insetButton.textContent = labelsArray[index];
+      insetButton.querySelector('p').textContent = labelsArray[index];
     }
   });
   console.log('labels updated');
 }
-
-// function updateInsetButtonsLabels(labelsArray) {
-//   for (let i = 0; i < labelsArray.length; i++) {
-//     currentInsetButton = insetButtonsArray[i];
-//     currentInsetButton.querySelector('p').textContent = newInsetButtonsText[i];
-//   }
-// }
-
-// function addInsetButtonsEventListeners() {
-  
-// }
-
-
-
 
 function disableDisplayButtons() {
   bridgeIMGbuttons.forEach(bridgeIMGbutton => {
@@ -352,35 +347,8 @@ function enableDisplayButtons() {
   });
 }
 
-
-
-
-
-function saySomething() {
-  console.log('say something');
-}
-
-function doSomething() {
-  console.log('do something');
-}
-
-function eatSomething() {
-  console.log('eat something');
-}
-
-// const insetButtonsFunctionSets = {
-  // 'dradisButton': [func1a,func1b,func1c,clearall],
-  // 'phoneButton': [func2a,func2b,func2c,clearall],
-  // 'wheelButton': [func3a,func4b,func4c,unviewFrozenPlanete],
-  // 'fluxCapacitorButton': [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetTrajectories],
-  // 'punchItButton': [func6a,func6b,func6c,func6d],
-  // 'engineButton': [eatSomething,playsomeghing,clearAll],
-  // 'vacuumTubesButton': [saySomething,doSomething,clearAll]
-// };
-
 function clearAll() {
-  console.log('all cleared');
-  
+  console.log('all cleared');  
 }
 
 function resetInsetButtonsNames() {
@@ -475,12 +443,13 @@ const dradisOnImg = document.querySelector('#dradis-on-img');
 
 function dradisContact() {
   disableDisplayButtons();
-  let insetButtonsText = ["seek","find","evaluate","clear"];
-  updateInsetButtons(insetButtonsText);
+  updateInsetButtons('dradisButton');
+  // let insetButtonsText = ["seek","find","evaluate","clear"];
+  // updateInsetButtons(insetButtonsText);
   dradisOnImg.classList.add('dradis-on');
   setTimeout(() => {
     dradisOnImg.classList.remove('dradis-on');
-    resetInsetButtonsNames();
+    // resetInsetButtonsNames();
     enableDisplayButtons();
   }, 2000);
 }
@@ -488,8 +457,10 @@ function dradisContact() {
 // COMPUTER
 
 function magnifyComputer() {
-  let insetButtonsText = ["quality","tests","models","clear"];
-  updateInsetButtons(insetButtonsText);
+  // let insetButtonsText = ["quality","tests","models","clear"];
+  // updateInsetButtons(insetButtonsText);
+  console.log('magnify computer');
+  
 }
 
 // PHONE
@@ -501,8 +472,8 @@ function ringring() {
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
-  let insetButtonsText = ["text","data vis","dialogue","clear"];
-  updateInsetButtons(insetButtonsText);
+  // let insetButtonsText = ["text","data vis","dialogue","clear"];
+  // updateInsetButtons(insetButtonsText);
 }
 
 function ringOn() {
@@ -832,8 +803,8 @@ const loveArray = ['coffee','gelato','chocolate','cats','sailing','dancing'];
 let nameList = document.getElementsByClassName('tn');
 
 function updateButtonNames() {
-  let insetButtonsText = ["Academic","Skills","Love","clear"];
-  updateInsetButtonsNames(insetButtonsText);
+  // let insetButtonsText = ["Academic","Skills","Love","clear"];
+  // updateInsetButtonsNames(insetButtonsText);
   updateInsetButtonsToTrajectories();
 }
 
@@ -1086,8 +1057,8 @@ const engineOnIMG = document.querySelector('#engine-on-img');
 
 function checkEngine() {
   engineOnIMG.style.opacity = "1";
-  let insetButtonsText = ["unit tests","diagnostics","treats","clear"];
-  updateInsetButtonsNames(insetButtonsText);
+  // let insetButtonsText = ["unit tests","diagnostics","treats","clear"];
+  // updateInsetButtonsNames(insetButtonsText);
   setTimeout(() => {
     engineOnIMG.style.opacity = "0";
   }, 2000);
@@ -1108,8 +1079,8 @@ function lightUpVacuumTubes() {
   vacuumTubesOnIMG.style.opacity = "1";
   setTimeout(() => {
     vacuumTubesOnIMG.style.opacity = "0";
-    let insetButtonsText = ["one","two","three","clear"];
-    updateInsetButtons(insetButtonsText);
+    // let insetButtonsText = ["one","two","three","clear"];
+    // updateInsetButtons(insetButtonsText);
     // enableDisplayButtons();
   }, 2000);
 }
