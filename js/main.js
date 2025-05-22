@@ -354,21 +354,39 @@ function resetInsetButtons() {
   enableDisplayButtons();
 }
 
+// function resetInsetButtonsNames() {
+//   for (let i = 0; i < insetButtonsArray.length; i++) {
+//     let currentInsetButton = insetButtonsArray[i];
+//     currentInsetButton.querySelector('p').textContent = "ready";
+//   }
+//   const insetButtonsAllP = insetButtons.querySelectorAll('p');
+//     insetButtonsAllP.forEach(p => {
+//       p.style['filter'] = 'none';
+//       p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
+//       p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
+//       p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
+//       p.style['padding'] = '8px 0 0';
+//       p.style['color'] = 'rgb(175,175,225)';
+//       p.style['textShadow'] = 'none';
+//     })
+// }
+
 function resetInsetButtonsNames() {
   for (let i = 0; i < insetButtonsArray.length; i++) {
-    currentInsetButton = insetButtonsArray[i];
-    currentInsetButton.querySelector('p').textContent = "ready";
-  }
-  const insetButtonsAllP = insetButtons.querySelectorAll('p');
-    insetButtonsAllP.forEach(p => {
-      p.style['filter'] = 'none';
-      p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
-      p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
-      p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      p.style['padding'] = '8px 0 0';
-      p.style['color'] = 'rgb(175,175,225)';
-      p.style['textShadow'] = 'none';
-    })
+    let currentInsetButton = insetButtonsArray[i];
+    resetDelay = i * 200;
+    setTimeout(() => {
+      currentP = currentInsetButton.querySelector('p');
+      currentP.textContent = "ready";
+      currentP.style['filter'] = 'none';
+      currentP.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
+      currentP.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
+      currentP.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
+      currentP.style['padding'] = '8px 0 0';
+      currentP.style['color'] = 'rgb(175,175,225)';
+      currentP.style['textShadow'] = 'none';
+    }, resetDelay);
+  } 
 }
 
 // SEQUENCE BUTTONS
