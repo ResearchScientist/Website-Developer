@@ -238,8 +238,8 @@ const insetButtonsConfigurations = {
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'fluxCapacitorButton':  {
-    functions: [e1,e2,e3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    functions: [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetTrajectories],
+    labels: ["Academic","Skills","Love", "Clear"]
   },
   'punchItButton':  {
     functions: [f1,f2,f3,clearAll],
@@ -443,10 +443,10 @@ const dradisOnImg = document.querySelector('#dradis-on-img');
 
 function dradisContact() {
   disableDisplayButtons();
-  updateInsetButtons('dradisButton');
-  // let insetButtonsText = ["seek","find","evaluate","clear"];
-  // updateInsetButtons(insetButtonsText);
   dradisOnImg.classList.add('dradis-on');
+  setTimeout(() => {
+    updateInsetButtons('dradisButton');
+  }, 1000);
   setTimeout(() => {
     dradisOnImg.classList.remove('dradis-on');
     // resetInsetButtonsNames();
@@ -457,10 +457,7 @@ function dradisContact() {
 // COMPUTER
 
 function magnifyComputer() {
-  // let insetButtonsText = ["quality","tests","models","clear"];
-  // updateInsetButtons(insetButtonsText);
   console.log('magnify computer');
-  
 }
 
 // PHONE
@@ -472,8 +469,6 @@ function ringring() {
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
-  // let insetButtonsText = ["text","data vis","dialogue","clear"];
-  // updateInsetButtons(insetButtonsText);
 }
 
 function ringOn() {
@@ -784,7 +779,7 @@ function showTrajectoryNames() {
   trajectoryNames.forEach(name => {
     name.style.opacity = '1';
   });
-  updateButtonNames();
+  updateInsetButtons('fluxCapacitorButton');
   strobeLights();
 }
 
@@ -802,18 +797,9 @@ const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animatio
 const loveArray = ['coffee','gelato','chocolate','cats','sailing','dancing'];
 let nameList = document.getElementsByClassName('tn');
 
-function updateButtonNames() {
-  // let insetButtonsText = ["Academic","Skills","Love","clear"];
-  // updateInsetButtonsNames(insetButtonsText);
-  updateInsetButtonsToTrajectories();
-}
-
-function updateInsetButtonsToTrajectories() {
-  insetButton1.addEventListener('click',updateTrajectoryAcademic);
-  insetButton2.addEventListener('click',updateTrajectorySkills);
-  insetButton3.addEventListener('click',updateTrajectoryLove);
-  insetButton4.addEventListener('click',resetTrajectories);
-}
+// function updateButtonNames() {
+//   updateInsetButtonsToTrajectories();
+// }
 
 function updateTrajectoryAcademic() {
   trajectoryGroupName.style.opacity = "1";
