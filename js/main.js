@@ -222,7 +222,7 @@ const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 
 const insetButtonsConfigurations = {
   'dradisButton': {
-    functions: [a1,a2,a3,clearInsets],
+    functions: [a1,a2,a3,clearAll],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'computerButton':  {
@@ -259,11 +259,48 @@ const insetButtonsConfigurations = {
   }
 };
 
+function a1() {console.log('a1');}
+function a2() {console.log('a2');}
+function a3() {console.log('a3');}
+function b1() {console.log('b1');}
+function b2() {console.log('b2');}
+function b3() {console.log('b3');}
+function c1() {console.log('c1');}
+function c2() {console.log('c2');}
+function c3() {console.log('c3');}
+function d1() {console.log('d1');}
+function d2() {console.log('d2');}
+function d3() {console.log('d3');}
+function e1() {console.log('e1');}
+function e2() {console.log('e2');}
+function e3() {console.log('e3');}
+function f1() {console.log('f1');}
+function f2() {console.log('f2');}
+function f3() {console.log('f3');}
+function g1() {console.log('g1');}
+function g2() {console.log('g2');}
+function g3() {console.log('g3');}
+function h1() {console.log('h1');}
+function h2() {console.log('h2');}
+function h3() {console.log('h3');}
+function i1() {console.log('i1');}
+function i2() {console.log('i2');}
+function i3() {console.log('i3');}
+
 const currentInsetButtonFunctions = [null,null,null,null];
 
-function updateInsetButtons(newInsetButtonsText) {
+function updateInsetButtons(bridgeIMGbuttonName) {
+  const config = insetButtonsConfigurations[bridgeIMGbuttonName];
+
+  if (!config) {
+    console.warn(`Config not found for ${bridgeIMGbuttonName}.`);
+    removeInsetButtonsEventListeners();
+    // updateInsetButtonsLabels(["","","",""]);
+    return;
+  }
   removeInsetButtonsEventListeners();
-  updateInsetButtonsNames(newInsetButtonsText);
+
+  // updateInsetButtonsNames(newInsetButtonsText);
 }
 
 function removeInsetButtonsEventListeners() {
@@ -296,9 +333,9 @@ function updateInsetButtonsLabels(labelsArray) {
 //   }
 // }
 
-function addInsetButtonsEventListeners() {
+// function addInsetButtonsEventListeners() {
   
-}
+// }
 
 
 
