@@ -190,7 +190,7 @@ function activateShipDoors() {
 
 const screenDisplay = document.querySelector('#display');
 
-// BRIDGE BUTTONS
+// BRIDGE BUTTONS & INSET BUTTONS
 
 const dradisButton = document.querySelector('#dradis-button');
 const computerButton = document.querySelector('#computer-button');
@@ -212,6 +212,13 @@ punchItButton.addEventListener('click',punchIt);
 engineButton.addEventListener('click',checkEngine);
 gaugeButton.addEventListener('click',gaugeIntoTheAbyss);
 vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
+
+const insetButtons = document.querySelector('#inset-buttons');
+const insetButton1 = document.querySelector('#inset-button-1');
+const insetButton2 = document.querySelector('#inset-button-2');
+const insetButton3 = document.querySelector('#inset-button-3');
+const insetButton4 = document.querySelector('#inset-button-4');
+const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 
 const insetButtonsConfigurations = {
   'dradisButton': {
@@ -252,6 +259,50 @@ const insetButtonsConfigurations = {
   }
 };
 
+const currentInsetButtonFunctions = [null,null,null,null];
+
+function updateInsetButtons(newInsetButtonsText) {
+  removeInsetButtonsEventListeners();
+  updateInsetButtonsNames(newInsetButtonsText);
+}
+
+function removeInsetButtonsEventListeners() {
+  insetButtonsArray.forEach((insetButton,index) => {
+    if (insetButton && currentInsetButtonFunctions[index]) {
+      insetButton.removeEventListener('click',currentInsetButtonFunctions[index]);
+      currentInsetButtonFunctions[index] = null;
+    }
+  });
+  console.log('event listeners removed');
+}
+
+function updateInsetButtonsLabels(labelsArray) {
+  if (!labelsArray || labelsArray.length !== 4) {
+    console.warn("Did not receive 4 labels.");
+    return;
+  }
+  insetButtonsArray.forEach((insetButton,index) => {
+    if (insetButton) {
+      insetButton.textContent = labelsArray[index];
+    }
+  });
+  console.log('labels updated');
+}
+
+// function updateInsetButtonsLabels(labelsArray) {
+//   for (let i = 0; i < labelsArray.length; i++) {
+//     currentInsetButton = insetButtonsArray[i];
+//     currentInsetButton.querySelector('p').textContent = newInsetButtonsText[i];
+//   }
+// }
+
+function addInsetButtonsEventListeners() {
+  
+}
+
+
+
+
 function disableDisplayButtons() {
   bridgeIMGbuttons.forEach(bridgeIMGbutton => {
     bridgeIMGbutton.disabled = true;
@@ -263,6 +314,10 @@ function enableDisplayButtons() {
     bridgeIMGbutton.disabled = false;
   });
 }
+
+
+
+
 
 function saySomething() {
   console.log('say something');
@@ -286,44 +341,9 @@ function eatSomething() {
   // 'vacuumTubesButton': [saySomething,doSomething,clearAll]
 // };
 
-const currentInsetButtonFunctions = [null,null,null,null];
-
-function updateInsetButtons(newInsetButtonsText) {
-  removeInsetButtonsEventListenersFunctions();
-  updateInsetButtonsNames(newInsetButtonsText);
-}
-
-function removeInsetButtonsEventListenersFunctions() {
-  insetButtonsArray.forEach((insetButton,index) => {
-    if (currentInsetButtonFunctions[index]) {
-      insetButton.removeEventListener('click',currentInsetButtonFunctions[index]);
-      currentInsetButtonFunctions[index] = null;
-    }
-  });
-  console.log('eventlisteners removed');
-}
-
-function addInsetButtonsEventListenersFunctions() {
-  
-}
-
 function clearAll() {
   console.log('all cleared');
   
-}
-
-// function removeInsetButtonsEventListeners() {
-//   insetButton1.removeEventListener('click',updateTrajectoryAcademic);
-//   insetButton2.removeEventListener('click',updateTrajectorySkills);
-//   insetButton3.removeEventListener('click',updateTrajectoryLove);
-//   insetButton4.removeEventListener('click',resetTrajectories);
-// }
-
-function updateInsetButtonsNames(newInsetButtonsText) {
-  for (let i = 0; i < insetButtonsArray.length; i++) {
-    currentInsetButton = insetButtonsArray[i];
-    currentInsetButton.querySelector('p').textContent = newInsetButtonsText[i];
-  }
 }
 
 function resetInsetButtonsNames() {
@@ -343,19 +363,10 @@ function resetInsetButtonsNames() {
     })
 }
 
-// engineButton.addEventListener('click', () => updateInsetButtonsEventListeners('engineButton'));
-// vacuumTubesButton.addEventListener('click', () => updateInsetButtonsEventListeners('vacuumTubesButton'));
-
 // SEQUENCE BUTTONS
 
 const sequenceDisplay = document.querySelector('#sequence-display-section');
 const sequenceMSGtxt = document.querySelector('#sequence-msg-txt');
-const insetButtons = document.querySelector('#inset-buttons');
-const insetButton1 = document.querySelector('#inset-button-1');
-const insetButton2 = document.querySelector('#inset-button-2');
-const insetButton3 = document.querySelector('#inset-button-3');
-const insetButton4 = document.querySelector('#inset-button-4');
-const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 const sequences = {
   "1111": "When one is not enough.",
   "2222": "2 times the fun.",
@@ -834,7 +845,7 @@ function resetTrajectories() {
     lightList[i].classList.remove('lights-strobe');
     lightList[i].style.opacity = "0";
   }
-  removeInsetButtonsEventListenersFunctions();
+  removeInsetButtonsEventListeners();
   resetInsetButtonsNames();
   enableDisplayButtons();
 }
