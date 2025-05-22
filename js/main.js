@@ -222,39 +222,39 @@ const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 
 const insetButtonsConfigurations = {
   'dradisButton': {
-    functions: [a1,a2,a3,clearAll],
+    functions: [a1,a2,a3,resetDradis],
     labels: ["proposal","experiment","study", "clear"]
   },
   'computerButton':  {
-    functions: [b1,b2,b3,clearAll],
+    functions: [b1,b2,b3,resetComputer],
     labels: ["quality","stats","modeling", "clear"]
   },
   'phoneButton':  {
-    functions: [c1,c2,c3,clearAll],
+    functions: [c1,c2,c3,resetPhone],
     labels: ["copy","data vis","discussion", "clear"]
   },
   'wheelButton':  {
-    functions: [d1,d2,d3,clearAll],
+    functions: [d1,d2,d3,resetWheel],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'fluxCapacitorButton':  {
-    functions: [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetTrajectories],
+    functions: [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetFlux],
     labels: ["Academic","Skills","Love", "Clear"]
   },
   'punchItButton':  {
-    functions: [f1,f2,f3,clearAll],
+    functions: [f1,f2,f3,resetPunchIt],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'engineButton':  {
-    functions: [g1,g2,g3,clearAll],
+    functions: [g1,g2,g3,resetEngine],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'gaugeButton':  {
-    functions: [h1,h2,h3,clearAll],
+    functions: [h1,h2,h3,resetGauge],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'vacuumButton':  {
-    functions: [i1,i2,i3,clearAll],
+    functions: [i1,i2,i3,resetVacuum],
     labels: ["fun1","fun2","fun3", "clear"]
   }
 };
@@ -271,9 +271,6 @@ function c3() {console.log('c3');}
 function d1() {console.log('d1');}
 function d2() {console.log('d2');}
 function d3() {console.log('d3');}
-function e1() {console.log('e1');}
-function e2() {console.log('e2');}
-function e3() {console.log('e3');}
 function f1() {console.log('f1');}
 function f2() {console.log('f2');}
 function f3() {console.log('f3');}
@@ -469,6 +466,10 @@ function ringring() {
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
+  disableDisplayButtons();
+  setTimeout(() => {
+    updateInsetButtons('phoneButton');
+  }, 3000);
 }
 
 function ringOn() {
@@ -805,7 +806,7 @@ function updateTrajectoryLove() {
   trajectoryNameFade();
 }
 
-function resetTrajectories() {
+function resetFlux() {
   fluxCapacitorOnIMG.classList.remove('flux-capacitor-on');
   trajectoryGroupName.style.opacity = "0";
   trajectoryGroupName.textContent = "";
