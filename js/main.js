@@ -348,6 +348,12 @@ function clearAll() {
   console.log('all cleared');  
 }
 
+function resetInsetButtons() {
+  removeInsetButtonsEventListeners();
+  resetInsetButtonsNames();
+  enableDisplayButtons();
+}
+
 function resetInsetButtonsNames() {
   for (let i = 0; i < insetButtonsArray.length; i++) {
     currentInsetButton = insetButtonsArray[i];
@@ -444,17 +450,21 @@ function dradisContact() {
   setTimeout(() => {
     updateInsetButtons('dradisButton');
   }, 1000);
-  setTimeout(() => {
-    dradisOnImg.classList.remove('dradis-on');
-    // resetInsetButtonsNames();
-    enableDisplayButtons();
-  }, 2000);
+}
+
+function resetDradis() {
+  dradisOnImg.classList.remove('dradis-on');
+    resetInsetButtons();
 }
 
 // COMPUTER
 
 function magnifyComputer() {
   console.log('magnify computer');
+}
+
+function resetComputer() {
+  resetInsetButtons();
 }
 
 // PHONE
@@ -490,6 +500,10 @@ function phoneLightOn(phoneLight) {
 
 function phoneLightOff(phoneLight) {
   phoneLight.style.opacity = "0";
+}
+
+function resetPhone() {
+  resetInsetButtons();
 }
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
@@ -533,8 +547,11 @@ function unviewFrozenPlanete() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.remove('animate-planet-curve');
   });
-  setTimeout(resetInsetButtonsNames,3000);
-  setTimeout(enableDisplayButtons,3000);
+  setTimeout(resetInsetButtons,3000);
+}
+
+function resetWheel() {
+  resetInsetButtons();
 }
 
 // FLUX CAPACITOR
@@ -817,9 +834,7 @@ function resetFlux() {
     lightList[i].classList.remove('lights-strobe');
     lightList[i].style.opacity = "0";
   }
-  removeInsetButtonsEventListeners();
-  resetInsetButtonsNames();
-  enableDisplayButtons();
+  resetInsetButtons();
 }
 
 function trajectoryNameFade() {
@@ -1015,23 +1030,31 @@ function animateElongation(timestamp) {
   }
 }
 
+function resetPunchIt() {
+  resetInsetButtons();
+}
+
 //  ENGINE
 
 const engineOnIMG = document.querySelector('#engine-on-img');
 
 function checkEngine() {
   engineOnIMG.style.opacity = "1";
-  // let insetButtonsText = ["unit tests","diagnostics","treats","clear"];
-  // updateInsetButtonsNames(insetButtonsText);
-  setTimeout(() => {
-    engineOnIMG.style.opacity = "0";
-  }, 2000);
+}
+
+function resetEngine() {
+  engineOnIMG.style.opacity = "0";
+  resetInsetButtons();
 }
 
 // GAUGE
 
 function gaugeIntoTheAbyss() {
   console.log('gauging this');
+}
+
+function resetGauge() {
+  resetInsetButtons();
 }
 
 //  VACUUM TUBES
@@ -1047,6 +1070,10 @@ function lightUpVacuumTubes() {
     // updateInsetButtons(insetButtonsText);
     // enableDisplayButtons();
   }, 2000);
+}
+
+function resetVacuum() {
+  resetInsetButtons();
 }
 
 // TOOLBOX BUTTON
