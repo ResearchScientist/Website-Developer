@@ -576,58 +576,39 @@ function speedMetronome() {
 
   switch (true) {
     case speed == 87:
-      acceleration = 2000;
-      break;
-    case speed == 86:
-      acceleration = 3000;
-      break;
-    case speed == 85:
       acceleration = 1500;
       break;
-    case speed == 84:
+    case speed == 86:
       acceleration = 1000;
       break;
-    case speed == 83:
-      acceleration = 2000;
+    case speed == 85:
+      acceleration = 1000;
       break;
     case speed > 79:
-      acceleration = 1000;
+      acceleration = 500;
       break;
     case speed > 75:
-      acceleration = 100;
-      break;
-    case speed == 75:
-      acceleration = 500;
-      // currentFunction = gear5;
-      break;
-    case speed > 65:
-      acceleration = 250;
+      acceleration = 200;
       break;
     case speed > 60:
       acceleration = 100;
       break;
     case speed == 60:
-      acceleration = 500;
+      acceleration = 250;
       // currentFunction = gear4;
-      break;
-    case speed > 45:
-      acceleration = 200;
       break;
     case speed > 40:
       acceleration = 100;
       break;
     case speed == 40:
-      acceleration = 500;
+      acceleration = 250;
       // currentFunction = gear3;
-      break;
-    case speed > 35:
-      acceleration = 150;
       break;
     case speed > 30:
       acceleration = 100;
       break;
     case speed == 30:
-      acceleration = 500;
+      acceleration = 250;
       // currentFunction = gear2;
       break;
     default:
@@ -796,10 +777,6 @@ const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','gelato','chocolate','cats','sailing','dancing'];
 let nameList = document.getElementsByClassName('tn');
-
-// function updateButtonNames() {
-//   updateInsetButtonsToTrajectories();
-// }
 
 function updateTrajectoryAcademic() {
   trajectoryGroupName.style.opacity = "1";
