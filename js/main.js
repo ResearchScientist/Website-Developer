@@ -213,6 +213,45 @@ engineButton.addEventListener('click',checkEngine);
 gaugeButton.addEventListener('click',gaugeIntoTheAbyss);
 vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
 
+const insetButtonsConfigurations = {
+  'dradisButton': {
+    functions: [a1,a2,a3,clearInsets],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'computerButton':  {
+    functions: [b1,b2,b3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'phoneButton':  {
+    functions: [c1,c2,c3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'wheelButton':  {
+    functions: [d1,d2,d3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'fluxCapacitorButton':  {
+    functions: [e1,e2,e3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'punchItButton':  {
+    functions: [f1,f2,f3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'engineButton':  {
+    functions: [g1,g2,g3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'gaugeButton':  {
+    functions: [h1,h2,h3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  },
+  'vacuumButton':  {
+    functions: [i1,i2,i3,clearAll],
+    labels: ["fun1","fun2","fun3", "clear"]
+  }
+};
+
 function disableDisplayButtons() {
   bridgeIMGbuttons.forEach(bridgeIMGbutton => {
     bridgeIMGbutton.disabled = true;
@@ -237,27 +276,48 @@ function eatSomething() {
   console.log('eat something');
 }
 
-const insetButtonsFunctionSets = {
-  // 'dradisButton': [func1a,func1b,func1c,func1d],
-  // 'phoneButton': [func2a,func2b,func2c,func2d],
-  // 'wheelButton': [func4a,func4b,func4c,unviewFrozenPlanete],
-  'fluxCapacitorButton': [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetTrajectories],
+// const insetButtonsFunctionSets = {
+  // 'dradisButton': [func1a,func1b,func1c,clearall],
+  // 'phoneButton': [func2a,func2b,func2c,clearall],
+  // 'wheelButton': [func3a,func4b,func4c,unviewFrozenPlanete],
+  // 'fluxCapacitorButton': [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetTrajectories],
   // 'punchItButton': [func6a,func6b,func6c,func6d],
-  'engineButton': [eatSomething],
-  'vacuumTubesButton': [saySomething,doSomething]
-};
+  // 'engineButton': [eatSomething,playsomeghing,clearAll],
+  // 'vacuumTubesButton': [saySomething,doSomething,clearAll]
+// };
+
+const currentInsetButtonFunctions = [null,null,null,null];
 
 function updateInsetButtons(newInsetButtonsText) {
-  removeInsetButtonsEventListeners();
-  updateInsetButtonsNames(newInsetButtonsText)
+  removeInsetButtonsEventListenersFunctions();
+  updateInsetButtonsNames(newInsetButtonsText);
 }
 
-function removeInsetButtonsEventListeners() {
-  insetButton1.removeEventListener('click',updateTrajectoryAcademic);
-  insetButton2.removeEventListener('click',updateTrajectorySkills);
-  insetButton3.removeEventListener('click',updateTrajectoryLove);
-  insetButton4.removeEventListener('click',resetTrajectories);
+function removeInsetButtonsEventListenersFunctions() {
+  insetButtonsArray.forEach((insetButton,index) => {
+    if (currentInsetButtonFunctions[index]) {
+      insetButton.removeEventListener('click',currentInsetButtonFunctions[index]);
+      currentInsetButtonFunctions[index] = null;
+    }
+  });
+  console.log('eventlisteners removed');
 }
+
+function addInsetButtonsEventListenersFunctions() {
+  
+}
+
+function clearAll() {
+  console.log('all cleared');
+  
+}
+
+// function removeInsetButtonsEventListeners() {
+//   insetButton1.removeEventListener('click',updateTrajectoryAcademic);
+//   insetButton2.removeEventListener('click',updateTrajectorySkills);
+//   insetButton3.removeEventListener('click',updateTrajectoryLove);
+//   insetButton4.removeEventListener('click',resetTrajectories);
+// }
 
 function updateInsetButtonsNames(newInsetButtonsText) {
   for (let i = 0; i < insetButtonsArray.length; i++) {
@@ -774,7 +834,7 @@ function resetTrajectories() {
     lightList[i].classList.remove('lights-strobe');
     lightList[i].style.opacity = "0";
   }
-  removeInsetButtonsEventListeners();
+  removeInsetButtonsEventListenersFunctions();
   resetInsetButtonsNames();
   enableDisplayButtons();
 }
@@ -1000,7 +1060,9 @@ function lightUpVacuumTubes() {
   vacuumTubesOnIMG.style.opacity = "1";
   setTimeout(() => {
     vacuumTubesOnIMG.style.opacity = "0";
-    enableDisplayButtons();
+    let insetButtonsText = ["one","two","three","clear"];
+    updateInsetButtons(insetButtonsText);
+    // enableDisplayButtons();
   }, 2000);
 }
 
