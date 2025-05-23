@@ -480,7 +480,7 @@ function ringring() {
   setTimeout(ringOff,1800);
   disableDisplayButtons();
   setTimeout(() => {
-    updateInsetButtons('phoneButton');
+    resetPhone();
   }, 3000);
 }
 
