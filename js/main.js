@@ -222,39 +222,39 @@ const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 
 const insetButtonsConfigurations = {
   'dradisButton': {
-    functions: [a1,a2,a3,clearAll],
-    labels: ["proposal","experiment","study", "clear"]
+    functions: [a1,a2,a3,resetDradis],
+    labels: ["explore","experiment","study", "clear"]
   },
   'computerButton':  {
-    functions: [b1,b2,b3,clearAll],
+    functions: [b1,b2,b3,resetComputer],
     labels: ["quality","stats","modeling", "clear"]
   },
   'phoneButton':  {
-    functions: [c1,c2,c3,clearAll],
+    functions: [c1,c2,c3,resetPhone],
     labels: ["copy","data vis","discussion", "clear"]
   },
   'wheelButton':  {
-    functions: [d1,d2,d3,clearAll],
+    functions: [d1,d2,d3,resetWheel],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'fluxCapacitorButton':  {
-    functions: [e1,e2,e3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    functions: [updateTrajectoryAcademic,updateTrajectorySkills,updateTrajectoryLove,resetFlux],
+    labels: ["Academic","Skills","Love", "Clear"]
   },
   'punchItButton':  {
-    functions: [f1,f2,f3,clearAll],
+    functions: [f1,f2,f3,resetPunchIt],
     labels: ["fun1","fun2","fun3", "clear"]
   },
   'engineButton':  {
-    functions: [g1,g2,g3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    functions: [g1,g2,g3,resetEngine],
+    labels: ["testing","fun2","fun3", "clear"]
   },
   'gaugeButton':  {
-    functions: [h1,h2,h3,clearAll],
-    labels: ["fun1","fun2","fun3", "clear"]
+    functions: [h1,h2,h3,resetGauge],
+    labels: ["fun1","usability","fun3", "clear"]
   },
   'vacuumButton':  {
-    functions: [i1,i2,i3,clearAll],
+    functions: [i1,i2,i3,resetVacuum],
     labels: ["fun1","fun2","fun3", "clear"]
   }
 };
@@ -271,9 +271,6 @@ function c3() {console.log('c3');}
 function d1() {console.log('d1');}
 function d2() {console.log('d2');}
 function d3() {console.log('d3');}
-function e1() {console.log('e1');}
-function e2() {console.log('e2');}
-function e3() {console.log('e3');}
 function f1() {console.log('f1');}
 function f2() {console.log('f2');}
 function f3() {console.log('f3');}
@@ -351,21 +348,28 @@ function clearAll() {
   console.log('all cleared');  
 }
 
+function resetInsetButtons() {
+  removeInsetButtonsEventListeners();
+  resetInsetButtonsNames();
+  enableDisplayButtons();
+}
+
 function resetInsetButtonsNames() {
   for (let i = 0; i < insetButtonsArray.length; i++) {
-    currentInsetButton = insetButtonsArray[i];
-    currentInsetButton.querySelector('p').textContent = "ready";
-  }
-  const insetButtonsAllP = insetButtons.querySelectorAll('p');
-    insetButtonsAllP.forEach(p => {
-      p.style['filter'] = 'none';
-      p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
-      p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
-      p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      p.style['padding'] = '8px 0 0';
-      p.style['color'] = 'rgb(175,175,225)';
-      p.style['textShadow'] = 'none';
-    })
+    let currentInsetButton = insetButtonsArray[i];
+    resetDelay = i * 200;
+    setTimeout(() => {
+      currentP = currentInsetButton.querySelector('p');
+      currentP.textContent = "ready";
+      currentP.style['filter'] = 'none';
+      currentP.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
+      currentP.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
+      currentP.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
+      currentP.style['padding'] = '8px 0 0';
+      currentP.style['color'] = 'rgb(175,175,225)';
+      currentP.style['textShadow'] = 'none';
+    }, resetDelay);
+  } 
 }
 
 // SEQUENCE BUTTONS
@@ -443,24 +447,26 @@ const dradisOnImg = document.querySelector('#dradis-on-img');
 
 function dradisContact() {
   disableDisplayButtons();
-  updateInsetButtons('dradisButton');
-  // let insetButtonsText = ["seek","find","evaluate","clear"];
-  // updateInsetButtons(insetButtonsText);
   dradisOnImg.classList.add('dradis-on');
   setTimeout(() => {
-    dradisOnImg.classList.remove('dradis-on');
-    // resetInsetButtonsNames();
-    enableDisplayButtons();
-  }, 2000);
+    updateInsetButtons('dradisButton');
+  }, 1000);
+}
+
+function resetDradis() {
+  dradisOnImg.classList.remove('dradis-on');
+    resetInsetButtons();
 }
 
 // COMPUTER
 
 function magnifyComputer() {
-  // let insetButtonsText = ["quality","tests","models","clear"];
-  // updateInsetButtons(insetButtonsText);
   console.log('magnify computer');
-  
+  updateInsetButtons('computerButton');
+}
+
+function resetComputer() {
+  resetInsetButtons();
 }
 
 // PHONE
@@ -472,8 +478,10 @@ function ringring() {
   setTimeout(ringOff,400);
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
-  // let insetButtonsText = ["text","data vis","dialogue","clear"];
-  // updateInsetButtons(insetButtonsText);
+  disableDisplayButtons();
+  setTimeout(() => {
+    updateInsetButtons('phoneButton');
+  }, 3000);
 }
 
 function ringOn() {
@@ -494,6 +502,10 @@ function phoneLightOn(phoneLight) {
 
 function phoneLightOff(phoneLight) {
   phoneLight.style.opacity = "0";
+}
+
+function resetPhone() {
+  resetInsetButtons();
 }
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
@@ -537,8 +549,11 @@ function unviewFrozenPlanete() {
   planetCurves.forEach((planetCurve) => {
     planetCurve.classList.remove('animate-planet-curve');
   });
-  setTimeout(resetInsetButtonsNames,3000);
-  setTimeout(enableDisplayButtons,3000);
+  setTimeout(resetInsetButtons,3000);
+}
+
+function resetWheel() {
+  resetInsetButtons();
 }
 
 // FLUX CAPACITOR
@@ -581,58 +596,39 @@ function speedMetronome() {
 
   switch (true) {
     case speed == 87:
-      acceleration = 2000;
-      break;
-    case speed == 86:
-      acceleration = 3000;
-      break;
-    case speed == 85:
       acceleration = 1500;
       break;
-    case speed == 84:
+    case speed == 86:
       acceleration = 1000;
       break;
-    case speed == 83:
-      acceleration = 2000;
+    case speed == 85:
+      acceleration = 1000;
       break;
     case speed > 79:
-      acceleration = 1000;
+      acceleration = 500;
       break;
     case speed > 75:
-      acceleration = 100;
-      break;
-    case speed == 75:
-      acceleration = 500;
-      // currentFunction = gear5;
-      break;
-    case speed > 65:
-      acceleration = 250;
+      acceleration = 200;
       break;
     case speed > 60:
       acceleration = 100;
       break;
     case speed == 60:
-      acceleration = 500;
+      acceleration = 250;
       // currentFunction = gear4;
-      break;
-    case speed > 45:
-      acceleration = 200;
       break;
     case speed > 40:
       acceleration = 100;
       break;
     case speed == 40:
-      acceleration = 500;
+      acceleration = 250;
       // currentFunction = gear3;
-      break;
-    case speed > 35:
-      acceleration = 150;
       break;
     case speed > 30:
       acceleration = 100;
       break;
     case speed == 30:
-      acceleration = 500;
+      acceleration = 250;
       // currentFunction = gear2;
       break;
     default:
@@ -784,7 +780,7 @@ function showTrajectoryNames() {
   trajectoryNames.forEach(name => {
     name.style.opacity = '1';
   });
-  updateButtonNames();
+  updateInsetButtons('fluxCapacitorButton');
   strobeLights();
 }
 
@@ -801,19 +797,6 @@ const academicArray = ['mentoring','self-learning','Ph.D. Cog Sci','M.S. HCI','B
 const skillsArray = ['Virtual Reality','3D Animation','3D Modeling','2D Animation','2D Illustration','Micro-Interactions'];
 const loveArray = ['coffee','gelato','chocolate','cats','sailing','dancing'];
 let nameList = document.getElementsByClassName('tn');
-
-function updateButtonNames() {
-  // let insetButtonsText = ["Academic","Skills","Love","clear"];
-  // updateInsetButtonsNames(insetButtonsText);
-  updateInsetButtonsToTrajectories();
-}
-
-function updateInsetButtonsToTrajectories() {
-  insetButton1.addEventListener('click',updateTrajectoryAcademic);
-  insetButton2.addEventListener('click',updateTrajectorySkills);
-  insetButton3.addEventListener('click',updateTrajectoryLove);
-  insetButton4.addEventListener('click',resetTrajectories);
-}
 
 function updateTrajectoryAcademic() {
   trajectoryGroupName.style.opacity = "1";
@@ -842,7 +825,7 @@ function updateTrajectoryLove() {
   trajectoryNameFade();
 }
 
-function resetTrajectories() {
+function resetFlux() {
   fluxCapacitorOnIMG.classList.remove('flux-capacitor-on');
   trajectoryGroupName.style.opacity = "0";
   trajectoryGroupName.textContent = "";
@@ -853,9 +836,7 @@ function resetTrajectories() {
     lightList[i].classList.remove('lights-strobe');
     lightList[i].style.opacity = "0";
   }
-  removeInsetButtonsEventListeners();
-  resetInsetButtonsNames();
-  enableDisplayButtons();
+  resetInsetButtons();
 }
 
 function trajectoryNameFade() {
@@ -1051,23 +1032,31 @@ function animateElongation(timestamp) {
   }
 }
 
+function resetPunchIt() {
+  resetInsetButtons();
+}
+
 //  ENGINE
 
 const engineOnIMG = document.querySelector('#engine-on-img');
 
 function checkEngine() {
   engineOnIMG.style.opacity = "1";
-  // let insetButtonsText = ["unit tests","diagnostics","treats","clear"];
-  // updateInsetButtonsNames(insetButtonsText);
-  setTimeout(() => {
-    engineOnIMG.style.opacity = "0";
-  }, 2000);
+}
+
+function resetEngine() {
+  engineOnIMG.style.opacity = "0";
+  resetInsetButtons();
 }
 
 // GAUGE
 
 function gaugeIntoTheAbyss() {
   console.log('gauging this');
+}
+
+function resetGauge() {
+  resetInsetButtons();
 }
 
 //  VACUUM TUBES
@@ -1083,6 +1072,10 @@ function lightUpVacuumTubes() {
     // updateInsetButtons(insetButtonsText);
     // enableDisplayButtons();
   }, 2000);
+}
+
+function resetVacuum() {
+  resetInsetButtons();
 }
 
 // TOOLBOX BUTTON
