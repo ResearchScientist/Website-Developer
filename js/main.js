@@ -1062,16 +1062,20 @@ function resetGauge() {
 //  VACUUM TUBES
 
 const vacuumTubesOnIMG = document.querySelector('#vacuum-tubes-on-img');
+const vacuumGear1 = document.querySelector('#vacuum-gear-1');
+const vacuumGear2 = document.querySelector('#vacuum-gear-2');
 
 function lightUpVacuumTubes() {
   disableDisplayButtons();
   vacuumTubesOnIMG.style.opacity = "1";
+  vacuumGear1.classList.add('vacuum-gear-spin-clockwise');
+  vacuumGear2.classList.add('vacuum-gear-spin-counter-clockwise');
   setTimeout(() => {
     vacuumTubesOnIMG.style.opacity = "0";
-    // let insetButtonsText = ["one","two","three","clear"];
-    // updateInsetButtons(insetButtonsText);
-    // enableDisplayButtons();
-  }, 2000);
+    vacuumGear1.classList.remove('vacuum-gear-spin-clockwise');
+  vacuumGear2.classList.remove('vacuum-gear-spin-counter-clockwise');
+    enableDisplayButtons();
+  }, 6000);
 }
 
 function resetVacuum() {

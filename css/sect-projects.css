@@ -1072,6 +1072,20 @@
   transition: opacity .25s;
 }
 
+.vacuum-gear-spin-clockwise {animation: vacuumGearSpinClockwise 6s linear infinite;}
+
+@keyframes vacuumGearSpinClockwise {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.vacuum-gear-spin-counter-clockwise {animation: vacuumGearSpinCounterClockwise 6s linear infinite;}
+
+@keyframes vacuumGearSpinCounterClockwise {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}
+}
+
 /* BRIDGE FLOOR */
 
 #bridge-floor {
