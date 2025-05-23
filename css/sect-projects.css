@@ -1059,6 +1059,34 @@
   transition: opacity .25s;
 }
 
+#gauge-button {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.gauge-dial-spin {animation: gaugeDialSpin 2s linear forwards;}
+
+@keyframes gaugeDialSpin {
+  0% {transform: rotate(-130deg);}
+  40% {transform: rotate(30deg);}
+  50% {transform: rotate(45deg);}
+  60% {transform: rotate(30deg);}
+  70% {transform: rotate(45deg);}
+  80% {transform: rotate(30deg);}
+  90% {transform: rotate(45deg);}
+  100% {transform: rotate(50deg);}
+}
+
+.gauge-dial-unspin {animation: gaugeDialUnSpin 1s linear forwards;}
+
+@keyframes gaugeDialUnSpin {
+  0% {transform: rotate(50deg);}
+  100% {transform: rotate(-130deg);}
+}
+
 #vacuum-tubes-button {
   display: grid;
   grid-template-columns: 100%;
