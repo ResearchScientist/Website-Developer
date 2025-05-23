@@ -223,7 +223,7 @@ const insetButtonsArray = [insetButton1,insetButton2,insetButton3,insetButton4];
 const insetButtonsConfigurations = {
   'dradisButton': {
     functions: [a1,a2,a3,resetDradis],
-    labels: ["proposal","experiment","study", "clear"]
+    labels: ["explore","experiment","study", "clear"]
   },
   'computerButton':  {
     functions: [b1,b2,b3,resetComputer],
@@ -247,11 +247,11 @@ const insetButtonsConfigurations = {
   },
   'engineButton':  {
     functions: [g1,g2,g3,resetEngine],
-    labels: ["fun1","fun2","fun3", "clear"]
+    labels: ["testing","fun2","fun3", "clear"]
   },
   'gaugeButton':  {
     functions: [h1,h2,h3,resetGauge],
-    labels: ["fun1","fun2","fun3", "clear"]
+    labels: ["fun1","usability","fun3", "clear"]
   },
   'vacuumButton':  {
     functions: [i1,i2,i3,resetVacuum],
@@ -353,23 +353,6 @@ function resetInsetButtons() {
   resetInsetButtonsNames();
   enableDisplayButtons();
 }
-
-// function resetInsetButtonsNames() {
-//   for (let i = 0; i < insetButtonsArray.length; i++) {
-//     let currentInsetButton = insetButtonsArray[i];
-//     currentInsetButton.querySelector('p').textContent = "ready";
-//   }
-//   const insetButtonsAllP = insetButtons.querySelectorAll('p');
-//     insetButtonsAllP.forEach(p => {
-//       p.style['filter'] = 'none';
-//       p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
-//       p.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
-//       p.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-//       p.style['padding'] = '8px 0 0';
-//       p.style['color'] = 'rgb(175,175,225)';
-//       p.style['textShadow'] = 'none';
-//     })
-// }
 
 function resetInsetButtonsNames() {
   for (let i = 0; i < insetButtonsArray.length; i++) {
@@ -479,6 +462,7 @@ function resetDradis() {
 
 function magnifyComputer() {
   console.log('magnify computer');
+  updateInsetButtons('computerButton');
 }
 
 function resetComputer() {
