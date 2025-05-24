@@ -152,7 +152,6 @@ img > * {
   justify-self: center;
   align-self: center;
   z-index: 1;
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #ship-wheel-img {
