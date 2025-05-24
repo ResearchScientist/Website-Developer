@@ -1155,7 +1155,7 @@ toTop.addEventListener('click',starsToTop);
 
 // ASTRONAUT DIALOGUE
 
-const astronaut = document.getElementById('astronaut');
+const astronautButton = document.getElementById('astronaut-button');
 const astronautText = document.getElementById('astronaut-dialogue-screen');
 const dialogue = [
   "Live long and prosper.",
@@ -1165,10 +1165,9 @@ const dialogue = [
   "Allons-y!",
   "42",
   "It's a trap.",
-  "In space, no one can hear you scream."
-]
+  "In space, no one can hear you scream."]
 
-astronaut.addEventListener('click',astronautDialogue);
+astronautButton.addEventListener('click',astronautDialogue);
 
 function astronautDialogue() {
   astronautText.textContent = dialogue[Math.floor(Math.random()*dialogue.length)];

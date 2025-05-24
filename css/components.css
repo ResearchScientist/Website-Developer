@@ -144,6 +144,34 @@ body {
   cursor: url('../img/space-cursor.svg') 9 0,auto;
 }
 
+#astronaut-button {
+  width: 78px;
+  height: 138px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  margin-top: 5px;
+  margin-left: 5px;
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
+  z-index: 1;
+}
+
+#rocket-button {
+  width: 92px;
+  height: 170px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  margin-bottom: 13px;
+  margin-left: 18px;
+  transform: rotateZ(58deg);
+  justify-self: center;
+  align-self: center;
+  border-radius: 50% 50% 0 0;
+  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
+  z-index: 1;
+}
+
 #planete-bubble button {
   z-index: 1;
   cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
