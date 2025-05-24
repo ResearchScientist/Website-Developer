@@ -85,7 +85,7 @@ function cometStream() {
 
 // SHIP DOORS
 
-const rocket = document.getElementById('rocket');
+const rocketButton = document.getElementById('rocket-button');
 const shipSection = document.getElementById('ship-section');
 const shipBridge = document.getElementById('ship-bridge');
 const shipDoors = document.getElementById('ship-doors');
@@ -107,7 +107,7 @@ function lowerShipDoors() {
   shipSection.style.zIndex = '2';
 }
 
-rocket.addEventListener('click',lowerShipDoors);
+rocketButton.addEventListener('click',lowerShipDoors);
 
 function raiseShipDoors() {
   if (areShipDoorsOpen) {

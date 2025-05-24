@@ -84,7 +84,6 @@ img > * {
   transform: rotateZ(30deg);
   justify-self: center;
   align-self: center;
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #spaceport {
