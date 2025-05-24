@@ -85,7 +85,7 @@ function cometStream() {
 
 // SHIP DOORS
 
-const rocket = document.getElementById('rocket');
+const rocketButton = document.getElementById('rocket-button');
 const shipSection = document.getElementById('ship-section');
 const shipBridge = document.getElementById('ship-bridge');
 const shipDoors = document.getElementById('ship-doors');
@@ -107,7 +107,7 @@ function lowerShipDoors() {
   shipSection.style.zIndex = '2';
 }
 
-rocket.addEventListener('click',lowerShipDoors);
+rocketButton.addEventListener('click',lowerShipDoors);
 
 function raiseShipDoors() {
   if (areShipDoorsOpen) {
@@ -1155,7 +1155,7 @@ toTop.addEventListener('click',starsToTop);
 
 // ASTRONAUT DIALOGUE
 
-const astronaut = document.getElementById('astronaut');
+const astronautButton = document.getElementById('astronaut-button');
 const astronautText = document.getElementById('astronaut-dialogue-screen');
 const dialogue = [
   "Live long and prosper.",
@@ -1165,10 +1165,9 @@ const dialogue = [
   "Allons-y!",
   "42",
   "It's a trap.",
-  "In space, no one can hear you scream."
-]
+  "In space, no one can hear you scream."]
 
-astronaut.addEventListener('click',astronautDialogue);
+astronautButton.addEventListener('click',astronautDialogue);
 
 function astronautDialogue() {
   astronautText.textContent = dialogue[Math.floor(Math.random()*dialogue.length)];
