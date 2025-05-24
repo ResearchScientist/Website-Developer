@@ -18,7 +18,6 @@ img > * {
   align-self: center;
   margin-left: 75px;
   animation: space-walk 1s ease-in-out infinite alternate;
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #big-red-button-img {
@@ -84,7 +83,6 @@ img > * {
   transform: rotateZ(30deg);
   justify-self: center;
   align-self: center;
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #spaceport {
@@ -154,7 +152,6 @@ img > * {
   justify-self: center;
   align-self: center;
   z-index: 1;
-  cursor: url('../img/space-cursor-hover.svg') 15 0,auto;
 }
 
 #ship-wheel-img {

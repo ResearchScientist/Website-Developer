@@ -1,6 +1,7 @@
 // SATELLITE ANIMATION
 
 const imgSatellite = document.getElementById('satellite-3d');
+const satelliteButton = document.getElementById('satellite-button');
 const canvasSatellite = document.getElementById('canvas-satellite');
 const ctx = canvasSatellite.getContext('2d');
 const canvasSatellite_width = canvasSatellite.width = 460;
@@ -62,14 +63,4 @@ function rotateSatellite() {
   requestAnimationFrame(rotateSatellite);
 };
 
-// const throttleSatellite = (fun,delay) => {
-//   let priorTime = 0;
-//   return (...args) => {
-//     const currentTime = new Date().getTime();
-//     if (currentTime - priorTime < delay) return;
-//     priorTime = currentTime;
-//     fun(...args);
-//   }
-// }
-
-canvasSatellite.addEventListener('click',satelliteFlightCheck);
+satelliteButton.addEventListener('click',satelliteFlightCheck);
