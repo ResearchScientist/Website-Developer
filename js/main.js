@@ -460,9 +460,14 @@ function resetDradis() {
 
 // COMPUTER
 
+const magnifiedData = document.querySelector('#magnified-data');
+const magnifyingGlass = document.querySelector('#magnifying-glass');
+
 function magnifyComputer() {
   console.log('magnify computer');
   updateInsetButtons('computerButton');
+  magnifiedData.classList.add('magnify-data');
+  magnifyingGlass.classList.add('move-magnifying-glass');
 }
 
 function resetComputer() {
