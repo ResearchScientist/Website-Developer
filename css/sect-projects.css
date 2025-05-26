@@ -444,21 +444,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* NAVIGATION */
-
-/* SHIP WHEEL */
-
-.ship-wheel-spin {
-  animation: shipWheelSpin 1s ease-in-out forwards;
-}
-
-@keyframes shipWheelSpin {
-  0% {transform: rotate(0deg);}
-  25% {transform: rotate(-45deg);}
-  75% {transform: rotate(45deg);}
-  100% {transform: rotate(0deg);}
-}
-
 /* DRADIS BUTTON */
 
 #dradis-button {
@@ -478,6 +463,77 @@
 @keyframes dradisOn {
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+/* COMPUTER */
+
+#computer-button {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+
+#unmagnified-data {
+  width: 44px;
+  height: 24px;
+  margin-top: -2px;
+  padding-top: 8px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  color: var(--text-blue);
+  font-family: 'Roboto',sans-serif;
+  font-size: 5px;
+  z-index: 1;
+}
+
+#magnified-data {
+  width: 44px;
+  height: 24px;
+  margin-top: -2px;
+  padding-top: 3px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  color: var(--text-blue);
+  font-family: 'Roboto',sans-serif;
+  clip-path: circle(10px at 45px 50%);
+  z-index: 1;
+}
+
+#magnifying-glass {
+  width: 20px;
+  height: 20px;
+  margin-top: -2px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: flex-start;
+  align-self: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  /* background-color: rgba(100,150,250,.2); */
+  transform: translate(37px,0px);
+  z-index: 1;
+}
+
+.magnify-data {animation: magnifyData 3s linear forwards;}
+
+@keyframes magnifyData {
+  0% {clip-path: circle(10px at 45px 50%);}
+  50% {clip-path: circle(10px at 5px 50%);}
+  100% {clip-path: circle(10px at 45px 50%);}
+}
+
+.move-magnifying-glass {animation: moveMagnifyingGlass 3s linear forwards;}
+
+@keyframes moveMagnifyingGlass {
+  0% {transform: translate(37px,0px);}
+  50% {transform: translate(-2px,0px);}
+-1000% {transform: translate(37px,0px);}
 }
 
 /* PHONE */
@@ -567,6 +623,19 @@
   justify-self: flex-start;
   align-self: flex-end;
   margin-left: 4px;
+}
+
+/* SHIP WHEEL */
+
+.ship-wheel-spin {
+  animation: shipWheelSpin 1s ease-in-out forwards;
+}
+
+@keyframes shipWheelSpin {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(-45deg);}
+  75% {transform: rotate(45deg);}
+  100% {transform: rotate(0deg);}
 }
 
 /* FLUX CAPACITOR BUTTON */
