@@ -1449,20 +1449,24 @@ function blastAsteroids() {
 const resumeInfoCards = document.querySelector('#resume-info-cards');
 const resumeSectionBooks = document.querySelector('#resume-section-books');
 const resumeSectionFilm = document.querySelector('#resume-section-film');
+const resumeSectionFirstAidKit = document.querySelector('#resume-section-first-aid-kit');
 const resumeSectionHouse = document.querySelector('#resume-section-house');
 const resumeSectionQuill = document.querySelector('#resume-section-quill');
 const resumeSectionSailing = document.querySelector('#resume-section-sailing');
+const resumeSections = [resumeSectionBooks,resumeSectionFilm,resumeSectionFirstAidKit,resumeSectionHouse,resumeSectionQuill,resumeSectionSailing]
 const booksButton = document.querySelector('#books-button');
 const filmButton = document.querySelector('#film-button');
+const firstAidKitButton = document.querySelector('#first-aid-kit-button');
 const houseButton = document.querySelector('#house-button');
 const quillButton = document.querySelector('#quill-button');
 const sailingButton = document.querySelector('#sailing-button');
 
 booksButton.addEventListener('click',showBooks);
 filmButton.addEventListener('click',showFilm);
+firstAidKitButton.addEventListener('click',showFirstAidKit);
+houseButton.addEventListener('click',showHouse);
 quillButton.addEventListener('click',showQuill);
 sailingButton.addEventListener('click',showSailing);
-houseButton.addEventListener('click',showHouse);
 
 function showBooks() {
   clearResumeDisplay();
@@ -1472,6 +1476,11 @@ function showBooks() {
 function showFilm() {
   clearResumeDisplay();
   resumeSectionFilm.style.opacity = '1';
+}
+
+function showFirstAidKit() {
+  clearResumeDisplay();
+  resumeSectionFirstAidKit.style.opacity = '1';
 }
 
 function showHouse() {
@@ -1491,9 +1500,7 @@ function showSailing() {
 
 function clearResumeDisplay() {
   resumeInfoCards.style.opacity = '0';
-  resumeSectionBooks.style.opacity = '0';
-  resumeSectionFilm.style.opacity = '0';
-  resumeSectionHouse.style.opacity = '0';
-  resumeSectionQuill.style.opacity = '0';
-  resumeSectionSailing.style.opacity = '0';
+  resumeSections.forEach(section => {
+    section.style.opacity = '0';
+  });
 }
