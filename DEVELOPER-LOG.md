@@ -90,6 +90,9 @@ Except for the ship door images. These I kept at a one large size. when using th
 
 I'm really happy with the way the 3d images are turning out. Using a sketchbook for drawing out some variations, then using blender to model, sculpt, and light the scenes. And wow, blender sure has some wild idiosyncrasies. So had to allocate further time for troubleshooting and workarounds. Nonetheless, I've learnt a lot more about modeling and am very pleased with the results. Thanks blender for such an available and powerful tool. And thanks community for all the available posts and resources.
 
+For the main images that appear in each section, I added a button overlay and resized it to cover the image.
+This accomplished two things. 1: the hit area is more consistent to where the image is displayed, ie clicking over a transparent section is no longer an issue. 2: the button tag is consistent to its use, trigerring an action.
+
 # Cursor
 
 Added a custom cursor. The cursor is an svg of a classic spaceship. Upon hovering over an interactive image the cursor gets swapped to another svg which expands the fins out, lights up the porthole, and adds an orange flame. These changes serve as a signal to the user. Initially I had removed the pointer indicator and was hoping to surprise the user. But by adding this subtle change, it offers a hint to the user which meets their expectations on interactivity indicators and allows them to explore and still be surprised and hopefully pleased.
