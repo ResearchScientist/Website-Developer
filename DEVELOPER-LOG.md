@@ -28,6 +28,7 @@ Reverted back to using only this log.
 - development
 - accessibility
 - projects
+- resume
 - svgs
 
 > March 2025
