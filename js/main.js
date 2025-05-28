@@ -326,7 +326,7 @@ function updateInsetButtonsLabels(labelsArray) {
   }
   insetButtonsArray.forEach((insetButton,index) => {
     if (insetButton) {
-      insetButton.querySelector('p').textContent = labelsArray[index];
+      insetButton.querySelector('span').textContent = labelsArray[index];
     }
   });
   console.log('labels updated');
@@ -359,7 +359,7 @@ function resetInsetButtonsNames() {
     let currentInsetButton = insetButtonsArray[i];
     resetDelay = i * 200;
     setTimeout(() => {
-      currentP = currentInsetButton.querySelector('p');
+      currentP = currentInsetButton.querySelector('span');
       currentP.textContent = "ready";
       currentP.style['filter'] = 'none';
       currentP.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
@@ -389,7 +389,7 @@ insetButtons.addEventListener('click',activateInsetButton);
 function activateInsetButton(e) {
   const insetButton = e.target.closest('button');
   if (insetButton) {
-    const insetButtonsAllP = insetButtons.querySelectorAll('p');
+    const insetButtonsAllP = insetButtons.querySelectorAll('span');
     insetButtonsAllP.forEach(p => {
       p.style['filter'] = 'none';
       p.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
@@ -399,7 +399,7 @@ function activateInsetButton(e) {
       p.style['color'] = 'rgb(175,175,225)';
       p.style['textShadow'] = 'none';
     })
-    const insetButtonP = insetButton.querySelector('p');
+    const insetButtonP = insetButton.querySelector('span');
     insetButtonP.style['filter'] = 'brightness(.9)';
     insetButtonP.style['borderTop'] = '2px solid var(--bridge-wall)';
     insetButtonP.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
