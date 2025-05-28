@@ -506,6 +506,15 @@
 }
 
 #magnifying-glass {
+  width: 50px;
+  height: 50px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  transform: translate(20px,0);
+  pointer-events: none;
+}
+
+/* #magnifying-glass {
   width: 20px;
   height: 20px;
   margin-top: -2px;
@@ -515,10 +524,9 @@
   align-self: center;
   border-radius: 50%;
   border: 2px solid white;
-  /* background-color: rgba(100,150,250,.2); */
   transform: translate(37px,0px);
   z-index: 1;
-}
+} */
 
 .magnify-data {animation: magnifyData 3s linear forwards;}
 
@@ -531,9 +539,9 @@
 .move-magnifying-glass {animation: moveMagnifyingGlass 3s linear forwards;}
 
 @keyframes moveMagnifyingGlass {
-  0% {transform: translate(37px,0px);}
-  50% {transform: translate(-2px,0px);}
--1000% {transform: translate(37px,0px);}
+  0% {transform: translate(20px,0px);}
+  50% {transform: translate(-15px,0px);}
+  100% {transform: translate(20px,0px);}
 }
 
 /* PHONE */
