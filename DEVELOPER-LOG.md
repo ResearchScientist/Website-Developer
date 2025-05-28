@@ -1,9 +1,5 @@
 # Developer Log
 
-> april
-
-Had loads of fun making the custom cursor for the website. Wanted something small that would not overwhelm the user , but still be functional and informative.
-
 A happily floating astronaut , there's something zen about it.
 
 > may 
@@ -96,9 +92,11 @@ This accomplished two things. 1: the hit area is more consistent to where the im
 
 # Cursor
 
-Added a custom cursor. The cursor is an svg of a classic spaceship. Upon hovering over an interactive image the cursor gets swapped to another svg which expands the fins out, lights up the porthole, and adds an orange flame. These changes serve as a signal to the user. Initially I had removed the pointer indicator and was hoping to surprise the user. But by adding this subtle change, it offers a hint to the user which meets their expectations on interactivity indicators and allows them to explore and still be surprised and hopefully pleased.
+Added a custom cursor. The cursor is an svg of a classic spaceship. Upon hovering over an interactive image the cursor gets swapped to another svg which expands the fins out, lights up the porthole, and adds an orange flame. These changes serve as a signal to the user. Initially I had removed the pointer indicator and was hoping to surprise the user. But by adding this subtle change, it offers a hint to the user which meets their expectations about interactive indicators and allows them to explore and still be surprised and hopefully pleased.
  
 So far I have kept the default pointer when interacting with the top navigation menu. Also decided to keep the finger pointer when interacting with items within the ship bridge. This is a more natural indicator since the items are inside the ship and the user would be touching the controls with their own hands. When outside the ship the cursor reverts back to an animation of a small spaceship. 
+
+Had loads of fun making the custom cursor.
 
 # Resume SVGs
 
