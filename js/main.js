@@ -1504,3 +1504,13 @@ function clearResumeDisplay() {
     section.style.opacity = '0';
   });
 }
+
+// CONTACT
+
+const contactMSG = document.querySelector('#contact-message');
+
+contactMSG.addEventListener('click',showContactMSG);
+
+function showContactMSG() {
+  alert('to avoid spam bots this is a non selectable svg');
+}
