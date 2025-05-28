@@ -299,11 +299,12 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-#inset-buttons p {
+#inset-buttons span {
   width: 66px;
   height: 41px;
   padding: 8px 0 0;
   margin: 0 auto;
+  display: block;
   border-radius: 5px;
   border-top: 2px solid rgba(250,250,250,.2);
   border-bottom: 2px solid rgba(0,0,50,.8);
@@ -513,20 +514,6 @@
   transform: translate(20px,0);
   pointer-events: none;
 }
-
-/* #magnifying-glass {
-  width: 20px;
-  height: 20px;
-  margin-top: -2px;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-  justify-self: flex-start;
-  align-self: center;
-  border-radius: 50%;
-  border: 2px solid white;
-  transform: translate(37px,0px);
-  z-index: 1;
-} */
 
 .magnify-data {animation: magnifyData 3s linear forwards;}
 

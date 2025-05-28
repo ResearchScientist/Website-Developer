@@ -112,4 +112,10 @@ Animated some of the SVGs to break up the static feel of the resume page. I impl
 
 # Accessibility
 
+**Aria Labels**
+
 Since the overlay buttons I placed over the planet illustrations have very short names, I added aria labels to them. These are more descriptive and should help orient users with assistive technologies.
+
+**Buttons**
+
+Added `type="button"` to all buttons to aid in consistent behaviour.

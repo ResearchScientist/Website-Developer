@@ -109,7 +109,7 @@
 }
 
 #nacelle1 {
-  width: 1px;
+  width: 8px;
   height: 1px;
   margin-top: 4px;
   grid-column: 1/-1;
@@ -118,7 +118,7 @@
 }
 
 #nacelle2 {
-  width: 1px;
+  width: 8px;
   height: 1px;
   margin-bottom: 4px;
   grid-column: 1/-1;
