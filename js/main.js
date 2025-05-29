@@ -395,16 +395,16 @@ function activateInsetButton(e) {
       span.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
       span.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
       span.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      span.style['padding'] = '8px 0 0';
+      span.style['padding'] = '9px 0 0';
       span.style['color'] = 'rgb(175,175,225)';
       span.style['textShadow'] = 'none';
     })
     const insetButtonSpan = insetButton.querySelector('span');
-    insetButtonSpan.style['filter'] = 'brightness(.9)';
+    insetButtonSpan.style['filter'] = 'brightness(.8)';
     insetButtonSpan.style['borderTop'] = '2px solid var(--bridge-wall)';
     insetButtonSpan.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
     insetButtonSpan.style['boxShadow'] = 'none';
-    insetButtonSpan.style['padding'] = '9px 0 0';
+    insetButtonSpan.style['padding'] = '10px 0 0';
     insetButtonSpan.style['color'] = 'var(--text-blue)';
     insetButtonSpan.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 2px var(--text-blue)';
     checkSequence(insetButton);
