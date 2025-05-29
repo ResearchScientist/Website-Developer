@@ -404,7 +404,7 @@ function activateInsetButton(e) {
     insetButtonSpan.style['borderTop'] = '2px solid var(--bridge-wall)';
     insetButtonSpan.style['borderBottom'] = '1px solid rgba(0,0,50,.8)';
     insetButtonSpan.style['boxShadow'] = 'none';
-    insetButtonSpan.style['padding'] = '10px 0 0';
+    insetButtonSpan.style['padding'] = '9px 0 0';
     insetButtonSpan.style['color'] = 'var(--text-blue)';
     insetButtonSpan.style['textShadow'] = '0 0 0px var(--text-blue), 0 0 2px var(--text-blue)';
     checkSequence(insetButton);
