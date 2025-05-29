@@ -2,10 +2,6 @@
 
 A happily floating astronaut , there's something zen about it.
 
-> may 
-
-Decided to make the houses on the planet as line drawings. This will keep with the aesthetic of contrasting full complex 3D imagery against minimal 2D art.
-
 # UI
 
 Really wanted a variable content drop down section on click. Initially was going to use the shadow dom and custom elements but since those are not indexable by search bots I decided to save their implementation for another project. Instead I made use of flex grid and overflow hidden to obtain the effect I wanted. Pretty happy with the result.
@@ -106,7 +102,7 @@ Had loads of fun making the custom cursor.
 
 # Resume SVGs
 
-Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg.
+Added 2d line art illustrations that match the 3d planet illustrations. Made these to give contextual continuity as the user clicks on the planet items and the related text is displayed next to its corresponding svg. While still maintaining the aesthetic of contrasting full complex 3D imagery against minimal 2D art.
 
 Animated some of the SVGs to break up the static feel of the resume page. I implemented only one animation at a time as not to overwhelm the scene. Also it's important to take opportunities to reduce cognitive load. While a user is engaging with textual content the animation should not distract from their primary goal of reading the text. So I kept the animation as subtle as necessary.
 
