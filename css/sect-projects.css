@@ -302,8 +302,8 @@
 #inset-buttons span {
   width: 66px;
   height: 41px;
-  padding: 8px 0 0;
-  margin: 2px auto 0px;
+  padding: 9px 0 0;
+  margin: 0 auto;
   display: block;
   border-radius: 5px;
   border-top: 2px solid rgba(250,250,250,.2);
