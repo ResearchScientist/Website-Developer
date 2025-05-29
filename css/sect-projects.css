@@ -639,6 +639,13 @@
   100% {opacity: 1;}
 }
 
+.flux-capacitor-off {animation: fluxCapacitorOff .1s linear forwards;}
+
+@keyframes fluxCapacitorOff {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 #speedometer-glass {
   width: 100%;
   height: 100%;
