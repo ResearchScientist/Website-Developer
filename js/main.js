@@ -574,6 +574,7 @@ const lightningRsvg = document.querySelector('#lightning-R-svg');
 function fluxIt() {
   console.log('Get to 88!');
   disableDisplayButtons();
+  fluxCapacitorOnIMG.classList.remove('flux-capacitor-off');
   fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
   setTimeout(showSpeedometer,500);
 }
@@ -787,7 +788,17 @@ function showTrajectoryNames() {
   });
   updateInsetButtons('fluxCapacitorButton');
   strobeLights();
+  // resetFluxCapacitorButton();
 }
+
+// function resetFluxCapacitorButton() {
+//   fluxCapacitorButton.disabled = false;
+//   fluxCapacitorButton.removeEventListener('click',fluxIt);
+//   fluxCapacitorButton.addEventListener('click',resetFlux,{once:true});
+//   setTimeout(() => {
+//     fluxCapacitorButton.addEventListener('click',fluxIt);
+//   }, 1000);
+// }
 
 function strobeLights() {
   for (var i=0 ; i < lightList.length ; i++) {
@@ -831,6 +842,7 @@ function updateTrajectoryLove() {
 }
 
 function resetFlux() {
+  fluxCapacitorOnIMG.classList.add('flux-capacitor-off');
   fluxCapacitorOnIMG.classList.remove('flux-capacitor-on');
   trajectoryGroupName.style.opacity = "0";
   trajectoryGroupName.textContent = "";
