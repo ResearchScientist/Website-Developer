@@ -329,6 +329,7 @@ function updateInsetButtonsLabels(labelsArray) {
       insetButton.querySelector('span').textContent = labelsArray[index];
     }
   });
+  popUpAllInsetButtons();
   console.log('labels updated');
 }
 
@@ -368,6 +369,19 @@ function resetInsetButtonsNames() {
   } 
 }
 
+function popUpAllInsetButtons() {
+  const insetButtonsAllSpans = insetButtons.querySelectorAll('span');
+  insetButtonsAllSpans.forEach(span => {
+    span.style['filter'] = 'none';
+    span.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
+    span.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
+    span.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
+    span.style['padding'] = '11px 0 0';
+    span.style['color'] = 'rgb(175,175,225)';
+    span.style['textShadow'] = 'none';
+  })
+}
+
 // SEQUENCE BUTTONS
 
 const sequenceDisplay = document.querySelector('#sequence-display-section');
@@ -385,16 +399,7 @@ insetButtons.addEventListener('click',activateInsetButton);
 function activateInsetButton(e) {
   const insetButton = e.target.closest('button');
   if (insetButton) {
-    const insetButtonsAllSpans = insetButtons.querySelectorAll('span');
-    insetButtonsAllSpans.forEach(span => {
-      span.style['filter'] = 'none';
-      span.style['borderTop'] = '2px solid rgba(250,250,250,.2)';
-      span.style['borderBottom'] = '2px solid rgba(0,0,50,.8)';
-      span.style['boxShadow'] = '0px 1px 2px 0px rgba(0,0,0,.8)';
-      span.style['padding'] = '11px 0 0';
-      span.style['color'] = 'rgb(175,175,225)';
-      span.style['textShadow'] = 'none';
-    })
+    popUpAllInsetButtons();
     const insetButtonSpan = insetButton.querySelector('span');
     insetButtonSpan.style['filter'] = 'brightness(.8)';
     insetButtonSpan.style['borderTop'] = '2px solid var(--bridge-wall)';
