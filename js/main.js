@@ -1073,6 +1073,8 @@ const gaugeDialIMG = document.querySelector('#gauge-dial-img');
 
 function gaugeIntoTheAbyss() {
   console.log('gauging this');
+  disableDisplayButtons();
+  gaugeButton.disabled = false;
   if (gaugeDialIMG.classList.contains('gauge-dial-unspin')) {
     gaugeDialIMG.classList.remove('gauge-dial-unspin');
     gaugeDialIMG.classList.add('gauge-dial-spin');
