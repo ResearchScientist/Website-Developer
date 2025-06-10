@@ -478,6 +478,7 @@ function resetComputer() {
 // PHONE
 
 const phoneLights = document.querySelectorAll('.phone-lights');
+const sciCom = document.querySelector('#science-comm');
 
 function ringring() {
   ringOn();
@@ -485,6 +486,9 @@ function ringring() {
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
   disableDisplayButtons();
+  setTimeout(() => {
+    sciCom.style.opacity = 1;
+  }, 1000);
   setTimeout(() => {
     resetPhone();
   }, 3000);
