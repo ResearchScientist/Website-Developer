@@ -1073,16 +1073,23 @@ const gaugeDialIMG = document.querySelector('#gauge-dial-img');
 
 function gaugeIntoTheAbyss() {
   console.log('gauging this');
-  gaugeDialIMG.classList.add('gauge-dial-spin');
-  updateInsetButtons('gaugeButton');
+  if (gaugeDialIMG.classList.contains('gauge-dial-unspin')) {
+    gaugeDialIMG.classList.remove('gauge-dial-unspin');
+    gaugeDialIMG.classList.add('gauge-dial-spin');
+    updateInsetButtons('gaugeButton');
+  }
+  else if (gaugeDialIMG.classList.contains('gauge-dial-spin')) {
+    gaugeDialIMG.classList.remove('gauge-dial-spin');
+    gaugeDialIMG.classList.add('gauge-dial-unspin');
+    resetInsetButtons();
+  }
+  // gaugeDialIMG.classList.add('gauge-dial-spin');
+  // updateInsetButtons('gaugeButton');
 }
 
 function resetGauge() {
   gaugeDialIMG.classList.remove('gauge-dial-spin');
   gaugeDialIMG.classList.add('gauge-dial-unspin');
-  setTimeout(() => {
-    gaugeDialIMG.classList.remove('gauge-dial-unspin');
-  }, 1000);
   resetInsetButtons();
 }
 
