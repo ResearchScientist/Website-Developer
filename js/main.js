@@ -466,6 +466,7 @@ const magnifyingGlass = document.querySelector('#magnifying-glass');
 
 function magnifyComputer() {
   console.log('magnify computer');
+  disableDisplayButtons();
   updateInsetButtons('computerButton');
   magnifiedData.classList.add('magnify-data');
   magnifyingGlass.classList.add('move-magnifying-glass');
@@ -473,11 +474,13 @@ function magnifyComputer() {
 
 function resetComputer() {
   resetInsetButtons();
+  enableDisplayButtons();
 }
 
 // PHONE
 
 const phoneLights = document.querySelectorAll('.phone-lights');
+const sciCom = document.querySelector('#science-comm');
 
 function ringring() {
   ringOn();
@@ -485,9 +488,10 @@ function ringring() {
   setTimeout(ringOn,1400);
   setTimeout(ringOff,1800);
   disableDisplayButtons();
+  updateInsetButtons('phoneButton');
   setTimeout(() => {
-    resetPhone();
-  }, 3000);
+    sciCom.style.opacity = 1;
+  }, 1000);
 }
 
 function ringOn() {
@@ -511,7 +515,9 @@ function phoneLightOff(phoneLight) {
 }
 
 function resetPhone() {
+  sciCom.style.opacity = 0;
   resetInsetButtons();
+  enableDisplayButtons();
 }
 
 // WHEEL BUTTON - DISPLAY PLANETE AND SKILLS
@@ -1073,16 +1079,25 @@ const gaugeDialIMG = document.querySelector('#gauge-dial-img');
 
 function gaugeIntoTheAbyss() {
   console.log('gauging this');
-  gaugeDialIMG.classList.add('gauge-dial-spin');
-  updateInsetButtons('gaugeButton');
+  disableDisplayButtons();
+  gaugeButton.disabled = false;
+  if (gaugeDialIMG.classList.contains('gauge-dial-unspin')) {
+    gaugeDialIMG.classList.remove('gauge-dial-unspin');
+    gaugeDialIMG.classList.add('gauge-dial-spin');
+    updateInsetButtons('gaugeButton');
+  }
+  else if (gaugeDialIMG.classList.contains('gauge-dial-spin')) {
+    gaugeDialIMG.classList.remove('gauge-dial-spin');
+    gaugeDialIMG.classList.add('gauge-dial-unspin');
+    resetInsetButtons();
+  }
+  // gaugeDialIMG.classList.add('gauge-dial-spin');
+  // updateInsetButtons('gaugeButton');
 }
 
 function resetGauge() {
   gaugeDialIMG.classList.remove('gauge-dial-spin');
   gaugeDialIMG.classList.add('gauge-dial-unspin');
-  setTimeout(() => {
-    gaugeDialIMG.classList.remove('gauge-dial-unspin');
-  }, 1000);
   resetInsetButtons();
 }
 

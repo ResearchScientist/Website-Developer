@@ -605,6 +605,25 @@
   margin-left: 4px;
 }
 
+#science-comm {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: flex-start;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+#science-comm p:nth-of-type(1) {
+  margin: 10px 0 10px;
+  text-align: center;
+}
+
+#science-comm p:nth-of-type(2) {
+  width: 95%;
+  margin: 0 auto;
+}
+
 /* SHIP WHEEL */
 
 .ship-wheel-spin {
