@@ -213,6 +213,12 @@ engineButton.addEventListener('click',checkEngine);
 gaugeButton.addEventListener('click',gaugeIntoTheAbyss);
 vacuumTubesButton.addEventListener('click',lightUpVacuumTubes);
 
+const inactiveStations = document.querySelectorAll('button[data-station-active="false"]');
+
+inactiveStations.forEach((button,index) => {
+  console.log(`button ${index + 1} : ${button.id} `);
+})
+
 const insetButtons = document.querySelector('#inset-buttons');
 const insetButton1 = document.querySelector('#inset-button-1');
 const insetButton2 = document.querySelector('#inset-button-2');
@@ -483,15 +489,26 @@ const phoneLights = document.querySelectorAll('.phone-lights');
 const sciCom = document.querySelector('#science-comm');
 
 function ringring() {
-  ringOn();
-  setTimeout(ringOff,400);
-  setTimeout(ringOn,1400);
-  setTimeout(ringOff,1800);
-  disableDisplayButtons();
-  updateInsetButtons('phoneButton');
-  setTimeout(() => {
-    sciCom.style.opacity = 1;
-  }, 1000);
+  if (phoneButton.getAttribute('data-station-active') === 'false') {
+    ringOn();
+    setTimeout(ringOff,400);
+    setTimeout(ringOn,1400);
+    setTimeout(ringOff,1800);
+    disableDisplayButtons();
+    phoneButton.disabled = false;
+    phoneButton.dataset.stationActive = true;
+    setTimeout(() => {
+      sciCom.style.opacity = 1;
+      updateInsetButtons('phoneButton');
+    }, 1000);
+  } else if (phoneButton.getAttribute('data-station-active') === 'true') {
+    ringOn();
+    setTimeout(ringOff,400);
+    resetPhone();
+  } else {
+    console.log('oops');
+    phoneButton.dataset.stationActive = false;
+  }
 }
 
 function ringOn() {
@@ -516,6 +533,7 @@ function phoneLightOff(phoneLight) {
 
 function resetPhone() {
   sciCom.style.opacity = 0;
+  phoneButton.dataset.stationActive = false;
   resetInsetButtons();
   enableDisplayButtons();
 }
