@@ -20,7 +20,7 @@ Issues with vs code not able to clone or make new repos on github.
 
 For improved workflow and separation of concerns I implemented separate logs for development and feature branches.
 
-Reverted back to using only this log.
+Reverted back to one dev log. Maintaining multiple ones was cumbersome.
 
 # Branches
 
@@ -52,10 +52,6 @@ Using Blender for making the 3D images and optimizing as webp instead of png bef
 Redesigning the projects section. Current implementation has too many animations that play prior to the user being able to engage. Will redesign so that the user can engage more meaningfully at page load.
 
 Removed all animations that autoplayed.
-
-> April 2025
-
-Reverted back to one dev log. Maintaining multiple ones was cumbersome. Will need to restructure the dev log.
 
 # Asteroid Ship Animation SVG
 
