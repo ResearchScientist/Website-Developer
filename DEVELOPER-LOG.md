@@ -25,6 +25,8 @@ Reverted back to using only this log.
 - resume
 - svgs
 
+# Projects Section Redesign
+
 > March 2025
 
 I'm updating the projects page.
