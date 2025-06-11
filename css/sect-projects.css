@@ -445,6 +445,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+#bridge-stations button:disabled {
+  cursor: url('../img/space-cursor.svg') 9 0,auto;
+}
+
 /* DRADIS BUTTON */
 
 #dradis-button {
