@@ -1,0 +1,19 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main arrow line: starts at (40, 20), curves through control points (40, 35) and (25, 40), and ends at (20, 40) -->
+  <path
+    d="M 40 20 C 40 35, 25 40, 20 40"
+    stroke="white"
+    fill="none"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <!-- Arrowhead: a small triangle at (20, 40) pointing downwards -->
+  <path
+    d="M 17 37 L 20 40 L 23 37"
+    stroke="white"
+    fill="white"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
