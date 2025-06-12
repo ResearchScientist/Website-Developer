@@ -1212,6 +1212,19 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* CAPTAINS LOG */
+
+#bridge-floor #captains-log-button {
+  width: 60px;
+  height: 80px;
+  grid-column: 2/3;
+  grid-row: 1/-1;
+  justify-self: flex-start;
+  align-self: flex-end;
+  border: 1px solid black;
+  background-color: teal;
+}
+
 /* TOOLBOX BUTTON */
 
 #bridge-floor #toolbox-button {
