@@ -461,14 +461,15 @@
 
 #dradis-on-img {
   opacity: 0;
+  transition: opacity .1s;
 }
 
-.dradis-on {animation: dradisOn .1s linear forwards;}
+/* .dradis-on {animation: dradisOn .1s linear forwards;} */
 
-@keyframes dradisOn {
+/* @keyframes dradisOn {
   0% {opacity: 0;}
   100% {opacity: 1;}
-}
+} */
 
 /* COMPUTER */
 
@@ -609,7 +610,7 @@
   margin-left: 4px;
 }
 
-#phone-display {
+#dradis-display , #phone-display {
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
@@ -618,7 +619,8 @@
   opacity: 0;
 }
 
-#phone-display h1 {
+
+#dradis-display h1 , #phone-display h1 {
   width: 340px;
   height: 35px;
   margin: 20px auto 20px;
@@ -628,7 +630,7 @@
   font-size: 24px;
 }
 
-#phone-display p {
+#dradis-display p , #phone-display p {
   width: 95%;
   margin: 0 auto;
 }
