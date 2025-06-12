@@ -486,7 +486,7 @@ function resetComputer() {
 // PHONE
 
 const phoneLights = document.querySelectorAll('.phone-lights');
-const sciCom = document.querySelector('#science-comm');
+const phoneDisplay = document.querySelector('#phone-display');
 
 function ringring() {
   if (phoneButton.getAttribute('data-station-active') === 'false') {
@@ -498,7 +498,7 @@ function ringring() {
     phoneButton.disabled = false;
     phoneButton.dataset.stationActive = true;
     setTimeout(() => {
-      sciCom.style.opacity = 1;
+      phoneDisplay.style.opacity = 1;
       updateInsetButtons('phoneButton');
     }, 1000);
   } else if (phoneButton.getAttribute('data-station-active') === 'true') {
@@ -532,7 +532,7 @@ function phoneLightOff(phoneLight) {
 }
 
 function resetPhone() {
-  sciCom.style.opacity = 0;
+  phoneDisplay.style.opacity = 0;
   phoneButton.dataset.stationActive = false;
   resetInsetButtons();
   enableDisplayButtons();
