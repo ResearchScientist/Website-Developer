@@ -451,18 +451,30 @@ function displaySequenceMSG() {
 // DRADIS
 
 const dradisOnImg = document.querySelector('#dradis-on-img');
+const dradisDisplay = document.querySelector('#dradis-display');
 
 function dradisContact() {
-  disableDisplayButtons();
-  dradisOnImg.classList.add('dradis-on');
-  setTimeout(() => {
-    updateInsetButtons('dradisButton');
-  }, 1000);
+  if (dradisButton.getAttribute('data-station-active') === 'false') {
+    disableDisplayButtons();
+    dradisButton.disabled = false;
+    dradisButton.dataset.stationActive = true;
+    dradisOnImg.style.opacity = 1;
+    dradisDisplay.style.opacity = 1;
+    setTimeout(() => {
+      updateInsetButtons('dradisButton');
+    }, 1000);
+  } else if (dradisButton.getAttribute('data-station-active') === 'true') {
+    resetDradis();
+  } else {
+    dradisButton.dataset.stationActive = false;
+  }
 }
 
 function resetDradis() {
-  dradisOnImg.classList.remove('dradis-on');
-    resetInsetButtons();
+  dradisOnImg.style.opacity = 0;
+  dradisDisplay.style.opacity = 0;
+  dradisButton.dataset.stationActive = false;
+  resetInsetButtons();
 }
 
 // COMPUTER
@@ -486,7 +498,7 @@ function resetComputer() {
 // PHONE
 
 const phoneLights = document.querySelectorAll('.phone-lights');
-const sciCom = document.querySelector('#science-comm');
+const phoneDisplay = document.querySelector('#phone-display');
 
 function ringring() {
   if (phoneButton.getAttribute('data-station-active') === 'false') {
@@ -498,7 +510,7 @@ function ringring() {
     phoneButton.disabled = false;
     phoneButton.dataset.stationActive = true;
     setTimeout(() => {
-      sciCom.style.opacity = 1;
+      phoneDisplay.style.opacity = 1;
       updateInsetButtons('phoneButton');
     }, 1000);
   } else if (phoneButton.getAttribute('data-station-active') === 'true') {
@@ -506,7 +518,6 @@ function ringring() {
     setTimeout(ringOff,400);
     resetPhone();
   } else {
-    console.log('oops');
     phoneButton.dataset.stationActive = false;
   }
 }
@@ -532,7 +543,7 @@ function phoneLightOff(phoneLight) {
 }
 
 function resetPhone() {
-  sciCom.style.opacity = 0;
+  phoneDisplay.style.opacity = 0;
   phoneButton.dataset.stationActive = false;
   resetInsetButtons();
   enableDisplayButtons();
