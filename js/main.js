@@ -481,18 +481,33 @@ function resetDradis() {
 
 const magnifiedData = document.querySelector('#magnified-data');
 const magnifyingGlass = document.querySelector('#magnifying-glass');
+const computerDisplay = document.querySelector('#computer-display');
 
 function magnifyComputer() {
-  console.log('magnify computer');
-  disableDisplayButtons();
-  updateInsetButtons('computerButton');
-  magnifiedData.classList.add('magnify-data');
-  magnifyingGlass.classList.add('move-magnifying-glass');
+  if (computerButton.getAttribute('data-station-active') === 'false') {
+    disableDisplayButtons();
+    computerButton.disabled = false;
+    computerButton.dataset.stationActive = true;
+    updateInsetButtons('computerButton');
+    magnifiedData.classList.add('magnify-data');
+    magnifyingGlass.classList.add('move-magnifying-glass');
+    setTimeout(() => {
+      computerDisplay.style.opacity = 1;
+    }, 2200);
+  } else if (computerButton.getAttribute('data-station-active') === 'true') {
+    resetComputer();
+  } else {
+    computerButton.dataset.stationActive = false;
+  }
 }
 
 function resetComputer() {
+  computerDisplay.style.opacity = 0;
   resetInsetButtons();
   enableDisplayButtons();
+  magnifiedData.classList.remove('magnify-data');
+  magnifyingGlass.classList.remove('move-magnifying-glass');
+  computerButton.dataset.stationActive = false;
 }
 
 // PHONE
