@@ -481,6 +481,7 @@ function resetDradis() {
 
 const magnifiedData = document.querySelector('#magnified-data');
 const magnifyingGlass = document.querySelector('#magnifying-glass');
+const computerDisplay = document.querySelector('#computer-display');
 
 function magnifyComputer() {
   console.log('magnify computer');
@@ -488,9 +489,11 @@ function magnifyComputer() {
   updateInsetButtons('computerButton');
   magnifiedData.classList.add('magnify-data');
   magnifyingGlass.classList.add('move-magnifying-glass');
+  computerDisplay.style.opacity = 1;
 }
 
 function resetComputer() {
+  computerDisplay.style.opacity = 0;
   resetInsetButtons();
   enableDisplayButtons();
 }
