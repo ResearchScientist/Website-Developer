@@ -482,18 +482,20 @@ function resetDradis() {
 const magnifiedData = document.querySelector('#magnified-data');
 const magnifyingGlass = document.querySelector('#magnifying-glass');
 const computerDisplay = document.querySelector('#computer-display');
+const computerLight = document.querySelector('#computer-light');
 
 function magnifyComputer() {
   if (computerButton.getAttribute('data-station-active') === 'false') {
     disableDisplayButtons();
     computerButton.disabled = false;
     computerButton.dataset.stationActive = true;
+    computerLight.style.opacity = 1;
     updateInsetButtons('computerButton');
     magnifiedData.classList.add('magnify-data');
     magnifyingGlass.classList.add('move-magnifying-glass');
     setTimeout(() => {
       computerDisplay.style.opacity = 1;
-    }, 2200);
+    }, 1500);
   } else if (computerButton.getAttribute('data-station-active') === 'true') {
     resetComputer();
   } else {
@@ -503,6 +505,7 @@ function magnifyComputer() {
 
 function resetComputer() {
   computerDisplay.style.opacity = 0;
+  computerLight.style.opacity = 0;
   resetInsetButtons();
   enableDisplayButtons();
   magnifiedData.classList.remove('magnify-data');
@@ -526,8 +529,10 @@ function ringring() {
     phoneButton.dataset.stationActive = true;
     setTimeout(() => {
       phoneDisplay.style.opacity = 1;
-      updateInsetButtons('phoneButton');
-    }, 1000);
+      setTimeout(() => {
+        updateInsetButtons('phoneButton');
+      }, 200);
+    }, 800);
   } else if (phoneButton.getAttribute('data-station-active') === 'true') {
     ringOn();
     setTimeout(ringOff,400);
