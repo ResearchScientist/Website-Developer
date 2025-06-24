@@ -967,6 +967,8 @@ function moveHyperspeedLeverDown() {
 
 function punchIt() {
   console.log('punched it');
+  console.log(paths);
+  
   disableDisplayButtons();
   moveHyperspeedLeverUp();
   setTimeout(() => {
