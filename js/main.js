@@ -482,18 +482,22 @@ function resetDradis() {
 const magnifiedData = document.querySelector('#magnified-data');
 const magnifyingGlass = document.querySelector('#magnifying-glass');
 const computerDisplay = document.querySelector('#computer-display');
+const computerLight = document.querySelector('#computer-light');
 
 function magnifyComputer() {
   if (computerButton.getAttribute('data-station-active') === 'false') {
     disableDisplayButtons();
     computerButton.disabled = false;
     computerButton.dataset.stationActive = true;
+    computerLight.style.opacity = 1;
     updateInsetButtons('computerButton');
     magnifiedData.classList.add('magnify-data');
     magnifyingGlass.classList.add('move-magnifying-glass');
+    magnifiedData.classList.remove('un-magnify-data');
+  magnifyingGlass.classList.remove('un-move-magnifying-glass');
     setTimeout(() => {
       computerDisplay.style.opacity = 1;
-    }, 2200);
+    }, 1500);
   } else if (computerButton.getAttribute('data-station-active') === 'true') {
     resetComputer();
   } else {
@@ -505,8 +509,13 @@ function resetComputer() {
   computerDisplay.style.opacity = 0;
   resetInsetButtons();
   enableDisplayButtons();
+  magnifiedData.classList.add('un-magnify-data');
+  magnifyingGlass.classList.add('un-move-magnifying-glass');
   magnifiedData.classList.remove('magnify-data');
   magnifyingGlass.classList.remove('move-magnifying-glass');
+  setTimeout(() => {
+    computerLight.style.opacity = 0;
+  }, 1400);
   computerButton.dataset.stationActive = false;
 }
 
@@ -526,8 +535,10 @@ function ringring() {
     phoneButton.dataset.stationActive = true;
     setTimeout(() => {
       phoneDisplay.style.opacity = 1;
-      updateInsetButtons('phoneButton');
-    }, 1000);
+      setTimeout(() => {
+        updateInsetButtons('phoneButton');
+      }, 200);
+    }, 400);
   } else if (phoneButton.getAttribute('data-station-active') === 'true') {
     ringOn();
     setTimeout(ringOff,400);
@@ -956,6 +967,8 @@ function moveHyperspeedLeverDown() {
 
 function punchIt() {
   console.log('punched it');
+  console.log(paths);
+  
   disableDisplayButtons();
   moveHyperspeedLeverUp();
   setTimeout(() => {
