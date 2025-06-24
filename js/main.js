@@ -493,6 +493,8 @@ function magnifyComputer() {
     updateInsetButtons('computerButton');
     magnifiedData.classList.add('magnify-data');
     magnifyingGlass.classList.add('move-magnifying-glass');
+    magnifiedData.classList.remove('un-magnify-data');
+  magnifyingGlass.classList.remove('un-move-magnifying-glass');
     setTimeout(() => {
       computerDisplay.style.opacity = 1;
     }, 1500);
@@ -505,11 +507,15 @@ function magnifyComputer() {
 
 function resetComputer() {
   computerDisplay.style.opacity = 0;
-  computerLight.style.opacity = 0;
   resetInsetButtons();
   enableDisplayButtons();
+  magnifiedData.classList.add('un-magnify-data');
+  magnifyingGlass.classList.add('un-move-magnifying-glass');
   magnifiedData.classList.remove('magnify-data');
   magnifyingGlass.classList.remove('move-magnifying-glass');
+  setTimeout(() => {
+    computerLight.style.opacity = 0;
+  }, 1400);
   computerButton.dataset.stationActive = false;
 }
 
@@ -532,7 +538,7 @@ function ringring() {
       setTimeout(() => {
         updateInsetButtons('phoneButton');
       }, 200);
-    }, 800);
+    }, 400);
   } else if (phoneButton.getAttribute('data-station-active') === 'true') {
     ringOn();
     setTimeout(ringOff,400);

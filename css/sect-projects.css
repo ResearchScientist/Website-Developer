@@ -514,19 +514,33 @@
   pointer-events: none;
 }
 
-.magnify-data {animation: magnifyData 3s linear forwards;}
+.magnify-data {animation: magnifyData 1.5s linear forwards;}
 
 @keyframes magnifyData {
   0% {clip-path: circle(10px at 45px 50%);}
-  50% {clip-path: circle(10px at 5px 50%);}
-  100% {clip-path: circle(10px at 45px 50%);}
+  100% {clip-path: circle(10px at 5px 50%);}
+  /* 100% {clip-path: circle(10px at 45px 50%);} */
 }
 
-.move-magnifying-glass {animation: moveMagnifyingGlass 3s linear forwards;}
+.move-magnifying-glass {animation: moveMagnifyingGlass 1.5s linear forwards;}
 
 @keyframes moveMagnifyingGlass {
   0% {transform: translate(20px,0px);}
-  50% {transform: translate(-15px,0px);}
+  100% {transform: translate(-15px,0px);}
+  /* 100% {transform: translate(20px,0px);} */
+}
+
+.un-magnify-data {animation: unMagnifyData 1.5s linear forwards;}
+
+@keyframes unMagnifyData {
+  0% {clip-path: circle(10px at 5px 50%);}
+  100% {clip-path: circle(10px at 45px 50%);}
+}
+
+.un-move-magnifying-glass {animation: unMoveMagnifyingGlass 1.5s linear forwards;}
+
+@keyframes unMoveMagnifyingGlass {
+  0% {transform: translate(-15px,0px);}
   100% {transform: translate(20px,0px);}
 }
 
