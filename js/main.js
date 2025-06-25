@@ -967,8 +967,6 @@ function moveHyperspeedLeverDown() {
 
 function punchIt() {
   console.log('punched it');
-  console.log(paths);
-  
   disableDisplayButtons();
   moveHyperspeedLeverUp();
   setTimeout(() => {
@@ -985,6 +983,7 @@ function punchIt() {
       animationFrameId = requestAnimationFrame(animateElongation);
     }
   }, 500);
+  setTimeout(showPlanetes,5750);
 }
 
 function easeInSine(t) {
@@ -1111,6 +1110,20 @@ function animateElongation(timestamp) {
     // Start color animation for each path
     paths.forEach(path => animateSingleLineColor(path));
   }
+}
+
+const punchedPlanete1 = document.querySelector('#punched-planete-1');
+const punchedPlanete2 = document.querySelector('#punched-planete-2');
+const punchedPlanete3 = document.querySelector('#punched-planete-3');
+
+function showPlanetes() {
+  console.log('show planetes');
+  punchedPlanete1.style.opacity = "1";
+  punchedPlanete1.style.transform = "scale(1)";
+  punchedPlanete2.style.opacity = "1";
+  punchedPlanete2.style.transform = "scale(1)";
+  punchedPlanete3.style.opacity = "1";
+  punchedPlanete3.style.transform = "scale(1)";
 }
 
 function resetPunchIt() {
