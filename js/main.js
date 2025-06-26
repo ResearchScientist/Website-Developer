@@ -197,7 +197,7 @@ const computerButton = document.querySelector('#computer-button');
 const phoneButton = document.querySelector('#phone-button');
 const wheelButton = document.querySelector('#wheel-button');
 const fluxCapacitorButton = document.querySelector('#flux-capacitor-button');
-const punchItButton = document.querySelector('#punch-it');
+const punchItButton = document.querySelector('#punch-it-button');
 const engineButton = document.querySelector('#engine-button');
 const gaugeButton = document.querySelector('#gauge-button');
 const vacuumTubesButton = document.querySelector('#vacuum-tubes-button');
@@ -249,7 +249,7 @@ const insetButtonsConfigurations = {
   },
   'punchItButton':  {
     functions: [f1,f2,f3,resetPunchIt],
-    labels: ["fun1","fun2","fun3", "clear"]
+    labels: ["illus","anim","conv", "leave"]
   },
   'engineButton':  {
     functions: [g1,g2,g3,resetEngine],
@@ -312,7 +312,6 @@ function removeInsetButtonsEventListeners() {
       currentInsetButtonFunctions[index] = null;
     }
   });
-  console.log('event listeners removed');
 }
 
 function addInsetButtonsEventListeners(configFunctionsArray) {
@@ -322,7 +321,6 @@ function addInsetButtonsEventListeners(configFunctionsArray) {
       currentInsetButtonFunctions[index] = func;
     }
   });
-  console.log('event listeners added');
 }
 
 function updateInsetButtonsLabels(labelsArray) {
@@ -336,7 +334,6 @@ function updateInsetButtonsLabels(labelsArray) {
     }
   });
   popUpAllInsetButtons();
-  console.log('labels updated');
 }
 
 function disableDisplayButtons() {
@@ -966,11 +963,28 @@ function moveHyperspeedLeverDown() {
 }
 
 function punchIt() {
-  console.log('punched it');
-  disableDisplayButtons();
-  moveHyperspeedLeverUp();
-  setTimeout(() => {
-    if (!animationFrameId) {
+  if (punchItButton.getAttribute('data-station-active') === 'false') {
+    disableDisplayButtons();
+    punchItButton.disabled = false;
+    punchItButton.dataset.stationActive = true;
+    moveHyperspeedLeverUp();
+    setTimeout(startHyperjump,500);
+    setTimeout(showPlanetes,5750);
+    setTimeout(() => {
+      updateInsetButtons('punchItButton');
+    }, 1000);
+  } else if (punchItButton.getAttribute('data-station-active') === 'true') {
+    movePlanetes();
+    setTimeout(startHyperjump,1000);
+    setTimeout(hidePlanetes,1000);
+    resetPunchIt();
+  } else {
+    punchItButton.dataset.stationActive = false;
+  }
+}
+
+function startHyperjump() {
+  if (!animationFrameId) {
       startTime = null;
       animationPhase = 'elongate';
       // Remove any existing color paths
@@ -982,8 +996,6 @@ function punchIt() {
       });
       animationFrameId = requestAnimationFrame(animateElongation);
     }
-  }, 500);
-  setTimeout(showPlanetes,5750);
 }
 
 function easeInSine(t) {
@@ -1063,12 +1075,7 @@ function animateSingleLineColor(path) {
           animationPhase = 'reset';
           startTime = null;
           animationFrameId = requestAnimationFrame(animateReset);
-          setTimeout(moveHyperspeedLeverDown,1000);
-          setTimeout(enableDisplayButtons,1000);
-          // setTimeout(() => {
-          //   console.log('animation finish 1');
-
-          // }, 1000);
+          moveHyperspeedLeverDown();
         }
       }
     }
@@ -1117,7 +1124,6 @@ const punchedPlanete2 = document.querySelector('#punched-planete-2');
 const punchedPlanete3 = document.querySelector('#punched-planete-3');
 
 function showPlanetes() {
-  console.log('show planetes');
   punchedPlanete1.style.opacity = "1";
   punchedPlanete1.style.transform = "scale(1)";
   punchedPlanete2.style.opacity = "1";
@@ -1126,8 +1132,31 @@ function showPlanetes() {
   punchedPlanete3.style.transform = "scale(1)";
 }
 
+function movePlanetes() {
+  punchedPlanete1.style.transition = "transform 1s ease-in, opacity .2s";
+  punchedPlanete2.style.transition = "transform 1s ease-in, opacity .2s";
+  punchedPlanete3.style.transition = "transform 1s ease-in, opacity .2s";
+  punchedPlanete1.style.transform = "translate(-210%,60%)";
+  punchedPlanete2.style.transform = "translate(180%,30%)";
+  punchedPlanete3.style.transform = "translate(0,30%)";
+}
+
+function hidePlanetes() {
+  punchedPlanete1.style.opacity = "0";
+  punchedPlanete1.style.transform = "translate(0,0) scale(.1)";
+  punchedPlanete2.style.opacity = "0";
+  punchedPlanete2.style.transform = "translate(0,0) scale(.1)";
+  punchedPlanete3.style.opacity = "0";
+  punchedPlanete3.style.transform = "translate(0,0) scale(.1)";
+  punchedPlanete1.style.transition = "transform .2s , opacity .2s";
+  punchedPlanete2.style.transition = "transform .2s , opacity .2s";
+  punchedPlanete3.style.transition = "transform .2s , opacity .2s";
+}
+
 function resetPunchIt() {
   resetInsetButtons();
+  enableDisplayButtons();
+  punchItButton.dataset.stationActive = false;
 }
 
 //  ENGINE
