@@ -634,12 +634,17 @@
 }
 
 #dradis-display , #computer-display , #phone-display {
+  width: 95%;
+  height: 80%;
   grid-column: 1/-1;
   grid-row: 1/-1;
   justify-self: center;
-  align-self: flex-start;
+  align-self: center;
   transition: opacity 1s;
   opacity: 0;
+  background-color: rgba(0,0,5,.8);
+  border-radius: 25px;
+  border: 1px solid rgba(204,204,255,.2);
 }
 
 
