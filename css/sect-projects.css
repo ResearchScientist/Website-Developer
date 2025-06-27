@@ -1201,6 +1201,29 @@
   transition: transform .2s , opacity .2s;
 }
 
+#use-the-force-bubble {
+  width: 200px;
+  height: 100px;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: center;
+  perspective: 200px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#use-the-force {
+  text-align: center;
+  transform: rotateX(45deg);
+}
+
+#use-the-force p {
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--accent-orange);
+}
+
 /* ENGINE */
 
 #engine-button {

@@ -248,7 +248,7 @@ const insetButtonsConfigurations = {
     labels: ["Academic","Skills","Love", "Clear"]
   },
   'punchItButton':  {
-    functions: [f1,f2,f3,resetPunchIt],
+    functions: [f1,f2,f3,useTheForce],
     labels: ["illus","anim","conv", "leave"]
   },
   'engineButton':  {
@@ -974,7 +974,8 @@ function punchIt() {
       updateInsetButtons('punchItButton');
     }, 1000);
   } else if (punchItButton.getAttribute('data-station-active') === 'true') {
-    movePlanetes();
+    moveHyperspeedLeverUp();
+    useTheForceBubble.style.opacity = "0";
     setTimeout(startHyperjump,1000);
     setTimeout(hidePlanetes,1000);
     resetPunchIt();
@@ -1122,6 +1123,7 @@ function animateElongation(timestamp) {
 const punchedPlanete1 = document.querySelector('#punched-planete-1');
 const punchedPlanete2 = document.querySelector('#punched-planete-2');
 const punchedPlanete3 = document.querySelector('#punched-planete-3');
+const useTheForceBubble = document.querySelector('#use-the-force-bubble');
 
 function showPlanetes() {
   punchedPlanete1.style.opacity = "1";
@@ -1132,25 +1134,17 @@ function showPlanetes() {
   punchedPlanete3.style.transform = "scale(1)";
 }
 
-function movePlanetes() {
-  punchedPlanete1.style.transition = "transform 1s ease-in, opacity .2s";
-  punchedPlanete2.style.transition = "transform 1s ease-in, opacity .2s";
-  punchedPlanete3.style.transition = "transform 1s ease-in, opacity .2s";
-  punchedPlanete1.style.transform = "translate(-210%,60%)";
-  punchedPlanete2.style.transform = "translate(180%,30%)";
-  punchedPlanete3.style.transform = "translate(0,30%)";
-}
-
 function hidePlanetes() {
   punchedPlanete1.style.opacity = "0";
-  punchedPlanete1.style.transform = "translate(0,0) scale(.1)";
   punchedPlanete2.style.opacity = "0";
-  punchedPlanete2.style.transform = "translate(0,0) scale(.1)";
   punchedPlanete3.style.opacity = "0";
-  punchedPlanete3.style.transform = "translate(0,0) scale(.1)";
-  punchedPlanete1.style.transition = "transform .2s , opacity .2s";
-  punchedPlanete2.style.transition = "transform .2s , opacity .2s";
-  punchedPlanete3.style.transition = "transform .2s , opacity .2s";
+  punchedPlanete1.style.transform = "scale(.1)";
+  punchedPlanete2.style.transform = "scale(.1)";
+  punchedPlanete3.style.transform = "scale(.1)";
+}
+
+function useTheForce() {
+  useTheForceBubble.style.opacity = "1";
 }
 
 function resetPunchIt() {
