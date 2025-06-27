@@ -249,7 +249,7 @@ const insetButtonsConfigurations = {
   },
   'punchItButton':  {
     functions: [f1,f2,f3,useTheForce],
-    labels: ["illus","anim","conv", "leave"]
+    labels: ["designs","visuals","systems", "leave"]
   },
   'engineButton':  {
     functions: [g1,g2,g3,resetEngine],
@@ -631,11 +631,19 @@ const lightningLsvg = document.querySelector('#lightning-L-svg');
 const lightningRsvg = document.querySelector('#lightning-R-svg');
 
 function fluxIt() {
-  console.log('Get to 88!');
-  disableDisplayButtons();
-  fluxCapacitorOnIMG.classList.remove('flux-capacitor-off');
-  fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
-  setTimeout(showSpeedometer,500);
+  if (fluxCapacitorButton.getAttribute('data-station-active') === 'false') {
+    console.log('Get to 88!');
+    disableDisplayButtons();
+    fluxCapacitorButton.disabled = false;
+    fluxCapacitorButton.dataset.stationActive = true;
+    fluxCapacitorOnIMG.classList.remove('flux-capacitor-off');
+    fluxCapacitorOnIMG.classList.add('flux-capacitor-on');
+    setTimeout(showSpeedometer,500);
+  } else if (fluxCapacitorButton.getAttribute('data-station-active') === 'true') {
+    resetFlux();
+  } else {
+    fluxCapacitorButton.dataset.stationActive = false;
+  }
 }
 
 function showSpeedometer() {
@@ -657,8 +665,6 @@ function speedMetronome() {
   speed++;
   updateSpeedometer(speed);
 
-  // let currentFunction = () => {};
-
   switch (true) {
     case speed == 87:
       acceleration = 1500;
@@ -675,34 +681,10 @@ function speedMetronome() {
     case speed > 75:
       acceleration = 200;
       break;
-    case speed > 60:
-      acceleration = 100;
-      break;
-    case speed == 60:
-      acceleration = 250;
-      // currentFunction = gear4;
-      break;
-    case speed > 40:
-      acceleration = 100;
-      break;
-    case speed == 40:
-      acceleration = 250;
-      // currentFunction = gear3;
-      break;
-    case speed > 30:
-      acceleration = 100;
-      break;
-    case speed == 30:
-      acceleration = 250;
-      // currentFunction = gear2;
-      break;
     default:
       acceleration = 100;
-      // currentFunction = gear1;
       break;
   }
-
-  // currentFunction();
 
   if (speed >= 88) {
     clearInterval(intervalID);
@@ -847,17 +829,7 @@ function showTrajectoryNames() {
   });
   updateInsetButtons('fluxCapacitorButton');
   strobeLights();
-  // resetFluxCapacitorButton();
 }
-
-// function resetFluxCapacitorButton() {
-//   fluxCapacitorButton.disabled = false;
-//   fluxCapacitorButton.removeEventListener('click',fluxIt);
-//   fluxCapacitorButton.addEventListener('click',resetFlux,{once:true});
-//   setTimeout(() => {
-//     fluxCapacitorButton.addEventListener('click',fluxIt);
-//   }, 1000);
-// }
 
 function strobeLights() {
   for (var i=0 ; i < lightList.length ; i++) {
@@ -913,6 +885,7 @@ function resetFlux() {
     lightList[i].style.opacity = "0";
   }
   resetInsetButtons();
+  fluxCapacitorButton.dataset.stationActive = false;
 }
 
 function trajectoryNameFade() {

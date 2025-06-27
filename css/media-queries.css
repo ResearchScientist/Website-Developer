@@ -12,7 +12,3 @@
   #bridge-stations > section:nth-of-type(2) {grid-column: 1/-1; grid-row: 3/4;}
   #bridge-stations > section:nth-of-type(3) {grid-column: 1/-1; grid-row: 5/6;}
 }
-
-/* @media screen and (max-width: 800px) { */
-  /* .telescope-pan {animation-duration: 5s;} */
-/* } */
