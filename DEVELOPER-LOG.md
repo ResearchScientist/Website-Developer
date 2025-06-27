@@ -39,13 +39,9 @@ These changes improve the visitor's experience by giving them more control over 
 
 While refactoring moved previous unused code to a temporary directory. You know, just in case.
 
-Used webp for the largest images. Kept the smallest images as png, mostly due to keeping the images sharp at various resolutions. Testing different formats and sizes for various device resolutions. Using 1250x1080 as the highest resoluton for each ship door. May need higher to accomodate some longer mobile devices when using landscape orientation. If so will use the `picture` element. Making higher resolution images depends on my blender installation being able to render them.
-
 > Mar 2025
 
-Using Blender for making the 3D images and optimizing as webp instead of png before adding to site.
-
-Redesigning the projects section. Current implementation has too many animations that play prior to the user being able to engage. Will redesign so that the user can engage more meaningfully at page load.
+Redesigning the projects section. Current implementation has too many animations that play prior to the user being able to engage. Will redesign so that the user can engage quickly and more meaningfully at page load.
 
 Removed all animations that autoplayed.
 
@@ -77,11 +73,15 @@ Updated the `start_url` in the manifest.json file to reflect the name of the rep
 
 # Webp Images
 
+Using Blender for making the 3D images and optimizing as webp instead of png before adding to site.
+
 Added `srcset` to img tags. Rerendered all images as webp files at 1x 2x 3x. This should lower the initial page load size and improve speed as only the best matched assets should download.
 
 Gave them width and height or width and aspect ratio.
 
-Except for the ship door images. These I kept at a one large size. when using the picture element with media queries it became unwieldly to capture so many different device width, heights, aspect ratios, orientations, and pixel densities. These are the only 2 images that I'm scaling down to fit devices so the overall impact on the site is relatively minimal in terms of bandwidth and initial load metrics. 
+Testing different formats and sizes for various device resolutions. Using 1250x1080 as the highest resoluton for each ship door. May need higher to accomodate some longer mobile devices when using landscape orientation. If so will use the `picture` element. Making higher resolution images depends on my blender installation being able to render them.
+
+Except for the ship door images. These I kept at a one large size. when using the picture element with media queries it became unwieldly to capture so many different device width, heights, aspect ratios, orientations, and pixel densities. These are the only 2 images that I'm scaling down to fit devices so the overall impact on the site is relatively minimal in terms of bandwidth and initial load metrics.
 
 # 3D Images
 
