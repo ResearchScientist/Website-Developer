@@ -1209,7 +1209,7 @@
   background-color: teal;
 }
 
-#punched-planete-1-section {
+#punched-planete-1-section , #punched-planete-2-section , #punched-planete-3-section {
   width: 90%;
   height: 80%;
   padding: 20px;
@@ -1223,10 +1223,15 @@
   border: 1px solid rgba(204,204,255,.2);
   background: rgba(0,0,0,.5);
   backdrop-filter: blur(10px);
+  opacity: 0;
 }
 
-#punched-planete-1-section h1 {
-  width: 180px;
+#punched-planete-3-section {
+  opacity: 1;
+}
+
+#punched-planete-1-section h1 , #punched-planete-2-section h1, #punched-planete-3-section h1 {
+  width: 200px;
   margin: 0px auto 20px;
   grid-column: 1/-1;
   grid-row: 1/-1;
@@ -1235,13 +1240,13 @@
   letter-spacing: normal;
 }
 
-#punched-planete-1-section ul {
+#punched-planete-1-section ul , #punched-planete-2-section ul , #punched-planete-3-section ul {
   grid-column: 1/-1;
   grid-row: 1/-1;
   align-self: center;
 }
 
-#punched-planete-1-section ul li {
+#punched-planete-1-section ul li , #punched-planete-2-section ul li , #punched-planete-3-section ul li {
   display: grid;
   grid-template-columns: 30px 1fr;
   grid-template-rows: 30px;
@@ -1249,13 +1254,13 @@
   align-items: center;
 }
 
-#punched-planete-1-section ul li img {
+#punched-planete-1-section ul li img , #punched-planete-2-section ul li img , #punched-planete-3-section ul li img {
   height: 20px;
   grid-column: 1/2;
   grid-row: 1/-1;
 }
 
-#punched-planete-1-section ul li p {
+#punched-planete-1-section ul li p , #punched-planete-2-section ul li p , #punched-planete-3-section ul li p {
   grid-column: 2/-1;
   grid-row: 1/-1;
   font-size: 12px;
