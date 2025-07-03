@@ -1,6 +1,6 @@
 /* RESETS */
 
-html,body,main,header,footer,section,aside,div,nav,a,h1,h2,h3,h4,p,span,figure,button,canvas {
+html,body,main,header,footer,section,aside,div,nav,a,h1,h2,h3,h4,p,span,ul,li,figure,button,canvas {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,6 +10,10 @@ a {
   text-decoration: none;
   color: var(--text-black);
   -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+  list-style-type: none;
 }
 
 button {
