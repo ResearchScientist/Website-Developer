@@ -1220,14 +1220,12 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
+  border-radius: 20px;
   border: 1px solid rgba(204,204,255,.2);
   background: rgba(0,0,0,.5);
   backdrop-filter: blur(10px);
   opacity: 0;
-}
-
-#punched-planete-3-section {
-  opacity: 1;
+  transition: opacity .2s;
 }
 
 #punched-planete-1-section h1 , #punched-planete-2-section h1, #punched-planete-3-section h1 {
