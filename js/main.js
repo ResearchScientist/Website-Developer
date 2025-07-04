@@ -248,8 +248,8 @@ const insetButtonsConfigurations = {
     labels: ["Academic","Skills","Love", "Clear"]
   },
   'punchItButton':  {
-    functions: [f1,f2,f3,useTheForce],
-    labels: ["designs","visuals","systems", "leave"]
+    functions: [showPunchedPlaneteDisplay,showPunchedPlaneteDisplay,showPunchedPlaneteDisplay,useTheForce],
+    labels: ["art","visuals","systems", "leave"]
   },
   'engineButton':  {
     functions: [g1,g2,g3,resetEngine],
@@ -277,9 +277,6 @@ function c3() {console.log('c3');}
 function d1() {console.log('d1');}
 function d2() {console.log('d2');}
 function d3() {console.log('d3');}
-function f1() {console.log('f1');}
-function f2() {console.log('f2');}
-function f3() {console.log('f3');}
 function g1() {console.log('g1');}
 function g2() {console.log('g2');}
 function g3() {console.log('g3');}
@@ -1096,6 +1093,9 @@ function animateElongation(timestamp) {
 const punchedPlanete1 = document.querySelector('#punched-planete-1');
 const punchedPlanete2 = document.querySelector('#punched-planete-2');
 const punchedPlanete3 = document.querySelector('#punched-planete-3');
+const punchedPlanete1Section = document.querySelector('#punched-planete-1-section');
+const punchedPlanete2Section = document.querySelector('#punched-planete-2-section');
+const punchedPlanete3Section = document.querySelector('#punched-planete-3-section');
 const useTheForceBubble = document.querySelector('#use-the-force-bubble');
 
 function showPlanetes() {
@@ -1116,11 +1116,52 @@ function hidePlanetes() {
   punchedPlanete3.style.transform = "scale(.1)";
 }
 
+function showPunchedPlaneteDisplay(e) {
+  const currentPunchedPlanet = e.currentTarget.id;
+  switch (currentPunchedPlanet) {
+    case 'inset-button-1':
+      setTimeout(() => {
+        punchedPlanete1Section.style.opacity = "1";
+      }, 200);
+      punchedPlanete2Section.style.opacity = "0";
+      punchedPlanete3Section.style.opacity = "0";
+      useTheForceBubble.style.opacity = "0";
+      break;
+    case 'inset-button-2':
+      punchedPlanete1Section.style.opacity = "0";
+      setTimeout(() => {
+        punchedPlanete2Section.style.opacity = "1";
+      }, 200);
+      punchedPlanete3Section.style.opacity = "0";
+      useTheForceBubble.style.opacity = "0";
+      break;
+    case 'inset-button-3':
+      punchedPlanete1Section.style.opacity = "0";
+      punchedPlanete2Section.style.opacity = "0";
+      setTimeout(() => {
+        punchedPlanete3Section.style.opacity = "1";
+      }, 200);
+      useTheForceBubble.style.opacity = "0";
+      break;
+    default:
+      break;
+  }
+}
+
 function useTheForce() {
-  useTheForceBubble.style.opacity = "1";
+  setTimeout(() => {
+    useTheForceBubble.style.opacity = "1";
+  }, 200);
+  punchedPlanete1Section.style.opacity = "0";
+  punchedPlanete2Section.style.opacity = "0";
+  punchedPlanete3Section.style.opacity = "0";
 }
 
 function resetPunchIt() {
+  punchedPlanete1Section.style.opacity = "0";
+  punchedPlanete2Section.style.opacity = "0";
+  punchedPlanete3Section.style.opacity = "0";
+  useTheForceBubble.style.opacity = "0";
   resetInsetButtons();
   enableDisplayButtons();
   punchItButton.dataset.stationActive = false;
