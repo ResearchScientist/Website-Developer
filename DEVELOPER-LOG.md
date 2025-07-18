@@ -57,6 +57,10 @@ To have the shots come out of the ship as it is moving I placed the last shot in
 
 Very happy with the lever animation. Used 3 images. Animated the lever moving up or down and switched the braces when the lever was halfway through the animation. Quick and performant.
 
+# Lightcycles
+
+Since I had many leftover tokens from the Bolt hackathon, I used AI to show me a working version of the tron lightcycle race from the arcade game. Studied the code and had multiple conversations with the AI to better understand the mechanics of making a game.
+
 # Magnifying Glass Animation
 
 I had previously drawn a flat illustration of a computer with a magnifying glass over the screen. The glass magnified 1s and 0s. I used masking to make the effect. I thought how cool if it could be animated. But I was very early in my illustrating journey and even earlier in my programming journey. Now I'm able to model a 3d computer and magnifying glass. Render it as a webp img and interactively animate it. Pretty neat.
