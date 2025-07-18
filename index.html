@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="css/line-art.css">
   <script src="js/main.js" defer></script>
   <script src="js/satellite.js" defer></script>
+  <script src="js/lightcycles.js" defer></script>
   <title>Portfolio</title>
 </head>
 <body>
@@ -467,6 +468,19 @@
               <li><img src="img/favicon32.png" alt="SweetHurts"><p>Chatbot dialogue system.</p></li>
               <li><img src="img/favicon32.png" alt="motor neuron"><p>Database schema.</p></li>
             </ul>
+          </section>
+          <section id="lightcycles-section">
+            <section id="lightcycles-title-screen">
+              <h1>LIGHTCYCLES</h1>
+              <section id="scores">
+                <div><p>PLAYER</p><p id="player-score">0</p></div>
+                <div><p>NPC1</p><p id="npc1-score">0</p></div>
+                <div><p>NPC2</p><p id="npc2-score">0</p></div>
+              </section>
+            </section>
+            <section id="the-grid">
+              <canvas id="lightcycles-canvas"></canvas>
+            </section>
           </section>
         </section>
         <button type="button" id="ship-doors-activate" class="ship-door-sign-green">OPEN</button>

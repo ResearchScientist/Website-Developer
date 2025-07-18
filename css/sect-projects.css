@@ -1303,6 +1303,65 @@
   transition: opacity .25s;
 }
 
+/* LIGHT CYCLES */
+
+#lightcycles-section {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: center;
+  align-self: flex-start;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#lightcycles-title-screen h1 {
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+#lightcycles-title-screen #scores {
+  margin-right: 3px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+#lightcycles-title-screen #scores div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#lightcycles-title-screen #scores div p {
+  font-size: 8px;
+}
+
+#lightcycles-title-screen #scores div:nth-of-type(2) p:nth-of-type(1) {
+  color: var(--primary-blue);
+}
+
+#lightcycles-title-screen #scores div:nth-of-type(3) p:nth-of-type(1) {
+  color: var(--accent-orange);
+}
+
+#the-grid {
+  width: 70%;
+  aspect-ratio: 16/9;
+  margin: 10px auto 0;
+  border: 1px solid rgba(180,200,250,.3);
+  background-color: rgba(0,0,0,.85);
+}
+
+/* #lightcycles-canvas { */
+  /* width: 100%; */
+  /* border: 1px solid salmon; */
+/* } */
+
+/* GAUGE DIAL */
+
 #gauge-button {
   display: grid;
   grid-template-columns: 100%;
@@ -1330,6 +1389,8 @@
   0% {transform: rotate(50deg);}
   100% {transform: rotate(-130deg);}
 }
+
+/* VACUUM TUBES */
 
 #vacuum-tubes-button {
   display: grid;
