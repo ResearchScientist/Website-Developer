@@ -253,7 +253,7 @@ const insetButtonsConfigurations = {
   },
   'engineButton':  {
     functions: [g1,g2,g3,resetEngine],
-    labels: ["testing","fun2","fun3", "clear"]
+    labels: ["start","fun2","fun3", "exit"]
   },
   'gaugeButton':  {
     functions: [h1,h2,h3,resetGauge],
@@ -1170,13 +1170,27 @@ function resetPunchIt() {
 //  ENGINE
 
 const engineOnIMG = document.querySelector('#engine-on-img');
+const lightcyclesSection = document.querySelector('#lightcycles-section');
 
 function checkEngine() {
-  engineOnIMG.style.opacity = "1";
+  if (engineButton.getAttribute('data-station-active') === 'false') {
+    engineOnIMG.style.opacity = "1";
+    lightcyclesSection.style.opacity = '1';
+    disableDisplayButtons();
+    engineButton.disabled = false;
+    engineButton.dataset.stationActive = true;
+    updateInsetButtons('engineButton');
+  } else if (engineButton.getAttribute('data-station-active') === 'true') {
+    resetEngine();
+  } else {
+    engineButton.dataset.stationActive = false;
+  }
 }
 
 function resetEngine() {
   engineOnIMG.style.opacity = "0";
+  lightcyclesSection.style.opacity = '0';
+  engineButton.dataset.stationActive = false;
   resetInsetButtons();
 }
 
