@@ -26,6 +26,7 @@ Reverted back to one dev log. Maintaining multiple ones was cumbersome.
 - projects
 - resume
 - svgs
+- lightcycles
 
 # Projects Section Redesign
 
