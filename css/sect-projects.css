@@ -1393,6 +1393,10 @@
   color: var(--text-blue);
 }
 
+.controls-start {
+  margin-bottom: 20px;
+}
+
 
 
 /* GAUGE DIAL */

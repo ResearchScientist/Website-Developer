@@ -5,5 +5,7 @@ class LightCyclesGame {
     this.gridSize = 10;
     this.gridWidth = this.canvas.width / this.gridSize;
     this.gridHeight = this.canvas.height / this.gridSize;
+
+    this.lightcyclesEventListeners();
   }
 }
