@@ -1,4 +1,4 @@
-class LightCyclesGame {
+export class LightCyclesGame {
   constructor() {
     this.canvas = document.getElementById('lightcycles-canvas');
     this.ctx = this.canvas.getContext('2d');
@@ -6,6 +6,8 @@ class LightCyclesGame {
     this.gridWidth = this.canvas.width / this.gridSize;
     this.gridHeight = this.canvas.height / this.gridSize;
 
-    this.lightcyclesEventListeners();
+  }
+  handleStartButtonClick() {
+    console.log('lc js handled it');
   }
 }
