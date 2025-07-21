@@ -1192,18 +1192,17 @@ function checkEngine() {
   }
 }
 
+function startLightcyclesGame() {
+  if (gameInstance) {
+    gameInstance.handleStartButtonClick();
+  }
+}
+
 function resetEngine() {
   engineOnIMG.style.opacity = "0";
   lightcyclesSection.style.opacity = '0';
   engineButton.dataset.stationActive = false;
   resetInsetButtons();
-}
-
-function startLightcyclesGame() {
-  if (gameInstance) {
-    gameInstance.handleStartButtonClick();
-    console.log('starting lightcycles');
-  }
 }
 
 // GAUGE
