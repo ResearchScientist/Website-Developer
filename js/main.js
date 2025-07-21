@@ -1,3 +1,5 @@
+import { LightCyclesGame } from "./lightcycles.js";
+
 // TAB TITLE
 
 window.onfocus = function() {
@@ -252,7 +254,7 @@ const insetButtonsConfigurations = {
     labels: ["art","visuals","systems", "leave"]
   },
   'engineButton':  {
-    functions: [g1,g2,g3,resetEngine],
+    functions: [startLightcyclesGame,g2,g3,resetEngine],
     labels: ["start","fun2","fun3", "exit"]
   },
   'gaugeButton':  {
@@ -277,7 +279,7 @@ function c3() {console.log('c3');}
 function d1() {console.log('d1');}
 function d2() {console.log('d2');}
 function d3() {console.log('d3');}
-function g1() {console.log('g1');}
+// function g1() {console.log('g1');}
 function g2() {console.log('g2');}
 function g3() {console.log('g3');}
 function h1() {console.log('h1');}
@@ -354,7 +356,7 @@ function resetInsetButtons() {
 function resetInsetButtonsNames() {
   for (let i = 0; i < insetButtonsArray.length; i++) {
     let currentInsetButton = insetButtonsArray[i];
-    resetDelay = i * 200;
+    let resetDelay = i * 200;
     setTimeout(() => {
       let currentP = currentInsetButton.querySelector('span');
       currentP.textContent = "ready";
@@ -1172,6 +1174,8 @@ function resetPunchIt() {
 const engineOnIMG = document.querySelector('#engine-on-img');
 const lightcyclesSection = document.querySelector('#lightcycles-section');
 
+let gameInstance = null;
+
 function checkEngine() {
   if (engineButton.getAttribute('data-station-active') === 'false') {
     engineOnIMG.style.opacity = "1";
@@ -1180,6 +1184,7 @@ function checkEngine() {
     engineButton.disabled = false;
     engineButton.dataset.stationActive = true;
     updateInsetButtons('engineButton');
+    gameInstance = new LightCyclesGame();
   } else if (engineButton.getAttribute('data-station-active') === 'true') {
     resetEngine();
   } else {
@@ -1192,6 +1197,13 @@ function resetEngine() {
   lightcyclesSection.style.opacity = '0';
   engineButton.dataset.stationActive = false;
   resetInsetButtons();
+}
+
+function startLightcyclesGame() {
+  if (gameInstance) {
+    gameInstance.handleStartButtonClick();
+    console.log('starting lightcycles');
+  }
 }
 
 // GAUGE
