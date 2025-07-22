@@ -189,7 +189,7 @@ export class LightCyclesGame {
       this.userPrevUpTime = currentTime;
     }
     if (currentTime - this.npcPrevUpTime >= this.npcInterval) {
-      // this.updateNPCs();
+      this.updateNPCs();
       this.npcPrevUpTime = currentTime;
     }
     this.render();
@@ -217,6 +217,30 @@ export class LightCyclesGame {
     this.grid[this.user.y][this.user.x] = this.user;
   }
 
+
+
+  updateNPCs() {
+    const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
+    if (aliveLightcycles.length <=1) {
+      this.endGame();
+      return;
+    }
+    [this.npc1,this.npc2].forEach(lightcycle => {
+      if (!lightcycle.alive) return;
+      this.updateAInpc(lightcycle);
+      const newPos = this.getNewPosition(lightcycle);
+      if (this.checkCollision(newPos.x,newPos.y)) {
+        lightcycle.alive = false;
+        this.checkGameEnd();
+        return;
+      }
+      lightcycle.x = newPos.x;
+      lightcycle.y = newPos.y;
+      lightcycle.trail.push({x: lightcycle.x, y: lightcycle.y});
+      this.grid[lightcycle.y][lightcycle.x] = lightcycle;
+    });
+  }
+
   getNewPosition(lightcycle) {
     const directions = {
       'up': {x: 0, y: -1},
@@ -236,6 +260,17 @@ export class LightCyclesGame {
       return true;
     }
     return this.grid[y][x] !== 0;
+  }
+
+  checkGameEnd() {
+    const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
+    if (aliveLightcycles.length <= 1) {
+      this.endGame();
+    }
+  }
+
+  endGame() {
+    console.log('end of line');
   }
 
   render() {
