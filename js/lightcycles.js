@@ -3,7 +3,7 @@ export class LightCyclesGame {
     // GRID SETUP
     this.canvas = document.getElementById('lightcycles-canvas');
     this.ctx = this.canvas.getContext('2d');
-    this.gridSize = 10;
+    this.gridSize = 6;
     this.gridWidth = this.canvas.width / this.gridSize;
     this.gridHeight = this.canvas.height / this.gridSize;
     this.lightcyclesInfo = document.getElementById('lightcycles-info');
@@ -189,7 +189,7 @@ export class LightCyclesGame {
       this.userPrevUpTime = currentTime;
     }
     if (currentTime - this.npcPrevUpTime >= this.npcInterval) {
-      // this.updateNPCs();
+      this.updateNPCs();
       this.npcPrevUpTime = currentTime;
     }
     this.render();
@@ -208,13 +208,68 @@ export class LightCyclesGame {
     const newPos = this.getNewPosition(this.user);
     if (this.checkCollision(newPos.x, newPos.y)) {
       this.user.alive = false;
-      // this.checkGameEnd();
+      this.checkGameEnd();
       return;
     }
     this.user.x = newPos.x;
     this.user.y = newPos.y;
     this.user.trail.push({x: this.user.x, y: this.user.y});
     this.grid[this.user.y][this.user.x] = this.user;
+  }
+
+  updateNPCs() {
+    const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
+    if (aliveLightcycles.length <=1) {
+      this.endGame();
+      return;
+    }
+    [this.npc1,this.npc2].forEach(lightcycle => {
+      if (!lightcycle.alive) return;
+      this.updateAInpc(lightcycle);
+      const newPos = this.getNewPosition(lightcycle);
+      if (this.checkCollision(newPos.x,newPos.y)) {
+        lightcycle.alive = false;
+        this.checkGameEnd();
+        return;
+      }
+      lightcycle.x = newPos.x;
+      lightcycle.y = newPos.y;
+      lightcycle.trail.push({x: lightcycle.x, y: lightcycle.y});
+      this.grid[lightcycle.y][lightcycle.x] = lightcycle;
+    });
+  }
+
+  updateAInpc(npc) {
+    const directions = ['up','down','left','right'];
+    const currentTime = Date.now();
+    // CHANGE DIRECTION BETWEEN 1 AND 3 SECONDS
+    if (currentTime - npc.deltaDirection < 1000 + Math.random() * 2000) {
+      return;
+    }
+    const nextPos = this.getNewPosition(npc);
+    if (this.checkCollision(nextPos.x, nextPos.y)) {
+      const validDirections = directions.filter(dir => {
+        if (!this.isValidDirection(npc.direction, dir)) return false;
+        const testPos = this.getNewPosition({...npc,direction: dir});
+        return !this.checkCollision(testPos.x, testPos.y);
+      });
+      if (validDirections.length > 0) {
+        npc.direction = validDirections[Math.floor(Math.random() * validDirections.length)];
+        npc.deltaDirection = currentTime;
+      }
+    } else {
+      if (Math.random() < 0.1) {
+        const validDirections = directions.filter(dir => {
+          if (!this.isValidDirection(npc.direction,dir)) return false;
+          const testPos = this.getNewPosition({...npc, direction: dir});
+          return !this.checkCollision(testPos.x, testPos.y);
+        });
+        if (validDirections.length > 0 && Math.random() < 0.3) {
+          npc.direction = validDirections[Math.floor(Math.random() * validDirections.length)];
+          npc.deltaDirection = currentTime;
+        }
+      }
+    }
   }
 
   getNewPosition(lightcycle) {
@@ -238,8 +293,22 @@ export class LightCyclesGame {
     return this.grid[y][x] !== 0;
   }
 
+  checkGameEnd() {
+    const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
+    if (aliveLightcycles.length <= 1) {
+      this.endGame();
+    }
+  }
+
+  endGame() {
+    this.gameRunning = false;
+    this.stopGameLoop();
+    console.log('end of line');
+  }
+
   render() {
-    this.ctx.fillStyle = 'rgba(0,0,0,0)';
+    // this.ctx.fillStyle = 'rgba(0,0,0,0)';
+    this.ctx.fillStyle = '#000';
     this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
     this.ctx.strokeStyle = 'rgba(25,50,75,0.2)';
     this.ctx.lineWidth = 1;
@@ -267,6 +336,28 @@ export class LightCyclesGame {
     this.ctx.fillStyle = lightcycle.color;
     this.ctx.shadowColor = lightcycle.color;
     this.ctx.shadowBlur = 10;
+    lightcycle.trail.forEach((segment, index) => {
+      const opacity = lightcycle.alive ? 1 : 0.3;
+      this.ctx.globalAlpha = opacity;
+      if (index === lightcycle.trail.length - 1) {
+        this.ctx.shadowBlur = 15;
+        this.ctx.fillRect(
+          segment.x * this.gridSize + 1,
+          segment.y * this.gridSize + 1,
+          this.gridSize - 2,
+          this.gridSize - 2
+        );
+      } else {
+        this.ctx.shadowBlur = 5;
+        this.ctx.fillRect(
+          segment.x * this.gridSize + 2,
+          segment.y * this.gridSize + 2,
+          this.gridSize - 4,
+          this.gridSize - 4
+        );
+      }
+    });
+    this.ctx.globalAlpha = 1;
+    this.ctx.shadowBlur = 0;
   }
-
 }
