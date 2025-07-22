@@ -13,6 +13,29 @@ export class LightCyclesGame {
     this.currentRound = 1;
     this.countdownActive = false;
     this.countdownValue = 3;
+    // USER AND NPC UPDATES AS LINKED TO SPEED
+    this.userInterval = 140;
+    this.npcInterval = 140;
+    this.baseInterval = 140;
+    this.slowInterval = 240; // s key held
+    this.fastInterval = 70;  // f key held
+    this.speedKeysHeld = {
+      s: false,
+      f: false
+    };
+    // WHEN USER OR NPC WAS LAST UPDATED
+    this.userPrevUpTime = 0;
+    this.npcPrevUpTime = 0;
+    // SCORES
+    this.scores = {
+      user: 0,
+      npc1: 0,
+      npc2: 0
+    };
+    // BIND KEYS
+    this.bindDirectionKeys();
+    this.bindSpeedKeys();
+    this.animationId = null;
   }
 
   handleStartButtonClick() {
@@ -56,31 +79,169 @@ export class LightCyclesGame {
       deltaDirection: 0
     };
 
+    this.lightcycles = [this.user, this.npc1, this.npc2];
+
+    this.lightcycles.forEach(lightcycle => {
+      lightcycle.trail = [{x: lightcycle.x, y: lightcycle.y}];
+      this.grid[lightcycle.y][lightcycle.x] = lightcycle;
+    });
+
+    this.npcInterval = this.changeNPCspeed();
+  }
+
+  changeNPCspeed() {
+    switch (this.currentRound) {
+      case 1: return 180;
+      case 2: return 160;
+      case 3: return 140;
+      case 4: return 120;
+      case 5: return 100;
+      case 6: return 80;
+      default: return 60;
+    }
+  }
+
+  bindDirectionKeys() {
+    document.addEventListener('keydown', (e) => {
+      if (!this.gameRunning) return;
+      let newDirection = null;
+      switch (e.key) {
+        case 'ArrowUp':
+          newDirection = 'up';
+          break;
+        case 'ArrowDown':
+          newDirection = 'down';
+          break;
+        case 'ArrowLeft':
+          newDirection = 'left';
+          break;
+        case 'ArrowRight':
+          newDirection = 'right';
+          break;
+      }
+      if (newDirection && this.isValidDirection(this.user.direction, newDirection)) {
+        this.user.direction = newDirection;
+      }
+    });
+  }
+
+  isValidDirection(currentDir,nextDir) {
+    const oppositeDirections = {
+      'up': 'down',
+      'down': 'up',
+      'left': 'right',
+      'right': 'left'
+    };
+    return oppositeDirections[currentDir] !== nextDir;
+  }
+
+  bindSpeedKeys() {
+    document.addEventListener('keydown', (e) => {
+      const speedKey = e.key.toLowerCase();
+      if (speedKey === 's') {
+        this.speedKeysHeld.s = true;
+        this.updateSpeed();
+      }
+      if (speedKey === 'f') {
+        this.speedKeysHeld.f = true;
+        this.updateSpeed();
+      }
+    });
+    document.addEventListener('keyup', (e) => {
+      const speedKey = e.key.toLowerCase();
+      if (speedKey === 's') {
+        this.speedKeysHeld.s = false;
+        this.updateSpeed();
+      }
+      if (speedKey === 'f') {
+        this.speedKeysHeld.f = false;
+        this.updateSpeed();
+      }
+    });
+  }
+
+  updateSpeed() {
+    if (this.speedKeysHeld.f && this.speedKeysHeld.s) {
+      this.userInterval = this.baseInterval;
+    } else if (this.speedKeysHeld.f) {
+      this.userInterval = this.fastInterval;
+    } else if (this.speedKeysHeld.s) {
+      this.userInterval = this.slowInterval;
+    } else {
+      this.userInterval = this.baseInterval;
+    }
   }
 
   startGame() {
     this.lightcyclesInfo.style.opacity = 0;
     this.gameRunning = true;
     this.init();
+    this.userPrevUpTime = 0;
+    this.npcPrevUpTime = 0;
     this.gameLoop();
     console.log(`is game running : ${this.gameRunning}`);
   }
 
   gameLoop(currentTime = 0) {
     if (!this.gameRunning) return;
-
-
-
+    if (currentTime - this.userPrevUpTime >= this.userInterval) {
+      this.updateUser();
+      this.userPrevUpTime = currentTime;
+    }
+    if (currentTime - this.npcPrevUpTime >= this.npcInterval) {
+      // this.updateNPCs();
+      this.npcPrevUpTime = currentTime;
+    }
     this.render();
-
     this.animationId = requestAnimationFrame((time) => this.gameLoop(time));
   }
 
+  stopGameLoop() {
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
+  }
+
+  updateUser() {
+    if (!this.user.alive) return;
+    const newPos = this.getNewPosition(this.user);
+    if (this.checkCollision(newPos.x, newPos.y)) {
+      this.user.alive = false;
+      // this.checkGameEnd();
+      return;
+    }
+    this.user.x = newPos.x;
+    this.user.y = newPos.y;
+    this.user.trail.push({x: this.user.x, y: this.user.y});
+    this.grid[this.user.y][this.user.x] = this.user;
+  }
+
+  getNewPosition(lightcycle) {
+    const directions = {
+      'up': {x: 0, y: -1},
+      'down': {x: 0, y: 1},
+      'left': {x: -1, y: 0},
+      'right': {x: 1, y: 0}
+    };
+    const dir = directions[lightcycle.direction];
+    return {
+      x: lightcycle.x + dir.x,
+      y: lightcycle.y + dir.y
+    };
+  }
+
+  checkCollision(x,y) {
+    if (x < 0 || x >= this.gridWidth || y < 0 || y >= this.gridHeight) {
+      return true;
+    }
+    return this.grid[y][x] !== 0;
+  }
 
   render() {
     this.ctx.fillStyle = 'rgba(0,0,0,0)';
     this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
-    this.ctx.strokeStyle = 'rgb(5,5,15)';
+    this.ctx.strokeStyle = 'rgba(25,50,75,0.2)';
     this.ctx.lineWidth = 1;
 
     for (let i = 0; i <= this.gridWidth; i++) {
@@ -89,11 +250,23 @@ export class LightCyclesGame {
       this.ctx.lineTo(i * this.gridSize, this.canvas.height);
       this.ctx.stroke();
     }
+
     for (let i = 0; i <= this.gridHeight; i++) {
       this.ctx.beginPath();
       this.ctx.moveTo(0, i * this.gridSize);
       this.ctx.lineTo(this.canvas.width, i * this.gridSize);
       this.ctx.stroke();
     }
+
+    this.lightcycles.forEach(lightcycle => {
+      this.drawLightcycle(lightcycle);
+    });
   }
+
+  drawLightcycle(lightcycle) {
+    this.ctx.fillStyle = lightcycle.color;
+    this.ctx.shadowColor = lightcycle.color;
+    this.ctx.shadowBlur = 10;
+  }
+
 }
