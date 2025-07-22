@@ -3,9 +3,9 @@ export class LightCyclesGame {
     // GRID SETUP
     this.canvas = document.getElementById('lightcycles-canvas');
     this.ctx = this.canvas.getContext('2d');
-    this.gridSize = 6;
-    this.gridWidth = this.canvas.width / this.gridSize;
-    this.gridHeight = this.canvas.height / this.gridSize;
+    this.gridSize = 4;
+    this.gridWidth = Math.floor(this.canvas.width / this.gridSize);
+    this.gridHeight = Math.floor(this.canvas.height / this.gridSize);
     this.lightcyclesInfo = document.getElementById('lightcycles-info');
     // STATE
     this.gameRunning = false;
@@ -179,6 +179,8 @@ export class LightCyclesGame {
     this.userPrevUpTime = 0;
     this.npcPrevUpTime = 0;
     this.gameLoop();
+    const startGameButton = document.querySelector('#inset-button-1');
+    startGameButton.disabled = true;
     console.log(`is game running : ${this.gameRunning}`);
   }
 
@@ -307,11 +309,13 @@ export class LightCyclesGame {
     if (aliveLightcycles.length === 0) {
       console.log("Jim! I'm a doctor not a gamer. But, yeah they're all derezed.");
     }
-    
+    const startGameButton = document.querySelector('#inset-button-1');
+    startGameButton.disabled = false;
   }
 
   render() {
-    this.ctx.fillStyle = 'rgba(0,0,0,.1)';
+    this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    this.ctx.fillStyle = 'rgba(0,0,0,.5)';
     this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
     this.ctx.strokeStyle = 'rgba(25,50,75,0.2)';
     this.ctx.lineWidth = 1;
@@ -338,25 +342,23 @@ export class LightCyclesGame {
   drawLightcycle(lightcycle) {
     this.ctx.fillStyle = lightcycle.color;
     this.ctx.shadowColor = lightcycle.color;
-    this.ctx.shadowBlur = 10;
+    this.ctx.shadowBlur = 2;
     lightcycle.trail.forEach((segment, index) => {
       const opacity = lightcycle.alive ? 1 : 0.3;
       this.ctx.globalAlpha = opacity;
       if (index === lightcycle.trail.length - 1) {
-        this.ctx.shadowBlur = 15;
         this.ctx.fillRect(
-          segment.x * this.gridSize + 1,
-          segment.y * this.gridSize + 1,
-          this.gridSize - 2,
-          this.gridSize - 2
+          segment.x * this.gridSize + .5,
+          segment.y * this.gridSize + .5,
+          this.gridSize - 1,
+          this.gridSize - 1
         );
       } else {
-        this.ctx.shadowBlur = 5;
         this.ctx.fillRect(
-          segment.x * this.gridSize + 2,
-          segment.y * this.gridSize + 2,
-          this.gridSize - 4,
-          this.gridSize - 4
+          segment.x * this.gridSize, // this.gridSize + 1
+          segment.y * this.gridSize, // this.gridSize + 1
+          this.gridSize, // this.gridSize - 2
+          this.gridSize  // this.gridSize - 2
         );
       }
     });
