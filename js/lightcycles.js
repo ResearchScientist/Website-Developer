@@ -303,12 +303,15 @@ export class LightCyclesGame {
   endGame() {
     this.gameRunning = false;
     this.stopGameLoop();
-    console.log('end of line');
+    const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
+    if (aliveLightcycles.length === 0) {
+      console.log("Jim! I'm a doctor not a gamer. But, yeah they're all derezed.");
+    }
+    
   }
 
   render() {
-    // this.ctx.fillStyle = 'rgba(0,0,0,0)';
-    this.ctx.fillStyle = '#000';
+    this.ctx.fillStyle = 'rgba(0,0,0,.1)';
     this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
     this.ctx.strokeStyle = 'rgba(25,50,75,0.2)';
     this.ctx.lineWidth = 1;
