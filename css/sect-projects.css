@@ -1348,10 +1348,8 @@
 }
 
 #the-grid {
-  /* width: 70%;
-  aspect-ratio: 16/9; */
-  width: 480px;
-  height: 270px;
+  width: 70%;
+  aspect-ratio: 16/9;
   margin: 10px auto 0;
   display: grid;
   grid-template-columns: 100%;
@@ -1366,7 +1364,6 @@
   height: 100%;
   grid-column: 1/-1;
   grid-row: 1/-1;
-  background-color: teal;
 }
 
 #lightcycles-info {
