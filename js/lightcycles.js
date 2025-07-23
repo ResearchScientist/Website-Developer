@@ -7,6 +7,10 @@ export class LightCyclesGame {
     this.gridWidth = Math.floor(this.canvas.width / this.gridSize);
     this.gridHeight = Math.floor(this.canvas.height / this.gridSize);
     this.lightcyclesInfo = document.getElementById('lightcycles-info');
+    // INFO SCREENS
+    this.winnerSection = document.getElementById('winner-section');
+    // this.winner = document.getElementById('winner');
+    this.roundWon = document.getElementById('round-won');
     // STATE
     this.gameRunning = false;
     // ROUND COUNTDOWN
@@ -308,6 +312,11 @@ export class LightCyclesGame {
     const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
     if (aliveLightcycles.length === 0) {
       console.log("Jim! I'm a doctor not a gamer. But, yeah they're all derezed.");
+    } else {
+      const winner = aliveLightcycles[0];
+      if (winner === this.user) {
+        this.winnerSection.style.opacity = '1';
+      }
     }
     const startGameButton = document.querySelector('#inset-button-1');
     startGameButton.disabled = false;
