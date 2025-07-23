@@ -9,7 +9,7 @@ export class LightCyclesGame {
     this.lightcyclesInfo = document.getElementById('lightcycles-info');
     // INFO SCREENS
     this.winnerSection = document.getElementById('winner-section');
-    // this.winner = document.getElementById('winner');
+    this.winner = document.getElementById('winner');
     this.roundWon = document.getElementById('round-won');
     // STATE
     this.gameRunning = false;
@@ -316,6 +316,8 @@ export class LightCyclesGame {
       const winner = aliveLightcycles[0];
       if (winner === this.user) {
         this.winnerSection.style.opacity = '1';
+        this.winner.textContent = 'USER WINS';
+        this.roundWon.textContent = `ROUND ${this.currentRound}`;
       }
     }
     const startGameButton = document.querySelector('#inset-button-1');
