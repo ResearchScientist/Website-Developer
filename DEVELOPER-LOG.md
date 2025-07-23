@@ -30,8 +30,6 @@ Reverted back to one dev log. Maintaining multiple ones was cumbersome.
 
 # Projects Section Redesign
 
-> March 2025
-
 I'm updating the projects page.
 
 Animations upon entering the page are a bit long and computationally expensive. I'm removing the planet sliding animations and animated drop down menu as well as the lights coming on around the planet.
