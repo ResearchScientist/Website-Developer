@@ -11,12 +11,14 @@ export class LightCyclesGame {
     this.winnerSection = document.getElementById('winner-section');
     this.winner = document.getElementById('winner');
     this.roundWon = document.getElementById('round-won');
+    this.proceedingRoundScreen = document.getElementById('proceed-to-next-round');
     // STATE
     this.gameRunning = false;
     // ROUND COUNTDOWN
     this.currentRound = 1;
     this.countdownActive = false;
     this.countdownValue = 3;
+    this.nextRoundCountdownText = document.getElementById('next-round-countdown-text');
     // USER AND NPC UPDATES AS LINKED TO SPEED
     this.userInterval = 140;
     this.npcInterval = 140;
@@ -31,6 +33,9 @@ export class LightCyclesGame {
     this.userPrevUpTime = 0;
     this.npcPrevUpTime = 0;
     // SCORES
+    this.userScore = document.getElementById('user-score');
+    this.npc1Score = document.getElementById('npc1-score');
+    this.npc2Score = document.getElementById('npc2-score');
     this.scores = {
       user: 0,
       npc1: 0,
@@ -318,10 +323,37 @@ export class LightCyclesGame {
         this.winnerSection.style.opacity = '1';
         this.winner.textContent = 'USER WINS';
         this.roundWon.textContent = `ROUND ${this.currentRound}`;
+        this.currentRound++;
+        this.scores.user++;
+        this.userScore.textContent = this.scores.user;
+        setTimeout(() => {
+          this.countdownToRound();
+          this.winnerSection.style.display = 'none';
+          this.winnerSection.style.opacity = '0';
+          this.winnerSection.style.display = 'flex';
+        }, 2000);
       }
     }
     const startGameButton = document.querySelector('#inset-button-1');
     startGameButton.disabled = false;
+  }
+
+  countdownToRound() {
+    this.proceedingRoundScreen.style.opacity = '1';
+    this.countdownActive = true;
+    this.countdownValue = 3;
+    this.nextRoundCountdownText.textContent = this.countdownValue.toString();
+    const countdownInterval = setInterval(() => {
+      this.countdownValue--;
+      if (this.countdownValue > 0) {
+        this.nextRoundCountdownText.textContent = this.countdownValue.toString();
+      } else {
+        clearInterval(countdownInterval);
+        this.countdownActive = false;
+        this.proceedingRoundScreen.style.opacity = '0';
+        this.startGame();
+      }
+    }, 1000);
   }
 
   render() {
