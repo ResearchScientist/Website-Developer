@@ -66,6 +66,10 @@ Since I had many leftover tokens from the Bolt hackathon, I used AI to show me a
 
 I had previously drawn a flat illustration of a computer with a magnifying glass over the screen. The glass magnified 1s and 0s. I used masking to make the effect. I thought how cool if it could be animated. But I was very early in my illustrating journey and even earlier in my programming journey. Now I'm able to model a 3d computer and magnifying glass. Render it as a webp img and interactively animate it. Pretty neat.
 
+# Manifest JSON
+
+Updated the `start_url` in the manifest.json file to reflect the name of the repository since it was returning `404`. Also had to update the favicon relative paths.
+
 # Ship Wheel Animation
 
 Decided on using `transform rotate` on one img instead of making a sprite sheet for the ship wheel spinning animation. Since the img is being rendered at 50px by 50px any fine details at such a small resolution will be difficutl to see. Additionally, performance is better when animating one img vs a sprite sheet of many images. I was mostly concerned with the lighting and shadows on the wheel but at such a small resolution and at such a short animation the trade off between the lack of realism and the performance gain is worth it at that scale.
@@ -73,10 +77,6 @@ Decided on using `transform rotate` on one img instead of making a sprite sheet 
 # Spaceport Redesign
 
 Changed the camera orientation of the spaceport to a direct front view instead of an angle. By having the landing strip pointing direclty at the viewer, it changes the perspective to first person and helps immerse the viewer into the experience of arriving at the landing page as if they where literaly reaching a landing strip.
-
-# Manifest JSON
-
-Updated the `start_url` in the manifest.json file to reflect the name of the repository since it was returning `404`. Also had to update the favicon relative paths.
 
 # Webp Images
 
