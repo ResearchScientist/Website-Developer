@@ -25,6 +25,8 @@ export class LightCyclesGame {
     this.countdownActive = false;
     this.countdownValue = 3;
     this.nextRoundCountdownText = document.getElementById('next-round-countdown-text');
+    this.roundScreen = document.getElementById('round-screen');
+    this.roundOnScreen = document.getElementById('round-on-screen');
     // USER AND NPC UPDATES AS LINKED TO SPEED
     this.userInterval = 140;
     this.npcInterval = 140;
@@ -195,13 +197,46 @@ export class LightCyclesGame {
     this.winnerSection.style.opacity = '0';
     this.contestantsDerezzedScreen.style.opacity = '0';
     this.endOfLineScreen.style.opacity = '0';
+    this.roundScreen.style.opacity = '1';
     this.gameRunning = true;
     this.init();
     this.userPrevUpTime = 0;
     this.npcPrevUpTime = 0;
     this.gameLoop();
+    this.roundOnScreen.textContent = `${this.currentRound}`;
     const startGameButton = document.querySelector('#inset-button-1');
     startGameButton.disabled = true;
+  }
+
+  resetGame() {
+    this.stopGameLoop();
+    this.gameRunning = false;
+    this.currentRound = 1;
+    this.roundOnScreen.textContent = `${this.currentRound}`;
+    this.countdownActive = false;
+    this.countdownValue = 3;
+    this.scores = {
+      user: 0,
+      npc1: 0,
+      npc2: 0
+    };
+    this.userScore.textContent = this.scores.user;
+    this.npc1Score.textContent = this.scores.npc1;
+    this.npc2Score.textContent = this.scores.npc2;
+    this.deresolutionMSGqueue = [];
+    this.isDeresolutionMSGplaying = false;
+    this.lightcyclesInfo.style.opacity = '1';
+    this.roundOnScreen.style.opacity = '0';
+    this.winnerSection.style.opacity = '0';
+    this.proceedingRoundScreen.style.opacity = '0';
+    this.deresolutionScreen.style.opacity = '0';
+    this.contestantsDerezzedScreen.style.opacity = '0';
+    this.endOfLineScreen.style.opacity = '0';
+    this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    const startGameButton = document.getElementById('#inset-button-1');
+    if (startGameButton) {
+      startGameButton.disabled = false;
+    }
   }
 
   gameLoop(currentTime = 0) {
@@ -381,6 +416,7 @@ export class LightCyclesGame {
       } else if (winner === this.npc1) {
           this.winnerSection.style.opacity = '1';
           this.winner.textContent = 'NPC1 WINS';
+          this.roundWon.textContent = `ROUND ${this.currentRound}`;
           this.scores.npc1++;
           this.npc1Score.textContent = this.scores.npc1;
           setTimeout(() => {
@@ -390,6 +426,7 @@ export class LightCyclesGame {
         } else if (winner === this.npc2) {
           this.winnerSection.style.opacity = '1';
           this.winner.textContent = 'NPC2 WINS';
+          this.roundWon.textContent = `ROUND ${this.currentRound}`;
           this.scores.npc2++;
           this.npc2Score.textContent = this.scores.npc2;
           setTimeout(() => {

@@ -1321,7 +1321,7 @@
   align-items: center;
 }
 
-#lightcycles-title-screen {
+#lightcycles-title-screen , #round-screen {
   width: 100px;
   grid-column: 1/-1;
   grid-row: 1/-1;
@@ -1329,7 +1329,7 @@
   align-self: flex-start;
 }
 
-#lightcycles-title-screen h1 {
+#lightcycles-title-screen h1 , #round-screen h1 {
   text-align: center;
   letter-spacing: 3px;
   font-size: 12px;
@@ -1358,6 +1358,17 @@
 
 #lightcycles-title-screen #scores div:nth-of-type(3) p:nth-of-type(1) {
   color: var(--accent-orange);
+}
+
+#round-screen {
+  margin-left: 250px;
+  opacity: 0;
+}
+
+#round-screen p {
+  margin-top: 4px;
+  font-size: 14px;
+  text-align: center;
 }
 
 #the-grid {
