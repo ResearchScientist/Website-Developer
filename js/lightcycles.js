@@ -12,6 +12,11 @@ export class LightCyclesGame {
     this.winner = document.getElementById('winner');
     this.roundWon = document.getElementById('round-won');
     this.proceedingRoundScreen = document.getElementById('proceed-to-next-round');
+    this.deresolutionScreen = document.getElementById('deresolution-screen');
+    this.deresolutionScreenP = document.getElementById('deresolution-screen-p');
+    this.deresolutionMSGqueue = [];
+    this.isDeresolutionMSGplaying = false;
+    this.endOfLineScreen = document.getElementById('end-of-line-screen');
     // STATE
     this.gameRunning = false;
     // ROUND COUNTDOWN
@@ -96,6 +101,9 @@ export class LightCyclesGame {
     });
 
     this.npcInterval = this.changeNPCspeed();
+
+    this.deresolutionMSGqueue = [];
+    this.isDeresolutionMSGplaying = false;
   }
 
   changeNPCspeed() {
@@ -183,6 +191,8 @@ export class LightCyclesGame {
 
   startGame() {
     this.lightcyclesInfo.style.opacity = 0;
+    this.winnerSection.style.opacity = 0;
+    this.endOfLineScreen.style.opacity = 0;
     this.gameRunning = true;
     this.init();
     this.userPrevUpTime = 0;
@@ -190,7 +200,6 @@ export class LightCyclesGame {
     this.gameLoop();
     const startGameButton = document.querySelector('#inset-button-1');
     startGameButton.disabled = true;
-    console.log(`is game running : ${this.gameRunning}`);
   }
 
   gameLoop(currentTime = 0) {
@@ -219,6 +228,7 @@ export class LightCyclesGame {
     const newPos = this.getNewPosition(this.user);
     if (this.checkCollision(newPos.x, newPos.y)) {
       this.user.alive = false;
+      this.showDeresolutionMSG(this.user);
       this.checkGameEnd();
       return;
     }
@@ -229,17 +239,13 @@ export class LightCyclesGame {
   }
 
   updateNPCs() {
-    const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
-    if (aliveLightcycles.length <=1) {
-      this.endGame();
-      return;
-    }
     [this.npc1,this.npc2].forEach(lightcycle => {
       if (!lightcycle.alive) return;
       this.updateAInpc(lightcycle);
       const newPos = this.getNewPosition(lightcycle);
       if (this.checkCollision(newPos.x,newPos.y)) {
         lightcycle.alive = false;
+        this.showDeresolutionMSG(lightcycle);
         this.checkGameEnd();
         return;
       }
@@ -304,14 +310,46 @@ export class LightCyclesGame {
     return this.grid[y][x] !== 0;
   }
 
+  showDeresolutionMSG(lightcycle) {
+    let deresolutionMSG = '';
+    if (lightcycle === this.user) {
+      deresolutionMSG = 'USER DEREZZED';
+    } else if (lightcycle === this.npc1) {
+      deresolutionMSG = 'NPC1 DEREZZED';
+    } else if (lightcycle === this.npc2) {
+      deresolutionMSG = 'NPC2 DEREZZED';
+    }
+    this.deresolutionMSGqueue.push(deresolutionMSG);
+    this.processDeresolutionMSGqueue();
+  }
+
+  processDeresolutionMSGqueue() {
+    if (this.isDeresolutionMSGplaying || this.deresolutionMSGqueue.length === 0) {
+      return;
+    } else {
+      this.isDeresolutionMSGplaying = true;
+      const deresolutionMSG = this.deresolutionMSGqueue.shift();
+      this.deresolutionScreenP.textContent = deresolutionMSG;
+      this.deresolutionScreenP.classList.add('derezzed-msg-animation');
+      setTimeout(() => {
+        this.deresolutionScreenP.classList.remove('derezzed-msg-animation');
+        this.isDeresolutionMSGplaying = false;
+        this.processDeresolutionMSGqueue();
+      }, 1200);
+    }
+  }
+
   checkGameEnd() {
     const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
     if (aliveLightcycles.length <= 1) {
-      this.endGame();
+      setTimeout(() => {
+        this.endGame();
+      }, 1000);
     }
   }
 
   endGame() {
+    if (!this.gameRunning) return;
     this.gameRunning = false;
     this.stopGameLoop();
     const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
@@ -332,7 +370,25 @@ export class LightCyclesGame {
           this.winnerSection.style.opacity = '0';
           this.winnerSection.style.display = 'flex';
         }, 2000);
-      }
+      } else if (winner === this.npc1) {
+          this.winnerSection.style.opacity = '1';
+          this.winner.textContent = 'NPC1 WINS';
+          this.scores.npc1++;
+          this.npc1Score.textContent = this.scores.npc1;
+          setTimeout(() => {
+            this.endOfLineScreen.style.opacity = '1';
+            this.currentRound = 1;
+          }, 1000);
+        } else if (winner === this.npc2) {
+          this.winnerSection.style.opacity = '1';
+          this.winner.textContent = 'NPC2 WINS';
+          this.scores.npc2++;
+          this.npc2Score.textContent = this.scores.npc2;
+          setTimeout(() => {
+            this.endOfLineScreen.style.opacity = '1';
+            this.currentRound = 1;
+          }, 1000);
+        }
     }
     const startGameButton = document.querySelector('#inset-button-1');
     startGameButton.disabled = false;
