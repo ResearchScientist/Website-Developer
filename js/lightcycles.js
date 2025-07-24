@@ -11,6 +11,7 @@ export class LightCyclesGame {
     this.winnerSection = document.getElementById('winner-section');
     this.winner = document.getElementById('winner');
     this.roundWon = document.getElementById('round-won');
+    this.contestantsDerezzedScreen = document.getElementById('contestants-derezzed-screen');
     this.proceedingRoundScreen = document.getElementById('proceed-to-next-round');
     this.deresolutionScreen = document.getElementById('deresolution-screen');
     this.deresolutionScreenP = document.getElementById('deresolution-screen-p');
@@ -190,9 +191,10 @@ export class LightCyclesGame {
   }
 
   startGame() {
-    this.lightcyclesInfo.style.opacity = 0;
-    this.winnerSection.style.opacity = 0;
-    this.endOfLineScreen.style.opacity = 0;
+    this.lightcyclesInfo.style.opacity = '0';
+    this.winnerSection.style.opacity = '0';
+    this.contestantsDerezzedScreen.style.opacity = '0';
+    this.endOfLineScreen.style.opacity = '0';
     this.gameRunning = true;
     this.init();
     this.userPrevUpTime = 0;
@@ -354,7 +356,13 @@ export class LightCyclesGame {
     this.stopGameLoop();
     const aliveLightcycles = this.lightcycles.filter(lightcycle => lightcycle.alive);
     if (aliveLightcycles.length === 0) {
-      console.log("Jim! I'm a doctor not a gamer. But, yeah they're all derezed.");
+      console.log("Jim! I'm a doctor not a gamer. But, yeah. They're all derezed.");
+      setTimeout(() => {
+        this.contestantsDerezzedScreen.style.opacity = '1';
+      }, 1000);
+      setTimeout(() => {
+        this.endOfLineScreen.style.opacity = '1';
+      }, 2000);
     } else {
       const winner = aliveLightcycles[0];
       if (winner === this.user) {
