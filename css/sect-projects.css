@@ -1381,7 +1381,7 @@
   grid-row: 1/-1;
 }
 
-#lightcycles-info , #winner-section , #proceed-to-next-round , #deresolution-screen {
+#lightcycles-info , #winner-section , #proceed-to-next-round , #deresolution-screen , #end-of-line-screen {
   width: 99.8%;
   height: 99.8%;
   padding: 0;
@@ -1458,24 +1458,38 @@
 }
 
 #deresolution-screen {
-  opacity: 1;
   background: rgba(0,0,0,0);
 }
 
 #deresolution-screen p {
-  font-family: '-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Lato';
   font-weight: 300;
   font-size: 64px;
   letter-spacing: 5px;
   text-align: center;
   color: var(--text-blue);
   transform: scale(.05);
-  animation: derezzed-msg-animation 1.5s ease-in forwards;
+  opacity: 0;
 }
 
+.derezzed-msg-animation {animation: derezzed-msg-animation 1s ease-in forwards;}
+
 @keyframes derezzed-msg-animation {
-  0% {transform: scale(.05); opacity: 1;}
-  100% {transform: scale(2); opacity: 1;}
+  0% {transform: scale(.05); opacity: 0;}
+  50% {transform: scale(.5); opacity: 1;}
+  100% {transform: scale(1); opacity: 0;}
+}
+
+#end-of-line-screen {
+  opacity: 0;
+}
+
+#end-of-line-screen p {
+  font-family: '-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Lato';
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  text-align: center;
+  color: var(--text-blue);
 }
 
 /* GAUGE DIAL */
