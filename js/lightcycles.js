@@ -233,10 +233,10 @@ export class LightCyclesGame {
     this.contestantsDerezzedScreen.style.opacity = '0';
     this.endOfLineScreen.style.opacity = '0';
     this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
-    const startGameButton = document.getElementById('#inset-button-1');
-    if (startGameButton) {
-      startGameButton.disabled = false;
-    }
+    // const startGameButton = document.getElementById('#inset-button-1');
+    // if (startGameButton) {
+    //   startGameButton.disabled = false;
+    // }
   }
 
   gameLoop(currentTime = 0) {
