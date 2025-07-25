@@ -254,7 +254,7 @@ const insetButtonsConfigurations = {
     labels: ["art","visuals","systems", "leave"]
   },
   'engineButton':  {
-    functions: [startLightcyclesGame,g2,g3,endLightcyclesGame],
+    functions: [startLightcyclesGame,g2,g3,resetEngine], // endLightcyclesGame
     labels: ["start","fun2","fun3", "end"]
   },
   'gaugeButton':  {
@@ -1198,19 +1198,20 @@ function startLightcyclesGame() {
   }
 }
 
-function endLightcyclesGame() {
-  if (gameInstance) {
-    gameInstance.resetGame();
-    gameInstance = null;
-    resetEngine();
-  }
-  lightcyclesSection.style.opacity = '0';
-  // lightcyclesInfo.style.opacity = '1';
-}
+// function endLightcyclesGame() {
+//   if (gameInstance) {
+//     gameInstance.resetGame();
+//     gameInstance = null;
+//     resetEngine();
+//   }
+//   lightcyclesSection.style.opacity = '0';
+//   lightcyclesInfo.style.opacity = '1';
+// }
 
 function resetEngine() {
   engineOnIMG.style.opacity = "0";
   engineButton.dataset.stationActive = false;
+  lightcyclesSection.style.opacity = "0";
   resetInsetButtons();
 }
 
