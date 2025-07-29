@@ -68,7 +68,6 @@ export class LightCyclesGame {
       return;
     } else {
       this.startGame();
-      this.electrify();
     }
   }
 
@@ -434,6 +433,11 @@ export class LightCyclesGame {
           this.winnerSection.style.opacity = '0';
           this.winnerSection.style.display = 'flex';
         }, 2000);
+        if (this.currentRound > 2) {
+          setTimeout(() => {
+            this.electrify();
+          }, 4000);
+        }
       } else if (winner === this.npc1) {
           this.winnerSection.style.opacity = '1';
           this.winner.textContent = 'NPC1 WINS';
