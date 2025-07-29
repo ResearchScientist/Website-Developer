@@ -18,6 +18,14 @@ export class LightCyclesGame {
     this.deresolutionMSGqueue = [];
     this.isDeresolutionMSGplaying = false;
     this.endOfLineScreen = document.getElementById('end-of-line-screen');
+    // END OF LINE CLUB
+    this.endOfLineClubSVG = document.getElementById('end-of-line-club-svg');
+    this.borderL = document.getElementById('border-l');
+    this.borderR = document.getElementById('border-r');
+    this.helmet1 = document.getElementById('helmet1');
+    this.helmet2 = document.getElementById('helmet2');
+    this.body1 = document.getElementById('body1');
+    this.body2 = document.getElementById('body2');
     // STATE
     this.gameRunning = false;
     // ROUND COUNTDOWN
@@ -61,6 +69,18 @@ export class LightCyclesGame {
     } else {
       this.startGame();
     }
+  }
+
+  electrify() {
+    this.endOfLineClubSVG.style.opacity = '1';
+    this.borderL.classList.add('end-of-line-club-animation');
+    this.borderR.classList.add('end-of-line-club-animation');
+    setTimeout(() => {
+      this.helmet1.style.opacity = '1';
+      this.helmet2.style.opacity = '1';
+      this.body1.style.opacity = '1';
+      this.body2.style.opacity = '1';
+    }, 2000);
   }
 
   init() {
@@ -413,6 +433,11 @@ export class LightCyclesGame {
           this.winnerSection.style.opacity = '0';
           this.winnerSection.style.display = 'flex';
         }, 2000);
+        if (this.currentRound > 2) {
+          setTimeout(() => {
+            this.electrify();
+          }, 4000);
+        }
       } else if (winner === this.npc1) {
           this.winnerSection.style.opacity = '1';
           this.winner.textContent = 'NPC1 WINS';
